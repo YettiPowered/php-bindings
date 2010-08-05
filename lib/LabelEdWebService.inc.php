@@ -246,20 +246,20 @@ class LabelEdWebService
 	 */
 	private function parseResponse($response)
 	{
-		list($headers, $responseBody) = explode("\r\n\r\n", $response, 2);
-		$headers = explode("\r\n", $headers);
+		$headers		= explode("\r\n\r\n", $response);
+		$responseBody	= array_pop($headers);
+		$headerArray 	= array();
 		
-		$line = array_shift($headers);
-		if (preg_match('@^HTTP/[0-9]\.[0-9] ([0-9]{3})@', $line, $matches)) {
-			$responseCode = $matches[1];
-		}
-		
-		$headerArray = array();
-		
-		foreach($headers as $line)
+		foreach ($headers as $line)
 		{
-			list($header, $value) = explode(': ', $line, 2);
-			$headerArray[$header] = $value;
+			if (preg_match('@^HTTP/[0-9]\.[0-9] ([0-9]{3})@', $line, $matches)) {
+				$responseCode = $matches[1];
+			}
+			else
+			{
+				list($header, $value) = explode(': ', $line, 2);
+				$headerArray[$header] = $value;
+			}
 		}
 		
 		$this->_responseCode 	= $responseCode;

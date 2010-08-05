@@ -23,46 +23,36 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 	/**
 	 * Create a new item
 	 *
-	 * @param int $typeId
-	 * @param array $itemData
+	 * @param array $itemArray
 	 * @return bool
 	 */
-	public function create($typeId, $itemData)
+	public function create($itemArray)
 	{
+		$typeId 	= !empty($itemArray['item']['typeId']) ? $itemArray['item']['typeId'] : false;
+		$identifier = !empty($itemArray['item']['identifier']) ? $itemArray['item']['identifier'] : false;
+		$properties = !empty($itemArray['properties']) && is_array($itemArray['properties']) ?
+			$itemArray['properties'] : false;
+		
 		$this->webservice()->setRequestPath('/templates/item/' . $typeId . '.ws');
 		$this->webservice()->setRequestMethod('get');
 		$this->webservice()->makeRequest();
-		$xml = $this->webservice()->getResponse();
+		
+		$item = new DOMDocument();
+		$item->loadXML($this->webservice()->getResponse());
+		$xpath = new DOMXPath($item);
+		
+		$xpath->query('item/identifier')->item(0)->nodeValue = $identifier;
+		
+		foreach ($properties as $name => $value) {
+			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = $value;
+		}
 		
 		$this->webservice()->setRequestPath('/items.ws');
 		$this->webservice()->setRequestMethod('post');
-		$this->webservice()->setPostData($xml);
+		$this->webservice()->setPostData($item->saveXML());
 		
 		$this->webservice()->makeRequest();
 		return $this->webservice()->getResponseCode() == 201;
-	}
-	
-	/**
-	 * Modify an existing item
-	 *
-	 * @param int $itemId
-	 * @param array $itemData
-	 * @return bool
-	 */
-	public function modify($itemId, $itemData)
-	{
-		$this->webservice()->setRequestPath('/items/' . $itemId . '.ws');
-		$this->webservice()->setRequestMethod('get');
-		$this->webservice()->makeRequest();
-		$xml = $this->webservice()->getResponse();
-		
-		$this->webservice()->resetRequest();
-		$this->webservice()->setRequestPath('/items/' . $itemId . '.ws');
-		$this->webservice()->setRequestMethod('put');
-		$this->webservice()->setPostData($xml);
-		
-		$this->webservice()->makeRequest();
-		return $this->webservice()->getResponseCode() == 200;
 	}
 	
 	/**
