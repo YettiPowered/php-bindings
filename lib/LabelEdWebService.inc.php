@@ -231,6 +231,10 @@ class LabelEdWebService
 			$this->_responseXmlObject = simplexml_load_string($this->_response);
 		}
 		
+		if ($this->_responseCode == 403) {
+			throw new Exception('Webservice authentication failed');
+		}
+		
 		return $this->_responseCode == 200;
 	}
 	
