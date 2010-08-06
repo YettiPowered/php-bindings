@@ -4,6 +4,12 @@ include_once('LabelEdWebService.inc.php');
 include_once('APIs/Abstract.inc.php');
 include_once('Result.inc.php');
 
+/**
+ * LabelEd API class, provides easy interfaces for dealing with LabelEd data
+ *
+ * $Id$
+ *
+ */
 class LabelEdAPI
 {
 	private
@@ -15,8 +21,6 @@ class LabelEdAPI
 	
 	public function __construct($baseUri, $accessKey, $privateKey)
 	{
-		
-		
 		$this->_webservice = new LabelEdWebService();
 		$this->_webservice->setBaseUri($baseUri);
 		$this->_webservice->setAccessKey($accessKey);

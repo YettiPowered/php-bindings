@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Webservice class handles the actual CURL calls and responses to LabelEd
+ *
+ * $Id$
+ *
+ */
 class LabelEdWebService
 {
 	private

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Abstract base class for LabelEd APIs
+ *
+ * $Id$
+ *
+ */
 abstract class LabelEdAPI_Abstract
 {
 	private $_webservice;
