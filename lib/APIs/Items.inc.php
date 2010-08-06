@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * API for interfacing with LabelEd items over web services.
+ *
+ * $Id$
+ *
+ */
 class LabelEdAPI_Items extends LabelEdAPI_Abstract
 {
 	private $_items;
@@ -21,10 +27,40 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 	}
 	
 	/**
+	 * Returns a template for use when creating a new item
+	 *
+	 * @param int $typeId
+	 * @return array
+	 */
+	public function template($typeId)
+	{
+		$itemArray = array();
+		
+		$this->webservice()->setRequestPath('/templates/item/' . $typeId . '.ws');
+		$this->webservice()->setRequestMethod('get');
+		
+		if ($this->webservice()->makeRequest())
+		{
+			$template = $this->webservice()->getResponseXmlObject();
+							
+			$itemArray = array('item' => array(
+				'identifier'	=> '',
+				'typeId' 		=> $typeId,
+			));
+			
+			foreach ($template->xpath('item/language/properties/property') as $property) {
+				$itemArray['properties'][(string)$property->attributes()->name] = '';
+			}
+		}
+		
+		return $itemArray;
+	}
+	
+	/**
 	 * Create a new item
 	 *
 	 * @param array $itemArray
-	 * @return bool
+	 * @return LabelEdAPIResult
 	 */
 	public function create($itemArray)
 	{
@@ -52,7 +88,18 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		$this->webservice()->setPostData($item->saveXML());
 		
 		$this->webservice()->makeRequest();
-		return $this->webservice()->getResponseCode() == 201;
+		$result = new LabelEdAPIResult();
+		
+		if ($this->webservice()->getResponseCode() != 201)
+		{
+			$response = $this->webservice()->getResponseXmlObject();
+			
+			foreach ($response->response->errors->error as $error) {
+				$result->addError($error);
+			}
+		}
+		
+		return $result;
 	}
 	
 	/**

@@ -1,5 +1,9 @@
 <?php
 
+include_once('LabelEdWebService.inc.php');
+include_once('APIs/Abstract.inc.php');
+include_once('Result.inc.php');
+
 class LabelEdAPI
 {
 	private
@@ -11,7 +15,7 @@ class LabelEdAPI
 	
 	public function __construct($baseUri, $accessKey, $privateKey)
 	{
-		include_once('LabelEdWebService.inc.php');
+		
 		
 		$this->_webservice = new LabelEdWebService();
 		$this->_webservice->setBaseUri($baseUri);
@@ -26,7 +30,6 @@ class LabelEdAPI
 			$className = $this->_apiClasses[$var];
 			list($prefix, $filename) = explode('_', $className);
 			
-			include_once('APIs/Abstract.inc.php');
 			include_once('APIs/' . $filename . '.inc.php');
 			return new $className($this->_webservice);
 		}
