@@ -17,6 +17,7 @@ class LabelEdAPI
 		
 		$_apiClasses = array(
 			'items' => 'LabelEdAPI_Items',
+			'users' => 'LabelEdAPI_Users',
 		);
 	
 	public function __construct($baseUri, $accessKey, $privateKey)

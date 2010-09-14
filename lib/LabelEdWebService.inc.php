@@ -171,7 +171,7 @@ class LabelEdWebService
 	 */
 	public function makeRequest()
 	{
-		if (!$this->_requestUri) {
+		if (!$this->_requestUri || substr($this->_requestUri, 0, 4) != 'http') {
 			throw new Exception('Request URI not set');
 		}
 		
@@ -253,6 +253,7 @@ class LabelEdWebService
 	private function parseResponse($response)
 	{
 		$headers		= explode("\r\n\r\n", $response);
+		$responseCode	= false;
 		$responseBody	= array_pop($headers);
 		$headerArray 	= array();
 		
