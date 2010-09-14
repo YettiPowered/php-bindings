@@ -87,6 +87,43 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		$this->webservice()->setRequestMethod('post');
 		$this->webservice()->setPostData($item->saveXML());
 		
+		return $this->makeRequestReturnResult();
+	}
+	
+	/**
+	 * Update an existing item
+	 *
+	 * @param int $itemId
+	 * @param array $itemArray
+	 * @return LabelEdAPIResult
+	 */
+	public function update($itemId, $itemArray)
+	{
+		$itemPath = '/items/' . $itemId . '.ws';
+		
+		$this->webservice()->setRequestPath($itemPath);
+		$this->webservice()->setRequestMethod('get');
+		$this->webservice()->makeRequest();
+		
+		$item = new DOMDocument();
+		$item->loadXML($this->webservice()->getResponse());
+		$xpath = new DOMXPath($item);
+		
+		$this->webservice()->setRequestPath($itemPath);
+		$this->webservice()->setRequestMethod('put');
+		$this->webservice()->setPostData($item->saveXML());
+		
+		return $this->makeRequestReturnResult();
+	}
+	
+	/**
+	 * Performs a webservice request and returns a result object
+	 * Must be called after everything else has been set up
+	 *
+	 * @return LabelEdAPIResult
+	 */
+	private function makeRequestReturnResult()
+	{
 		$this->webservice()->makeRequest();
 		$result = new LabelEdAPIResult();
 		
@@ -147,8 +184,13 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 					'typeId' 		=> (string)$itemElement[0]->attributes()->typeId,
 				));
 				
-				foreach ($item->xpath('item/language/properties/property') as $property) {
-					$itemArray['properties'][(string)$property->attributes()->name] = (string)$property;
+				foreach ($item->xpath('item/language/properties/property') as $property)
+				{
+					$itemArray['properties'][(string)$property->attributes()->name] = array(
+						'value'		=> (string)$property,
+						'dataType'	=> (string)$property->attributes()->dataType,
+						'required'	=> (string)$property->attributes()->required,
+					);
 				}
 			}
 		}
