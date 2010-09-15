@@ -99,6 +99,10 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 	 */
 	public function update($itemId, $itemArray)
 	{
+		$identifier = !empty($itemArray['item']['identifier']) ? $itemArray['item']['identifier'] : false;
+		$properties = !empty($itemArray['properties']) && is_array($itemArray['properties']) ?
+			$itemArray['properties'] : false;
+		
 		$itemPath = '/items/' . $itemId . '.ws';
 		
 		$this->webservice()->setRequestPath($itemPath);
@@ -108,6 +112,12 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		$item = new DOMDocument();
 		$item->loadXML($this->webservice()->getResponse());
 		$xpath = new DOMXPath($item);
+		
+		$xpath->query('item/identifier')->item(0)->nodeValue = $identifier;
+		
+		foreach ($properties as $name => $value) {
+			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = $value['value'];
+		}
 		
 		$this->webservice()->setRequestPath($itemPath);
 		$this->webservice()->setRequestMethod('put');
@@ -127,12 +137,15 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		$this->webservice()->makeRequest();
 		$result = new LabelEdAPIResult();
 		
-		if ($this->webservice()->getResponseCode() != 201)
+		if (substr($this->webservice()->getResponseCode(), 0, 1) != 2)
 		{
 			$response = $this->webservice()->getResponseXmlObject();
 			
-			foreach ($response->response->errors->error as $error) {
-				$result->addError($error);
+			if (isset($response->response) && isset($response->response->errors))
+			{
+				foreach ($response->response->errors->error as $error) {
+					$result->addError($error);
+				}
 			}
 		}
 		

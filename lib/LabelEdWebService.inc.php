@@ -252,7 +252,13 @@ class LabelEdWebService
 	 */
 	private function parseResponse($response)
 	{
-		$headers		= explode("\r\n\r\n", $response, 2);
+		$headerCount = 2;
+		
+		if (substr($response, 0, 21) == 'HTTP/1.1 100 Continue') {
+			$headerCount = 3;
+		}
+		
+		$headers		= explode("\r\n\r\n", $response, $headerCount);
 		$responseCode	= false;
 		$responseBody	= array_pop($headers);
 		$headerArray 	= array();
