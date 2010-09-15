@@ -252,7 +252,7 @@ class LabelEdWebService
 	 */
 	private function parseResponse($response)
 	{
-		$headers		= explode("\r\n\r\n", $response);
+		$headers		= explode("\r\n\r\n", $response, 2);
 		$responseCode	= false;
 		$responseBody	= array_pop($headers);
 		$headerArray 	= array();
