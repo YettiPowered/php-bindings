@@ -188,22 +188,25 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		{
 			$item = $this->webservice()->getResponseXmlObject();
 			
-			if ($identifier = $item->xpath('item/identifier'))
+			if (is_object($item) && $item instanceof SimpleXMLElement)
 			{
-				$itemElement = $item->xpath('item');
-				
-				$itemArray = array('item' => array(
-					'identifier'	=> (string)$identifier[0],
-					'typeId' 		=> (string)$itemElement[0]->attributes()->typeId,
-				));
-				
-				foreach ($item->xpath('item/language/properties/property') as $property)
+				if ($identifier = $item->xpath('item/identifier'))
 				{
-					$itemArray['properties'][(string)$property->attributes()->name] = array(
-						'value'		=> (string)$property,
-						'dataType'	=> (string)$property->attributes()->dataType,
-						'required'	=> (string)$property->attributes()->required,
-					);
+					$itemElement = $item->xpath('item');
+					
+					$itemArray = array('item' => array(
+						'identifier'	=> (string)$identifier[0],
+						'typeId' 		=> (string)$itemElement[0]->attributes()->typeId,
+					));
+					
+					foreach ($item->xpath('item/language/properties/property') as $property)
+					{
+						$itemArray['properties'][(string)$property->attributes()->name] = array(
+							'value'		=> (string)$property,
+							'dataType'	=> (string)$property->attributes()->dataType,
+							'required'	=> (string)$property->attributes()->required,
+						);
+					}
 				}
 			}
 		}
