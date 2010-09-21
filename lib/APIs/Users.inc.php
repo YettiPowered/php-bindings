@@ -39,7 +39,20 @@ class LabelEdAPI_Users extends LabelEdAPI_Abstract
 			$this->webservice()->setRequestMethod('get');
 			$this->webservice()->makeRequest();
 			
-			$this->_users = $this->webservice()->getResponseXmlObject()->users->user;
+			$users = array();
+			
+			foreach ($this->webservice()->getResponseXmlObject()->users->user as $user)
+			{
+				$users[] = array(
+					'id'		=> (int)$user->attributes()->id,
+					'typeId' 	=> (int)$user->attributes()->typeId,
+					'username'	=> (string)$user->username,
+					'email'		=> (string)$user->email,
+					'usertype'	=> (string)$user->usertype,
+				);
+			}
+			
+			$this->_users = $users;
 		}
 		
 		return $this->_users;
