@@ -165,7 +165,18 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 			$this->webservice()->setRequestMethod('get');
 			$this->webservice()->makeRequest();
 			
-			$this->_items = $this->webservice()->getResponseXmlObject()->items->item;
+			$items = array();
+			
+			foreach ($this->webservice()->getResponseXmlObject()->items->item as $item)
+			{
+				$items[] = array(
+					'id'			=> (int)$item->attributes()->id,
+					'typeId' 		=> (int)$item->attributes()->typeId,
+					'identifier'	=> (string)$item->identifier,
+				);
+			}
+			
+			$this->_items = $items;
 		}
 		
 		return $this->_items;
