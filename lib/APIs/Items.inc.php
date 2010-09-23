@@ -79,8 +79,10 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		
 		$xpath->query('item/identifier')->item(0)->nodeValue = $identifier;
 		
-		foreach ($properties as $name => $value) {
-			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = $value;
+		foreach ($properties as $name => $value)
+		{
+			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = '';
+			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->appendChild($item->createCDATASection($value));
 		}
 		
 		$this->webservice()->setRequestPath('/items.ws');
@@ -115,8 +117,10 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		
 		$xpath->query('item/identifier')->item(0)->nodeValue = $identifier;
 		
-		foreach ($properties as $name => $value) {
-			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = $value['value'];
+		foreach ($properties as $name => $value)
+		{
+			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = '';
+			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->appendChild($item->createCDATASection($value['value']));
 		}
 		
 		$this->webservice()->setRequestPath($itemPath);
