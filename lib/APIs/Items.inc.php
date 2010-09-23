@@ -85,6 +85,10 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->appendChild($item->createCDATASection($value));
 		}
 		
+		if (!empty($itemArray['revisionComment'])) {
+			$xpath->query('item/language/revisionComment')->item(0)->appendChild($item->createCDATASection($itemArray['revisionComment']));
+		}
+		
 		$this->webservice()->setRequestPath('/items.ws');
 		$this->webservice()->setRequestMethod('post');
 		$this->webservice()->setPostData($item->saveXML());
@@ -121,6 +125,10 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		{
 			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = '';
 			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->appendChild($item->createCDATASection($value['value']));
+		}
+		
+		if (!empty($itemArray['revisionComment'])) {
+			$xpath->query('item/language/revisionComment')->item(0)->appendChild($item->createCDATASection($itemArray['revisionComment']));
 		}
 		
 		$this->webservice()->setRequestPath($itemPath);
