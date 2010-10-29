@@ -233,7 +233,7 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 					
 					foreach ($item->xpath('item/language/attachedItems/itemGroup') as $itemGroup)
 					{
-						$itemArray['attachedItems'][(string)$itemGroup->attributes()->id]['collectionId'] = (string)$itemGroup->attributes()->id;
+						$itemArray['attachedItems'][(string)$itemGroup->attributes()->id]['itemGroupId'] = (string)$itemGroup->attributes()->id;
 						
 						foreach ($itemGroup->xpath('item') as $item)
 						{
