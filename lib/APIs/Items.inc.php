@@ -230,6 +230,22 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 							'required'	=> (string)$property->attributes()->required,
 						);
 					}
+					
+					foreach ($item->xpath('item/language/attachedItems/itemGroup') as $itemGroup)
+					{
+						$itemArray['attachedItems'][(string)$itemGroup->attributes()->id]['collectionId'] = (string)$itemGroup->attributes()->id;
+						
+						foreach ($itemGroup->xpath('item') as $item)
+						{
+							$itemArray['attachedItems'][(string)$itemGroup->attributes()->id]['items'][] = array(
+								'itemId'	=> (string)$item->attributes()->id,
+								'caption' 	=> (string)$item->caption,
+								'url'		=> (string)$item->url,
+							);
+						}
+					}
+					
+					$itemArray['attachedItems'] = array_values($itemArray['attachedItems']);
 				}
 			}
 		}
