@@ -89,6 +89,12 @@ class LabelEdAPI_Users extends LabelEdAPI_Abstract
 				foreach ($user->xpath('user/properties/property') as $property) {
 					$userArray['properties'][(string)$property->attributes()->name] = (string)$property;
 				}
+				
+				foreach ($user->xpath('user/groups/group') as $group) {
+					$userArray['groups'][] = array(
+						'id'	=> $group->attributes()->id,
+					);
+				}
 			}
 		}
 		

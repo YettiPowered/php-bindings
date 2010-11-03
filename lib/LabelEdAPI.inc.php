@@ -16,8 +16,9 @@ class LabelEdAPI
 		$_webservice,
 		
 		$_apiClasses = array(
-			'items' => 'LabelEdAPI_Items',
-			'users' => 'LabelEdAPI_Users',
+			'items' 	=> 'LabelEdAPI_Items',
+			'users' 	=> 'LabelEdAPI_Users',
+			'groups'	=> 'LabelEdAPI_Groups',
 		);
 	
 	public function __construct($baseUri, $accessKey, $privateKey)
