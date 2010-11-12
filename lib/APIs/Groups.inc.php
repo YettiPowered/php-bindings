@@ -75,36 +75,39 @@ class LabelEdAPI_Groups extends LabelEdAPI_Abstract
 			
 			$groupElement = $group->xpath('group');
 			
-			$groupArray = array('group' => array(
-				'type' 		=> (string)$groupElement[0]->attributes()->type,
-			));
-			
-			foreach ($group->xpath('group/properties/property') as $property)
+			if (!empty($groupElement[0]))
 			{
-				$groupArray['properties'][(string)$property->attributes()->name] = array(
-					'value'		=> (string)$property,
-					'dataType'	=> (string)$property->attributes()->dataType,
-					'required'	=> (string)$property->attributes()->required,
-				);
-			}
-			
-			$groupArray['attachedItems'] = array();
-			
-			foreach ($group->xpath('group/attachedItems/itemGroup') as $itemGroup)
-			{
-				$groupArray['attachedItems'][(string)$itemGroup->attributes()->id]['itemGroupId'] = (string)$itemGroup->attributes()->id;
+				$groupArray = array('group' => array(
+					'type' 		=> (string)$groupElement[0]->attributes()->type,
+				));
 				
-				foreach ($itemGroup->xpath('item') as $item)
+				foreach ($group->xpath('group/properties/property') as $property)
 				{
-					$groupArray['attachedItems'][(string)$itemGroup->attributes()->id]['items'][] = array(
-						'itemId'	=> (string)$item->attributes()->id,
-						'caption' 	=> (string)$item->caption,
-						'url'		=> (string)$item->url,
+					$groupArray['properties'][(string)$property->attributes()->name] = array(
+						'value'		=> (string)$property,
+						'dataType'	=> (string)$property->attributes()->dataType,
+						'required'	=> (string)$property->attributes()->required,
 					);
 				}
+				
+				$groupArray['attachedItems'] = array();
+				
+				foreach ($group->xpath('group/attachedItems/itemGroup') as $itemGroup)
+				{
+					$groupArray['attachedItems'][(string)$itemGroup->attributes()->id]['itemGroupId'] = (string)$itemGroup->attributes()->id;
+					
+					foreach ($itemGroup->xpath('item') as $item)
+					{
+						$groupArray['attachedItems'][(string)$itemGroup->attributes()->id]['items'][] = array(
+							'itemId'	=> (string)$item->attributes()->id,
+							'caption' 	=> (string)$item->caption,
+							'url'		=> (string)$item->url,
+						);
+					}
+				}
+				
+				$groupArray['attachedItems'] = array_values($groupArray['attachedItems']);
 			}
-			
-			$groupArray['attachedItems'] = array_values($groupArray['attachedItems']);
 		}
 		
 		return $groupArray;
