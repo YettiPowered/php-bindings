@@ -64,10 +64,11 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 	 */
 	public function create($itemArray)
 	{
-		$typeId 	= !empty($itemArray['item']['typeId']) ? $itemArray['item']['typeId'] : false;
-		$identifier = !empty($itemArray['item']['identifier']) ? $itemArray['item']['identifier'] : false;
-		$properties = !empty($itemArray['properties']) && is_array($itemArray['properties']) ?
-			$itemArray['properties'] : false;
+		$typeId 		= !empty($itemArray['item']['typeId']) ? $itemArray['item']['typeId'] : false;
+		$identifier 	= !empty($itemArray['item']['identifier']) ? $itemArray['item']['identifier'] : false;
+		$properties 	= !empty($itemArray['properties']) && is_array($itemArray['properties']) ? $itemArray['properties'] : array();
+		$metaInfo 		= !empty($itemArray['metaInfo']) && is_array($itemArray['metaInfo']) ? $itemArray['metaInfo'] : array();
+		$productOptions	= !empty($itemArray['productOptions']) && is_array($itemArray['productOptions']) ? $itemArray['productOptions'] : array();
 		
 		$this->webservice()->setRequestPath('/templates/item/' . $typeId . '.ws');
 		$this->webservice()->setRequestMethod('get');
@@ -81,8 +82,31 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		
 		foreach ($properties as $name => $value)
 		{
-			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = '';
-			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->appendChild($item->createCDATASection($value));
+			if ($property = $xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0))
+			{
+				$property->nodeValue = '';
+				$property->appendChild($item->createCDATASection($value));
+			}
+		}
+		
+		if (!empty($metaInfo))
+		{
+			$xpath->query('item/language/metaInfo/title')->item(0)->appendChild($item->createCDATASection($metaInfo['title']));
+			$xpath->query('item/language/metaInfo/description')->item(0)->appendChild($item->createCDATASection($metaInfo['description']));
+			$xpath->query('item/language/metaInfo/keywords')->item(0)->appendChild($item->createCDATASection($metaInfo['keywords']));
+		}
+		
+		if (!empty($productOptions))
+		{
+			$xpath->query('item/language/productOptions/shippingUnitValue')->item(0)->appendChild($item->createCDATASection($productOptions['shippingUnitValue']));
+			$xpath->query('item/language/productOptions/vatBandId')->item(0)->appendChild($item->createCDATASection($productOptions['vatBandId']));
+			
+			if (!empty($productOptions['pricing']) && !empty($productOptions['pricing']['tier']))
+			{
+				$xpath->query('item/language/productOptions/pricing/tier/appliesToType')->item(0)->appendChild($item->createCDATASection($productOptions['pricing']['tier']['appliesToType']));
+				$xpath->query('item/language/productOptions/pricing/tier/appliesToId')->item(0)->appendChild($item->createCDATASection($productOptions['pricing']['tier']['appliesToId']));
+				$xpath->query('item/language/productOptions/pricing/tier/price')->item(0)->appendChild($item->createCDATASection($productOptions['pricing']['tier']['price']));
+			}
 		}
 		
 		if (!empty($itemArray['revisionComment'])) {
