@@ -101,11 +101,14 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 			$xpath->query('item/language/productOptions/shippingUnitValue')->item(0)->appendChild($item->createCDATASection($productOptions['shippingUnitValue']));
 			$xpath->query('item/language/productOptions/vatBandId')->item(0)->appendChild($item->createCDATASection($productOptions['vatBandId']));
 			
-			if (!empty($productOptions['pricing']) && !empty($productOptions['pricing']['tier']))
+			if (!empty($productOptions['pricing']) && !empty($productOptions['pricing']['tiers']))
 			{
-				$xpath->query('item/language/productOptions/pricing/tier/appliesToType')->item(0)->appendChild($item->createCDATASection($productOptions['pricing']['tier']['appliesToType']));
-				$xpath->query('item/language/productOptions/pricing/tier/appliesToId')->item(0)->appendChild($item->createCDATASection($productOptions['pricing']['tier']['appliesToId']));
-				$xpath->query('item/language/productOptions/pricing/tier/price')->item(0)->appendChild($item->createCDATASection($productOptions['pricing']['tier']['price']));
+				foreach ($productOptions['pricing']['tiers'] as $tier)
+				{
+					$xpath->query('item/language/productOptions/pricing/tier/appliesToType')->item(0)->appendChild($item->createCDATASection($tier['appliesToType']));
+					$xpath->query('item/language/productOptions/pricing/tier/appliesToId')->item(0)->appendChild($item->createCDATASection($tier['appliesToId']));
+					$xpath->query('item/language/productOptions/pricing/tier/price')->item(0)->appendChild($item->createCDATASection($tier['price']));
+				}
 			}
 		}
 		
