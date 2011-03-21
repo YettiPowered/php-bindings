@@ -42,6 +42,7 @@ class LabelEdAPI_Collections extends LabelEdAPI_Abstract
 					'id'			=> (int)$collection->attributes()->id,
 					'typeId' 		=> (int)$collection->attributes()->typeId,
 					'identifier'	=> (string)$collection->identifier,
+					'parentId'		=> (string)$collection->parentId,
 				);
 			}
 			
