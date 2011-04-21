@@ -6,7 +6,9 @@ $item->webservice()->setBaseUri('http://whitelounge.tom.dev/1.0');
 
 $item->setTypeId(6);
 
-$item->setName('test');
+$item->setName('test345345');
+$item->setPropertyValue('Name', 'testItem-oidjfpaodn');
+$item->setPropertyValue('Summary', 't34fgergqerg');
 $item->setPropertyValue('Artist', 'tom');
 $item->save();
 

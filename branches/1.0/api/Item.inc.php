@@ -55,11 +55,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		foreach ($this->getXml()->resource->properties->children() as $property) {
 			$property->value = $this->getPropertyValue($property->getName());
 		}
-		
-
-		print_r($this->getXml());
-		return;
-		
+				
 		// Categories
 		
 		// Revision comment
