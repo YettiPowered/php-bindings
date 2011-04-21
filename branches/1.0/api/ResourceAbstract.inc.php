@@ -1,4 +1,5 @@
 <?php
+require_once 'BaseAbstract.inc.php';
 
 /**
  * API for interfacing with LabelEd items over web services.

@@ -1,4 +1,5 @@
 <?php
+require_once 'ResourceAbstract.inc.php';
 
 /**
  * API for interfacing with LabelEd items over web services.
@@ -44,30 +45,26 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	
 	protected function create()
 	{
+		$this->loadTemplate();
 		$this->webservice()->setRequestPath('/items.ws');
 		$this->webservice()->setRequestMethod('post');
 		
-		$this->getXml()->item->identifier = $this->getName();
+		$this->getXml()->resource->resource->identifier = $this->getName();
 		
 		// Properties
-		foreach ($this->getXml()->item->language->properties->property as $property) {
-			$property[0] = $this->getPropertyValue($property->attributes()->name);
+		foreach ($this->getXml()->resource->properties->children() as $property) {
+			$property->value = $this->getPropertyValue($property->getName());
 		}
 		
-		// Meta info
-		$this->getXml()->item->language->metaInfo->title 		= $this->getMetaTitle();
-		$this->getXml()->item->language->metaInfo->description 	= $this->getMetaDescription();
-		$this->getXml()->item->language->metaInfo->keywords		= $this->getMetaKeywords();
-		
-		// Product options
-		$this->getXml()->item->language->productOptions->shippingUnitValue	= $this->getShippingUnitValue();
-		$this->getXml()->item->language->productOptions->vatBandId 			= $this->getVatBandId();
+
+		print_r($this->getXml());
+		return;
 		
 		// Categories
 		
 		// Revision comment
-		$this->getXml()->item->language->revisionComment = $this->getRevisionComment();
-		
+		//$this->getXml()->resource->language->revisionComment = $this->getRevisionComment();
+				
 		$this->webservice()->setPostData($this->getXml()->asXML());
 		return $this->makeRequestReturnResult();
 	}

@@ -277,7 +277,7 @@ class LabelEdAPI_WebService
 		
 		$this->_responseCode 	= $responseCode;
 		$this->_responseHeaders = $headerArray;
-		$this->_response 		= trim($responseBody);
+		echo $this->_response 		= trim($responseBody);
 	}
 	
 	/**

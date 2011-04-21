@@ -1,4 +1,6 @@
 <?php
+require_once 'Webservice.inc.php';
+require_once 'Result.inc.php';
 
 /**
  * API for interfacing with LabelEd items over web services.
