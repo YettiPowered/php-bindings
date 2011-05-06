@@ -264,17 +264,21 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 					{
 						$itemArray['attachedItems'][(string)$itemGroup->attributes()->id]['itemGroupId'] = (string)$itemGroup->attributes()->id;
 						
-						foreach ($itemGroup->xpath('item') as $item)
+						foreach ($itemGroup->xpath('item') as $attachedItem)
 						{
 							$itemArray['attachedItems'][(string)$itemGroup->attributes()->id]['items'][] = array(
-								'itemId'	=> (string)$item->attributes()->id,
-								'caption' 	=> (string)$item->caption,
-								'url'		=> (string)$item->url,
+								'itemId'	=> (string)$attachedItem->attributes()->id,
+								'caption' 	=> (string)$attachedItem->caption,
+								'url'		=> (string)$attachedItem->url,
 							);
 						}
 					}
 					
 					$itemArray['attachedItems'] = array_values($itemArray['attachedItems']);
+					
+					foreach ($item->xpath('item/language/categories/category') as $category) {
+						$itemArray['categories'][] = (string)$category->attributes()->id;
+					}
 				}
 			}
 		}
