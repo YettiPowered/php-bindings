@@ -135,6 +135,8 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		$identifier = !empty($itemArray['item']['identifier']) ? $itemArray['item']['identifier'] : false;
 		$properties = !empty($itemArray['properties']) && is_array($itemArray['properties']) ?
 			$itemArray['properties'] : false;
+		$categories = !empty($itemArray['categories']) && is_array($itemArray['categories']) ?
+			$itemArray['categories'] : false;
 		
 		$itemPath = '/items/' . $itemId . '.ws';
 		
@@ -144,6 +146,7 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		
 		$item = new DOMDocument();
 		$item->loadXML($this->webservice()->getResponse());
+		
 		$xpath = new DOMXPath($item);
 		
 		$xpath->query('item/identifier')->item(0)->nodeValue = $identifier;
@@ -152,6 +155,29 @@ class LabelEdAPI_Items extends LabelEdAPI_Abstract
 		{
 			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->nodeValue = '';
 			$xpath->query('item/language/properties/property[@name="' . $name . '"]')->item(0)->appendChild($item->createCDATASection($value['value']));
+		}
+		
+		if (!empty($itemArray['categories'])) 
+		{
+			//remove existing category nodes
+			$categoryNodes = $xpath->query('item/language/categories/category');
+			foreach($categoryNodes as $node)
+			{
+				$xpath->query('item/language/categories')->item(0)->removeChild($node);
+			}
+			
+			//add each category node
+			foreach($categories as $category)
+			{
+				$node = $item->createElement("category");
+				$xpath->query('item/language/categories')->item(0)->appendChild($node);
+				
+				$attribute = $item->createAttribute("id");
+				$attributeValue = $item->createTextNode($category);
+				$attribute->appendChild($attributeValue);
+				
+				$node->appendChild($attribute);
+			}			
 		}
 		
 		if (!empty($itemArray['revisionComment'])) {
