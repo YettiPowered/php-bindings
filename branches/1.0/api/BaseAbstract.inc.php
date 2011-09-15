@@ -34,18 +34,22 @@ abstract class LabelEdAPI_BaseAbstract
 	 *
 	 * @param SimpleXMLElement $xml
 	 */
-	protected function setXml(SimpleXMLElement $xml)
+	public function setXml(SimpleXMLElement $xml)
 	{
 		$this->_xml = $xml;
 	}
 	
 	/**
 	 * Returns the XML object
-	 *
+	 * @throws Exception
 	 * @return SimpleXMLElement
 	 */
-	protected function getXml()
+	public function getXml()
 	{
+		if (!isset($this->_xml)) {
+			throw new Exception('Unable to access XML data without first loading resource or template');
+		}
+		
 		return $this->_xml;
 	}
 }
