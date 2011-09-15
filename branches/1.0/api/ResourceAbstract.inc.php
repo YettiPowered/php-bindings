@@ -9,9 +9,6 @@ require_once 'BaseAbstract.inc.php';
 
 abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 {
-	private
-		$_revisionComment = '';
-		
 	/**
 	 * Load a resource template using 
 	 *
@@ -124,7 +121,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getName()
 	{
-		return (int)((string)$this->getXml()->item->resource->name);
+		return (string)$this->getXml()->item->resource->name;
 	}
 	
 	/**
@@ -147,16 +144,16 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getPropertyValue($name)
 	{
-		throw new Exception('Not yet implemented');
+		return (string)$this->getXml()->item->properties->{$name}->value;
 	}
 	
 	public function getRevisionComment()
 	{
-		return $this->_revisionComment;
+		return (string)$this->getXml()->item->resource->name;
 	}
 	
 	public function setRevisionComment($comment)
 	{
-		$this->_revisionComment = (string)$comment;
+		throw new Exception('Not yet implemented');
 	}
 }
