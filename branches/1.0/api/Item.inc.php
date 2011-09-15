@@ -23,11 +23,9 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			echo $this->webservice()->getResponse();
 			$this->setXml($this->webservice()->getResponseXmlObject());
 			return true;
 		}
-		echo $this->webservice()->getResponse();
 		
 		return false;
 	}
@@ -70,6 +68,31 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	
 	protected function update()
 	{
-		
+		throw new Exception('Not yet implemented');
+	}
+	
+	public function getMetaTitle()
+	{
+		throw new Exception('Not yet implemented');
+	}
+	
+	public function getMetaDescription()
+	{
+		throw new Exception('Not yet implemented');
+	}
+	
+	public function getMetaKeywords()
+	{
+		throw new Exception('Not yet implemented');
+	}
+	
+	public function getShippingUnitValue()
+	{
+		throw new Exception('Not yet implemented');
+	}
+	
+	public function getVatBandId()
+	{
+		throw new Exception('Not yet implemented');
 	}
 }

@@ -10,18 +10,8 @@ require_once 'BaseAbstract.inc.php';
 abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 {
 	private
-		$_id,
-		$_name,
-		$_typeId,
-		$_properties = array(),
-		$_metaTitle,
-		$_metaDescription,
-		$_metaKeywords,
-		$_revisionComment,
+		$_revisionComment = '';
 		
-		$_shippingUnitValue,
-		$_vatBandId;
-	
 	/**
 	 * Load a resource template using getTypeId()
 	 *
@@ -91,7 +81,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getId()
 	{
-		return $this->_id;
+		return (int)((string)$this->getXml()->item->resource->resourceId);
 	}
 	
 	/**
@@ -102,14 +92,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setTypeId($id)
 	{
-		if (is_numeric($id))
-		{
-			$this->_typeId = (int)$id;
-			
-			if (!$this->getXml()) {
-				$this->loadTemplate();
-			}
-		}
+		throw new Exception('Not yet implemented');
 	}
 	
 	/**
@@ -119,7 +102,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getTypeId()
 	{
-		return $this->_typeId;
+		return (int)((string)$this->getXml()->item->resource->resourceTypeId);
 	}
 	
 	/**
@@ -130,9 +113,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setName($name)
 	{
-		if (is_string($name)) {
-			$this->_name = $name;
-		}
+		throw new Exception('Not yet implemented');
 	}
 	
 	/**
@@ -142,7 +123,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getName()
 	{
-		return $this->_name;
+		return (int)((string)$this->getXml()->item->resource->name);
 	}
 	
 	/**
@@ -154,9 +135,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setPropertyValue($name, $value)
 	{
-		if (is_string($name)) {
-			$this->_properties[$name] = $value;
-		}
+		throw new Exception('Not yet implemented');
 	}
 	
 	/**
@@ -167,37 +146,16 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getPropertyValue($name)
 	{
-		$name = (string)$name;
-		return isset($this->_properties[$name]) ? $this->_properties[$name] : false;
-	}
-	
-	public function getMetaTitle()
-	{
-		return $this->_metaTitle;
-	}
-	
-	public function getMetaDescription()
-	{
-		return $this->_metaDescription;
-	}
-	
-	public function getMetaKeywords()
-	{
-		return $this->_metaKeywords;
-	}
-	
-	public function getShippingUnitValue()
-	{
-		return $this->_shippingUnitValue;
-	}
-	
-	public function getVatBandId()
-	{
-		return $this->_vatBandId;
+		throw new Exception('Not yet implemented');
 	}
 	
 	public function getRevisionComment()
 	{
 		return $this->_revisionComment;
+	}
+	
+	public function setRevisionComment($comment)
+	{
+		$this->_revisionComment = (string)$comment;
 	}
 }
