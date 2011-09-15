@@ -1,16 +1,14 @@
+<pre>
 <?php
+ob_start();
 require_once 'api/Item.inc.php';
 
 $item = new LabelEdAPI_Item();
-$item->webservice()->setBaseUri('http://whitelounge.tom.dev/1.0');
 
-$item->setTypeId(6);
+$item->load(6726);
+$output = ob_get_clean();
 
-$item->setName('test345345');
-$item->setPropertyValue('Name', 'testItem-oidjfpaodn');
-$item->setPropertyValue('Summary', 't34fgergqerg');
-$item->setPropertyValue('Artist', 'tom');
-$item->save();
+echo htmlspecialchars($output);
 
 
 

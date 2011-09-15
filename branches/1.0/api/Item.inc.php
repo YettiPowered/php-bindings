@@ -15,16 +15,19 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 * @param mixed $itemId int ID or string identifier
 	 * @return bool
 	 */
-	public function load($itemId)
+	public function load($resourceId)
 	{
-		$this->webservice()->setRequestPath('/items/' . $itemId . '.ws');
+		$this->webservice()->setRequestPath('/items' . '.ws');
+		$this->webservice()->setRequestParam('resourceId', $resourceId);
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
 		{
+			echo $this->webservice()->getResponse();
 			$this->setXml($this->webservice()->getResponseXmlObject());
 			return true;
 		}
+		echo $this->webservice()->getResponse();
 		
 		return false;
 	}
@@ -59,7 +62,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		// Categories
 		
 		// Revision comment
-		//$this->getXml()->resource->language->revisionComment = $this->getRevisionComment();
+		$this->getXml()->resource->revision->comment = $this->getRevisionComment();
 				
 		$this->webservice()->setPostData($this->getXml()->asXML());
 		return $this->makeRequestReturnResult();

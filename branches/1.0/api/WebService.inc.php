@@ -13,6 +13,7 @@ class LabelEdAPI_WebService
 		$_requestUri,
 		$_accessKey,
 		$_privateKey,
+		$_version='1.0',
 		$_requestMethod,
 		$_requestParams = array(),
 		$_postData,
@@ -21,7 +22,10 @@ class LabelEdAPI_WebService
 		$_response,
 		$_responseXmlObject;
 	
-	public function __construct() {}
+	public function __construct()
+	{
+		include('config.inc.php');
+	}
 	
 	/**
 	 * Set the base URI for all requests
@@ -54,7 +58,7 @@ class LabelEdAPI_WebService
 				$path .= '?';
 			}
 			
-			$this->_requestUri = $this->_baseUri . $path;
+			$this->_requestUri = $this->_baseUri . '/' . $this->_version . $path;
 			return true;
 		}
 		
@@ -93,6 +97,18 @@ class LabelEdAPI_WebService
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Set your webservice API version
+	 *
+	 * @param string $version
+	 * @return bool
+	 */
+	public function setVersion($version)
+	{
+		$this->_version = (string)$version;
+		return true;
 	}
 	
 	/**
@@ -192,13 +208,7 @@ class LabelEdAPI_WebService
 		$queryString 	= substr($queryString, 0, -1);
 		$requestUri  	= $this->_requestUri . $queryString;
 		$signature	 	= hash_hmac('sha256', $requestUri, $this->_privateKey);
-		$authString		= '&accessKey=' . $this->_accessKey . '&signature=' . $signature;
-		$queryString   .= $authString;
-		$requestUri    .= $authString;
-		
-		$this->setRequestParam('accessKey', $this->_accessKey);
-		$this->setRequestParam('signature', $signature);
-		
+
 		if (!$request = curl_init($requestUri)) {
 			throw new Exception('Failed to initialise curl');
 		}
@@ -221,6 +231,9 @@ class LabelEdAPI_WebService
 		curl_setopt($request, CURLOPT_CUSTOMREQUEST, $this->_requestMethod);
 		curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($request, CURLOPT_HEADER, true);
+		curl_setopt($request, CURLOPT_HTTPHEADER, array(
+			'X-Authorization: ' . $this->_accessKey . ':' . $signature,
+		));
 		curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($request, CURLOPT_USERAGENT, 'LabelEdWebServicePHP');
 		

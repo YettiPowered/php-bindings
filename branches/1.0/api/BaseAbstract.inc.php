@@ -14,10 +14,7 @@ abstract class LabelEdAPI_BaseAbstract
 		$_webservice,
 		$_xml;
 	
-	public function __construct()
-	{
-		$this->_webservice = new LabelEdAPI_WebService();
-	}
+	public function __construct() {}
 	
 	/**
 	 * Returns the webservice object
@@ -26,6 +23,9 @@ abstract class LabelEdAPI_BaseAbstract
 	 */
 	public function webservice()
 	{
+		if (!$this->_webservice) {
+			$this->_webservice = new LabelEdAPI_WebService();
+		}
 		return $this->_webservice;
 	}
 	
