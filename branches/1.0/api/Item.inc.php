@@ -92,29 +92,4 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	{
 		return (string)$this->getXml()->item->resource->name;
 	}
-	
-	public function getMetaTitle()
-	{
-		throw new Exception('Not yet implemented');
-	}
-	
-	public function getMetaDescription()
-	{
-		throw new Exception('Not yet implemented');
-	}
-	
-	public function getMetaKeywords()
-	{
-		throw new Exception('Not yet implemented');
-	}
-	
-	public function getShippingUnitValue()
-	{
-		throw new Exception('Not yet implemented');
-	}
-	
-	public function getVatBandId()
-	{
-		throw new Exception('Not yet implemented');
-	}
 }
