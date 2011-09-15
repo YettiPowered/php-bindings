@@ -81,18 +81,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	{
 		return (int)((string)$this->getXml()->item->resource->resourceId);
 	}
-	
-	/**
-	 * Sets the resource type ID
-	 *
-	 * @param int $id
-	 * @return void
-	 */
-	public function setTypeId($id)
-	{
-		throw new Exception('Not yet implemented');
-	}
-	
+		
 	/**
 	 * Returns the resource type ID
 	 *
@@ -111,7 +100,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setName($name)
 	{
-		throw new Exception('Not yet implemented');
+		$this->getXml()->item->resource->identifier = (string)$name;
 	}
 	
 	/**
@@ -121,7 +110,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getName()
 	{
-		return (string)$this->getXml()->item->resource->name;
+		return (string)$this->getXml()->item->resource->identifier;
 	}
 	
 	/**
@@ -147,13 +136,24 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 		return (string)$this->getXml()->item->properties->{$name}->value;
 	}
 	
+	/**
+	 * Gets the revision comment for the current revision
+	 * 
+	 * @return string
+	 */
 	public function getRevisionComment()
 	{
 		return (string)$this->getXml()->item->resource->name;
 	}
 	
+	/**
+	 * Sets the revision comment for the current revision
+	 * 
+	 * @param string $comment
+	 * @return void
+	 */
 	public function setRevisionComment($comment)
 	{
-		throw new Exception('Not yet implemented');
+		$this->getXml()->item->resource->name = (string)$value;
 	}
 }

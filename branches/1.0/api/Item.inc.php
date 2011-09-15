@@ -83,6 +83,16 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		throw new Exception('Not yet implemented');
 	}
 	
+	/**
+	 * Returns the item display name
+	 *
+	 * @return string
+	 */
+	public function getDisplayName()
+	{
+		return (string)$this->getXml()->item->resource->name;
+	}
+	
 	public function getMetaTitle()
 	{
 		throw new Exception('Not yet implemented');
