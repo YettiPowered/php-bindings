@@ -242,11 +242,18 @@ class LabelEdAPI_WebService
 		
 		if ($this->_responseCode == 503 && isset($this->_responseHeaders['Retry-After']))
 		{
-			sleep($this->_responseHeaders['Retry-After']);
-			return $this->makeRequest();
+			if ($this->_responseHeaders['Retry-After'] <= 60)
+			{
+				sleep($this->_responseHeaders['Retry-After']);
+				return $this->makeRequest();
+			}
+			else {
+				throw new Exception('Webservice failed with 503 header and requested retry was unreasonable to wait.');
+			}
 		}
 		
 		if ($this->_response && is_string($this->_response) && substr($this->_response, 0, 5) == '<?xml') {
+			echo $this->_response;
 			$this->_responseXmlObject = simplexml_load_string($this->_response);
 		}
 		

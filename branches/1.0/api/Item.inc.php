@@ -30,9 +30,13 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		return false;
 	}
 	
-	protected function loadTemplate()
+	/**
+	 * (non-PHPdoc)
+	 * @see LabelEdAPI_ResourceAbstract::loadTemplate()
+	 */
+	public function loadTemplate($typeId=null)
 	{
-		$this->webservice()->setRequestPath('/templates/item/' . $this->getTypeId() . '.ws');
+		$this->webservice()->setRequestPath('/templates/item/' . ((int)$typeId) . '.ws');
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -44,7 +48,11 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		return false;
 	}
 	
-	protected function create()
+	/**
+	 * (non-PHPdoc)
+	 * @see LabelEdAPI_ResourceAbstract::create()
+	 */
+	public function create()
 	{
 		$this->loadTemplate();
 		$this->webservice()->setRequestPath('/items.ws');
@@ -66,7 +74,11 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		return $this->makeRequestReturnResult();
 	}
 	
-	protected function update()
+	/**
+	 * (non-PHPdoc)
+	 * @see LabelEdAPI_ResourceAbstract::update()
+	 */
+	public function update()
 	{
 		throw new Exception('Not yet implemented');
 	}

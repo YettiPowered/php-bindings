@@ -13,25 +13,26 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 		$_revisionComment = '';
 		
 	/**
-	 * Load a resource template using getTypeId()
+	 * Load a resource template using 
 	 *
+	 * @param int typeId
 	 * @return bool
 	 */
-	abstract protected function loadTemplate();
+	abstract public function loadTemplate($typeId=null);
 	
 	/**
 	 * Update an existing resource
 	 *
 	 * @return LabelEdAPI_Result
 	 */
-	abstract protected function update();
+	abstract public function update();
 	
 	/**
 	 * Create a new resource
 	 *
 	 * @return LabelEdAPI_Result
 	 */
-	abstract protected function create();
+	abstract public function create();
 	
 	/**
 	 * Save this resource
