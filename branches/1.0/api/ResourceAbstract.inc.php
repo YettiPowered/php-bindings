@@ -133,7 +133,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setPropertyValue($name, $value)
 	{
-		throw new Exception('Not yet implemented');
+		$this->getXml()->item->properties->{$name}->value = (string)$value;
 	}
 	
 	/**

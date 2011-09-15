@@ -9,7 +9,9 @@ $item->load(6726);
 //$item->loadTemplate(6);
 $output = ob_get_clean();
 
-echo htmlspecialchars($item->getPropertyValue('Summary'));
+$item->setPropertyValue('Summary', $item->getPropertyValue('Summary') . "\n\n<h1>New Data</h1>");
+
+echo $item->getPropertyValue('Summary');
 
 echo htmlspecialchars($output);
 
