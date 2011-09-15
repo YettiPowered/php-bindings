@@ -54,22 +54,9 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function create()
 	{
-		$this->loadTemplate();
 		$this->webservice()->setRequestPath('/items.ws');
 		$this->webservice()->setRequestMethod('post');
 		
-		$this->getXml()->resource->resource->identifier = $this->getName();
-		
-		// Properties
-		foreach ($this->getXml()->resource->properties->children() as $property) {
-			$property->value = $this->getPropertyValue($property->getName());
-		}
-				
-		// Categories
-		
-		// Revision comment
-		$this->getXml()->resource->revision->comment = $this->getRevisionComment();
-				
 		$this->webservice()->setPostData($this->getXml()->asXML());
 		return $this->makeRequestReturnResult();
 	}
@@ -80,7 +67,12 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function update()
 	{
-		throw new Exception('Not yet implemented');
+		$this->webservice()->setRequestPath('/items.ws');
+		$this->webservice()->setRequestParam('resourceId', $this->getId());
+		$this->webservice()->setRequestMethod('put');
+		
+		$this->webservice()->setPostData($this->getXml()->asXML());
+		return $this->makeRequestReturnResult();
 	}
 	
 	/**
