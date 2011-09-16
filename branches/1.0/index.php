@@ -1,21 +1,17 @@
 <pre>
 <?php
 ob_start();
-require_once 'api/Item.inc.php';
+require_once 'api/Items.inc.php';
 
-$item = new LabelEdAPI_Item();
+$items = new LabelEdAPI_Items();
 //$item->load(6726);
-$item->loadTemplate(6);
-
-
-$item->setName('test-create');
-$item->setPropertyValue('Summary', "<h1>New Data</h1>");
-$item->setPropertyValue('Name', "New name");
-echo "\n\n\n\n";
-$item->save();
+$items->load(6, 5);
 
 $output = ob_get_clean();
 echo htmlspecialchars($output);
 
+foreach ($items->getItems() as $item) {
+	echo $item->getId() . ' - ' . $item->getDisplayName() . ' (' . $item->getName() . ")\n";
+}
 
 
