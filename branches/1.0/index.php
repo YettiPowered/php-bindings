@@ -1,17 +1,15 @@
 <pre>
 <?php
 ob_start();
-require_once 'api/Items.inc.php';
+require_once 'api/Users.inc.php';
 
-$items = new LabelEdAPI_Items();
+$user = new LabelEdAPI_User();
 //$item->load(6726);
-$items->load(6, 5);
+$user->load(2);
 
 $output = ob_get_clean();
 echo htmlspecialchars($output);
 
-foreach ($items->getItems() as $item) {
+/*foreach ($items->getItems() as $item) {
 	echo $item->getId() . ' - ' . $item->getDisplayName() . ' (' . $item->getName() . ")\n";
-}
-
-
+}*/
