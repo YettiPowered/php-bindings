@@ -52,4 +52,31 @@ abstract class LabelEdAPI_BaseAbstract
 		
 		return $this->_xml;
 	}
+	
+	
+	/**
+	 * Performs a webservice request and returns a result object
+	 * Must be called after everything else has been set up
+	 *
+	 * @return LabelEdAPI_Result
+	 */
+	protected function makeRequestReturnResult()
+	{
+		$this->webservice()->makeRequest();
+		$result = new LabelEdAPI_Result();
+		
+		if (substr($this->webservice()->getResponseCode(), 0, 1) != 2)
+		{
+			$response = $this->webservice()->getResponseXmlObject();
+			
+			if (isset($response->response) && isset($response->response->errors))
+			{
+				foreach ($response->response->errors->error as $error) {
+					$result->addError($error);
+				}
+			}
+		}
+		
+		return $result;
+	}
 }
