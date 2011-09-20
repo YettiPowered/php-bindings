@@ -44,7 +44,7 @@ class LabelEdAPI_Users extends LabelEdAPI_ListAbstract
 			$item->revision->asXml() .
 			"</item></labeled>");
 			
-			$item = new LabelEdAPI_Item();
+			$item = new LabelEdAPI_User();
 			$item->setXml($element);
 			
 			$return[] = $item;
