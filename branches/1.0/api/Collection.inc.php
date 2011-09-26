@@ -84,4 +84,14 @@ class LabelEdAPI_Collection extends LabelEdAPI_ResourceAbstract
 	{
 		return (string)$this->getXml()->item->resource->name;
 	}
+	
+	/**
+	 * Sets the parentId for the collection
+	 * 
+	 * @param $parentId
+	 */
+	public function setParentId($parentId)
+	{
+		$this->getXml()->item->parentId = (int)$parentId;
+	}
 }

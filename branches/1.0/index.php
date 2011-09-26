@@ -4,12 +4,15 @@ ob_start();
 require_once 'api/Collections.inc.php';
 
 $collection = new LabelEdAPI_Collection();
-$collection->load(11422);
+$collection->load(18208);
 //$item->load(6726);
 //$collections->load(6726);
 
+/*$collection->setName('Testcollection3');
+$collection->setPropertyValue('Name', 'Test Collection');
 $collection->setPropertyValue('Body', 'I am a WS set body');
-$collection->save();
+$collection->setParentId(18202);
+$collection->save();*/
 
 $output = ob_get_clean();
 echo htmlspecialchars($output);
