@@ -130,4 +130,28 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	{
 		$this->getXml()->item->resource->name = (string)$value;
 	}
+	
+	/**
+	 * Adds a new asset to the resourec
+	 * 
+	 * @param string $assetGroupName
+	 * @param int $resourceId
+	 * @param string $altText
+	 * @param string $url
+	 */
+	public function addAsset($assetGroupName, $resourceId, $altText=null, $url=null)
+	{
+		$asset = $this->getXml()->item->assets->addChild($assetGroupName);
+		
+		if (isset($altText)) {
+			$asset->addChild('altText', $altText);
+		}
+		
+		if (isset($url)) {
+			$asset->addChild('url', $url);
+		}
+		
+		$item = $asset->addChild('item');
+		$item->addChild('resourceId', $resourceId);
+	}
 }

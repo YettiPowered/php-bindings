@@ -3,16 +3,19 @@
 ob_start();
 require_once 'api/Collections.inc.php';
 
-$collection = new LabelEdAPI_Collection();
-$collection->load(18208);
+$item = new LabelEdAPI_Collection();
+$item->loadTemplate(6);
 //$item->load(6726);
 //$collections->load(6726);
 
-/*$collection->setName('Testcollection3');
-$collection->setPropertyValue('Name', 'Test Collection');
-$collection->setPropertyValue('Body', 'I am a WS set body');
-$collection->setParentId(18202);
-$collection->save();*/
+$item->addAsset('Image', 6922, 'Alt Text', 'http://www.google.com');
+//$item->addAsset('Category_image', 6922, 'Alt Text2', 'http://www.labelmedia.co.uk');
+
+$item->setName('newcollection4');
+$item->setPropertyValue('Name', 'Test Colleciton with asset2');
+$item->setPropertyValue('Body', 'I am a WS set body');
+$item->setPropertyValue('Summary', 'I am a WS set summary');
+$item->save();
 
 $output = ob_get_clean();
 echo htmlspecialchars($output);
