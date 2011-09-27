@@ -76,6 +76,22 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	}
 	
 	/**
+	 * Returns an array of collection Ids that the item is in
+	 * 
+	 * @return array
+	 */
+	public function getCollectionIds()
+	{
+		$return = array();
+		
+		foreach ($this->getXml()->item->collectionIds as $itemId) {
+			$return[] = (int)((string)$itemId);
+		}
+		
+		return $return;
+	}
+	
+	/**
 	 * Returns the item display name
 	 *
 	 * @return string
