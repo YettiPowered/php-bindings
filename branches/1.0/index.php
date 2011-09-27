@@ -1,22 +1,25 @@
 <pre>
 <?php
 ob_start();
-require_once 'api/Collections.inc.php';
+require_once 'api/Items.inc.php';
 
-$item = new LabelEdAPI_Collection();
-$item->loadTemplate(6);
-//$item->load(6726);
+$item = new LabelEdAPI_Item();
+//$item->loadTemplate(6);
+$item->load(6726);
 //$collections->load(6726);
-
-$item->addAsset('Image', 6922, 'Alt Text', 'http://www.google.com');
+//$item->addPricingTier(30);
+//$item->save();
+//$item->addAsset('Image', 6922, 'Alt Text', 'http://www.google.com');
 //$item->addAsset('Category_image', 6922, 'Alt Text2', 'http://www.labelmedia.co.uk');
+/*
+$item->addTier();
 
-$item->setName('newcollection4');
-$item->setPropertyValue('Name', 'Test Colleciton with asset2');
+$item->setName('newitemprice1');
+$item->setPropertyValue('Name', 'Test Item with asset and price');
 $item->setPropertyValue('Body', 'I am a WS set body');
 $item->setPropertyValue('Summary', 'I am a WS set summary');
 $item->save();
-
+*/
 $output = ob_get_clean();
 echo htmlspecialchars($output);
 

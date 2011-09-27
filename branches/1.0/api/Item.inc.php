@@ -100,4 +100,19 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	{
 		return (string)$this->getXml()->item->resource->name;
 	}
+	
+	/**
+	 * Adds a new pricing teir to this item
+	 * 
+	 * @param float $price
+	 * @param int $appliesToId
+	 * @param int $appliesToIdType
+	 */
+	public function addPricingTier($price, $appliesToId=-1, $appliesToIdType=100)
+	{
+		$tier = $this->getXml()->item->addChild('pricingTiers');
+		$tier->addChild('price', $price);
+		$tier->addChild('appliesToId', $appliesToId);
+		$tier->addChild('appliesToIdType', $appliesToIdType);
+	}
 }
