@@ -251,7 +251,7 @@ class LabelEdAPI_WebService
 				throw new Exception('Webservice failed with 503 header and requested retry was unreasonable to wait.');
 			}
 		}
-		echo $this->_response;
+		
 		if ($this->_response && is_string($this->_response) && substr($this->_response, 0, 5) == '<?xml') {
 			$this->_responseXmlObject = simplexml_load_string($this->_response);
 		}
