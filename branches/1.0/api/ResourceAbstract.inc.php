@@ -41,8 +41,11 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 		if ($this->getId()) {
 			return $this->update();
 		}
-		else {
-			return $this->create();
+		else
+		{
+			$return = $this->create();
+			$this->getXml()->item->resource->resourceId = $this->webservice()->getResponseHeader('X-ResourceId');
+			return $return;
 		}
 	}
 	

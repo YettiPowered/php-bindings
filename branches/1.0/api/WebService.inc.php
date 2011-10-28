@@ -365,6 +365,17 @@ class LabelEdAPI_WebService
 	}
 	
 	/**
+	 * Gets the value of a response header
+	 * 
+	 * @param string $name
+	 * @return string
+	 */
+	public function getResponseHeader($name)
+	{
+		return isset($this->_responseHeaders[$name]) ? $this->_responseHeaders[$name] : null;
+	}
+	
+	/**
 	 * Parses a message from the LabelEd webservice response xml
 	 *
 	 * @param $xml
