@@ -128,7 +128,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setRevisionComment($comment)
 	{
-		$this->getXml()->item->resource->name = (string)$value;
+		$this->getXml()->item->revision->comment = (string)$comment;
 	}
 	
 	/**
