@@ -11,9 +11,9 @@ class LabelEdAPI_Result
 	 * @param string $error
 	 * @return void
 	 */
-	public function addError($error)
+	public function addError($error, $key)
 	{
-		$this->_errors[] = $error;
+		$this->_errors[$key] = $error;
 	}
 	
 	/**

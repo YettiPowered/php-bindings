@@ -69,10 +69,10 @@ abstract class LabelEdAPI_BaseAbstract
 		{
 			$response = $this->webservice()->getResponseXmlObject();
 			
-			if (isset($response->response) && isset($response->response->errors))
+			if (isset($response) && isset($response->errors))
 			{
-				foreach ($response->response->errors->error as $error) {
-					$result->addError($error);
+				foreach ($response->errors->error as $error) {
+					$result->addError((string)$error->error, (string)$error->key);
 				}
 			}
 		}
