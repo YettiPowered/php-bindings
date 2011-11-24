@@ -73,4 +73,14 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 		$this->webservice()->setPostData($this->getXml()->asXML());
 		return $this->makeRequestReturnResult();
 	}
+	
+	/**
+	 * Returns the hashed password for this user
+	 * 
+	 * @return string
+	 */
+	public function getPassHash()
+	{
+		return (string)$this->getXml()->item->resource->password;
+	}
 }

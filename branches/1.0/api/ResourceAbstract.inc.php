@@ -1,5 +1,6 @@
 <?php
 require_once 'BaseAbstract.inc.php';
+require_once 'Property.inc.php';
 
 /**
  * API for interfacing with LabelEd items over web services.
@@ -156,5 +157,20 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 		
 		$item = $asset->addChild('item');
 		$item->addChild('resourceId', $resourceId);
+	}
+	
+	/**
+	 * Gets an array of property elements
+	 * 
+	 * @return array
+	 */
+	public function getProperties()
+	{
+		$properties = array();
+		foreach ($this->getXml()->item->properties->children() as $propertyXml) {
+			$properties[$propertyXml->getName()] = new LabelEdAPI_Property($propertyXml);
+		}
+		
+		return $properties;
 	}
 }
