@@ -15,10 +15,13 @@ class LabelEdAPI_Users extends LabelEdAPI_ListAbstract
 	 * @param int $page
 	 * @return bool
 	 */
-	public function load($page=1)
+	public function load($typeId=null, $page=1)
 	{
 		$this->webservice()->setRequestPath('/users.ws');
 		$this->webservice()->setRequestParam('page', (int)$page);
+		if ($typeId) {
+			$this->webservice()->setRequestParam('typeId', (int)$typeId);
+		}
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
