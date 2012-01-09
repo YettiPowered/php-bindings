@@ -115,4 +115,15 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		$tier->addChild('appliesToId', $appliesToId);
 		$tier->addChild('appliesToIdType', $appliesToIdType);
 	}
+	
+	/**
+	 * Sets the file content to be send for saving
+	 * 
+	 * @param string $data
+	 * @return void;
+	 */
+	public function setFileData($data)
+	{
+		$this->getXml()->item->fileData = base64_encode($data);
+	}
 }
