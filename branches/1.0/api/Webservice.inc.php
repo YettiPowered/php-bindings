@@ -240,6 +240,8 @@ class LabelEdAPI_WebService
 		$this->parseResponse(curl_exec($request));
 		curl_close($request);
 		
+		echo $this->_responseCode . "\n";
+		
 		if ($this->_responseCode == 503 && isset($this->_responseHeaders['Retry-After']))
 		{
 			if ($this->_responseHeaders['Retry-After'] <= 60)
@@ -256,7 +258,7 @@ class LabelEdAPI_WebService
 			$this->_responseXmlObject = simplexml_load_string($this->_response);
 		}
 		
-		if ($this->_responseCode == 403) {
+		if ($this->_responseCode == 401 || $this->_responseCode == 403) {
 			throw new Exception('Webservice authentication failed');
 		}
 		
