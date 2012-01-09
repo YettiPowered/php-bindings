@@ -240,8 +240,6 @@ class LabelEdAPI_WebService
 		$this->parseResponse(curl_exec($request));
 		curl_close($request);
 		
-		echo $this->_responseCode . "\n";
-		
 		if ($this->_responseCode == 503 && isset($this->_responseHeaders['Retry-After']))
 		{
 			if ($this->_responseHeaders['Retry-After'] <= 60)
