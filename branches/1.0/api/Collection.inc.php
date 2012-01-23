@@ -18,7 +18,7 @@ class LabelEdAPI_Collection extends LabelEdAPI_ResourceAbstract
 	public function load($resourceId)
 	{
 		$this->webservice()->setRequestPath('/collections' . '.ws');
-		$this->webservice()->setRequestParam('collectionId', $resourceId);
+		$this->webservice()->setRequestParam('resourceId', $resourceId);
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
