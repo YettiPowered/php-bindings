@@ -14,18 +14,17 @@ class LabelEdAPI_WebService
 		$_accessKey,
 		$_privateKey,
 		$_version='1.0',
-		$_requestMethod,
+		$_requestMethod = 'GET',
 		$_requestParams = array(),
+		$_requestSignature,
 		$_postData,
 		$_responseCode,
 		$_responseHeaders,
 		$_response,
-		$_responseXmlObject;
+		$_responseXmlObject,
+		$_rawResponse;
 	
-	public function __construct()
-	{
-		include('config.inc.php');
-	}
+	public function __construct() {}
 	
 	/**
 	 * Set the base URI for all requests
@@ -131,6 +130,41 @@ class LabelEdAPI_WebService
 	}
 	
 	/**
+	 * Returns the request method
+	 * 
+	 * @return string
+	 */
+	public function getRequestMethod()
+	{
+		return $this->_requestMethod;
+	}
+	
+	/**
+	 * Returns the full request URI
+	 * 
+	 * @return string
+	 */
+	public function getRequestUri()
+	{
+		/**
+		 * Make sure we don't have any existing auth params
+		 */
+		unset($this->_requestParams['accessKey']);
+		unset($this->_requestParams['signature']);
+		
+		$this->setRequestParam('timestamp', time());
+		
+		$queryString = '';
+		
+		foreach ($this->_requestParams as $var => $val) {
+			$queryString .= $var . '=' . $val . '&';
+		}
+		
+		$queryString = substr($queryString, 0, -1);
+		return $this->_requestUri . $queryString;
+	}
+	
+	/**
 	 * Set a parameter to be sent with your request
 	 *
 	 * @param string $name
@@ -191,24 +225,9 @@ class LabelEdAPI_WebService
 			throw new Exception('Request URI not set');
 		}
 		
-		/**
-		 * Make sure we don't have any existing auth params
-		 */
-		unset($this->_requestParams['accessKey']);
-		unset($this->_requestParams['signature']);
+		$requestUri = $this->getRequestUri();
+		$this->_requestSignature = hash_hmac('sha256', $requestUri, $this->_privateKey);
 		
-		$this->setRequestParam('timestamp', time());
-		
-		$queryString = '';
-		
-		foreach ($this->_requestParams as $var => $val) {
-			$queryString .= $var . '=' . $val . '&';
-		}
-		
-		$queryString 	= substr($queryString, 0, -1);
-		$requestUri  	= $this->_requestUri . $queryString;
-		$signature	 	= hash_hmac('sha256', $requestUri, $this->_privateKey);
-
 		if (!$request = curl_init($requestUri)) {
 			throw new Exception('Failed to initialise curl');
 		}
@@ -232,7 +251,7 @@ class LabelEdAPI_WebService
 		curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($request, CURLOPT_HEADER, true);
 		curl_setopt($request, CURLOPT_HTTPHEADER, array(
-			'X-Authorization: ' . $this->_accessKey . ':' . $signature,
+			'X-Authorization: ' . $this->_accessKey . ':' . $this->getRequestSignature(),
 		));
 		curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($request, CURLOPT_USERAGENT, 'LabelEdWebServicePHP');
@@ -295,9 +314,20 @@ class LabelEdAPI_WebService
 			}
 		}
 		
+		$this->_rawResponse	 	= $response;
 		$this->_responseCode 	= $responseCode;
 		$this->_responseHeaders = $headerArray;
 		$this->_response 		= trim($responseBody);
+	}
+	
+	/**
+	 * Returns the last used request signature
+	 * 
+	 * @return string
+	 */
+	public function getRequestSignature()
+	{
+		return $this->_requestSignature;
 	}
 	
 	/**
@@ -318,6 +348,16 @@ class LabelEdAPI_WebService
 	public function getResponseCode()
 	{
 		return $this->_responseCode;
+	}
+	
+	/**
+	 * Returns the full (raw) response string
+	 * 
+	 * @return string
+	 */
+	public function getRawResponse()
+	{
+		return $this->_rawResponse;
 	}
 	
 	/**
