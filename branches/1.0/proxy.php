@@ -23,19 +23,16 @@ foreach ($requestParams as $name => $value) {
 	$webservice->setRequestParam($name, $value);
 }
 
-try
-{
+try {
 	$webservice->makeRequest();
-	
-	$response  = $webservice->getRequestMethod() . ' ' . str_replace($baseUri, '', $webservice->getRequestUri()) . " HTTP/1.1\n";
-	$response .= 'Host: ' . str_replace(array('http://', 'https://'), '', $baseUri) .  "\n";
-	$response .= 'X-Authorization: ' . $accessKey . ':' . $webservice->getRequestSignature();
-	$response .= "\n\n";
-	$response .= $webservice->getRawResponse();
 }
-catch (Exception $e) {
-	$response = $e->getMessage();
-}
+catch (Exception $e) {}
+
+$response  = $webservice->getRequestMethod() . ' ' . str_replace($baseUri, '', $webservice->getRequestUri()) . " HTTP/1.1\n";
+$response .= 'Host: ' . str_replace(array('http://', 'https://'), '', $baseUri) .  "\n";
+$response .= 'X-Authorization: ' . $accessKey . ':' . $webservice->getRequestSignature();
+$response .= "\n\n";
+$response .= $webservice->getRawResponse();
 
 ?>
 
