@@ -42,10 +42,10 @@ class LabelEdAPI_Users extends LabelEdAPI_ListAbstract
 		$return = array();
 		foreach ($this->getXml()->listing->items as $item)
 		{
-			$element = new SimpleXMLElement("<?xml version=\"1.0\"?><labeled><item>" .
+			$element = new SimpleXMLElement("<?xml version=\"1.0\"?><yetti><item>" .
 			$item->resource->asXml() .
 			$item->revision->asXml() .
-			"</item></labeled>");
+			"</item></yetti>");
 			
 			$item = new LabelEdAPI_User();
 			$item->setXml($element);
