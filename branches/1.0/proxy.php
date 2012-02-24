@@ -95,9 +95,10 @@ $response .= $webservice->getRawResponse();
 					<li>
 						<label>HTTP Method: </label>
 						<select name="method">
-							<option <?php if ($method=='GET')  { echo 'selected="selected"'; } ?>>GET</option>
-							<option <?php if ($method=='POST') { echo 'selected="selected"'; } ?>>POST</option>
-							<option <?php if ($method=='PUT')  { echo 'selected="selected"'; } ?>>PUT</option>
+							<option <?php if ($method=='GET')	 { echo 'selected="selected"'; } ?>>GET</option>
+							<option <?php if ($method=='POST')	 { echo 'selected="selected"'; } ?>>POST</option>
+							<option <?php if ($method=='PUT')  	 { echo 'selected="selected"'; } ?>>PUT</option>
+							<option <?php if ($method=='DELETE') { echo 'selected="selected"'; } ?>>DELETE</option>
 						</select>
 					</li>
 					
