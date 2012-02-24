@@ -4,6 +4,8 @@ require_once 'api/Webservice.inc.php';
 
 $accessKey   = isset($_POST['accessKey']) ? $_POST['accessKey'] : null;
 $privateKey  = isset($_POST['privateKey']) ? $_POST['privateKey'] : null;
+$method 	 = isset($_POST['method']) ? $_POST['method'] : null;
+$postData 	 = isset($_POST['postData']) ? $_POST['postData'] : null;
 $baseUri 	 = isset($_POST['baseUri']) ? $_POST['baseUri'] : null;
 $requestPath = isset($_POST['requestPath']) ? $_POST['requestPath'] : null;
 $pathEnd 	 = strpos($requestPath, '?');
@@ -12,6 +14,8 @@ parse_str(parse_url($requestPath, PHP_URL_QUERY), $requestParams);
 $webservice = new LabelEdAPI_WebService();
 $webservice->setAccessKey($accessKey);
 $webservice->setPrivateKey($privateKey);
+$webservice->setRequestMethod($method);
+$webservice->setPostData($postData);
 $webservice->setBaseUri($baseUri);
 $webservice->setRequestPath($pathEnd ? substr($requestPath, 0, $pathEnd) : $requestPath);
 
@@ -24,7 +28,7 @@ try
 	$webservice->makeRequest();
 	
 	$response  = $webservice->getRequestMethod() . ' ' . str_replace($baseUri, '', $webservice->getRequestUri()) . " HTTP/1.1\n";
-	$response .= 'Host: ' . $baseUri .  "\n";
+	$response .= 'Host: ' . str_replace(array('http://', 'https://'), '', $baseUri) .  "\n";
 	$response .= 'X-Authorization: ' . $accessKey . ':' . $webservice->getRequestSignature();
 	$response .= "\n\n";
 	$response .= $webservice->getRawResponse();
@@ -48,6 +52,10 @@ catch (Exception $e) {
 			form fieldset ul li {
 				margin-bottom: 10px;
 			}
+			form fieldset ul li.float {
+				float: left;
+				width: 50%;
+			}
 			form fieldset label {
 				display: block;
 				margin-bottom: 3px;
@@ -56,7 +64,7 @@ catch (Exception $e) {
 				width: 600px;
 			}
 			textarea {
-				width: 1000px;
+				width: 100%;
 				height: 600px;
 				font-family: courier;
 				font-size: 12px;
@@ -88,7 +96,21 @@ catch (Exception $e) {
 					</li>
 					
 					<li>
-						<label>Response (leave blank): </label>
+						<label>HTTP Method: </label>
+						<select name="method">
+							<option <?php if ($method=='GET')  { echo 'selected="selected"'; } ?>>GET</option>
+							<option <?php if ($method=='POST') { echo 'selected="selected"'; } ?>>POST</option>
+							<option <?php if ($method=='PUT')  { echo 'selected="selected"'; } ?>>PUT</option>
+						</select>
+					</li>
+					
+					<li class="float">
+						<label>POST data (optional): </label>
+						<textarea name="postData"><?php echo htmlentities($postData); ?></textarea>
+					</li>
+					
+					<li class="float">
+						<label>Request / Response (leave blank): </label>
 						<textarea name="response"><?php echo htmlentities($response); ?></textarea>
 					</li>
 				</ul>
