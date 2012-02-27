@@ -30,8 +30,16 @@ catch (Exception $e) {}
 
 $response  = $webservice->getRequestMethod() . ' ' . str_replace($baseUri, '', $webservice->getRequestUri()) . " HTTP/1.1\n";
 $response .= 'Host: ' . str_replace(array('http://', 'https://'), '', $baseUri) .  "\n";
-$response .= 'X-Authorization: ' . $accessKey . ':' . $webservice->getRequestSignature();
-$response .= "\n\n";
+$response .= 'X-Authorization: ' . $accessKey . ':' . $webservice->getRequestSignature() . "\n";
+
+if (strlen($postData) && ($method == 'POST' || $method == 'PUT'))
+{
+	$response .= 'Content-Length: ' . strlen($postData) . "\n";
+	$response .= "Content-Type: application/x-www-form-urlencoded\n";
+	$response .= $postData . "\n";
+}
+
+$response .= "\n";
 $response .= $webservice->getRawResponse();
 
 ?>
