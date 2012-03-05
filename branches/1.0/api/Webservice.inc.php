@@ -17,6 +17,7 @@ class LabelEdAPI_WebService
 		$_requestMethod = 'GET',
 		$_requestParams = array(),
 		$_requestSignature,
+		$_requestHeaders = array(),
 		$_postData,
 		$_responseCode,
 		$_responseHeaders,
@@ -200,6 +201,19 @@ class LabelEdAPI_WebService
 	}
 	
 	/**
+	 * Add a request header
+	 * 
+	 * @param string $header
+	 * @return void
+	 */
+	public function addRequestHeader($header)
+	{
+		if (is_string($header)) {
+			$this->_requestHeaders[] = $header;
+		}
+	}
+	
+	/**
 	 * Resets any previously set request parameters and response
 	 * Call this method to reset your webservice object so that
 	 * you can safely make another request.
@@ -250,9 +264,9 @@ class LabelEdAPI_WebService
 		curl_setopt($request, CURLOPT_CUSTOMREQUEST, $this->_requestMethod);
 		curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($request, CURLOPT_HEADER, true);
-		curl_setopt($request, CURLOPT_HTTPHEADER, array(
+		curl_setopt($request, CURLOPT_HTTPHEADER, array_merge(array(
 			'X-Authorization: ' . $this->_accessKey . ':' . $this->getRequestSignature(),
-		));
+		), $this->_requestHeaders));
 		curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($request, CURLOPT_USERAGENT, 'LabelEdWebServicePHP');
 		
