@@ -83,4 +83,14 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 	{
 		return (string)$this->getXml()->item->resource->password;
 	}
+	
+	/**
+	* Returns the email address for this user
+	*
+	* @return string
+	*/
+	public function getEmail()
+	{
+		return (string)$this->getXml()->item->resource->email;
+	}
 }
