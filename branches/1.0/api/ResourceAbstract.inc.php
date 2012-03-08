@@ -1,4 +1,5 @@
 <?php
+
 require_once 'BaseAbstract.inc.php';
 require_once 'Property.inc.php';
 
@@ -115,7 +116,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	}
 	
 	/**
-	 * Gets the revision comment for the current revision
+	 * Returns the revision comment for the current revision
 	 * 
 	 * @return string
 	 */
@@ -136,7 +137,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	}
 	
 	/**
-	 * Adds a new asset to the resourec
+	 * Adds a new asset to the resource
 	 * 
 	 * @param string $assetGroupName
 	 * @param int $resourceId
@@ -160,7 +161,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	}
 	
 	/**
-	 * Gets an array of property elements
+	 * Returns an array of property elements
 	 * 
 	 * @return array
 	 */

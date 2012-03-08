@@ -1,4 +1,5 @@
 <?php
+
 require_once 'Webservice.inc.php';
 require_once 'Result.inc.php';
 
@@ -26,6 +27,7 @@ abstract class LabelEdAPI_BaseAbstract
 		if (!$this->_webservice) {
 			$this->_webservice = new LabelEdAPI_WebService();
 		}
+		
 		return $this->_webservice;
 	}
 	
@@ -52,7 +54,6 @@ abstract class LabelEdAPI_BaseAbstract
 		
 		return $this->_xml;
 	}
-	
 	
 	/**
 	 * Performs a webservice request and returns a result object

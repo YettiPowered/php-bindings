@@ -13,7 +13,7 @@ class LabelEdAPI_WebService
 		$_requestUri,
 		$_accessKey,
 		$_privateKey,
-		$_version='1.0',
+		$_version = '1.0',
 		$_requestMethod = 'GET',
 		$_requestParams = array(),
 		$_requestSignature,
@@ -25,30 +25,80 @@ class LabelEdAPI_WebService
 		$_responseXmlObject,
 		$_rawResponse;
 	
+	private static 
+		$_defaultBaseUri,
+		$_defaultAccessKey,
+		$_defaultPrivateKey;
+		
 	public function __construct() {}
+	
+	/**
+	 * Set a default base URI (used when no other base URI has been set)
+	 * 
+	 * @param string $uri
+	 * @return void
+	 */
+	public static function setDefaultBaseUri($uri)
+	{
+		if (is_string($uri)) {
+			self::$_defaultBaseUri = $uri;
+		}
+	}
+	
+	/**
+	 * Set a default access key (used when no other key has been set)
+	 * 
+	 * @param string $accessKey
+	 * @return void
+	 */
+	public static function setDefaultAccessKey($accessKey)
+	{
+		if (is_string($accessKey)) {
+			self::$_defaultAccessKey = $accessKey;
+		}
+	}
+	
+	/**
+	 * Set a default private key (used when no other key has been set)
+	 * 
+	 * @param string $privateKey
+	 * @return void
+	 */
+	public static function setDefaultPrivateKey($privateKey)
+	{
+		if (is_string($privateKey)) {
+			self::$_defaultPrivateKey = $privateKey;
+		}
+	}
 	
 	/**
 	 * Set the base URI for all requests
 	 *
 	 * @param string $uri
-	 * @return bool
+	 * @return void
 	 */
 	public function setBaseUri($uri)
 	{
-		if (is_string($uri))
-		{
+		if (is_string($uri)) {
 			$this->_baseUri = $uri;
-			return true;
 		}
-		
-		return false;
+	}
+	
+	/**
+	 * Returns the base URI
+	 * 
+	 * @return string
+	 */
+	public function getBaseUri()
+	{
+		return $this->_baseUri ? $this->_baseUri : self::$_defaultBaseUri;
 	}
 	
 	/**
 	 * Set the URI path for the specific webservice request
 	 *
 	 * @param string $path
-	 * @return bool
+	 * @return void
 	 */
 	public function setRequestPath($path)
 	{
@@ -58,76 +108,80 @@ class LabelEdAPI_WebService
 				$path .= '?';
 			}
 			
-			$this->_requestUri = $this->_baseUri . '/' . $this->_version . $path;
-			return true;
+			$this->_requestUri = $this->getBaseUri() . '/' . $this->_version . $path;
 		}
-		
-		return false;
 	}
 	
 	/**
 	 * Set your webservice access key
 	 *
 	 * @param string $accessKey
-	 * @return bool
+	 * @return void
 	 */
 	public function setAccessKey($accessKey)
 	{
-		if (is_string($accessKey))
-		{
+		if (is_string($accessKey)) {
 			$this->_accessKey = $accessKey;
-			return true;
 		}
-		
-		return false;
+	}
+	
+	/**
+	 * Returns the access key
+	 * 
+	 * @return string
+	 */
+	public function getAccessKey()
+	{
+		return $this->_accessKey ? $this->_accessKey : self::$_defaultAccessKey;
 	}
 	
 	/**
 	 * Set your webservice private key for authentication
 	 *
 	 * @param string $privateKey
-	 * @return bool
+	 * @return void
 	 */
 	public function setPrivateKey($privateKey)
 	{
-		if (is_string($privateKey))
-		{
+		if (is_string($privateKey)) {
 			$this->_privateKey = $privateKey;
-			return true;
 		}
-		
-		return false;
+	}
+	
+	/**
+	 * Returns the private key
+	 * 
+	 * @return string
+	 */
+	public function getPrivateKey()
+	{
+		return $this->_privateKey ? $this->_privateKey : self::$_defaultPrivateKey;
 	}
 	
 	/**
 	 * Set your webservice API version
 	 *
 	 * @param string $version
-	 * @return bool
+	 * @return void
 	 */
 	public function setVersion($version)
 	{
 		$this->_version = (string)$version;
-		return true;
 	}
 	
 	/**
 	 * Set the type of request (post or get)
 	 *
 	 * @param string $method
-	 * @return bool
+	 * @return void
 	 */
 	public function setRequestMethod($method)
 	{
 		$method = strtoupper($method);
 		
-		if ($method == 'POST' || $method == 'PUT' || $method == 'DELETE' || $method == 'GET' || $method == 'HEAD')
-		{
+		if ($method == 'POST' || $method == 'PUT' || $method == 'DELETE' || $method == 'GET' || $method == 'HEAD') {
 			$this->_requestMethod = $method;
-			return true;
 		}
-		
-		return false;
 	}
 	
 	/**
@@ -240,7 +294,7 @@ class LabelEdAPI_WebService
 		}
 		
 		$requestUri = $this->getRequestUri();
-		$this->_requestSignature = hash_hmac('sha256', $requestUri, $this->_privateKey);
+		$this->_requestSignature = hash_hmac('sha256', $requestUri, $this->getPrivateKey());
 		
 		if (!$request = curl_init($requestUri)) {
 			throw new Exception('Failed to initialise curl');
@@ -265,7 +319,7 @@ class LabelEdAPI_WebService
 		curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($request, CURLOPT_HEADER, true);
 		curl_setopt($request, CURLOPT_HTTPHEADER, array_merge(array(
-			'X-Authorization: ' . $this->_accessKey . ':' . $this->getRequestSignature(),
+			'X-Authorization: ' . $this->getAccessKey() . ':' . $this->getRequestSignature(),
 		), $this->_requestHeaders));
 		curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($request, CURLOPT_USERAGENT, 'LabelEdWebServicePHP');
