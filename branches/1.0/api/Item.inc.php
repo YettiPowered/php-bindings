@@ -18,8 +18,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function load($resourceId)
 	{
-		$this->webservice()->setRequestPath('/items' . '.ws');
-		$this->webservice()->setRequestParam('resourceId', $resourceId);
+		$this->webservice()->setRequestPath('/items/fake/' . $resourceId . '.ws');
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -68,8 +67,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function update()
 	{
-		$this->webservice()->setRequestPath('/items.ws');
-		$this->webservice()->setRequestParam('resourceId', $this->getId());
+		$this->webservice()->setRequestPath('/items/fake/' . $this->getId() . '.ws');
 		$this->webservice()->setRequestMethod('put');
 		
 		$this->webservice()->setPostData($this->getXml()->asXML());
