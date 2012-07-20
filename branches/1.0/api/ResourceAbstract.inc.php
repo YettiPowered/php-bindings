@@ -4,9 +4,10 @@ require_once 'BaseAbstract.inc.php';
 require_once 'Property.inc.php';
 
 /**
- * API for interfacing with LabelEd items over web services.
+ * API for interfacing with Yetti resources over web services.
  *
- * $Id$
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
 abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
@@ -46,7 +47,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 		else
 		{
 			$return = $this->create();
-			$this->getXml()->item->resource->resourceId = $this->webservice()->getResponseHeader('X-ResourceId');
+			$this->getJson()->item->resource->resourceId = $this->webservice()->getResponseHeader('X-ResourceId');
 			return $return;
 		}
 	}
@@ -58,7 +59,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getId()
 	{
-		return (int)((string)$this->getXml()->item->resource->resourceId);
+		return (int)((string)$this->getJson()->item->resource->resourceId);
 	}
 		
 	/**
@@ -68,7 +69,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getTypeId()
 	{
-		return (int)((string)$this->getXml()->item->resource->resourceTypeId);
+		return (int)((string)$this->getJson()->item->resource->resourceTypeId);
 	}
 	
 	/**
@@ -79,7 +80,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setName($name)
 	{
-		$this->getXml()->item->resource->identifier = (string)$name;
+		$this->getJson()->item->resource->identifier = (string)$name;
 	}
 	
 	/**
@@ -89,7 +90,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getName()
 	{
-		return (string)$this->getXml()->item->resource->identifier;
+		return (string)$this->getJson()->item->resource->identifier;
 	}
 	
 	/**
@@ -101,7 +102,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setPropertyValue($name, $value)
 	{
-		$this->getXml()->item->properties->{$name}->value = (string)$value;
+		$this->getJson()->item->properties->{$name}->value = (string)$value;
 	}
 	
 	/**
@@ -112,7 +113,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getPropertyValue($name)
 	{
-		return (string)$this->getXml()->item->properties->{$name}->value;
+		return (string)$this->getJson()->item->properties->{$name}->value;
 	}
 	
 	/**
@@ -122,7 +123,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getRevisionComment()
 	{
-		return (string)$this->getXml()->item->resource->name;
+		return (string)$this->getJson()->item->resource->name;
 	}
 	
 	/**
@@ -133,7 +134,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setRevisionComment($comment)
 	{
-		$this->getXml()->item->revision->comment = (string)$comment;
+		$this->getJson()->item->revision->comment = (string)$comment;
 	}
 	
 	/**
@@ -146,7 +147,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function addAsset($assetGroupName, $resourceId, $altText=null, $url=null)
 	{
-		$asset = $this->getXml()->item->assets->addChild($assetGroupName);
+		$asset = $this->getJson()->item->assets->addChild($assetGroupName);
 		
 		if (isset($altText)) {
 			$asset->addChild('altText', $altText);
@@ -168,8 +169,9 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	public function getProperties()
 	{
 		$properties = array();
-		foreach ($this->getXml()->item->properties->children() as $propertyXml) {
-			$properties[$propertyXml->getName()] = new LabelEdAPI_Property($propertyXml);
+		
+		foreach ($this->getJson()->item->properties as $name => $property) {
+			$properties[$name] = new LabelEdAPI_Property($property);
 		}
 		
 		return $properties;

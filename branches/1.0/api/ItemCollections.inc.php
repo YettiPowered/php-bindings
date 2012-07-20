@@ -26,7 +26,7 @@ class LabelEdAPI_ItemCollections extends LabelEdAPI_BaseAbstract
 		if ($this->webservice()->makeRequest())
 		{
 			$this->_resourceId = $resourceId;
-			$this->setXml($this->webservice()->getResponseXmlObject());
+			$this->setJson($this->webservice()->getResponseJsonObject());
 			return true;
 		}
 		
@@ -42,7 +42,7 @@ class LabelEdAPI_ItemCollections extends LabelEdAPI_BaseAbstract
 	{
 		$return = array();
 		
-		foreach ($this->getXml()->collections->collection as $collectionId) {
+		foreach ($this->getJson()->collections->collection as $collectionId) {
 			$return[] = (int)((string)$collectionId);
 		}
 		
@@ -57,7 +57,7 @@ class LabelEdAPI_ItemCollections extends LabelEdAPI_BaseAbstract
 	 */
 	public function addCollection($collectionId)
 	{
-		$this->getXml()->collections->addChild('collection', (int)$collectionId);
+		$this->getJson()->collections->addChild('collection', (int)$collectionId);
 	}
 	
 	/**
@@ -69,11 +69,11 @@ class LabelEdAPI_ItemCollections extends LabelEdAPI_BaseAbstract
 	public function removeCollection($collectionId)
 	{
 		$count = 0;
-		foreach ($this->getXml()->collections->collection as $key => $collection)
+		foreach ($this->getJson()->collections->collection as $key => $collection)
 		{
 			if ($collectionId == (int)((string)$collection))
 			{
-				unset($this->getXml()->collections->collection[$count]);
+				unset($this->getJson()->collections->collection[$count]);
 				return true;
 			}
 			$count++;
@@ -94,7 +94,7 @@ class LabelEdAPI_ItemCollections extends LabelEdAPI_BaseAbstract
 			$this->webservice()->setRequestParam('itemId', $this->_resourceId);
 			$this->webservice()->setRequestMethod('put');
 			
-			$this->webservice()->setPostData($this->getXml()->asXML());
+			$this->webservice()->setPostData($this->getJson()->asXML());
 			return $this->makeRequestReturnResult();
 		}
 		

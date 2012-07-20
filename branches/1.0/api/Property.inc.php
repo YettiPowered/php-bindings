@@ -10,11 +10,11 @@ require_once 'BaseAbstract.inc.php';
 class LabelEdAPI_Property
 {
 	private
-		$_xml;
+		$_json;
 	
-	public function __construct(SimpleXMLElement $xml)
+	public function __construct(stdClass $json)
 	{
-		$this->_xml = $xml;
+		$this->_json = $json;
 	}
 	
 	/**
@@ -24,7 +24,7 @@ class LabelEdAPI_Property
 	 */
 	public function getDataType()
 	{
-		return (string)$this->_xml->dataType; 
+		return (string)$this->_json->dataType; 
 	}
 
 	/**
@@ -34,6 +34,6 @@ class LabelEdAPI_Property
 	 */
 	public function getValue()
 	{
-		return (string)$this->_xml->value; 
+		return (string)$this->_json->value; 
 	}
 }

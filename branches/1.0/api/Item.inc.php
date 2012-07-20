@@ -3,9 +3,10 @@
 require_once 'ResourceAbstract.inc.php';
 
 /**
- * API for interfacing with LabelEd items over web services.
- *
- * $Id$
+ * API for interfacing with Yetti items over web services.
+ * 
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
 class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
@@ -23,7 +24,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setXml($this->webservice()->getResponseXmlObject());
+			$this->setJson($this->webservice()->getResponseJsonObject());
 			return true;
 		}
 		
@@ -41,7 +42,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setXml($this->webservice()->getResponseXmlObject());
+			$this->setJson($this->webservice()->getResponseJsonObject());
 			return true;
 		}
 		
@@ -57,7 +58,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 		$this->webservice()->setRequestPath('/items.ws');
 		$this->webservice()->setRequestMethod('post');
 		
-		$this->webservice()->setPostData($this->getXml()->asXML());
+		$this->webservice()->setPostData(json_encode($this->getJson()));
 		return $this->makeRequestReturnResult();
 	}
 	
@@ -67,10 +68,12 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function update()
 	{
-		$this->webservice()->setRequestPath('/items/fake/' . $this->getId() . '.ws');
+		$this->webservice()->setRequestPath('/items.ws');
+		$this->webservice()->setRequestParam('typeId', $this->getTypeId());
+		$this->webservice()->setRequestParam('resourceId', $this->getId());
 		$this->webservice()->setRequestMethod('put');
 		
-		$this->webservice()->setPostData($this->getXml()->asXML());
+		$this->webservice()->setPostData(json_encode($this->getJson()));
 		return $this->makeRequestReturnResult();
 	}
 	
@@ -83,7 +86,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	{
 		$return = array();
 		
-		foreach ($this->getXml()->item->collectionIds as $itemId) {
+		foreach ($this->getJson()->item->collectionIds as $itemId) {
 			$return[] = (int)((string)$itemId);
 		}
 		
@@ -97,7 +100,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function getDisplayName()
 	{
-		return (string)$this->getXml()->item->resource->name;
+		return (string)$this->getJson()->item->resource->name;
 	}
 	
 	/**
@@ -109,7 +112,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function addPricingTier($price, $appliesToId=-1, $appliesToIdType=100)
 	{
-		$tier = $this->getXml()->item->addChild('pricingTiers');
+		$tier = $this->getJson()->item->addChild('pricingTiers');
 		$tier->addChild('price', $price);
 		$tier->addChild('appliesToId', $appliesToId);
 		$tier->addChild('appliesToIdType', $appliesToIdType);
@@ -123,6 +126,6 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function setFileData($data)
 	{
-		$this->getXml()->item->fileData = base64_encode($data);
+		$this->getJson()->item->fileData = base64_encode($data);
 	}
 }

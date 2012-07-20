@@ -16,7 +16,7 @@ abstract class LabelEdAPI_ListAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getTotalItemCount()
 	{
-		return (int)((string)$this->getXml()->listing->totalItems);
+		return (int)((string)$this->getJson()->listing->totalItems);
 	}
 	
 	/**
@@ -26,7 +26,7 @@ abstract class LabelEdAPI_ListAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getTotalPages()
 	{
-		return (int)((string)$this->getXml()->listing->totalPages);
+		return (int)((string)$this->getJson()->listing->totalPages);
 	}
 	
 	/**
@@ -36,7 +36,7 @@ abstract class LabelEdAPI_ListAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getCurrentPage()
 	{
-		return (int)((string)$this->getXml()->listing->currentPage);
+		return (int)((string)$this->getJson()->listing->currentPage);
 	}
 	
 	/**

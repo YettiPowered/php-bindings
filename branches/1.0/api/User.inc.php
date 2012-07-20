@@ -22,7 +22,7 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setXml($this->webservice()->getResponseXmlObject());
+			$this->setJson($this->webservice()->getResponseJsonObject());
 			return true;
 		}
 		
@@ -40,7 +40,7 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setXml($this->webservice()->getResponseXmlObject());
+			$this->setJson($this->webservice()->getResponseJsonObject());
 			return true;
 		}
 		
@@ -56,7 +56,7 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 		$this->webservice()->setRequestPath('/users.ws');
 		$this->webservice()->setRequestMethod('post');
 		
-		$this->webservice()->setPostData($this->getXml()->asXML());
+		$this->webservice()->setPostData($this->getJson()->asXML());
 		return $this->makeRequestReturnResult();
 	}
 	
@@ -70,7 +70,7 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 		$this->webservice()->setRequestParam('resourceId', $this->getId());
 		$this->webservice()->setRequestMethod('put');
 		
-		$this->webservice()->setPostData($this->getXml()->asXML());
+		$this->webservice()->setPostData($this->getJson()->asXML());
 		return $this->makeRequestReturnResult();
 	}
 	
@@ -81,7 +81,7 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 	 */
 	public function getPassHash()
 	{
-		return (string)$this->getXml()->item->resource->password;
+		return (string)$this->getJson()->item->resource->password;
 	}
 	
 	/**
@@ -91,6 +91,6 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 	*/
 	public function getEmail()
 	{
-		return (string)$this->getXml()->item->resource->email;
+		return (string)$this->getJson()->item->resource->email;
 	}
 }

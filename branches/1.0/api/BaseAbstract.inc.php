@@ -4,16 +4,17 @@ require_once 'Webservice.inc.php';
 require_once 'Result.inc.php';
 
 /**
- * API for interfacing with LabelEd items over web services.
+ * Abstract base class for Yetti API bindings
  *
- * $Id$
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
 abstract class LabelEdAPI_BaseAbstract
 {
 	private
 		$_webservice,
-		$_xml;
+		$_json;
 	
 	public function __construct() {}
 	
@@ -32,27 +33,28 @@ abstract class LabelEdAPI_BaseAbstract
 	}
 	
 	/**
-	 * Set the XML object
+	 * Set the JSON object
 	 *
-	 * @param SimpleXMLElement $xml
+	 * @param stdClass $json
 	 */
-	public function setXml(SimpleXMLElement $xml)
+	public function setJson(stdClass $json)
 	{
-		$this->_xml = $xml;
+		$this->_json = $json;
 	}
 	
 	/**
-	 * Returns the XML object
+	 * Returns the JSON object
+	 * 
 	 * @throws Exception
-	 * @return SimpleXMLElement
+	 * @return stdClass
 	 */
-	public function getXml()
+	public function getJson()
 	{
-		if (!isset($this->_xml)) {
-			throw new Exception('Unable to access XML data without first loading resource or template');
+		if (!isset($this->_json)) {
+			throw new Exception('Unable to access JSON data without first loading resource or template');
 		}
 		
-		return $this->_xml;
+		return $this->_json;
 	}
 	
 	/**
@@ -68,12 +70,12 @@ abstract class LabelEdAPI_BaseAbstract
 		
 		if (substr($this->webservice()->getResponseCode(), 0, 1) != 2)
 		{
-			$response = $this->webservice()->getResponseXmlObject();
+			$response = $this->webservice()->getResponseJsonObject();
 			
 			if (isset($response) && isset($response->errors))
 			{
-				foreach ($response->errors->error as $error) {
-					$result->addError((string)$error->error, (string)$error->key);
+				foreach ($response->errors as $error) {
+					$result->addError((string)$error->message, (string)$error->key);
 				}
 			}
 		}

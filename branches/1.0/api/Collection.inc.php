@@ -23,7 +23,7 @@ class LabelEdAPI_Collection extends LabelEdAPI_ResourceAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setXml($this->webservice()->getResponseXmlObject());
+			$this->setJson($this->webservice()->getResponseJsonObject());
 			return true;
 		}
 		
@@ -41,7 +41,7 @@ class LabelEdAPI_Collection extends LabelEdAPI_ResourceAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setXml($this->webservice()->getResponseXmlObject());
+			$this->setJson($this->webservice()->getResponseJsonObject());
 			return true;
 		}
 		
@@ -57,7 +57,7 @@ class LabelEdAPI_Collection extends LabelEdAPI_ResourceAbstract
 		$this->webservice()->setRequestPath('/collections.ws');
 		$this->webservice()->setRequestMethod('post');
 		
-		$this->webservice()->setPostData($this->getXml()->asXML());
+		$this->webservice()->setPostData($this->getJson()->asXML());
 		return $this->makeRequestReturnResult();
 	}
 	
@@ -71,7 +71,7 @@ class LabelEdAPI_Collection extends LabelEdAPI_ResourceAbstract
 		$this->webservice()->setRequestParam('resourceId', $this->getId());
 		$this->webservice()->setRequestMethod('put');
 		
-		$this->webservice()->setPostData($this->getXml()->asXML());
+		$this->webservice()->setPostData($this->getJson()->asXML());
 		return $this->makeRequestReturnResult();
 	}
 	
@@ -82,7 +82,7 @@ class LabelEdAPI_Collection extends LabelEdAPI_ResourceAbstract
 	 */
 	public function getDisplayName()
 	{
-		return (string)$this->getXml()->item->resource->name;
+		return (string)$this->getJson()->item->resource->name;
 	}
 	
 	/**
@@ -92,6 +92,6 @@ class LabelEdAPI_Collection extends LabelEdAPI_ResourceAbstract
 	 */
 	public function setParentId($parentId)
 	{
-		$this->getXml()->item->parentId = (int)$parentId;
+		$this->getJson()->item->parentId = (int)$parentId;
 	}
 }

@@ -23,7 +23,7 @@ class LabelEdAPI_Collections extends LabelEdAPI_ListAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setXml($this->webservice()->getResponseXmlObject());
+			$this->setJson($this->webservice()->getResponseJsonObject());
 			return true;
 		}
 		
@@ -37,7 +37,7 @@ class LabelEdAPI_Collections extends LabelEdAPI_ListAbstract
 	public function getItems()
 	{
 		$return = array();
-		foreach ($this->getXml()->listing->items as $item)
+		foreach ($this->getJson()->listing->items as $item)
 		{
 			$element = new SimpleXMLElement("<?xml version=\"1.0\"?><yetti><item>" .
 			$item->resource->asXml() .
@@ -45,7 +45,7 @@ class LabelEdAPI_Collections extends LabelEdAPI_ListAbstract
 			"</item></yetti>");
 			
 			$item = new LabelEdAPI_Collection();
-			$item->setXml($element);
+			$item->setJson($element);
 			
 			$return[] = $item;
 		}

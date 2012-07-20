@@ -1,11 +1,12 @@
 <?php
 
 /**
- * Webservice class handles the actual CURL calls and responses to LabelEd
+ * Webservice class handles the actual cURL calls and responses to and from Yetti
  *
- * $Id$
- *
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
+
 class LabelEdAPI_WebService
 {
 	private
@@ -13,7 +14,7 @@ class LabelEdAPI_WebService
 		$_requestUri,
 		$_accessKey,
 		$_privateKey,
-		$_version = '1.0',
+		$_version = '2',
 		$_requestMethod = 'GET',
 		$_requestParams = array(),
 		$_requestSignature,
@@ -22,7 +23,7 @@ class LabelEdAPI_WebService
 		$_responseCode,
 		$_responseHeaders,
 		$_response,
-		$_responseXmlObject,
+		$_responseJsonObject,
 		$_rawResponse;
 	
 	private static 
@@ -339,8 +340,8 @@ class LabelEdAPI_WebService
 			}
 		}
 		
-		if ($this->_response && is_string($this->_response) && substr($this->_response, 0, 5) == '<?xml') {
-			$this->_responseXmlObject = simplexml_load_string($this->_response);
+		if ($this->_response && is_string($this->_response) && $json = json_decode($this->_response)) {
+			$this->_responseJsonObject = $json;
 		}
 		
 		if ($this->_responseCode == 401 || $this->_responseCode == 403) {
@@ -439,13 +440,13 @@ class LabelEdAPI_WebService
 	}
 	
 	/**
-	 * Returns a PHP xml object from response
+	 * Returns a JSON object from response
 	 *
-	 * @return SimpleXMLElement
+	 * @return stdClass
 	 */
-	public function getResponseXmlObject()
+	public function getResponseJsonObject()
 	{
-		return $this->_responseXmlObject;
+		return $this->_responseJsonObject;
 	}
 	
 	/**
@@ -456,7 +457,7 @@ class LabelEdAPI_WebService
 	 */
 	public function getResponseStatus()
 	{
-		if (!is_object($this->_response) || get_class($this->_response) != 'SimpleXMLElement') {
+		if (!is_object($this->_response)) {
 			throw new Exception('No valid response received or request not yet sent');
 		}
 		
@@ -485,21 +486,19 @@ class LabelEdAPI_WebService
 	}
 	
 	/**
-	 * Parses a message from the LabelEd webservice response xml
+	 * Parses a message from the LabelEd webservice response JSON
 	 *
-	 * @param $xml
+	 * @param $json
 	 * @return string
 	 */
-	private function parseMessageFromResponse($xml)
+	private function parseMessageFromResponse($json)
 	{
 		$message = 'No message found';
 		
-		if (is_object($xml) && get_class($xml) == 'SimpleXMLElement')
-		{
-			$child = $xml->children();
-			
-			if (isset($child->message)) {
-				$message = $child->message;
+		if (is_object($json))
+		{			
+			if (isset($json->message)) {
+				$message = $json->message;
 			}
 		}
 		

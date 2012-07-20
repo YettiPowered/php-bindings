@@ -2,14 +2,37 @@
 
 require_once 'api/Items.inc.php';
 
-LabelEdAPI_WebService::setDefaultBaseUri('http://yetti_demo.sam.dev');
-LabelEdAPI_WebService::setDefaultAccessKey('test');
-LabelEdAPI_WebService::setDefaultPrivateKey('gidsGe64dd34z!3445£$Ds');
+LabelEdAPI_WebService::setDefaultBaseUri('http://gripple.sam.dev');
+LabelEdAPI_WebService::setDefaultAccessKey('sholman');
+LabelEdAPI_WebService::setDefaultPrivateKey('monkey');
 
 $item = new LabelEdAPI_Item();
 
-if ($item->load(67)) {
+if ($item->load(5230))
+{
 	echo $item->getName();
+	echo '<br />';
+	
+	$item->setName('new-name');
+	echo $item->getName();
+	echo '<br />';
+	
+	$result = $item->save();
+	
+	if (!$result->success()) {
+		var_dump($result->getErrors());
+	}
+	
+	echo '<br />';
+	
+	$item = new LabelEdAPI_Item();
+	$item->load(5230);
+	echo $item->getName();
+	echo '<br />';
+	
+	foreach ($item->getProperties() as $name => $property) {
+		echo $name . ': ' . $property->getValue() . '<br />';
+	}
 }
 else {
 	echo 'Failed to load item.';
