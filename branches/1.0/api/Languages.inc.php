@@ -1,26 +1,24 @@
 <?php
 
 require_once 'ListAbstract.inc.php';
-require_once 'Item.inc.php';
+require_once 'Language.inc.php';
 
 /**
- * API for interfacing with a list of LabelEd items over web services.
+ * API for interfacing with a list of languages over web services.
  *
  * $Id$
  */
 
-class LabelEdAPI_Items extends LabelEdAPI_ListAbstract
+class LabelEdAPI_Languages extends LabelEdAPI_ListAbstract
 {
 	/**
-	 * Loads items by item type class ID
+	 * Loads a list of available languages
 	 *
-	 * @param int $typeClassId
 	 * @return bool
 	 */
-	public function load($typeClassId, $page=1)
+	public function load()
 	{
-		$this->webservice()->setRequestPath('/items/' . $typeClassId . '.ws');
-		$this->webservice()->setRequestParam('page', (int)$page);
+		$this->webservice()->setRequestPath('/languages.ws');
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -40,9 +38,9 @@ class LabelEdAPI_Items extends LabelEdAPI_ListAbstract
 	{
 		$return = array();
 		
-		foreach ($this->getJson()->listing->items as $json)
+		foreach ($this->getJson()->languages as $json)
 		{
-			$item = new LabelEdAPI_Item();
+			$item = new LabelEdAPI_Language();
 			$item->setJson($json);
 			$return[] = $item;
 		}

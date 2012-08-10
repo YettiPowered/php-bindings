@@ -2,6 +2,7 @@
 
 require_once 'BaseAbstract.inc.php';
 require_once 'Property.inc.php';
+require_once 'AssetGroup.inc.php';
 
 /**
  * API for interfacing with Yetti resources over web services.
@@ -47,7 +48,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 		else
 		{
 			$return = $this->create();
-			$this->getJson()->item->resource->resourceId = $this->webservice()->getResponseHeader('X-ResourceId');
+			$this->getJson()->resource->resourceId = $this->webservice()->getResponseHeader('X-ResourceId');
 			return $return;
 		}
 	}
@@ -59,9 +60,29 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getId()
 	{
-		return (int)((string)$this->getJson()->item->resource->resourceId);
+		return (int)((string)$this->getJson()->resource->resourceId);
 	}
-		
+	
+	/**
+	 * Returns the language ID
+	 * 
+	 * @return int
+	 */
+	public function getLanguageId()
+	{
+		return (int)$this->getJson()->resource->languageId;
+	}
+	
+	/**
+	 * Returns the revision ID
+	 * 
+	 * @return int
+	 */
+	public function getRevisionId()
+	{
+		return (int)$this->getJson()->revision->revisionId;
+	}
+	
 	/**
 	 * Returns the resource type ID
 	 *
@@ -69,7 +90,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getTypeId()
 	{
-		return (int)((string)$this->getJson()->item->resource->resourceTypeId);
+		return (int)((string)$this->getJson()->resource->resourceTypeId);
 	}
 	
 	/**
@@ -80,7 +101,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setName($name)
 	{
-		$this->getJson()->item->resource->identifier = (string)$name;
+		$this->getJson()->resource->identifier = (string)$name;
 	}
 	
 	/**
@@ -90,7 +111,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getName()
 	{
-		return (string)$this->getJson()->item->resource->identifier;
+		return (string)$this->getJson()->resource->identifier;
 	}
 	
 	/**
@@ -102,7 +123,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setPropertyValue($name, $value)
 	{
-		$this->getJson()->item->properties->{$name}->value = (string)$value;
+		$this->getJson()->properties->{$name}->value = (string)$value;
 	}
 	
 	/**
@@ -113,7 +134,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getPropertyValue($name)
 	{
-		return (string)$this->getJson()->item->properties->{$name}->value;
+		return (string)$this->getJson()->properties->{$name}->value;
 	}
 	
 	/**
@@ -123,7 +144,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function getRevisionComment()
 	{
-		return (string)$this->getJson()->item->resource->name;
+		return (string)$this->getJson()->resource->name;
 	}
 	
 	/**
@@ -134,7 +155,25 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function setRevisionComment($comment)
 	{
-		$this->getJson()->item->revision->comment = (string)$comment;
+		$this->getJson()->revision->comment = (string)$comment;
+	}
+	
+	/**
+	 * Clear the current attached assets
+	 * 
+	 * @return string $assetGroupName
+	 * @return void
+	 */
+	public function clearAttachedAssets($assetGroupName=null)
+	{
+		$this->getJson()->assets = (array)$this->getJson()->assets;
+		
+		if ($assetGroupName) {
+			$this->getJson()->assets[$assetGroupName] = array();
+		}
+		else {
+			$this->getJson()->assets = array();
+		}
 	}
 	
 	/**
@@ -147,18 +186,13 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	 */
 	public function addAsset($assetGroupName, $resourceId, $altText=null, $url=null)
 	{
-		$asset = $this->getJson()->item->assets->addChild($assetGroupName);
-		
-		if (isset($altText)) {
-			$asset->addChild('altText', $altText);
-		}
-		
-		if (isset($url)) {
-			$asset->addChild('url', $url);
-		}
-		
-		$item = $asset->addChild('item');
-		$item->addChild('resourceId', $resourceId);
+		$this->getJson()->assets[$assetGroupName][] = array(
+			'item'    => array(
+				'resourceId' => $resourceId,
+			),
+			'altText' => $altText,
+			'url' 	  => $url,
+		);
 	}
 	
 	/**
@@ -170,10 +204,28 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	{
 		$properties = array();
 		
-		foreach ($this->getJson()->item->properties as $name => $property) {
+		foreach ($this->getJson()->properties as $name => $property) {
 			$properties[$name] = new LabelEdAPI_Property($property);
 		}
 		
 		return $properties;
+	}
+	
+	/**
+	 * Returns an array of attached asset group elements
+	 * 
+	 * @return array
+	 */
+	public function getAttachedAssets()
+	{
+		$assets = array();
+		
+		foreach ($this->getJson()->assets as $name => $group)
+		{
+			$assets[$name] = new LabeledAPI_AssetGroup();
+			$assets[$name]->setJson($group);
+		}
+		
+		return $assets;
 	}
 }

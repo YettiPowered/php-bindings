@@ -11,20 +11,30 @@ require_once 'ResourceAbstract.inc.php';
 
 class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 {
+	private
+		$_countryCode;
+	
 	/**
 	 * Loads an item by item ID or identifier
 	 *
 	 * @param mixed $itemId int ID or string identifier
+	 * @param string $countryCode
 	 * @return bool
 	 */
-	public function load($resourceId)
+	public function load($resourceId, $countryCode=null)
 	{
-		$this->webservice()->setRequestPath('/items/fake/' . $resourceId . '.ws');
+		if ($countryCode && is_string($countryCode)) {
+			$this->_countryCode = '/' . strtolower($countryCode);
+		}
+		
+		$requestPath = $this->_countryCode . '/items/fake/' . $resourceId . '.ws';
+		
+		$this->webservice()->setRequestPath($requestPath);
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setJson($this->webservice()->getResponseJsonObject());
+			$this->setJson($this->webservice()->getResponseJsonObject()->item);
 			return true;
 		}
 		
@@ -68,12 +78,12 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	 */
 	public function update()
 	{
-		$this->webservice()->setRequestPath('/items.ws');
+		$this->webservice()->setRequestPath($this->_countryCode . '/items.ws');
 		$this->webservice()->setRequestParam('typeId', $this->getTypeId());
 		$this->webservice()->setRequestParam('resourceId', $this->getId());
 		$this->webservice()->setRequestMethod('put');
 		
-		$this->webservice()->setPostData(json_encode($this->getJson()));
+		$this->webservice()->setPostData(json_encode(array('item' => $this->getJson())));
 		return $this->makeRequestReturnResult();
 	}
 	
@@ -104,7 +114,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	}
 	
 	/**
-	 * Adds a new pricing teir to this item
+	 * Adds a new pricing tier to this item
 	 * 
 	 * @param float $price
 	 * @param int $appliesToId

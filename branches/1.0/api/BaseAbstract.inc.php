@@ -37,7 +37,7 @@ abstract class LabelEdAPI_BaseAbstract
 	 *
 	 * @param stdClass $json
 	 */
-	public function setJson(stdClass $json)
+	public function setJson($json)
 	{
 		$this->_json = $json;
 	}
