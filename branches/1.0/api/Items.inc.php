@@ -11,6 +11,10 @@ require_once 'Item.inc.php';
 
 class LabelEdAPI_Items extends LabelEdAPI_ListAbstract
 {
+	private
+		$_counter,
+		$_typeClassId;
+	
 	/**
 	 * Loads items by item type class ID
 	 *
@@ -19,6 +23,8 @@ class LabelEdAPI_Items extends LabelEdAPI_ListAbstract
 	 */
 	public function load($typeClassId, $page=1)
 	{
+		$this->_typeClassId = $typeClassId;
+		
 		$this->webservice()->setRequestPath('/items/' . $typeClassId . '.ws');
 		$this->webservice()->setRequestParam('page', (int)$page);
 		$this->webservice()->setRequestMethod('get');
@@ -38,13 +44,38 @@ class LabelEdAPI_Items extends LabelEdAPI_ListAbstract
 	 */
 	public function getItems()
 	{
+		$this->_counter = 1;
+		return $this->getItemList();
+	}
+	
+	/**
+	 * Returns an item list, paginating automatically where appropriate
+	 * 
+	 * @return array
+	 */
+	private function getItemList()
+	{
 		$return = array();
 		
-		foreach ($this->getJson()->listing->items as $json)
+		$items		 = $this->getJson()->listing->items;
+		$currentMax  = $this->getJson()->listing->currentMax;
+		$currentPage = $this->getJson()->listing->currentPage;
+		$totalPages  = $this->getJson()->listing->totalPages;
+		
+		foreach ($items as $json)
 		{
 			$item = new LabelEdAPI_Item();
 			$item->setJson($json);
 			$return[] = $item;
+			
+			$this->_counter++;
+			
+			if ($this->_counter == $currentMax && $currentPage < $totalPages)
+			{
+				if ($this->load($this->_typeClassId, $currentPage+1)) {
+					$return = array_merge($return, $this->getItemList());
+				}
+			}
 		}
 		
 		return $return;
