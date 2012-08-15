@@ -9,7 +9,7 @@ namespace Yetti\API;
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-class Asset extends BaseAbstract
+class Resource_Asset extends BaseAbstract
 {
 	/**
 	 * Returns the language ID

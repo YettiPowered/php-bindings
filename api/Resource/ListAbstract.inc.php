@@ -10,7 +10,7 @@ namespace Yetti\API;
  * @package yetti-api
  */
 
-abstract class ResourceListAbstract extends ListAbstract
+abstract class Resource_ListAbstract extends ListAbstract
 {
 	private
 		$_path,
@@ -128,7 +128,7 @@ abstract class ResourceListAbstract extends ListAbstract
 	/**
 	 * Returns a new object for population from the list
 	 * 
-	 * @return object \Yetti\API\ResourceAbstract
+	 * @return object \Yetti\API\Resource_Abstract
 	 */
 	abstract protected function getNewItemObject();
 }

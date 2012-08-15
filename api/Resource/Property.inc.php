@@ -9,7 +9,7 @@ namespace Yetti\API;
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-class Property extends BaseAbstract
+class Resource_Property extends BaseAbstract
 {
 	/**
 	 * Returns the data type of this property

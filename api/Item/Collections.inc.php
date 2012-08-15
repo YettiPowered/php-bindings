@@ -90,7 +90,7 @@ class Item_Collections extends BaseAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see ResourceAbstract::update()
+	 * @see Resource_Abstract::update()
 	 */
 	public function save()
 	{

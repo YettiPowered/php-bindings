@@ -8,7 +8,7 @@ namespace Yetti\API;
  * $Id$
  */
 
-class Collection extends ResourceAbstract
+class Collection extends Resource_Abstract
 {
 	/**
 	 * Loads an item by collection ID or identifier
@@ -33,7 +33,7 @@ class Collection extends ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see ResourceAbstract::loadTemplate()
+	 * @see Resource_Abstract::loadTemplate()
 	 */
 	public function loadTemplate($typeId=null)
 	{
@@ -51,7 +51,7 @@ class Collection extends ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see ResourceAbstract::create()
+	 * @see Resource_Abstract::create()
 	 */
 	public function create()
 	{
@@ -64,7 +64,7 @@ class Collection extends ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see ResourceAbstract::update()
+	 * @see Resource_Abstract::update()
 	 */
 	public function update()
 	{

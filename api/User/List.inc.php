@@ -10,7 +10,7 @@ namespace Yetti\API;
  * @package yetti-api
  */
 
-class User_List extends ResourceListAbstract
+class User_List extends Resource_ListAbstract
 {
 	/**
 	 * Construct a new user list model

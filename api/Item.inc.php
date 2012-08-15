@@ -9,7 +9,7 @@ namespace Yetti\API;
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-class Item extends ResourceAbstract
+class Item extends Resource_Abstract
 {
 	private
 		$_countryCode;

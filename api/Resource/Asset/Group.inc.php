@@ -11,7 +11,7 @@ namespace Yetti\API;
  * @package yetti-api
  */
 
-class AssetGroup extends ListAbstract
+class Resource_Asset_Group extends ListAbstract
 {
 	/**
 	 * Load the assets in this group
@@ -22,7 +22,7 @@ class AssetGroup extends ListAbstract
 	{
 		foreach ($this->getJson() as $json)
 		{
-			$asset = new \Yetti\API\Asset();
+			$asset = new \Yetti\API\Resource_Asset();
 			$asset->setJson($json);
 			
 			$this->addItem($asset);

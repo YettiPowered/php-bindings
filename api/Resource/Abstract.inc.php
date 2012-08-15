@@ -9,7 +9,7 @@ namespace Yetti\API;
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-abstract class ResourceAbstract extends BaseAbstract
+abstract class Resource_Abstract extends BaseAbstract
 {
 	/**
 	 * Save this resource
@@ -183,7 +183,7 @@ abstract class ResourceAbstract extends BaseAbstract
 		
 		foreach ($this->getJson()->properties as $name => $property)
 		{
-			$properties[$name] = new \Yetti\API\Property();
+			$properties[$name] = new \Yetti\API\Resource_Property();
 			$properties[$name]->setJson($property);
 		}
 		
@@ -201,7 +201,7 @@ abstract class ResourceAbstract extends BaseAbstract
 		
 		foreach ($this->getJson()->assets as $name => $group)
 		{
-			$assets[$name] = new \Yetti\API\AssetGroup();
+			$assets[$name] = new \Yetti\API\Resource_Asset_Group();
 			$assets[$name]->setJson($group);
 		}
 		

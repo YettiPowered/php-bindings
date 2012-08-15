@@ -2,15 +2,13 @@
 
 namespace Yetti\API;
 
-require_once 'ResourceAbstract.inc.php';
-
 /**
  * API for interfacing with LabelEd users over web services.
  *
  * $Id$
  */
 
-class User extends ResourceAbstract
+class User extends Resource_Abstract
 {
 	/**
 	 * Loads an item by item ID or identifier
@@ -34,7 +32,7 @@ class User extends ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see ResourceAbstract::loadTemplate()
+	 * @see Resource_Abstract::loadTemplate()
 	 */
 	public function loadTemplate($typeId=null)
 	{
@@ -52,7 +50,7 @@ class User extends ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see ResourceAbstract::create()
+	 * @see Resource_Abstract::create()
 	 */
 	public function create()
 	{
@@ -65,7 +63,7 @@ class User extends ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see ResourceAbstract::update()
+	 * @see Resource_Abstract::update()
 	 */
 	public function update()
 	{
