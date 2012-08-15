@@ -2,14 +2,12 @@
 
 namespace Yetti\API;
 
-require_once 'Webservice.inc.php';
-require_once 'Result.inc.php';
-
 /**
  * Abstract base class for Yetti API bindings
  *
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
 abstract class BaseAbstract
@@ -17,8 +15,6 @@ abstract class BaseAbstract
 	private
 		$_webservice,
 		$_json;
-	
-	public function __construct() {}
 	
 	/**
 	 * Returns the webservice object
@@ -28,7 +24,7 @@ abstract class BaseAbstract
 	public function webservice()
 	{
 		if (!$this->_webservice) {
-			$this->_webservice = new WebService();
+			$this->_webservice = new \Yetti\API\Webservice();
 		}
 		
 		return $this->_webservice;

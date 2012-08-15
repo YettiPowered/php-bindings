@@ -2,20 +2,23 @@
 
 namespace Yetti\API;
 
-require_once 'BaseAbstract.inc.php';
-
 /**
- * API for interfacing with LabelEd collection items
- * $Id$
+ * Item collections model
+ * Responsible for listing collections to which an item is assigned
+ * And assigning an item to one or more collections.
+ *
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
-class ItemCollections extends BaseAbstract
+class Item_Collections extends BaseAbstract
 {
 	private
 		$_resourceId;
 		
 	/**
-	 * Loads an items collections
+	 * Loads an item's collections
 	 *
 	 * @param mixed $resourceId int ID or string identifier
 	 * @return bool
@@ -37,7 +40,7 @@ class ItemCollections extends BaseAbstract
 	}
 	
 	/**
-	 * Returns an array of collectionIds
+	 * Returns an array of collection IDs
 	 * 
 	 * @return array
 	 */
@@ -53,7 +56,7 @@ class ItemCollections extends BaseAbstract
 	}
 	
 	/**
-	 * Adds a new collectionId to the list
+	 * Adds a new collection ID to the list
 	 * 
 	 * @param int $collectionId
 	 * @return void

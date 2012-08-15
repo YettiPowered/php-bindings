@@ -224,7 +224,7 @@ abstract class ResourceAbstract extends BaseAbstract
 		
 		foreach ($this->getJson()->assets as $name => $group)
 		{
-			$assets[$name] = new LabeledAPI_AssetGroup();
+			$assets[$name] = new \Yetti\API\AssetGroup();
 			$assets[$name]->setJson($group);
 		}
 		

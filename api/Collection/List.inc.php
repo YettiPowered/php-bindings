@@ -2,30 +2,27 @@
 
 namespace Yetti\API;
 
-require_once 'ListAbstract.inc.php';
-require_once 'User.inc.php';
-
 /**
- * API for interfacing with a list of LabelEd items over web services.
+ * Collection list model
  *
- * $Id$
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
-class Users extends ListAbstract
+class Collection_List extends ListAbstract
 {
 	/**
-	 * Loads users
+	 * Loads a list of collections for a given type ID
 	 *
+	 * @param int $typeId
 	 * @param int $page
 	 * @return bool
 	 */
-	public function load($typeId=null, $page=1)
+	public function load($typeId, $page=1)
 	{
-		$this->webservice()->setRequestPath('/users.ws');
+		$this->webservice()->setRequestPath('/collections/' . $typeId . '.ws');
 		$this->webservice()->setRequestParam('page', (int)$page);
-		if ($typeId) {
-			$this->webservice()->setRequestParam('typeId', (int)$typeId);
-		}
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -51,7 +48,7 @@ class Users extends ListAbstract
 			$item->revision->asXml() .
 			"</item></yetti>");
 			
-			$item = new User();
+			$item = new Collection();
 			$item->setJson($element);
 			
 			$return[] = $item;

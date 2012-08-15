@@ -2,16 +2,15 @@
 
 namespace Yetti\API;
 
-require_once 'ListAbstract.inc.php';
-require_once 'Language.inc.php';
-
 /**
- * API for interfacing with a list of languages over web services.
+ * Language list model
  *
- * $Id$
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
-class Languages extends ListAbstract
+class Language_List extends ListAbstract
 {
 	/**
 	 * Loads a list of available languages

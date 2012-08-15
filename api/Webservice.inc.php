@@ -1,6 +1,7 @@
 <?php
 
 namespace Yetti\API;
+spl_autoload_register(__NAMESPACE__ . '\Webservice::autoload', true, true);
 
 /**
  * Webservice class handles the actual cURL calls and responses to and from Yetti
@@ -40,6 +41,31 @@ class Webservice
 	 * @return void
 	 */
 	public function __construct() {}
+	
+	/**
+	 * Autoload class files
+	 *
+	 * @param string $className
+	 * @return void
+	 */
+	public static function autoload($className)
+	{
+		if (substr($className, 0, 9) == 'Yetti\API')
+		{
+			$className = substr($className, 10);
+			$classPath = '';
+			
+			foreach (explode('_', $className) as $component) {
+				$classPath .= '/' . ucfirst($component);
+			}
+			
+			$classPath = realpath(dirname(__FILE__)) . $classPath . '.inc.php';
+			
+			if (file_exists($classPath)) {
+				include $classPath;
+			}
+		}
+	}
 	
 	/**
 	 * Set a default base URI (used when no other base URI has been set)

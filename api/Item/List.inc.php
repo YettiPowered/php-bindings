@@ -2,32 +2,32 @@
 
 namespace Yetti\API;
 
-require_once 'ListAbstract.inc.php';
-require_once 'Item.inc.php';
-
 /**
- * API for interfacing with a list of LabelEd items over web services.
+ * Item list model
  *
- * $Id$
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
-class Items extends ListAbstract
+class Item_List extends ListAbstract
 {
 	private
 		$_counter,
-		$_typeClassId;
+		$_typeId;
 	
 	/**
-	 * Loads items by item type class ID
+	 * Loads items by item type ID
 	 *
-	 * @param int $typeClassId
+	 * @param int $typeId
+	 * @param int $page
 	 * @return bool
 	 */
-	public function load($typeClassId, $page=1)
+	public function load($typeId, $page=1)
 	{
-		$this->_typeClassId = $typeClassId;
+		$this->_typeId = $typeId;
 		
-		$this->webservice()->setRequestPath('/items/' . $typeClassId . '.ws');
+		$this->webservice()->setRequestPath('/items/' . $typeId . '.ws');
 		$this->webservice()->setRequestParam('page', (int)$page);
 		$this->webservice()->setRequestMethod('get');
 		
@@ -74,7 +74,7 @@ class Items extends ListAbstract
 			
 			if ($this->_counter == $currentMax && $currentPage < $totalPages)
 			{
-				if ($this->load($this->_typeClassId, $currentPage+1)) {
+				if ($this->load($this->_typeId, $currentPage+1)) {
 					$return = array_merge($return, $this->getItemList());
 				}
 			}
