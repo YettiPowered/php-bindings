@@ -1,13 +1,14 @@
 <?php
 
+namespace Yetti\API;
+
 /**
  * Webservice class handles the actual cURL calls and responses to and from Yetti
  *
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
-
-namespace Yetti\API;
 
 class Webservice
 {
@@ -32,7 +33,12 @@ class Webservice
 		$_defaultBaseUri,
 		$_defaultAccessKey,
 		$_defaultPrivateKey;
-		
+	
+	/**
+	 * Constructs a new webservice object
+	 * 
+	 * @return void
+	 */
 	public function __construct() {}
 	
 	/**
@@ -488,9 +494,9 @@ class Webservice
 	}
 	
 	/**
-	 * Parses a message from the LabelEd webservice response JSON
+	 * Parses a message from the webservice response JSON
 	 *
-	 * @param $json
+	 * @param stdClass $json
 	 * @return string
 	 */
 	private function parseMessageFromResponse($json)
@@ -506,6 +512,4 @@ class Webservice
 		
 		return $message;
 	}
-	
-	public function __destruct() {}
 }
