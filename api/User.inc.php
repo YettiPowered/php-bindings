@@ -3,76 +3,22 @@
 namespace Yetti\API;
 
 /**
- * API for interfacing with LabelEd users over web services.
- *
- * $Id$
+ * Individual user model
+ * 
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
 class User extends Resource_Abstract
 {
 	/**
-	 * Loads an item by item ID or identifier
-	 *
-	 * @param mixed $itemId int ID or string identifier
-	 * @return bool
+	 * Returns a singular name for this type of resource
+	 * 
+	 * @return string
 	 */
-	public function load($resourceId)
+	protected function getSingularName()
 	{
-		$this->webservice()->setRequestPath('/users/' . $resourceId . '.ws');
-		$this->webservice()->setRequestMethod('get');
-		
-		if ($this->webservice()->makeRequest())
-		{
-			$this->setJson($this->webservice()->getResponseJsonObject());
-			return true;
-		}
-		
-		return false;
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see Resource_Abstract::loadTemplate()
-	 */
-	public function loadTemplate($typeId=null)
-	{
-		$this->webservice()->setRequestPath('/templates/user.ws');
-		$this->webservice()->setRequestMethod('get');
-		
-		if ($this->webservice()->makeRequest())
-		{
-			$this->setJson($this->webservice()->getResponseJsonObject());
-			return true;
-		}
-		
-		return false;
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see Resource_Abstract::create()
-	 */
-	public function create()
-	{
-		$this->webservice()->setRequestPath('/users.ws');
-		$this->webservice()->setRequestMethod('post');
-		
-		$this->webservice()->setPostData($this->getJson()->asXML());
-		return $this->makeRequestReturnResult();
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see Resource_Abstract::update()
-	 */
-	public function update()
-	{
-		$this->webservice()->setRequestPath('/users.ws');
-		$this->webservice()->setRequestParam('resourceId', $this->getId());
-		$this->webservice()->setRequestMethod('put');
-		
-		$this->webservice()->setPostData($this->getJson()->asXML());
-		return $this->makeRequestReturnResult();
+		return 'user';
 	}
 	
 	/**

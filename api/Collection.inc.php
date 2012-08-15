@@ -3,93 +3,29 @@
 namespace Yetti\API;
 
 /**
- * API for interfacing with LabelEd collections over web services.
- *
- * $Id$
+ * Individual collection model
+ * 
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
 class Collection extends Resource_Abstract
 {
 	/**
-	 * Loads an item by collection ID or identifier
-	 *
-	 * @param mixed $resourceId int ID or string identifier
-	 * @return bool
-	 */
-	public function load($resourceId)
-	{
-		$this->webservice()->setRequestPath('/collections' . '.ws');
-		$this->webservice()->setRequestParam('resourceId', $resourceId);
-		$this->webservice()->setRequestMethod('get');
-		
-		if ($this->webservice()->makeRequest())
-		{
-			$this->setJson($this->webservice()->getResponseJsonObject());
-			return true;
-		}
-		
-		return false;
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see Resource_Abstract::loadTemplate()
-	 */
-	public function loadTemplate($typeId=null)
-	{
-		$this->webservice()->setRequestPath('/templates/collection/' . ((int)$typeId) . '.ws');
-		$this->webservice()->setRequestMethod('get');
-		
-		if ($this->webservice()->makeRequest())
-		{
-			$this->setJson($this->webservice()->getResponseJsonObject());
-			return true;
-		}
-		
-		return false;
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see Resource_Abstract::create()
-	 */
-	public function create()
-	{
-		$this->webservice()->setRequestPath('/collections.ws');
-		$this->webservice()->setRequestMethod('post');
-		
-		$this->webservice()->setPostData($this->getJson()->asXML());
-		return $this->makeRequestReturnResult();
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see Resource_Abstract::update()
-	 */
-	public function update()
-	{
-		$this->webservice()->setRequestPath('/collections.ws');
-		$this->webservice()->setRequestParam('resourceId', $this->getId());
-		$this->webservice()->setRequestMethod('put');
-		
-		$this->webservice()->setPostData($this->getJson()->asXML());
-		return $this->makeRequestReturnResult();
-	}
-	
-	/**
-	 * Returns the item display name
-	 *
+	 * Returns a singular name for this type of resource
+	 * 
 	 * @return string
 	 */
-	public function getDisplayName()
+	protected function getSingularName()
 	{
-		return (string)$this->getJson()->item->resource->name;
+		return 'collection';
 	}
-	
+		
 	/**
-	 * Sets the parentId for the collection
+	 * Sets the parent ID for the collection
 	 * 
 	 * @param $parentId
+	 * @return void
 	 */
 	public function setParentId($parentId)
 	{
