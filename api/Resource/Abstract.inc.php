@@ -11,6 +11,56 @@ namespace Yetti\API;
 
 abstract class Resource_Abstract extends BaseAbstract
 {
+	private
+		$_countryCode;
+	
+	/**
+	 * Loads a resource by ID or identifier
+	 *
+	 * @param mixed $resourceId int ID or string identifier
+	 * @param string $countryCode
+	 * @return bool
+	 */
+	public function load($resourceId, $countryCode=null)
+	{
+		if ($countryCode && is_string($countryCode)) {
+			$this->_countryCode = '/' . strtolower($countryCode);
+		}
+		
+		$requestPath = $this->_countryCode . '/' . $this->getPluralName() . '/null/' . $resourceId . '.ws';
+		
+		$this->webservice()->setRequestPath($requestPath);
+		$this->webservice()->setRequestMethod('get');
+		
+		if ($this->webservice()->makeRequest())
+		{
+			$this->setJson($this->webservice()->getResponseJsonObject()->item);
+			return true;
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * Load a resource template for the given type ID
+	 * 
+	 * @param int $typeId
+	 * @return bool
+	 */
+	public function loadTemplate($typeId=null)
+	{
+		$this->webservice()->setRequestPath('/templates/' . $this->getSingularName() . '/' . ((int)$typeId) . '.ws');
+		$this->webservice()->setRequestMethod('get');
+		
+		if ($this->webservice()->makeRequest())
+		{
+			$this->setJson($this->webservice()->getResponseJsonObject());
+			return true;
+		}
+		
+		return false;
+	}
+	
 	/**
 	 * Save this resource
 	 *
@@ -27,6 +77,36 @@ abstract class Resource_Abstract extends BaseAbstract
 			$this->getJson()->resource->resourceId = $this->webservice()->getResponseHeader('X-ResourceId');
 			return $return;
 		}
+	}
+	
+	/**
+	 * Create a new resource
+	 * 
+	 * @return \Yetti\API\Result
+	 */
+	protected function create()
+	{
+		$this->webservice()->setRequestPath('/' . $this->getPluralName() . '.ws');
+		$this->webservice()->setRequestMethod('post');
+		
+		$this->webservice()->setPostData(json_encode($this->getJson()));
+		return $this->makeRequestReturnResult();
+	}
+	
+	/**
+	 * Update an existing resource
+	 * 
+	 * @return \Yetti\API\Result
+	 */
+	protected function update()
+	{
+		$this->webservice()->setRequestPath($this->_countryCode . '/' . $this->getPluralName() . '.ws');
+		$this->webservice()->setRequestParam('typeId', $this->getTypeId());
+		$this->webservice()->setRequestParam('resourceId', $this->getId());
+		$this->webservice()->setRequestMethod('put');
+		
+		$this->webservice()->setPostData(json_encode(array($this->getSingularName() => $this->getJson())));
+		return $this->makeRequestReturnResult();
 	}
 	
 	/**
@@ -88,6 +168,16 @@ abstract class Resource_Abstract extends BaseAbstract
 	public function getName()
 	{
 		return (string)$this->getJson()->resource->identifier;
+	}
+	
+	/**
+	 * Returns the resource's display name
+	 *
+	 * @return string
+	 */
+	public function getDisplayName()
+	{
+		return (string)$this->getJson()->item->resource->name;
 	}
 	
 	/**
@@ -209,24 +299,19 @@ abstract class Resource_Abstract extends BaseAbstract
 	}
 	
 	/**
-	 * Load a resource template (for creating a new resource)
-	 *
-	 * @param int typeId
-	 * @return bool
+	 * Returns a plural name for resources of this type
+	 * 
+	 * @return string
 	 */
-	abstract public function loadTemplate($typeId=null);
+	private function getPluralName()
+	{
+		return $this->getSingularName() . 's';
+	}
 	
 	/**
-	 * Update an existing resource
-	 *
-	 * @return Result
+	 * Return a singular name for this resource type
+	 * 
+	 * @return string
 	 */
-	abstract protected function update();
-	
-	/**
-	 * Create a new resource
-	 *
-	 * @return Result
-	 */
-	abstract protected function create();
+	abstract protected function getSingularName();
 }
