@@ -13,14 +13,14 @@ namespace Yetti\API;
 class Language_List extends ListAbstract
 {
 	/**
-	 * Loads a list of available languages
-	 *
+	 * Load a list of available languages
+	 * 
 	 * @return bool
 	 */
 	public function load()
 	{
-		$this->webservice()->setRequestPath('/languages.ws');
 		$this->webservice()->setRequestMethod('get');
+		$this->webservice()->setRequestPath('/languages.ws');
 		
 		if ($this->webservice()->makeRequest())
 		{
@@ -32,20 +32,38 @@ class Language_List extends ListAbstract
 	}
 	
 	/**
-	 * (non-PHPdoc)
-	 * @see ListAbstract::getItems()
+	 * Load the language objects in this list
+	 * 
+	 * @return array
 	 */
-	public function getItems()
+	protected function loadItemObjects()
 	{
-		$return = array();
-		
 		foreach ($this->getJson()->languages as $json)
 		{
-			$item = new Language();
+			$item = new \Yetti\API\Language();
 			$item->setJson($json);
-			$return[] = $item;
+			
+			$this->addItem($item);
 		}
-		
-		return $return;
+	}
+	
+	/**
+	 * Returns the total number of pages in the list
+	 * 
+	 * @return int
+	 */
+	public function getTotalPages()
+	{
+		return 1;
+	}
+	
+	/**
+	 * Returns the current page
+	 * 
+	 * @return int
+	 */
+	public function getCurrentPage()
+	{
+		return 1;
 	}
 }

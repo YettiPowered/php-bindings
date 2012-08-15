@@ -12,6 +12,34 @@ namespace Yetti\API;
 
 abstract class ListAbstract extends BaseAbstract
 {
+	private
+		$_items = array();
+	
+	/**
+	 * Add an item to the list
+	 * 
+	 * @param mixed $item
+	 * @return void
+	 */
+	protected function addItem($item)
+	{
+		$this->_items[] = $item;
+	}
+	
+	/**
+	 * Returns an array of items in this listing
+	 * 
+	 * @return array
+	 */
+	public function getItems()
+	{
+		if (empty($this->_items)) {
+			$this->loadItemObjects();
+		}
+		
+		return $this->_items;
+	}
+	
 	/**
 	 * Returns the total number of items avaliable for this listing
 	 * 
@@ -19,33 +47,27 @@ abstract class ListAbstract extends BaseAbstract
 	 */
 	public function getTotalItemCount()
 	{
-		return (int)$this->getJson()->listing->totalItems;
+		return count($this->_items);
 	}
+	
+	/**
+	 * Load the item objects
+	 * 
+	 * @return void
+	 */
+	abstract protected function loadItemObjects();
 	
 	/**
 	 * Returns the total number of pages available in this listing
 	 * 
 	 * @return int
 	 */
-	public function getTotalPages()
-	{
-		return (int)$this->getJson()->listing->totalPages;
-	}
+	abstract public function getTotalPages();
 	
 	/**
 	 * Returns the currently loaded page number
 	 * 
 	 * @return int
 	 */
-	public function getCurrentPage()
-	{
-		return (int)$this->getJson()->listing->currentPage;
-	}
-	
-	/**
-	 * Returns an array of ResourceAbstract objects from the listing
-	 * 
-	 * @return array
-	 */
-	abstract public function getItems();
+	abstract public function getCurrentPage();
 }

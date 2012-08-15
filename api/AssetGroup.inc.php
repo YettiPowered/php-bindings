@@ -2,34 +2,50 @@
 
 namespace Yetti\API;
 
-require_once 'ListAbstract.inc.php';
-require_once 'Asset.inc.php';
-
 /**
- * API for interfacing with LabelEd property over web services.
+ * Asset group model
+ * Represents a single asset group for a resource
  *
- * $Id$
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
 class AssetGroup extends ListAbstract
 {
 	/**
-	 * Returns an array of assets in this group
+	 * Load the assets in this group
 	 * 
 	 * @return array
 	 */
-	public function getItems()
+	protected function loadItemObjects()
 	{
-		$assets = array();
-		
 		foreach ($this->getJson() as $json)
 		{
-			$asset = new Asset();
+			$asset = new \Yetti\API\Asset();
 			$asset->setJson($json);
 			
-			$assets[] = $asset;
+			$this->addItem($asset);
 		}
-		
-		return $assets;
+	}
+	
+	/**
+	 * Returns the total number of pages in the list
+	 * 
+	 * @return int
+	 */
+	public function getTotalPages()
+	{
+		return 1;
+	}
+	
+	/**
+	 * Returns the current page
+	 * 
+	 * @return int
+	 */
+	public function getCurrentPage()
+	{
+		return 1;
 	}
 }

@@ -13,47 +13,22 @@ namespace Yetti\API;
 class Collection_List extends ListAbstract
 {
 	/**
-	 * Loads a list of collections for a given type ID
-	 *
-	 * @param int $typeId
-	 * @param int $page
-	 * @return bool
+	 * Construct a new collection list model
+	 * 
+	 * @return void
 	 */
-	public function load($typeId, $page=1)
+	public function __construct()
 	{
-		$this->webservice()->setRequestPath('/collections/' . $typeId . '.ws');
-		$this->webservice()->setRequestParam('page', (int)$page);
-		$this->webservice()->setRequestMethod('get');
-		
-		if ($this->webservice()->makeRequest())
-		{
-			$this->setJson($this->webservice()->getResponseJsonObject());
-			return true;
-		}
-		
-		return false;
+		$this->setPath('collections');
 	}
 	
 	/**
-	 * (non-PHPdoc)
-	 * @see ListAbstract::getItems()
+	 * Returns a new collection object
+	 * 
+	 * @return object \Yetti\API\Collection
 	 */
-	public function getItems()
+	protected function getNewItemObject()
 	{
-		$return = array();
-		foreach ($this->getJson()->listing->items as $item)
-		{
-			$element = new SimpleXMLElement("<?xml version=\"1.0\"?><yetti><item>" .
-			$item->resource->asXml() .
-			$item->revision->asXml() .
-			"</item></yetti>");
-			
-			$item = new Collection();
-			$item->setJson($element);
-			
-			$return[] = $item;
-		}
-		
-		return $return;
+		return new \Yetti\API\Collection();
 	}
 }

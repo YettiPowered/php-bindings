@@ -3,7 +3,7 @@
 namespace Yetti\API;
 
 /**
- * API for interfacing with Yetti assets over web services.
+ * Model represents a single asset (attached to a resource)
  * 
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.

@@ -13,52 +13,22 @@ namespace Yetti\API;
 class User_List extends ListAbstract
 {
 	/**
-	 * Loads users
-	 *
-	 * @param int $typeId
-	 * @param int $page
-	 * @return bool
+	 * Construct a new user list model
+	 * 
+	 * @return void
 	 */
-	public function load($typeId=null, $page=1)
+	public function __construct()
 	{
-		$this->webservice()->setRequestPath('/users.ws');
-		$this->webservice()->setRequestParam('page', (int)$page);
-		
-		if ($typeId) {
-			$this->webservice()->setRequestParam('typeId', (int)$typeId);
-		}
-		
-		$this->webservice()->setRequestMethod('get');
-		
-		if ($this->webservice()->makeRequest())
-		{
-			$this->setJson($this->webservice()->getResponseJsonObject());
-			return true;
-		}
-		
-		return false;
+		$this->setPath('users');
 	}
 	
 	/**
-	 * (non-PHPdoc)
-	 * @see ListAbstract::getItems()
+	 * Returns a new user object
+	 * 
+	 * @return object \Yetti\API\User
 	 */
-	public function getItems()
+	protected function getNewItemObject()
 	{
-		$return = array();
-		foreach ($this->getJson()->listing->items as $item)
-		{
-			$element = new SimpleXMLElement("<?xml version=\"1.0\"?><yetti><item>" .
-			$item->resource->asXml() .
-			$item->revision->asXml() .
-			"</item></yetti>");
-			
-			$item = new User();
-			$item->setJson($element);
-			
-			$return[] = $item;
-		}
-		
-		return $return;
+		return new \Yetti\API\User();
 	}
 }
