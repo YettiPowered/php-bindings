@@ -47,11 +47,12 @@ class Item extends Resource_Abstract
 	 */
 	public function addPricingTier($price, $appliesToId=-1, $appliesToIdType=100)
 	{
-		$tier = $this->getJson()->item->addChild('pricingTiers');
-		
-		$tier->addChild('price', $price);
-		$tier->addChild('appliesToId', $appliesToId);
-		$tier->addChild('appliesToIdType', $appliesToIdType);
+		$this->getJson()->pricingTiers[] = array
+		(
+			'price' 		  => $price,
+			'appliesToId'	  => $appliesToId,
+			'appliesToIdType' => $appliesToIdType,
+		);
 	}
 	
 	/**
