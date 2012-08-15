@@ -6,7 +6,7 @@ require_once 'BaseAbstract.inc.php';
  * $Id$
  */
 
-class LabelEdAPI_ItemCollections extends LabelEdAPI_BaseAbstract
+class ItemCollections extends BaseAbstract
 {
 	private
 		$_resourceId;
@@ -84,7 +84,7 @@ class LabelEdAPI_ItemCollections extends LabelEdAPI_BaseAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ResourceAbstract::update()
+	 * @see ResourceAbstract::update()
 	 */
 	public function save()
 	{

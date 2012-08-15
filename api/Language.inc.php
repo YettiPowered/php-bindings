@@ -7,7 +7,7 @@
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-class LabelEdAPI_Language extends LabelEdAPI_BaseAbstract
+class Language extends BaseAbstract
 {
 	/**
 	 * Returns the language ID

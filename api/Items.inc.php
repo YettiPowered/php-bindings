@@ -9,7 +9,7 @@ require_once 'Item.inc.php';
  * $Id$
  */
 
-class LabelEdAPI_Items extends LabelEdAPI_ListAbstract
+class Items extends ListAbstract
 {
 	private
 		$_counter,
@@ -40,7 +40,7 @@ class LabelEdAPI_Items extends LabelEdAPI_ListAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ListAbstract::getItems()
+	 * @see ListAbstract::getItems()
 	 */
 	public function getItems()
 	{
@@ -64,7 +64,7 @@ class LabelEdAPI_Items extends LabelEdAPI_ListAbstract
 		
 		foreach ($items as $json)
 		{
-			$item = new LabelEdAPI_Item();
+			$item = new Item();
 			$item->setJson($json);
 			$return[] = $item;
 			

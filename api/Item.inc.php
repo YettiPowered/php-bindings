@@ -9,7 +9,7 @@ require_once 'ResourceAbstract.inc.php';
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
+class Item extends ResourceAbstract
 {
 	private
 		$_countryCode;
@@ -43,7 +43,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ResourceAbstract::loadTemplate()
+	 * @see ResourceAbstract::loadTemplate()
 	 */
 	public function loadTemplate($typeId=null)
 	{
@@ -61,7 +61,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ResourceAbstract::create()
+	 * @see ResourceAbstract::create()
 	 */
 	public function create()
 	{
@@ -74,7 +74,7 @@ class LabelEdAPI_Item extends LabelEdAPI_ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ResourceAbstract::update()
+	 * @see ResourceAbstract::update()
 	 */
 	public function update()
 	{

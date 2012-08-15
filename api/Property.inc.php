@@ -7,7 +7,7 @@ require_once 'BaseAbstract.inc.php';
  * $Id$
  */
 
-class LabelEdAPI_Property
+class Property
 {
 	private
 		$_json;

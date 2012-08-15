@@ -7,7 +7,7 @@ require_once 'ResourceAbstract.inc.php';
  * $Id$
  */
 
-class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
+class User extends ResourceAbstract
 {
 	/**
 	 * Loads an item by item ID or identifier
@@ -31,7 +31,7 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ResourceAbstract::loadTemplate()
+	 * @see ResourceAbstract::loadTemplate()
 	 */
 	public function loadTemplate($typeId=null)
 	{
@@ -49,7 +49,7 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ResourceAbstract::create()
+	 * @see ResourceAbstract::create()
 	 */
 	public function create()
 	{
@@ -62,7 +62,7 @@ class LabelEdAPI_User extends LabelEdAPI_ResourceAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ResourceAbstract::update()
+	 * @see ResourceAbstract::update()
 	 */
 	public function update()
 	{

@@ -7,7 +7,7 @@ require_once 'Collection.inc.php';
  * $Id$
  */
 
-class LabelEdAPI_Collections extends LabelEdAPI_ListAbstract
+class Collections extends ListAbstract
 {
 	/**
 	 * Loads items by collection type ID
@@ -32,7 +32,7 @@ class LabelEdAPI_Collections extends LabelEdAPI_ListAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ListAbstract::getItems()
+	 * @see ListAbstract::getItems()
 	 */
 	public function getItems()
 	{
@@ -44,7 +44,7 @@ class LabelEdAPI_Collections extends LabelEdAPI_ListAbstract
 			$item->revision->asXml() .
 			"</item></yetti>");
 			
-			$item = new LabelEdAPI_Collection();
+			$item = new Collection();
 			$item->setJson($element);
 			
 			$return[] = $item;

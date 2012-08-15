@@ -1,6 +1,6 @@
 <?php
 
-class LabelEdAPI_Result
+class Result
 {
 	private
 		$_errors = array();

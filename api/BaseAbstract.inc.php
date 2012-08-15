@@ -10,7 +10,7 @@ require_once 'Result.inc.php';
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-abstract class LabelEdAPI_BaseAbstract
+abstract class BaseAbstract
 {
 	private
 		$_webservice,
@@ -21,12 +21,12 @@ abstract class LabelEdAPI_BaseAbstract
 	/**
 	 * Returns the webservice object
 	 *
-	 * @return LabelEdAPI_WebService
+	 * @return WebService
 	 */
 	public function webservice()
 	{
 		if (!$this->_webservice) {
-			$this->_webservice = new LabelEdAPI_WebService();
+			$this->_webservice = new WebService();
 		}
 		
 		return $this->_webservice;
@@ -61,12 +61,12 @@ abstract class LabelEdAPI_BaseAbstract
 	 * Performs a webservice request and returns a result object
 	 * Must be called after everything else has been set up
 	 *
-	 * @return LabelEdAPI_Result
+	 * @return Result
 	 */
 	protected function makeRequestReturnResult()
 	{
 		$this->webservice()->makeRequest();
-		$result = new LabelEdAPI_Result();
+		$result = new Result();
 		
 		if (substr($this->webservice()->getResponseCode(), 0, 1) != 2)
 		{

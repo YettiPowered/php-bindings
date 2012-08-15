@@ -9,7 +9,7 @@ require_once 'Language.inc.php';
  * $Id$
  */
 
-class LabelEdAPI_Languages extends LabelEdAPI_ListAbstract
+class Languages extends ListAbstract
 {
 	/**
 	 * Loads a list of available languages
@@ -32,7 +32,7 @@ class LabelEdAPI_Languages extends LabelEdAPI_ListAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ListAbstract::getItems()
+	 * @see ListAbstract::getItems()
 	 */
 	public function getItems()
 	{
@@ -40,7 +40,7 @@ class LabelEdAPI_Languages extends LabelEdAPI_ListAbstract
 		
 		foreach ($this->getJson()->languages as $json)
 		{
-			$item = new LabelEdAPI_Language();
+			$item = new Language();
 			$item->setJson($json);
 			$return[] = $item;
 		}

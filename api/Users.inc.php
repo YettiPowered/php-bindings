@@ -7,7 +7,7 @@ require_once 'User.inc.php';
  * $Id$
  */
 
-class LabelEdAPI_Users extends LabelEdAPI_ListAbstract
+class Users extends ListAbstract
 {
 	/**
 	 * Loads users
@@ -35,7 +35,7 @@ class LabelEdAPI_Users extends LabelEdAPI_ListAbstract
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see LabelEdAPI_ListAbstract::getItems()
+	 * @see ListAbstract::getItems()
 	 */
 	public function getItems()
 	{
@@ -47,7 +47,7 @@ class LabelEdAPI_Users extends LabelEdAPI_ListAbstract
 			$item->revision->asXml() .
 			"</item></yetti>");
 			
-			$item = new LabelEdAPI_User();
+			$item = new User();
 			$item->setJson($element);
 			
 			$return[] = $item;

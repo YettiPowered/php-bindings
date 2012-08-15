@@ -11,7 +11,7 @@ require_once 'AssetGroup.inc.php';
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
+abstract class ResourceAbstract extends BaseAbstract
 {
 	/**
 	 * Load a resource template using 
@@ -24,21 +24,21 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 	/**
 	 * Update an existing resource
 	 *
-	 * @return LabelEdAPI_Result
+	 * @return Result
 	 */
 	abstract public function update();
 	
 	/**
 	 * Create a new resource
 	 *
-	 * @return LabelEdAPI_Result
+	 * @return Result
 	 */
 	abstract public function create();
 	
 	/**
 	 * Save this resource
 	 *
-	 * @return LabelEdAPI_Result
+	 * @return Result
 	 */
 	public function save()
 	{
@@ -205,7 +205,7 @@ abstract class LabelEdAPI_ResourceAbstract extends LabelEdAPI_BaseAbstract
 		$properties = array();
 		
 		foreach ($this->getJson()->properties as $name => $property) {
-			$properties[$name] = new LabelEdAPI_Property($property);
+			$properties[$name] = new Property($property);
 		}
 		
 		return $properties;

@@ -9,7 +9,7 @@ require_once 'Asset.inc.php';
  * $Id$
  */
 
-class LabelEdAPI_AssetGroup extends LabelEdAPI_ListAbstract
+class AssetGroup extends ListAbstract
 {
 	/**
 	 * Returns an array of assets in this group
@@ -22,7 +22,7 @@ class LabelEdAPI_AssetGroup extends LabelEdAPI_ListAbstract
 		
 		foreach ($this->getJson() as $json)
 		{
-			$asset = new LabelEdAPI_Asset();
+			$asset = new Asset();
 			$asset->setJson($json);
 			
 			$assets[] = $asset;

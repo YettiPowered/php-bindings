@@ -7,7 +7,7 @@ require_once 'BaseAbstract.inc.php';
  * $Id$
  */
 
-abstract class LabelEdAPI_ListAbstract extends LabelEdAPI_BaseAbstract
+abstract class ListAbstract extends BaseAbstract
 {
 	/**
 	 * Gets the total number of items avaliable for this listing

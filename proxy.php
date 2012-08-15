@@ -15,7 +15,7 @@ $requestPath 	= isset($_POST['requestPath']) ? $_POST['requestPath'] : null;
 $pathEnd 	 	= strpos($requestPath, '?');
 parse_str(parse_url($requestPath, PHP_URL_QUERY), $requestParams);
 
-$webservice = new LabelEdAPI_WebService();
+$webservice = new Yetti\API\Webservice();
 $webservice->setAccessKey($accessKey);
 $webservice->setPrivateKey($privateKey);
 $webservice->setRequestMethod($method);
