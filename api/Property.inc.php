@@ -2,41 +2,32 @@
 
 namespace Yetti\API;
 
-require_once 'BaseAbstract.inc.php';
-
 /**
- * API for interfacing with LabelEd property over web services.
- *
- * $Id$
+ * Model represents a single property (of a resource)
+ * 
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
  */
 
-class Property
+class Property extends BaseAbstract
 {
-	private
-		$_json;
-	
-	public function __construct(stdClass $json)
-	{
-		$this->_json = $json;
-	}
-	
 	/**
-	 * Gets the data type of this property
+	 * Returns the data type of this property
 	 * 
 	 * @return string
 	 */
 	public function getDataType()
 	{
-		return (string)$this->_json->dataType; 
+		return $this->getJson()->dataType;
 	}
 
 	/**
-	 * Gets the value of this property
+	 * Returns the value of this property
 	 * 
 	 * @return string
 	 */
 	public function getValue()
 	{
-		return (string)$this->_json->value; 
+		return $this->getJson()->value;
 	}
 }

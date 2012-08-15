@@ -181,8 +181,10 @@ abstract class ResourceAbstract extends BaseAbstract
 	{
 		$properties = array();
 		
-		foreach ($this->getJson()->properties as $name => $property) {
-			$properties[$name] = new Property($property);
+		foreach ($this->getJson()->properties as $name => $property)
+		{
+			$properties[$name] = new \Yetti\API\Property();
+			$properties[$name]->setJson($property);
 		}
 		
 		return $properties;
