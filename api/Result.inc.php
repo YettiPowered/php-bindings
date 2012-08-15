@@ -1,5 +1,7 @@
 <?php
 
+namespace Yetti\API;
+
 class Result
 {
 	private

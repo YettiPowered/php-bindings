@@ -1,5 +1,7 @@
 <?php
 
+namespace Yetti\API;
+
 require_once 'BaseAbstract.inc.php';
 require_once 'Property.inc.php';
 require_once 'AssetGroup.inc.php';

@@ -1,5 +1,7 @@
 <?php
 
+namespace Yetti\API;
+
 require_once 'ResourceAbstract.inc.php';
 
 /**

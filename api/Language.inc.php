@@ -1,5 +1,7 @@
 <?php
 
+namespace Yetti\API;
+
 /**
  * API for interfacing with Yetti languages over web services.
  * 

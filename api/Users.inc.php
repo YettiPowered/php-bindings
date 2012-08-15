@@ -1,6 +1,10 @@
 <?php
+
+namespace Yetti\API;
+
 require_once 'ListAbstract.inc.php';
 require_once 'User.inc.php';
+
 /**
  * API for interfacing with a list of LabelEd items over web services.
  *

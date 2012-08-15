@@ -1,5 +1,7 @@
 <?php
 
+namespace Yetti\API;
+
 require_once 'Webservice.inc.php';
 require_once 'Result.inc.php';
 

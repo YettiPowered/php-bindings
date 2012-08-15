@@ -1,4 +1,7 @@
 <?php
+
+namespace Yetti\API;
+
 require_once 'BaseAbstract.inc.php';
 
 /**
