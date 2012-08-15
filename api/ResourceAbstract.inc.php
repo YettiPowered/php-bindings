@@ -2,12 +2,8 @@
 
 namespace Yetti\API;
 
-require_once 'BaseAbstract.inc.php';
-require_once 'Property.inc.php';
-require_once 'AssetGroup.inc.php';
-
 /**
- * API for interfacing with Yetti resources over web services.
+ * Abstract base class for resource models.
  *
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
@@ -16,31 +12,9 @@ require_once 'AssetGroup.inc.php';
 abstract class ResourceAbstract extends BaseAbstract
 {
 	/**
-	 * Load a resource template using 
-	 *
-	 * @param int typeId
-	 * @return bool
-	 */
-	abstract public function loadTemplate($typeId=null);
-	
-	/**
-	 * Update an existing resource
-	 *
-	 * @return Result
-	 */
-	abstract public function update();
-	
-	/**
-	 * Create a new resource
-	 *
-	 * @return Result
-	 */
-	abstract public function create();
-	
-	/**
 	 * Save this resource
 	 *
-	 * @return Result
+	 * @return \Yetti\API\Result
 	 */
 	public function save()
 	{
@@ -62,7 +36,7 @@ abstract class ResourceAbstract extends BaseAbstract
 	 */
 	public function getId()
 	{
-		return (int)((string)$this->getJson()->resource->resourceId);
+		return (int)$this->getJson()->resource->resourceId;
 	}
 	
 	/**
@@ -92,7 +66,7 @@ abstract class ResourceAbstract extends BaseAbstract
 	 */
 	public function getTypeId()
 	{
-		return (int)((string)$this->getJson()->resource->resourceTypeId);
+		return (int)$this->getJson()->resource->resourceTypeId;
 	}
 	
 	/**
@@ -188,7 +162,8 @@ abstract class ResourceAbstract extends BaseAbstract
 	 */
 	public function addAsset($assetGroupName, $resourceId, $altText=null, $url=null)
 	{
-		$this->getJson()->assets[$assetGroupName][] = array(
+		$this->getJson()->assets[$assetGroupName][] = array
+		(
 			'item'    => array(
 				'resourceId' => $resourceId,
 			),
@@ -230,4 +205,26 @@ abstract class ResourceAbstract extends BaseAbstract
 		
 		return $assets;
 	}
+	
+	/**
+	 * Load a resource template (for creating a new resource)
+	 *
+	 * @param int typeId
+	 * @return bool
+	 */
+	abstract public function loadTemplate($typeId=null);
+	
+	/**
+	 * Update an existing resource
+	 *
+	 * @return Result
+	 */
+	abstract protected function update();
+	
+	/**
+	 * Create a new resource
+	 *
+	 * @return Result
+	 */
+	abstract protected function create();
 }

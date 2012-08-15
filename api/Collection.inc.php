@@ -2,8 +2,6 @@
 
 namespace Yetti\API;
 
-require_once 'ResourceAbstract.inc.php';
-
 /**
  * API for interfacing with LabelEd collections over web services.
  *

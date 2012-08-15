@@ -2,10 +2,8 @@
 
 namespace Yetti\API;
 
-require_once 'ResourceAbstract.inc.php';
-
 /**
- * API for interfacing with Yetti items over web services.
+ * Individual item model
  * 
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
@@ -29,7 +27,7 @@ class Item extends ResourceAbstract
 			$this->_countryCode = '/' . strtolower($countryCode);
 		}
 		
-		$requestPath = $this->_countryCode . '/items/fake/' . $resourceId . '.ws';
+		$requestPath = $this->_countryCode . '/items/null/' . $resourceId . '.ws';
 		
 		$this->webservice()->setRequestPath($requestPath);
 		$this->webservice()->setRequestMethod('get');
@@ -44,8 +42,10 @@ class Item extends ResourceAbstract
 	}
 	
 	/**
-	 * (non-PHPdoc)
-	 * @see ResourceAbstract::loadTemplate()
+	 * Load an item template for the given type ID
+	 * 
+	 * @param int $typeId
+	 * @return bool
 	 */
 	public function loadTemplate($typeId=null)
 	{
@@ -62,10 +62,11 @@ class Item extends ResourceAbstract
 	}
 	
 	/**
-	 * (non-PHPdoc)
-	 * @see ResourceAbstract::create()
+	 * Create a new item
+	 * 
+	 * @return \Yetti\API\Result
 	 */
-	public function create()
+	protected function create()
 	{
 		$this->webservice()->setRequestPath('/items.ws');
 		$this->webservice()->setRequestMethod('post');
@@ -75,10 +76,11 @@ class Item extends ResourceAbstract
 	}
 	
 	/**
-	 * (non-PHPdoc)
-	 * @see ResourceAbstract::update()
+	 * Update an existing item
+	 * 
+	 * @return \Yetti\API\Result
 	 */
-	public function update()
+	protected function update()
 	{
 		$this->webservice()->setRequestPath($this->_countryCode . '/items.ws');
 		$this->webservice()->setRequestParam('typeId', $this->getTypeId());
@@ -90,7 +92,7 @@ class Item extends ResourceAbstract
 	}
 	
 	/**
-	 * Returns an array of collection Ids that the item is in
+	 * Returns an array of collection IDs that the loaded item is assigned to
 	 * 
 	 * @return array
 	 */
@@ -131,10 +133,10 @@ class Item extends ResourceAbstract
 	}
 	
 	/**
-	 * Sets the file content to be send for saving
+	 * Sets the file content to be sent for saving
 	 * 
 	 * @param string $data
-	 * @return void;
+	 * @return void
 	 */
 	public function setFileData($data)
 	{

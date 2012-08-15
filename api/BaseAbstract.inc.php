@@ -59,12 +59,12 @@ abstract class BaseAbstract
 	 * Performs a webservice request and returns a result object
 	 * Must be called after everything else has been set up
 	 *
-	 * @return Result
+	 * @return \Yetti\API\Result
 	 */
 	protected function makeRequestReturnResult()
 	{
 		$this->webservice()->makeRequest();
-		$result = new Result();
+		$result = new \Yetti\API\Result();
 		
 		if (substr($this->webservice()->getResponseCode(), 0, 1) != 2)
 		{
