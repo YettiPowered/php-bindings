@@ -60,5 +60,20 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 		
 		$item->setPropertyValue('Body', 'A test body');
 		$this->assertTrue($item->save()->success());
+		
+		return $item;
+	}
+	
+	/**
+	 * @depends testSaveValidItem
+	 */
+	public function testLoadItem(\Yetti\API\Item $inItem)
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertFalse($item->load(-1)); // Invalid item
+		$this->assertTrue($item->load($inItem->getId()));
+		
+		$this->assertEquals($inItem->getName(), $item->getName());
+		$this->assertEquals('Test item', $item->getPropertyValue('Name'));
 	}
 }
