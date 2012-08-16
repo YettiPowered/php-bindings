@@ -1,3 +1,3 @@
 # PHP API bindings
 
-Readme coming soon.
+The documentation can be found [here](https://github.com/YettiPowered/api-docs).
