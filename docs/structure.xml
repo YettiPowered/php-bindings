@@ -164,6 +164,23 @@ Must be called after everything else has been set up]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file Collection.inc.php</error>
     </parse_markers>
   </file>
+  <file path="Exception/Auth.inc.php" hash="1f1befff47779f6c448237fbdf8de1a9" package="Default">
+    <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
+      <extends>\Yetti\API\Exception</extends>
+      <name>Exception_Auth</name>
+      <full_name>\Yetti\API\Exception_Auth</full_name>
+      <docblock line="5">
+        <description><![CDATA[Authentication exception]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
+        <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
+        <tag line="5" name="package" description="yetti-api"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Exception/Auth.inc.php</error>
+    </parse_markers>
+  </file>
   <file path="Exception.inc.php" hash="6f2b4377bdf4fa037808fe1d049dbf4a" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Exception</extends>
@@ -621,7 +638,7 @@ And assigning an item to one or more collections.]]></description>
       <error line="16" code="50018">No DocBlock was found for property $_items</error>
     </parse_markers>
   </file>
-  <file path="Resource/Abstract.inc.php" hash="07f0567378437eeadb2ae08792554dd4" package="Default">
+  <file path="Resource/Abstract.inc.php" hash="17c7a0bb9c0635d402783505fa0d080f" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\BaseAbstract</extends>
       <name>Resource_Abstract</name>
@@ -1430,7 +1447,7 @@ Represents a single asset group for a resource]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file User.inc.php</error>
     </parse_markers>
   </file>
-  <file path="Webservice.inc.php" hash="e95f813fa75df10e293a042242895545" package="Default">
+  <file path="Webservice.inc.php" hash="21db7486d193445a44f38878402b3500" package="Default">
     <include line="65" type="Include" package="Default">
       <name/>
     </include>
