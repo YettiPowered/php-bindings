@@ -87,7 +87,7 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		$this->webservice()->setRequestPath('/' . $this->getPluralName() . '.ws');
 		$this->webservice()->setRequestMethod('post');
 		
-		$this->webservice()->setPostData(json_encode(array($this->getSingularName() => $this->getJson())));
+		$this->webservice()->setPostData(json_encode(array('item' => $this->getJson())));
 		$result = $this->makeRequestReturnResult();
 		
 		if ($result->success()) {
@@ -109,7 +109,7 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		$this->webservice()->setRequestParam('resourceId', $this->getId());
 		$this->webservice()->setRequestMethod('put');
 		
-		$this->webservice()->setPostData(json_encode(array($this->getSingularName() => $this->getJson())));
+		$this->webservice()->setPostData(json_encode(array('item' => $this->getJson())));
 		return $this->makeRequestReturnResult();
 	}
 	
@@ -193,7 +193,9 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	 */
 	public function setPropertyValue($name, $value)
 	{
-		$this->getJson()->properties->{$name}->value = (string)$value;
+		if (isset($this->getJson()->properties->{$name})) {
+			$this->getJson()->properties->{$name}->value = (string)$value;
+		}
 	}
 	
 	/**
@@ -204,7 +206,9 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	 */
 	public function getPropertyValue($name)
 	{
-		return (string)$this->getJson()->properties->{$name}->value;
+		if (isset($this->getJson()->properties->{$name})) {
+			return (string)$this->getJson()->properties->{$name}->value;
+		}
 	}
 	
 	/**
