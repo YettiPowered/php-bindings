@@ -10,7 +10,7 @@ namespace Yetti\API;
  * @package yetti-api
  */
 
-abstract class Resource_Abstract extends BaseAbstract
+abstract class Resource_BaseAbstract extends BaseAbstract
 {
 	private
 		$_countryCode;

@@ -128,7 +128,7 @@ abstract class Resource_ListAbstract extends ListAbstract
 	/**
 	 * Returns a new object for population from the list
 	 * 
-	 * @return object \Yetti\API\Resource_Abstract
+	 * @return object \Yetti\API\Resource_BaseAbstract
 	 */
 	abstract protected function getNewItemObject();
 }

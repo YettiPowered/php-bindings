@@ -10,7 +10,7 @@ namespace Yetti\API;
  * @package yetti-api
  */
 
-class User extends Resource_Abstract
+class User extends Resource_BaseAbstract
 {
 	/**
 	 * Returns a singular name for this type of resource
