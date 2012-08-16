@@ -7,6 +7,7 @@ namespace Yetti\API;
  *
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
 abstract class Resource_Abstract extends BaseAbstract
@@ -227,7 +228,7 @@ abstract class Resource_Abstract extends BaseAbstract
 	/**
 	 * Clear the current attached assets
 	 * 
-	 * @return string $assetGroupName
+	 * @param string $assetGroupName
 	 * @return void
 	 */
 	public function clearAttachedAssets($assetGroupName=null)

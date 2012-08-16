@@ -7,6 +7,7 @@ namespace Yetti\API;
  * 
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
 class Result
@@ -18,6 +19,7 @@ class Result
 	 * Add an error to this result
 	 *
 	 * @param string $error
+	 * @param string $key
 	 * @return void
 	 */
 	public function addError($error, $key)

@@ -7,6 +7,7 @@ namespace Yetti\API;
  * 
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
  */
 
 class User extends Resource_Abstract
