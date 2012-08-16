@@ -379,7 +379,7 @@ class Webservice
 		}
 		
 		if ($this->_responseCode == 401 || $this->_responseCode == 403) {
-			throw new Exception('Webservice authentication failed');
+			throw new Exception_Auth('Webservice authentication failed');
 		}
 		
 		return $this->_responseCode == 200;
