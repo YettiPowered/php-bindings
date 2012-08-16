@@ -73,7 +73,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 		$this->assertFalse($item->load(-1)); // Invalid item
 		$this->assertTrue($item->load($inItem->getId()));
 		
-		$this->assertEquals($inItem->getName(), $item->getName());
+		$this->assertEquals('a-test-item', substr($item->getName(), 0, 11));
 		$this->assertEquals('Test item', $item->getPropertyValue('Name'));
 	}
 }

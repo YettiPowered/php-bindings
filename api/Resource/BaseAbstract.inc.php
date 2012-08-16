@@ -69,11 +69,11 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	 */
 	public function save()
 	{
-		if ($this->getId()) {
-			return $this->update();
+		if (!$this->getId()) {
+			return $this->create();
 		}
 		else {
-			return $this->create();
+			return $this->update();
 		}
 	}
 	
@@ -91,7 +91,7 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		$result = $this->makeRequestReturnResult();
 		
 		if ($result->success()) {
-			$this->load($this->webservice()->getResponseHeader('X-ResourceId'), $this->_countryCode);
+			$this->getJson()->resource->resourceId = $this->webservice()->getResponseHeader('X-ResourceId');
 		}
 		
 		return $result;
@@ -110,13 +110,7 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		$this->webservice()->setRequestMethod('put');
 		
 		$this->webservice()->setPostData(json_encode(array($this->getSingularName() => $this->getJson())));
-		$result = $this->makeRequestReturnResult();
-		
-		if ($result->success()) {
-			$this->load($this->getId(), $this->_countryCode);
-		}
-		
-		return $result;
+		return $this->makeRequestReturnResult();
 	}
 	
 	/**
