@@ -25,7 +25,7 @@ rm -rf docs && phpdoc
 
 The tests are written using PHPUnit and are run with PHPUnit 3.6.11.
 
-# Contributing
+## Contributing
 
 The Yetti APIs are under active development, as are these PHP bindings. If you find a bug or have specific comments, please use GitHub issues.
 If you'd like to help us make these bindings better then feel free to fork and send pull requests.
