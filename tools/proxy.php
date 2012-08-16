@@ -1,6 +1,6 @@
 <?php
 
-require_once 'api/Webservice.inc.php';
+require_once '../api/Webservice.inc.php';
 
 $accessKey   	= isset($_POST['accessKey']) ? $_POST['accessKey'] : null;
 $privateKey  	= isset($_POST['privateKey']) ? $_POST['privateKey'] : null;
