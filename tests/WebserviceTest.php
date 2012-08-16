@@ -48,4 +48,20 @@ class WebserviceTest extends \PHPUnit_Framework_TestCase
 		$webservice->setRequestPath('/items.ws');
 		$webservice->makeRequest();
 	}
+	
+	public function testThatAuthSucceeds()
+	{
+		$webservice = new \Yetti\API\Webservice();
+		$webservice->setBaseUri(YETTI_API_BASE_URI);
+		$webservice->setRequestPath('/items.ws');
+		$webservice->setAccessKey(YETTI_API_ACCESS_KEY);
+		$webservice->setPrivateKey(YETTI_API_PRIVATE_KEY);
+		
+		try {
+			$this->assertTrue($webservice->makeRequest());
+		}
+		catch (\Yetti\API\Exception $e) {
+			$this->fail('Auth failed. Have you configured your site settings in Config.inc.php?');
+		}
+	}
 }
