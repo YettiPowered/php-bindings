@@ -55,7 +55,7 @@ abstract class Resource_Abstract extends BaseAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setJson($this->webservice()->getResponseJsonObject());
+			$this->setJson($this->webservice()->getResponseJsonObject()->item);
 			return true;
 		}
 		
