@@ -17,13 +17,17 @@ Please see the included docs and tests directories for help using these bindings
 
 The included documentation was generated directly from the source code using the [phpDocumentor 2](http://www.phpdoc.org) tool.
 
-To regenerate the API docs, make sure that you have phpDocumentor 2 installed then run:
+To regenerate the API docs, make sure that you have phpDocumentor 2 installed, cd to the api bindings directory then run:
 
 rm -rf docs && phpdoc
 
 ## Tests
 
-The tests are written using PHPUnit and are run with PHPUnit 3.6.11.
+The tests are written using [PHPUnit 3.6.11](/sebastianbergmann/phpunit/).
+
+To run the tests, cd to the api bindings directory then run:
+
+phpunit .
 
 ## Contributing
 
