@@ -1,0 +1,505 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \Yetti\API\Resource_Abstract</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Yetti.html"><i class="icon-th"></i> Yetti</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/yetti-api.html"><i class="icon-folder-open"></i> yetti-api</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">46</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#addAsset" title="addAsset :: Adds a new asset to the resource"><span class="description">Adds a new asset to the resource</span><pre>addAsset()</pre></a></li>
+<li class="method public "><a href="#clearAttachedAssets" title="clearAttachedAssets :: Clear the current attached assets"><span class="description">Clear the current attached assets</span><pre>clearAttachedAssets()</pre></a></li>
+<li class="method public "><a href="#getAttachedAssets" title="getAttachedAssets :: Returns an array of attached asset group elements"><span class="description">Returns an array of attached asset group elements</span><pre>getAttachedAssets()</pre></a></li>
+<li class="method public "><a href="#getDisplayName" title="getDisplayName :: Returns the resource's display name"><span class="description">Returns the resource's display name</span><pre>getDisplayName()</pre></a></li>
+<li class="method public "><a href="#getId" title="getId :: Returns the resource ID"><span class="description">Returns the resource ID</span><pre>getId()</pre></a></li>
+<li class="method public inherited"><a href="#getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
+<li class="method public "><a href="#getLanguageId" title="getLanguageId :: Returns the language ID"><span class="description">Returns the language ID</span><pre>getLanguageId()</pre></a></li>
+<li class="method public "><a href="#getName" title="getName :: Returns the resource name"><span class="description">Returns the resource name</span><pre>getName()</pre></a></li>
+<li class="method public "><a href="#getProperties" title="getProperties :: Returns an array of property elements"><span class="description">Returns an array of property elements</span><pre>getProperties()</pre></a></li>
+<li class="method public "><a href="#getPropertyValue" title="getPropertyValue :: Returns a property value"><span class="description">Returns a property value</span><pre>getPropertyValue()</pre></a></li>
+<li class="method public "><a href="#getRevisionComment" title="getRevisionComment :: Returns the revision comment for the current revision"><span class="description">Returns the revision comment for the current revision</span><pre>getRevisionComment()</pre></a></li>
+<li class="method public "><a href="#getRevisionId" title="getRevisionId :: Returns the revision ID"><span class="description">Returns the revision ID</span><pre>getRevisionId()</pre></a></li>
+<li class="method public "><a href="#getTypeId" title="getTypeId :: Returns the resource type ID"><span class="description">Returns the resource type ID</span><pre>getTypeId()</pre></a></li>
+<li class="method public "><a href="#load" title="load :: Loads a resource by ID or identifier"><span class="description">Loads a resource by ID or identifier</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#loadTemplate" title="loadTemplate :: Load a resource template for the given type ID"><span class="description">Load a resource template for the given type ID</span><pre>loadTemplate()</pre></a></li>
+<li class="method public "><a href="#save" title="save :: Save this resource"><span class="description">Save this resource</span><pre>save()</pre></a></li>
+<li class="method public inherited"><a href="#setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
+<li class="method public "><a href="#setName" title="setName :: Set the resource name (identifier)"><span class="description">Set the resource name (identifier)</span><pre>setName()</pre></a></li>
+<li class="method public "><a href="#setPropertyValue" title="setPropertyValue :: Set a property value"><span class="description">Set a property value</span><pre>setPropertyValue()</pre></a></li>
+<li class="method public "><a href="#setRevisionComment" title="setRevisionComment :: Sets the revision comment for the current revision"><span class="description">Sets the revision comment for the current revision</span><pre>setRevisionComment()</pre></a></li>
+<li class="method public inherited"><a href="#webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#create" title="create :: Create a new resource"><span class="description">Create a new resource</span><pre>create()</pre></a></li>
+<li class="method protected "><a href="#getSingularName" title="getSingularName :: Return a singular name for this resource type"><span class="description">Return a singular name for this resource type</span><pre>getSingularName()</pre></a></li>
+<li class="method protected inherited"><a href="#makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
+Must be called after everything else has been set up"><span class="description">Performs a webservice request and returns a result object
+Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li>
+<li class="method protected "><a href="#update" title="update :: Update an existing resource"><span class="description">Update an existing resource</span><pre>update()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#getPluralName" title="getPluralName :: Returns a plural name for resources of this type"><span class="description">Returns a plural name for resources of this type</span><pre>getPluralName()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24_countryCode" title="$_countryCode :: "><span class="description">$_countryCode</span><pre>$_countryCode</pre></a></li>
+<li class="property private inherited"><a href="#%24_json" title="$_json :: "><span class="description">$_json</span><pre>$_json</pre></a></li>
+<li class="property private inherited"><a href="#%24_webservice" title="$_webservice :: "><span class="description">$_webservice</span><pre>$_webservice</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CYetti%5CAPI%5CResource_Abstract" id="\Yetti\API\Resource_Abstract"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Yetti.html">Yetti</a></li>
+<span class="divider">\</span><li><a href="../namespaces/Yetti.API.html">API</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Yetti.API.Resource_Abstract.html">Resource_Abstract</a>
+</li>
+</ul>
+<div href="../classes/Yetti.API.Resource_Abstract.html" class="element class">
+<p class="short_description">Abstract base class for resource models.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:sam@yetti.co.uk">Sam Holman</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2011-2012, Yetti Ltd.</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/yetti-api.html">yetti-api</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="addAsset" id="addAsset"></a><div class="element clickable method public addAsset" data-toggle="collapse" data-target=".addAsset .collapse">
+<h2>Adds a new asset to the resource</h2>
+<pre>addAsset(string $assetGroupName, int $resourceId, string $altText, string $url) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$assetGroupName</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$resourceId</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$altText</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="clearAttachedAssets" id="clearAttachedAssets"></a><div class="element clickable method public clearAttachedAssets" data-toggle="collapse" data-target=".clearAttachedAssets .collapse">
+<h2>Clear the current attached assets</h2>
+<pre>clearAttachedAssets(string $assetGroupName) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$assetGroupName</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="getAttachedAssets" id="getAttachedAssets"></a><div class="element clickable method public getAttachedAssets" data-toggle="collapse" data-target=".getAttachedAssets .collapse">
+<h2>Returns an array of attached asset group elements</h2>
+<pre>getAttachedAssets() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="getDisplayName" id="getDisplayName"></a><div class="element clickable method public getDisplayName" data-toggle="collapse" data-target=".getDisplayName .collapse">
+<h2>Returns the resource's display name</h2>
+<pre>getDisplayName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getId" id="getId"></a><div class="element clickable method public getId" data-toggle="collapse" data-target=".getId .collapse">
+<h2>Returns the resource ID</h2>
+<pre>getId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a name="getJson" id="getJson"></a><div class="element clickable method public getJson" data-toggle="collapse" data-target=".getJson .collapse">
+<h2>Returns the JSON object</h2>
+<pre>getJson() : \Yetti\API\stdClass</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::getJson()</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Yetti.API.Exception.html">\Yetti\API\Exception</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Yetti\API\stdClass</code></div>
+</div></div>
+</div>
+<a name="getLanguageId" id="getLanguageId"></a><div class="element clickable method public getLanguageId" data-toggle="collapse" data-target=".getLanguageId .collapse">
+<h2>Returns the language ID</h2>
+<pre>getLanguageId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a name="getName" id="getName"></a><div class="element clickable method public getName" data-toggle="collapse" data-target=".getName .collapse">
+<h2>Returns the resource name</h2>
+<pre>getName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getProperties" id="getProperties"></a><div class="element clickable method public getProperties" data-toggle="collapse" data-target=".getProperties .collapse">
+<h2>Returns an array of property elements</h2>
+<pre>getProperties() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="getPropertyValue" id="getPropertyValue"></a><div class="element clickable method public getPropertyValue" data-toggle="collapse" data-target=".getPropertyValue .collapse">
+<h2>Returns a property value</h2>
+<pre>getPropertyValue(string $name) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getRevisionComment" id="getRevisionComment"></a><div class="element clickable method public getRevisionComment" data-toggle="collapse" data-target=".getRevisionComment .collapse">
+<h2>Returns the revision comment for the current revision</h2>
+<pre>getRevisionComment() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getRevisionId" id="getRevisionId"></a><div class="element clickable method public getRevisionId" data-toggle="collapse" data-target=".getRevisionId .collapse">
+<h2>Returns the revision ID</h2>
+<pre>getRevisionId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a name="getTypeId" id="getTypeId"></a><div class="element clickable method public getTypeId" data-toggle="collapse" data-target=".getTypeId .collapse">
+<h2>Returns the resource type ID</h2>
+<pre>getTypeId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a name="load" id="load"></a><div class="element clickable method public load" data-toggle="collapse" data-target=".load .collapse">
+<h2>Loads a resource by ID or identifier</h2>
+<pre>load(mixed $resourceId, string $countryCode) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$resourceId</h4>
+<code>mixed</code><p>int ID or string identifier</p></div>
+<div class="subelement argument">
+<h4>$countryCode</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a name="loadTemplate" id="loadTemplate"></a><div class="element clickable method public loadTemplate" data-toggle="collapse" data-target=".loadTemplate .collapse">
+<h2>Load a resource template for the given type ID</h2>
+<pre>loadTemplate(int $typeId) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$typeId</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a name="save" id="save"></a><div class="element clickable method public save" data-toggle="collapse" data-target=".save .collapse">
+<h2>Save this resource</h2>
+<pre>save() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
+<a name="setJson" id="setJson"></a><div class="element clickable method public setJson" data-toggle="collapse" data-target=".setJson .collapse">
+<h2>Set the JSON object</h2>
+<pre>setJson(\Yetti\API\stdClass $json) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::setJson()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$json</h4>
+<code>\Yetti\API\stdClass</code>
+</div>
+</div></div>
+</div>
+<a name="setName" id="setName"></a><div class="element clickable method public setName" data-toggle="collapse" data-target=".setName .collapse">
+<h2>Set the resource name (identifier)</h2>
+<pre>setName(string $name) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setPropertyValue" id="setPropertyValue"></a><div class="element clickable method public setPropertyValue" data-toggle="collapse" data-target=".setPropertyValue .collapse">
+<h2>Set a property value</h2>
+<pre>setPropertyValue(string $name, mixed $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code>
+</div>
+</div></div>
+</div>
+<a name="setRevisionComment" id="setRevisionComment"></a><div class="element clickable method public setRevisionComment" data-toggle="collapse" data-target=".setRevisionComment .collapse">
+<h2>Sets the revision comment for the current revision</h2>
+<pre>setRevisionComment(string $comment) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$comment</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="webservice" id="webservice"></a><div class="element clickable method public webservice" data-toggle="collapse" data-target=".webservice .collapse">
+<h2>Returns the webservice object</h2>
+<pre>webservice() : \Yetti\API\WebService</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::webservice()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Yetti\API\WebService</code></div>
+</div></div>
+</div>
+<a name="create" id="create"></a><div class="element clickable method protected create" data-toggle="collapse" data-target=".create .collapse">
+<h2>Create a new resource</h2>
+<pre>create() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
+<a name="getSingularName" id="getSingularName"></a><div class="element clickable method protected getSingularName" data-toggle="collapse" data-target=".getSingularName .collapse">
+<h2>Return a singular name for this resource type</h2>
+<pre>getSingularName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="makeRequestReturnResult" id="makeRequestReturnResult"></a><div class="element clickable method protected makeRequestReturnResult" data-toggle="collapse" data-target=".makeRequestReturnResult .collapse">
+<h2>Performs a webservice request and returns a result object
+Must be called after everything else has been set up</h2>
+<pre>makeRequestReturnResult() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::makeRequestReturnResult()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
+<a name="update" id="update"></a><div class="element clickable method protected update" data-toggle="collapse" data-target=".update .collapse">
+<h2>Update an existing resource</h2>
+<pre>update() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
+<a name="getPluralName" id="getPluralName"></a><div class="element clickable method private getPluralName" data-toggle="collapse" data-target=".getPluralName .collapse">
+<h2>Returns a plural name for resources of this type</h2>
+<pre>getPluralName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_countryCode" id="$_countryCode"> </a><div class="element clickable property private $_countryCode" data-toggle="collapse" data-target=".$_countryCode .collapse">
+<h2>$_countryCode</h2>
+<pre>$_countryCode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_json" id="$_json"> </a><div class="element clickable property private $_json" data-toggle="collapse" data-target=".$_json .collapse">
+<h2>$_json</h2>
+<pre>$_json </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::$$_json</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24_webservice" id="$_webservice"> </a><div class="element clickable property private $_webservice" data-toggle="collapse" data-target=".$_webservice .collapse">
+<h2>$_webservice</h2>
+<pre>$_webservice </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::$$_webservice</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
+            generated on 2012-08-16T09:28:53+01:00.<br></footer></div>
+</div>
+</body>
+</html>

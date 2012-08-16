@@ -1,0 +1,655 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \Yetti\API\Webservice</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Yetti.html"><i class="icon-th"></i> Yetti</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/yetti-api.html"><i class="icon-folder-open"></i> yetti-api</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">46</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Constructs a new webservice object"><span class="description">Constructs a new webservice object</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#addRequestHeader" title="addRequestHeader :: Add a request header"><span class="description">Add a request header</span><pre>addRequestHeader()</pre></a></li>
+<li class="method public "><a href="#autoload" title="autoload :: Autoload class files"><span class="description">Autoload class files</span><pre>autoload()</pre></a></li>
+<li class="method public "><a href="#getAccessKey" title="getAccessKey :: Returns the access key"><span class="description">Returns the access key</span><pre>getAccessKey()</pre></a></li>
+<li class="method public "><a href="#getBaseUri" title="getBaseUri :: Returns the base URI"><span class="description">Returns the base URI</span><pre>getBaseUri()</pre></a></li>
+<li class="method public "><a href="#getPrivateKey" title="getPrivateKey :: Returns the private key"><span class="description">Returns the private key</span><pre>getPrivateKey()</pre></a></li>
+<li class="method public "><a href="#getRawResponse" title="getRawResponse :: Returns the full (raw) response string"><span class="description">Returns the full (raw) response string</span><pre>getRawResponse()</pre></a></li>
+<li class="method public "><a href="#getRequestMethod" title="getRequestMethod :: Returns the request method"><span class="description">Returns the request method</span><pre>getRequestMethod()</pre></a></li>
+<li class="method public "><a href="#getRequestSignature" title="getRequestSignature :: Returns the last used request signature"><span class="description">Returns the last used request signature</span><pre>getRequestSignature()</pre></a></li>
+<li class="method public "><a href="#getRequestUri" title="getRequestUri :: Returns the full request URI"><span class="description">Returns the full request URI</span><pre>getRequestUri()</pre></a></li>
+<li class="method public "><a href="#getResponse" title="getResponse :: Returns the response"><span class="description">Returns the response</span><pre>getResponse()</pre></a></li>
+<li class="method public "><a href="#getResponseCode" title="getResponseCode :: Returns the HTTP response status code"><span class="description">Returns the HTTP response status code</span><pre>getResponseCode()</pre></a></li>
+<li class="method public "><a href="#getResponseHeader" title="getResponseHeader :: Gets the value of a response header"><span class="description">Gets the value of a response header</span><pre>getResponseHeader()</pre></a></li>
+<li class="method public "><a href="#getResponseJsonObject" title="getResponseJsonObject :: Returns a JSON object from response"><span class="description">Returns a JSON object from response</span><pre>getResponseJsonObject()</pre></a></li>
+<li class="method public "><a href="#getResponseMessage" title="getResponseMessage :: Returns the response message"><span class="description">Returns the response message</span><pre>getResponseMessage()</pre></a></li>
+<li class="method public "><a href="#getResponseStatus" title="getResponseStatus :: Returns the status of the response (usually success or failed)"><span class="description">Returns the status of the response (usually success or failed)</span><pre>getResponseStatus()</pre></a></li>
+<li class="method public "><a href="#makeRequest" title="makeRequest :: Make the webservice request"><span class="description">Make the webservice request</span><pre>makeRequest()</pre></a></li>
+<li class="method public "><a href="#resetRequest" title="resetRequest :: Resets any previously set request parameters and response
+Call this method to reset your webservice object so that
+you can safely make another request."><span class="description">Resets any previously set request parameters and response
+Call this method to reset your webservice object so that
+you can safely make another request.</span><pre>resetRequest()</pre></a></li>
+<li class="method public "><a href="#setAccessKey" title="setAccessKey :: Set your webservice access key"><span class="description">Set your webservice access key</span><pre>setAccessKey()</pre></a></li>
+<li class="method public "><a href="#setBaseUri" title="setBaseUri :: Set the base URI for all requests"><span class="description">Set the base URI for all requests</span><pre>setBaseUri()</pre></a></li>
+<li class="method public "><a href="#setDefaultAccessKey" title="setDefaultAccessKey :: Set a default access key (used when no other key has been set)"><span class="description">Set a default access key (used when no other key has been set)</span><pre>setDefaultAccessKey()</pre></a></li>
+<li class="method public "><a href="#setDefaultBaseUri" title="setDefaultBaseUri :: Set a default base URI (used when no other base URI has been set)"><span class="description">Set a default base URI (used when no other base URI has been set)</span><pre>setDefaultBaseUri()</pre></a></li>
+<li class="method public "><a href="#setDefaultPrivateKey" title="setDefaultPrivateKey :: Set a default private key (used when no other key has been set)"><span class="description">Set a default private key (used when no other key has been set)</span><pre>setDefaultPrivateKey()</pre></a></li>
+<li class="method public "><a href="#setPostData" title="setPostData :: Set raw post data to be sent"><span class="description">Set raw post data to be sent</span><pre>setPostData()</pre></a></li>
+<li class="method public "><a href="#setPrivateKey" title="setPrivateKey :: Set your webservice private key for authentication"><span class="description">Set your webservice private key for authentication</span><pre>setPrivateKey()</pre></a></li>
+<li class="method public "><a href="#setRequestMethod" title="setRequestMethod :: Set the type of request (post or get)"><span class="description">Set the type of request (post or get)</span><pre>setRequestMethod()</pre></a></li>
+<li class="method public "><a href="#setRequestParam" title="setRequestParam :: Set a parameter to be sent with your request"><span class="description">Set a parameter to be sent with your request</span><pre>setRequestParam()</pre></a></li>
+<li class="method public "><a href="#setRequestPath" title="setRequestPath :: Set the URI path for the specific webservice request"><span class="description">Set the URI path for the specific webservice request</span><pre>setRequestPath()</pre></a></li>
+<li class="method public "><a href="#setVersion" title="setVersion :: Set your webservice API version"><span class="description">Set your webservice API version</span><pre>setVersion()</pre></a></li>
+<li class="method public "><a href="#success" title="success :: Returns whether or not the request was successful"><span class="description">Returns whether or not the request was successful</span><pre>success()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#parseMessageFromResponse" title="parseMessageFromResponse :: Parses a message from the webservice response JSON"><span class="description">Parses a message from the webservice response JSON</span><pre>parseMessageFromResponse()</pre></a></li>
+<li class="method private "><a href="#parseResponse" title="parseResponse :: Parses the response into headers and body"><span class="description">Parses the response into headers and body</span><pre>parseResponse()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24_accessKey" title="$_accessKey :: "><span class="description">$_accessKey</span><pre>$_accessKey</pre></a></li>
+<li class="property private "><a href="#%24_baseUri" title="$_baseUri :: "><span class="description">$_baseUri</span><pre>$_baseUri</pre></a></li>
+<li class="property private "><a href="#%24_defaultAccessKey" title="$_defaultAccessKey :: "><span class="description">$_defaultAccessKey</span><pre>$_defaultAccessKey</pre></a></li>
+<li class="property private "><a href="#%24_defaultBaseUri" title="$_defaultBaseUri :: "><span class="description">$_defaultBaseUri</span><pre>$_defaultBaseUri</pre></a></li>
+<li class="property private "><a href="#%24_defaultPrivateKey" title="$_defaultPrivateKey :: "><span class="description">$_defaultPrivateKey</span><pre>$_defaultPrivateKey</pre></a></li>
+<li class="property private "><a href="#%24_postData" title="$_postData :: "><span class="description">$_postData</span><pre>$_postData</pre></a></li>
+<li class="property private "><a href="#%24_privateKey" title="$_privateKey :: "><span class="description">$_privateKey</span><pre>$_privateKey</pre></a></li>
+<li class="property private "><a href="#%24_rawResponse" title="$_rawResponse :: "><span class="description">$_rawResponse</span><pre>$_rawResponse</pre></a></li>
+<li class="property private "><a href="#%24_requestHeaders" title="$_requestHeaders :: "><span class="description">$_requestHeaders</span><pre>$_requestHeaders</pre></a></li>
+<li class="property private "><a href="#%24_requestMethod" title="$_requestMethod :: "><span class="description">$_requestMethod</span><pre>$_requestMethod</pre></a></li>
+<li class="property private "><a href="#%24_requestParams" title="$_requestParams :: "><span class="description">$_requestParams</span><pre>$_requestParams</pre></a></li>
+<li class="property private "><a href="#%24_requestSignature" title="$_requestSignature :: "><span class="description">$_requestSignature</span><pre>$_requestSignature</pre></a></li>
+<li class="property private "><a href="#%24_requestUri" title="$_requestUri :: "><span class="description">$_requestUri</span><pre>$_requestUri</pre></a></li>
+<li class="property private "><a href="#%24_response" title="$_response :: "><span class="description">$_response</span><pre>$_response</pre></a></li>
+<li class="property private "><a href="#%24_responseCode" title="$_responseCode :: "><span class="description">$_responseCode</span><pre>$_responseCode</pre></a></li>
+<li class="property private "><a href="#%24_responseHeaders" title="$_responseHeaders :: "><span class="description">$_responseHeaders</span><pre>$_responseHeaders</pre></a></li>
+<li class="property private "><a href="#%24_responseJsonObject" title="$_responseJsonObject :: "><span class="description">$_responseJsonObject</span><pre>$_responseJsonObject</pre></a></li>
+<li class="property private "><a href="#%24_version" title="$_version :: "><span class="description">$_version</span><pre>$_version</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CYetti%5CAPI%5CWebservice" id="\Yetti\API\Webservice"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Yetti.html">Yetti</a></li>
+<span class="divider">\</span><li><a href="../namespaces/Yetti.API.html">API</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Yetti.API.Webservice.html">Webservice</a>
+</li>
+</ul>
+<div href="../classes/Yetti.API.Webservice.html" class="element class">
+<p class="short_description">Webservice class handles the actual cURL calls and responses to and from Yetti</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:sam@yetti.co.uk">Sam Holman</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2011-2012, Yetti Ltd.</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/yetti-api.html">yetti-api</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructs a new webservice object</h2>
+<pre>__construct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="addRequestHeader" id="addRequestHeader"></a><div class="element clickable method public addRequestHeader" data-toggle="collapse" data-target=".addRequestHeader .collapse">
+<h2>Add a request header</h2>
+<pre>addRequestHeader(string $header) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$header</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="autoload" id="autoload"></a><div class="element clickable method public autoload" data-toggle="collapse" data-target=".autoload .collapse">
+<h2>Autoload class files</h2>
+<pre>autoload(string $className) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$className</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="getAccessKey" id="getAccessKey"></a><div class="element clickable method public getAccessKey" data-toggle="collapse" data-target=".getAccessKey .collapse">
+<h2>Returns the access key</h2>
+<pre>getAccessKey() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getBaseUri" id="getBaseUri"></a><div class="element clickable method public getBaseUri" data-toggle="collapse" data-target=".getBaseUri .collapse">
+<h2>Returns the base URI</h2>
+<pre>getBaseUri() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getPrivateKey" id="getPrivateKey"></a><div class="element clickable method public getPrivateKey" data-toggle="collapse" data-target=".getPrivateKey .collapse">
+<h2>Returns the private key</h2>
+<pre>getPrivateKey() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getRawResponse" id="getRawResponse"></a><div class="element clickable method public getRawResponse" data-toggle="collapse" data-target=".getRawResponse .collapse">
+<h2>Returns the full (raw) response string</h2>
+<pre>getRawResponse() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getRequestMethod" id="getRequestMethod"></a><div class="element clickable method public getRequestMethod" data-toggle="collapse" data-target=".getRequestMethod .collapse">
+<h2>Returns the request method</h2>
+<pre>getRequestMethod() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getRequestSignature" id="getRequestSignature"></a><div class="element clickable method public getRequestSignature" data-toggle="collapse" data-target=".getRequestSignature .collapse">
+<h2>Returns the last used request signature</h2>
+<pre>getRequestSignature() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getRequestUri" id="getRequestUri"></a><div class="element clickable method public getRequestUri" data-toggle="collapse" data-target=".getRequestUri .collapse">
+<h2>Returns the full request URI</h2>
+<pre>getRequestUri() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getResponse" id="getResponse"></a><div class="element clickable method public getResponse" data-toggle="collapse" data-target=".getResponse .collapse">
+<h2>Returns the response</h2>
+<pre>getResponse() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getResponseCode" id="getResponseCode"></a><div class="element clickable method public getResponseCode" data-toggle="collapse" data-target=".getResponseCode .collapse">
+<h2>Returns the HTTP response status code</h2>
+<pre>getResponseCode() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a name="getResponseHeader" id="getResponseHeader"></a><div class="element clickable method public getResponseHeader" data-toggle="collapse" data-target=".getResponseHeader .collapse">
+<h2>Gets the value of a response header</h2>
+<pre>getResponseHeader(string $name) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getResponseJsonObject" id="getResponseJsonObject"></a><div class="element clickable method public getResponseJsonObject" data-toggle="collapse" data-target=".getResponseJsonObject .collapse">
+<h2>Returns a JSON object from response</h2>
+<pre>getResponseJsonObject() : \Yetti\API\stdClass</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Yetti\API\stdClass</code></div>
+</div></div>
+</div>
+<a name="getResponseMessage" id="getResponseMessage"></a><div class="element clickable method public getResponseMessage" data-toggle="collapse" data-target=".getResponseMessage .collapse">
+<h2>Returns the response message</h2>
+<pre>getResponseMessage() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getResponseStatus" id="getResponseStatus"></a><div class="element clickable method public getResponseStatus" data-toggle="collapse" data-target=".getResponseStatus .collapse">
+<h2>Returns the status of the response (usually success or failed)</h2>
+<pre>getResponseStatus() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Yetti.API.Exception.html">\Yetti\API\Exception</a></code></th>
+<td>if no valid response</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="makeRequest" id="makeRequest"></a><div class="element clickable method public makeRequest" data-toggle="collapse" data-target=".makeRequest .collapse">
+<h2>Make the webservice request</h2>
+<pre>makeRequest() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Yetti.API.Exception.html">\Yetti\API\Exception</a></code></th>
+<td>if required values not yet set</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a name="resetRequest" id="resetRequest"></a><div class="element clickable method public resetRequest" data-toggle="collapse" data-target=".resetRequest .collapse">
+<h2>Resets any previously set request parameters and response
+Call this method to reset your webservice object so that
+you can safely make another request.</h2>
+<pre>resetRequest() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="setAccessKey" id="setAccessKey"></a><div class="element clickable method public setAccessKey" data-toggle="collapse" data-target=".setAccessKey .collapse">
+<h2>Set your webservice access key</h2>
+<pre>setAccessKey(string $accessKey) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$accessKey</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setBaseUri" id="setBaseUri"></a><div class="element clickable method public setBaseUri" data-toggle="collapse" data-target=".setBaseUri .collapse">
+<h2>Set the base URI for all requests</h2>
+<pre>setBaseUri(string $uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setDefaultAccessKey" id="setDefaultAccessKey"></a><div class="element clickable method public setDefaultAccessKey" data-toggle="collapse" data-target=".setDefaultAccessKey .collapse">
+<h2>Set a default access key (used when no other key has been set)</h2>
+<pre>setDefaultAccessKey(string $accessKey) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$accessKey</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setDefaultBaseUri" id="setDefaultBaseUri"></a><div class="element clickable method public setDefaultBaseUri" data-toggle="collapse" data-target=".setDefaultBaseUri .collapse">
+<h2>Set a default base URI (used when no other base URI has been set)</h2>
+<pre>setDefaultBaseUri(string $uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setDefaultPrivateKey" id="setDefaultPrivateKey"></a><div class="element clickable method public setDefaultPrivateKey" data-toggle="collapse" data-target=".setDefaultPrivateKey .collapse">
+<h2>Set a default private key (used when no other key has been set)</h2>
+<pre>setDefaultPrivateKey(string $privateKey) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$privateKey</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setPostData" id="setPostData"></a><div class="element clickable method public setPostData" data-toggle="collapse" data-target=".setPostData .collapse">
+<h2>Set raw post data to be sent</h2>
+<pre>setPostData(string $data) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a name="setPrivateKey" id="setPrivateKey"></a><div class="element clickable method public setPrivateKey" data-toggle="collapse" data-target=".setPrivateKey .collapse">
+<h2>Set your webservice private key for authentication</h2>
+<pre>setPrivateKey(string $privateKey) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$privateKey</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setRequestMethod" id="setRequestMethod"></a><div class="element clickable method public setRequestMethod" data-toggle="collapse" data-target=".setRequestMethod .collapse">
+<h2>Set the type of request (post or get)</h2>
+<pre>setRequestMethod(string $method) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setRequestParam" id="setRequestParam"></a><div class="element clickable method public setRequestParam" data-toggle="collapse" data-target=".setRequestParam .collapse">
+<h2>Set a parameter to be sent with your request</h2>
+<pre>setRequestParam(string $name, string $value) : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a name="setRequestPath" id="setRequestPath"></a><div class="element clickable method public setRequestPath" data-toggle="collapse" data-target=".setRequestPath .collapse">
+<h2>Set the URI path for the specific webservice request</h2>
+<pre>setRequestPath(string $path) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setVersion" id="setVersion"></a><div class="element clickable method public setVersion" data-toggle="collapse" data-target=".setVersion .collapse">
+<h2>Set your webservice API version</h2>
+<pre>setVersion(string $version) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$version</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="success" id="success"></a><div class="element clickable method public success" data-toggle="collapse" data-target=".success .collapse">
+<h2>Returns whether or not the request was successful</h2>
+<pre>success() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a name="parseMessageFromResponse" id="parseMessageFromResponse"></a><div class="element clickable method private parseMessageFromResponse" data-toggle="collapse" data-target=".parseMessageFromResponse .collapse">
+<h2>Parses a message from the webservice response JSON</h2>
+<pre>parseMessageFromResponse(\Yetti\API\stdClass $json) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$json</h4>
+<code>\Yetti\API\stdClass</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="parseResponse" id="parseResponse"></a><div class="element clickable method private parseResponse" data-toggle="collapse" data-target=".parseResponse .collapse">
+<h2>Parses the response into headers and body</h2>
+<pre>parseResponse(string $response) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$response</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_accessKey" id="$_accessKey"> </a><div class="element clickable property private $_accessKey" data-toggle="collapse" data-target=".$_accessKey .collapse">
+<h2>$_accessKey</h2>
+<pre>$_accessKey </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_baseUri" id="$_baseUri"> </a><div class="element clickable property private $_baseUri" data-toggle="collapse" data-target=".$_baseUri .collapse">
+<h2>$_baseUri</h2>
+<pre>$_baseUri </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_defaultAccessKey" id="$_defaultAccessKey"> </a><div class="element clickable property private $_defaultAccessKey" data-toggle="collapse" data-target=".$_defaultAccessKey .collapse">
+<h2>$_defaultAccessKey</h2>
+<pre>$_defaultAccessKey </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_defaultBaseUri" id="$_defaultBaseUri"> </a><div class="element clickable property private $_defaultBaseUri" data-toggle="collapse" data-target=".$_defaultBaseUri .collapse">
+<h2>$_defaultBaseUri</h2>
+<pre>$_defaultBaseUri </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_defaultPrivateKey" id="$_defaultPrivateKey"> </a><div class="element clickable property private $_defaultPrivateKey" data-toggle="collapse" data-target=".$_defaultPrivateKey .collapse">
+<h2>$_defaultPrivateKey</h2>
+<pre>$_defaultPrivateKey </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_postData" id="$_postData"> </a><div class="element clickable property private $_postData" data-toggle="collapse" data-target=".$_postData .collapse">
+<h2>$_postData</h2>
+<pre>$_postData </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_privateKey" id="$_privateKey"> </a><div class="element clickable property private $_privateKey" data-toggle="collapse" data-target=".$_privateKey .collapse">
+<h2>$_privateKey</h2>
+<pre>$_privateKey </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_rawResponse" id="$_rawResponse"> </a><div class="element clickable property private $_rawResponse" data-toggle="collapse" data-target=".$_rawResponse .collapse">
+<h2>$_rawResponse</h2>
+<pre>$_rawResponse </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_requestHeaders" id="$_requestHeaders"> </a><div class="element clickable property private $_requestHeaders" data-toggle="collapse" data-target=".$_requestHeaders .collapse">
+<h2>$_requestHeaders</h2>
+<pre>$_requestHeaders </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_requestMethod" id="$_requestMethod"> </a><div class="element clickable property private $_requestMethod" data-toggle="collapse" data-target=".$_requestMethod .collapse">
+<h2>$_requestMethod</h2>
+<pre>$_requestMethod </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_requestParams" id="$_requestParams"> </a><div class="element clickable property private $_requestParams" data-toggle="collapse" data-target=".$_requestParams .collapse">
+<h2>$_requestParams</h2>
+<pre>$_requestParams </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_requestSignature" id="$_requestSignature"> </a><div class="element clickable property private $_requestSignature" data-toggle="collapse" data-target=".$_requestSignature .collapse">
+<h2>$_requestSignature</h2>
+<pre>$_requestSignature </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_requestUri" id="$_requestUri"> </a><div class="element clickable property private $_requestUri" data-toggle="collapse" data-target=".$_requestUri .collapse">
+<h2>$_requestUri</h2>
+<pre>$_requestUri </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_response" id="$_response"> </a><div class="element clickable property private $_response" data-toggle="collapse" data-target=".$_response .collapse">
+<h2>$_response</h2>
+<pre>$_response </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_responseCode" id="$_responseCode"> </a><div class="element clickable property private $_responseCode" data-toggle="collapse" data-target=".$_responseCode .collapse">
+<h2>$_responseCode</h2>
+<pre>$_responseCode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_responseHeaders" id="$_responseHeaders"> </a><div class="element clickable property private $_responseHeaders" data-toggle="collapse" data-target=".$_responseHeaders .collapse">
+<h2>$_responseHeaders</h2>
+<pre>$_responseHeaders </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_responseJsonObject" id="$_responseJsonObject"> </a><div class="element clickable property private $_responseJsonObject" data-toggle="collapse" data-target=".$_responseJsonObject .collapse">
+<h2>$_responseJsonObject</h2>
+<pre>$_responseJsonObject </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_version" id="$_version"> </a><div class="element clickable property private $_version" data-toggle="collapse" data-target=".$_version .collapse">
+<h2>$_version</h2>
+<pre>$_version </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
+            generated on 2012-08-16T09:28:53+01:00.<br></footer></div>
+</div>
+</body>
+</html>
