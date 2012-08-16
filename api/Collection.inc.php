@@ -30,6 +30,16 @@ class Collection extends Resource_BaseAbstract
 	 */
 	public function setParentId($parentId)
 	{
-		$this->getJson()->item->parentId = (int)$parentId;
+		$this->getJson()->parentId = (int)$parentId;
+	}
+	
+	/**
+	 * Returns the ID of this collection's parent
+	 * 
+	 * @return int
+	 */
+	public function getParentId()
+	{
+		return (int)$this->getJson()->parentId;
 	}
 }
