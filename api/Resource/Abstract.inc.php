@@ -90,7 +90,7 @@ abstract class Resource_Abstract extends BaseAbstract
 		$this->webservice()->setRequestPath('/' . $this->getPluralName() . '.ws');
 		$this->webservice()->setRequestMethod('post');
 		
-		$this->webservice()->setPostData(json_encode($this->getJson()));
+		$this->webservice()->setPostData(json_encode(array($this->getSingularName() => $this->getJson())));
 		return $this->makeRequestReturnResult();
 	}
 	
