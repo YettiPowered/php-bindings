@@ -11,6 +11,6 @@ namespace Yetti\API\Tests;
  * @subpackage tests
  */
 
-define('YETTI_API_BASE_URI',	'');
-define('YETTI_API_ACCESS_KEY',	'');
-define('YETTI_API_PRIVATE_KEY', '');
+define('YETTI_API_BASE_URI',	'http://apitests.dev.yetti.co.uk');
+define('YETTI_API_ACCESS_KEY',	'api-test');
+define('YETTI_API_PRIVATE_KEY', 'dCRFsKZNxldWm1mHZ3');
