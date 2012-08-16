@@ -332,7 +332,7 @@ class Webservice
 		$this->_requestSignature = hash_hmac('sha256', $requestUri, $this->getPrivateKey());
 		
 		if (!$request = curl_init($requestUri)) {
-			throw new Exception('Failed to initialise curl');
+			throw new Exception('Failed to initialise cURL');
 		}
 
 		switch ($this->_requestMethod)
@@ -357,7 +357,7 @@ class Webservice
 			'X-Authorization: ' . $this->getAccessKey() . ':' . $this->getRequestSignature(),
 		), $this->_requestHeaders));
 		curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($request, CURLOPT_USERAGENT, 'LabelEdWebServicePHP');
+		curl_setopt($request, CURLOPT_USERAGENT, 'Official-PHP-Bindings');
 		
 		$this->parseResponse(curl_exec($request));
 		curl_close($request);
