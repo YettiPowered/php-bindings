@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project version="2.0.0a9" title="">
+<project version="2.0.0a9" title="Yetti API - PHP Bindings">
   <file path="BaseAbstract.inc.php" hash="812ee930373e5c1a37e3c45279cfdfc4" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends/>
