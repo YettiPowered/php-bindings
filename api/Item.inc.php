@@ -31,7 +31,7 @@ class Item extends Resource_BaseAbstract
 	{
 		$return = array();
 		
-		foreach ($this->getJson()->item->collectionIds as $itemId) {
+		foreach ($this->getJson()->collectionIds as $itemId) {
 			$return[] = (int)$itemId;
 		}
 		
@@ -64,6 +64,6 @@ class Item extends Resource_BaseAbstract
 	 */
 	public function setFileData($data)
 	{
-		$this->getJson()->item->fileData = base64_encode($data);
+		$this->getJson()->fileData = base64_encode($data);
 	}
 }

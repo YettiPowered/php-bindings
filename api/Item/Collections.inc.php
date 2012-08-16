@@ -18,7 +18,7 @@ class Item_Collections extends BaseAbstract
 		$_resourceId;
 		
 	/**
-	 * Loads an item's collections
+	 * Loads a list of collections to which the given item is assigned
 	 *
 	 * @param mixed $resourceId int ID or string identifier
 	 * @return bool
@@ -40,6 +40,26 @@ class Item_Collections extends BaseAbstract
 	}
 	
 	/**
+	 * Save this item's collection data
+	 * 
+	 * @return \Yetti\API\Result
+	 */
+	public function save()
+	{
+		if ($this->_resourceId)
+		{
+			$this->webservice()->setRequestPath('/items/collections' . '.ws');
+			$this->webservice()->setRequestParam('itemId', $this->_resourceId);
+			$this->webservice()->setRequestMethod('put');
+			
+			$this->webservice()->setPostData(json_encode($this->getJson()));
+			return $this->makeRequestReturnResult();
+		}
+		
+		return false;
+	}
+	
+	/**
 	 * Returns an array of collection IDs
 	 * 
 	 * @return array
@@ -48,8 +68,8 @@ class Item_Collections extends BaseAbstract
 	{
 		$return = array();
 		
-		foreach ($this->getJson()->collections->collection as $collectionId) {
-			$return[] = (int)((string)$collectionId);
+		foreach ($this->getJson()->collections as $collectionId) {
+			$return[] = (int)$collectionId;
 		}
 		
 		return $return;
@@ -63,7 +83,7 @@ class Item_Collections extends BaseAbstract
 	 */
 	public function addCollection($collectionId)
 	{
-		$this->getJson()->collections->addChild('collection', (int)$collectionId);
+		$this->getJson()->collections[] = (int)$collectionId;
 	}
 	
 	/**
@@ -75,6 +95,7 @@ class Item_Collections extends BaseAbstract
 	public function removeCollection($collectionId)
 	{
 		$count = 0;
+		
 		foreach ($this->getJson()->collections->collection as $key => $collection)
 		{
 			if ($collectionId == (int)((string)$collection))
@@ -82,26 +103,8 @@ class Item_Collections extends BaseAbstract
 				unset($this->getJson()->collections->collection[$count]);
 				return true;
 			}
-			$count++;
-		}
-		
-		return false;
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see Resource_BaseAbstract::update()
-	 */
-	public function save()
-	{
-		if ($this->_resourceId)
-		{
-			$this->webservice()->setRequestPath('/items/collections' . '.ws');
-			$this->webservice()->setRequestParam('itemId', $this->_resourceId);
-			$this->webservice()->setRequestMethod('put');
 			
-			$this->webservice()->setPostData($this->getJson()->asXML());
-			return $this->makeRequestReturnResult();
+			$count++;
 		}
 		
 		return false;
