@@ -23,6 +23,45 @@ class Item extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Perform post save actions
+	 * 
+	 * @return void
+	 */
+	protected function _afterSave()
+	{
+		$this->saveCollections();
+	}
+	
+	/**
+	 * Save the list of associated collections for this item
+	 * 
+	 * @return void
+	 */
+	private function saveCollections()
+	{
+		$itemCollections = new \Yetti\API\Item_Collections();
+		$itemCollections->load($this->getId());
+		$itemCollections->clearCollections();
+		
+		foreach ($this->getCollectionIds() as $collectionId) {
+			$itemCollections->addCollection($collectionId);
+		}
+		
+		$itemCollections->save();
+	}
+	
+	/**
+	 * Assign this item to the collection with the given ID
+	 * 
+	 * @param int $collectionId
+	 * @return void
+	 */
+	public function assignToCollection($collectionId)
+	{
+		$this->getJson()->collectionIds[] = (int)$collectionId;
+	}
+	
+	/**
 	 * Returns an array of collection IDs that the loaded item is assigned to
 	 * 
 	 * @return array
@@ -31,8 +70,8 @@ class Item extends Resource_BaseAbstract
 	{
 		$return = array();
 		
-		foreach ($this->getJson()->collectionIds as $itemId) {
-			$return[] = (int)$itemId;
+		foreach ($this->getJson()->collectionIds as $collectionId) {
+			$return[] = (int)$collectionId;
 		}
 		
 		return $return;

@@ -63,5 +63,31 @@ class ItemTest extends AuthAbstract
 		
 		$this->assertEquals('a-test-item', substr($item->getName(), 0, 11));
 		$this->assertEquals('Test item', $item->getPropertyValue('Name'));
+		
+		return $item;
+	}
+	
+	/**
+	 * @depends testLoadItem
+	 */
+	public function testAssignItemToCategory(\Yetti\API\Item $inItem)
+	{
+		/**
+		 * Make a new collection
+		 */
+		$collection = new \Yetti\API\Collection();
+		$this->assertTrue($collection->loadTemplate(4));
+		$collection->setName('A test collection ' . microtime(true));
+		$collection->setPropertyValue('Name', 'Test collection');
+		$this->assertTrue($collection->save()->success());
+		$collectionId = $collection->getId();
+		
+		$this->assertEquals(0, count($inItem->getCollectionIds()));
+		$inItem->assignToCollection($collectionId);
+		$this->assertTrue($inItem->save()->success());
+		
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($inItem->getId()));
+		$this->assertEquals(1, count($item->getCollectionIds()));
 	}
 }

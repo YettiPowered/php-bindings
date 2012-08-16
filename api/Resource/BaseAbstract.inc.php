@@ -70,11 +70,17 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	public function save()
 	{
 		if (!$this->getId()) {
-			return $this->create();
+			$result = $this->create();
 		}
 		else {
-			return $this->update();
+			$result = $this->update();
 		}
+		
+		if ($result->success()) {
+			$this->_afterSave();
+		}
+		
+		return $result;
 	}
 	
 	/**
@@ -112,6 +118,13 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		$this->webservice()->setPostData(json_encode(array('item' => $this->getJson())));
 		return $this->makeRequestReturnResult();
 	}
+	
+	/**
+	 * This method can be overridden by derived classes to perform actions after a successful save
+	 * 
+	 * @return void
+	 */
+	protected function _afterSave() {}
 	
 	/**
 	 * Returns the resource ID

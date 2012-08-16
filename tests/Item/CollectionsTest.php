@@ -63,5 +63,8 @@ class Item_CollectionsTest extends AuthAbstract
 		
 		$this->assertEquals(1, count($item->getCollectionIds()));
 		$this->assertEquals(1, count($itemCollections->getCollectionIds()));
+		
+		$itemCollections->removeCollection($collectionId);
+		$this->assertEquals(0, count($itemCollections->getCollectionIds()));
 	}
 }

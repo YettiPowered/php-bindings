@@ -94,19 +94,25 @@ class Item_Collections extends BaseAbstract
 	 */
 	public function removeCollection($collectionId)
 	{
-		$count = 0;
-		
-		foreach ($this->getJson()->collections->collection as $key => $collection)
+		foreach ($this->getJson()->collections as $key => $collection)
 		{
-			if ($collectionId == (int)((string)$collection))
+			if ((int)$collectionId == (int)$collection)
 			{
-				unset($this->getJson()->collections->collection[$count]);
+				unset($this->getJson()->collections[$key]);
 				return true;
 			}
-			
-			$count++;
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Clear all assigned collections
+	 * 
+	 * @return void
+	 */
+	public function clearCollections()
+	{
+		$this->getJson()->collections = array();
 	}
 }
