@@ -184,7 +184,7 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	 */
 	public function isLanguageActive()
 	{
-		return isset($this->getJson()->resource->languageActive) ? $this->getJson()->resource->languageActive : false;
+		return isset($this->getJson()->resource->languageActive) ? (bool)$this->getJson()->resource->languageActive : false;
 	}
 	
 	/**
