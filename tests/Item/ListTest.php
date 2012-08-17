@@ -46,6 +46,15 @@ class Item_ListTest extends AuthAbstract
 		
 		$list = new \Yetti\API\Item_List();
 		$this->assertTrue($list->load(4));
-		$this->assertEquals($itemCount+1, $list->getTotalItemCount());
+		$this->assertGreaterThan($itemCount, $list->getTotalItemCount());
+		
+		foreach ($list->getItems() as $item)
+		{
+			if (!$item->isLanguageActive()) {
+				return;
+			}
+		}
+		
+		$this->fail("List didn't contain any inactive items.");
 	}
 }
