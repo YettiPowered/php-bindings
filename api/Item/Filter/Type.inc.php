@@ -62,7 +62,7 @@ class Item_Filter_Type extends BaseAbstract
 	}
 	
 	/**
-	 * Set the item type ID for this filter
+	 * Set the item type ID for this filter type
 	 * 
 	 * @param int $id
 	 * @return void
