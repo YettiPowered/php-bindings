@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">47</span></a></li>
+                <span class="label label-info">56</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -72,15 +72,18 @@
 <li class="method public inherited"><a href="#getRevisionComment" title="getRevisionComment :: Returns the revision comment for the current revision"><span class="description">Returns the revision comment for the current revision</span><pre>getRevisionComment()</pre></a></li>
 <li class="method public inherited"><a href="#getRevisionId" title="getRevisionId :: Returns the revision ID"><span class="description">Returns the revision ID</span><pre>getRevisionId()</pre></a></li>
 <li class="method public inherited"><a href="#getTypeId" title="getTypeId :: Returns the resource type ID"><span class="description">Returns the resource type ID</span><pre>getTypeId()</pre></a></li>
+<li class="method public inherited"><a href="#isLanguageActive" title="isLanguageActive :: Returns whether or not this resource is active in the current language"><span class="description">Returns whether or not this resource is active in the current language</span><pre>isLanguageActive()</pre></a></li>
 <li class="method public inherited"><a href="#load" title="load :: Loads a resource by ID or identifier"><span class="description">Loads a resource by ID or identifier</span><pre>load()</pre></a></li>
 <li class="method public inherited"><a href="#loadTemplate" title="loadTemplate :: Load a resource template for the given type ID"><span class="description">Load a resource template for the given type ID</span><pre>loadTemplate()</pre></a></li>
 <li class="method public inherited"><a href="#save" title="save :: Save this resource"><span class="description">Save this resource</span><pre>save()</pre></a></li>
 <li class="method public inherited"><a href="#setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
+<li class="method public inherited"><a href="#setLanguageActive" title="setLanguageActive :: Set whether or not this resource is available in the current language"><span class="description">Set whether or not this resource is available in the current language</span><pre>setLanguageActive()</pre></a></li>
 <li class="method public inherited"><a href="#setName" title="setName :: Set the resource name (identifier)"><span class="description">Set the resource name (identifier)</span><pre>setName()</pre></a></li>
 <li class="method public inherited"><a href="#setPropertyValue" title="setPropertyValue :: Set a property value"><span class="description">Set a property value</span><pre>setPropertyValue()</pre></a></li>
 <li class="method public inherited"><a href="#setRevisionComment" title="setRevisionComment :: Sets the revision comment for the current revision"><span class="description">Sets the revision comment for the current revision</span><pre>setRevisionComment()</pre></a></li>
 <li class="method public inherited"><a href="#webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#_afterSave" title="_afterSave :: This method can be overridden by derived classes to perform actions after a successful save"><span class="description">This method can be overridden by derived classes to perform actions after a successful save</span><pre>_afterSave()</pre></a></li>
 <li class="method protected inherited"><a href="#create" title="create :: Create a new resource"><span class="description">Create a new resource</span><pre>create()</pre></a></li>
 <li class="method protected "><a href="#getSingularName" title="getSingularName :: Returns a singular name for this type of resource"><span class="description">Returns a singular name for this type of resource</span><pre>getSingularName()</pre></a></li>
 <li class="method protected inherited"><a href="#makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
@@ -228,7 +231,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 <a name="getJson" id="getJson"></a><div class="element clickable method public getJson" data-toggle="collapse" data-target=".getJson .collapse">
 <h2>Returns the JSON object</h2>
-<pre>getJson() : \Yetti\API\stdClass</pre>
+<pre>getJson() : <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -248,7 +251,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <td></td>
 </tr></table>
 <h3>Returns</h3>
-<div class="subelement response"><code>\Yetti\API\stdClass</code></div>
+<div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
 </div></div>
 </div>
 <a name="getLanguageId" id="getLanguageId"></a><div class="element clickable method public getLanguageId" data-toggle="collapse" data-target=".getLanguageId .collapse">
@@ -364,6 +367,20 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
+<a name="isLanguageActive" id="isLanguageActive"></a><div class="element clickable method public isLanguageActive" data-toggle="collapse" data-target=".isLanguageActive .collapse">
+<h2>Returns whether or not this resource is active in the current language</h2>
+<pre>isLanguageActive() : bool</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::isLanguageActive()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
 <a name="load" id="load"></a><div class="element clickable method public load" data-toggle="collapse" data-target=".load .collapse">
 <h2>Loads a resource by ID or identifier</h2>
 <pre>load(mixed $resourceId, string $countryCode) : bool</pre>
@@ -442,6 +459,23 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 </div></div>
 </div>
+<a name="setLanguageActive" id="setLanguageActive"></a><div class="element clickable method public setLanguageActive" data-toggle="collapse" data-target=".setLanguageActive .collapse">
+<h2>Set whether or not this resource is available in the current language</h2>
+<pre>setLanguageActive(bool $active) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::setLanguageActive()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$active</h4>
+<code>bool</code>
+</div>
+</div></div>
+</div>
 <a name="setName" id="setName"></a><div class="element clickable method public setName" data-toggle="collapse" data-target=".setName .collapse">
 <h2>Set the resource name (identifier)</h2>
 <pre>setName(string $name) : void</pre>
@@ -515,6 +549,18 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </table>
 <h3>Returns</h3>
 <div class="subelement response"><code>\Yetti\API\WebService</code></div>
+</div></div>
+</div>
+<a name="_afterSave" id="_afterSave"></a><div class="element clickable method protected _afterSave" data-toggle="collapse" data-target="._afterSave .collapse">
+<h2>This method can be overridden by derived classes to perform actions after a successful save</h2>
+<pre>_afterSave() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::_afterSave()</td>
+</tr></table>
 </div></div>
 </div>
 <a name="create" id="create"></a><div class="element clickable method protected create" data-toggle="collapse" data-target=".create .collapse">
@@ -647,7 +693,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-08-16T13:42:18+01:00.<br></footer></div>
+            generated on 2012-08-17T16:24:15+01:00.<br></footer></div>
 </div>
 </body>
 </html>

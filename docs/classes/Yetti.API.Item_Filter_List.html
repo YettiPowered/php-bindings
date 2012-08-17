@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Yetti API - PHP Bindings » \Yetti\API\Resource_ListAbstract</title>
+<title>Yetti API - PHP Bindings » \Yetti\API\Item_Filter_List</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -57,48 +57,41 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#getCurrentPage" title="getCurrentPage :: Returns the currently loaded page number"><span class="description">Returns the currently loaded page number</span><pre>getCurrentPage()</pre></a></li>
+<li class="method public "><a href="#getCurrentPage" title="getCurrentPage :: Returns the current page"><span class="description">Returns the current page</span><pre>getCurrentPage()</pre></a></li>
 <li class="method public inherited"><a href="#getItems" title="getItems :: Returns an array of items in this listing"><span class="description">Returns an array of items in this listing</span><pre>getItems()</pre></a></li>
 <li class="method public inherited"><a href="#getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public "><a href="#getTotalItemCount" title="getTotalItemCount :: Returns the total number of items avaliable for this listing"><span class="description">Returns the total number of items avaliable for this listing</span><pre>getTotalItemCount()</pre></a></li>
-<li class="method public "><a href="#getTotalPages" title="getTotalPages :: Returns the total number of pages available in this listing"><span class="description">Returns the total number of pages available in this listing</span><pre>getTotalPages()</pre></a></li>
-<li class="method public "><a href="#load" title="load :: Loads the list from Yetti"><span class="description">Loads the list from Yetti</span><pre>load()</pre></a></li>
+<li class="method public inherited"><a href="#getTotalItemCount" title="getTotalItemCount :: Returns the total number of items avaliable for this listing"><span class="description">Returns the total number of items avaliable for this listing</span><pre>getTotalItemCount()</pre></a></li>
+<li class="method public "><a href="#getTotalPages" title="getTotalPages :: Returns the total number of pages in the list"><span class="description">Returns the total number of pages in the list</span><pre>getTotalPages()</pre></a></li>
+<li class="method public "><a href="#load" title="load :: Load a list of filters for the given filter type"><span class="description">Load a list of filters for the given filter type</span><pre>load()</pre></a></li>
 <li class="method public inherited"><a href="#setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
 <li class="method public inherited"><a href="#webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected inherited"><a href="#addItem" title="addItem :: Add an item to the list"><span class="description">Add an item to the list</span><pre>addItem()</pre></a></li>
-<li class="method protected "><a href="#getNewItemObject" title="getNewItemObject :: Returns a new object for population from the list"><span class="description">Returns a new object for population from the list</span><pre>getNewItemObject()</pre></a></li>
-<li class="method protected "><a href="#loadItemObjects" title="loadItemObjects :: Loads the list of resource objects"><span class="description">Loads the list of resource objects</span><pre>loadItemObjects()</pre></a></li>
+<li class="method protected "><a href="#loadItemObjects" title="loadItemObjects :: Load the filter objects in this list"><span class="description">Load the filter objects in this list</span><pre>loadItemObjects()</pre></a></li>
 <li class="method protected inherited"><a href="#makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
 Must be called after everything else has been set up"><span class="description">Performs a webservice request and returns a result object
 Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li>
-<li class="method protected "><a href="#setPath" title="setPath :: Set the request path"><span class="description">Set the request path</span><pre>setPath()</pre></a></li>
-<li class="nav-header private">» Private</li>
-<li class="method private "><a href="#loadItemList" title="loadItemList :: Returns an item list, paginating automatically where appropriate"><span class="description">Returns an item list, paginating automatically where appropriate</span><pre>loadItemList()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
-<li class="property private "><a href="#%24_counter" title="$_counter :: "><span class="description">$_counter</span><pre>$_counter</pre></a></li>
 <li class="property private inherited"><a href="#%24_items" title="$_items :: "><span class="description">$_items</span><pre>$_items</pre></a></li>
 <li class="property private inherited"><a href="#%24_json" title="$_json :: "><span class="description">$_json</span><pre>$_json</pre></a></li>
-<li class="property private "><a href="#%24_path" title="$_path :: "><span class="description">$_path</span><pre>$_path</pre></a></li>
-<li class="property private "><a href="#%24_typeId" title="$_typeId :: "><span class="description">$_typeId</span><pre>$_typeId</pre></a></li>
 <li class="property private inherited"><a href="#%24_webservice" title="$_webservice :: "><span class="description">$_webservice</span><pre>$_webservice</pre></a></li>
 </ul>
 </div>
 <div class="span8">
-<a name="%5CYetti%5CAPI%5CResource_ListAbstract" id="\Yetti\API\Resource_ListAbstract"></a><ul class="breadcrumb">
+<a name="%5CYetti%5CAPI%5CItem_Filter_List" id="\Yetti\API\Item_Filter_List"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/Yetti.html">Yetti</a></li>
 <span class="divider">\</span><li><a href="../namespaces/Yetti.API.html">API</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Yetti.API.Resource_ListAbstract.html">Resource_ListAbstract</a>
+<span class="divider">\</span><a href="../classes/Yetti.API.Item_Filter_List.html">Item_Filter_List</a>
 </li>
 </ul>
-<div href="../classes/Yetti.API.Resource_ListAbstract.html" class="element class">
-<p class="short_description">Abstract class for resource list models</p>
+<div href="../classes/Yetti.API.Item_Filter_List.html" class="element class">
+<p class="short_description">Filter list model</p>
 <div class="details">
 <p class="long_description"></p>
 <table class="table table-bordered">
@@ -118,7 +111,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="getCurrentPage" id="getCurrentPage"></a><div class="element clickable method public getCurrentPage" data-toggle="collapse" data-target=".getCurrentPage .collapse">
-<h2>Returns the currently loaded page number</h2>
+<h2>Returns the current page</h2>
 <pre>getCurrentPage() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -169,15 +162,19 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <a name="getTotalItemCount" id="getTotalItemCount"></a><div class="element clickable method public getTotalItemCount" data-toggle="collapse" data-target=".getTotalItemCount .collapse">
 <h2>Returns the total number of items avaliable for this listing</h2>
 <pre>getTotalItemCount() : int</pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\ListAbstract::getTotalItemCount()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
 <a name="getTotalPages" id="getTotalPages"></a><div class="element clickable method public getTotalPages" data-toggle="collapse" data-target=".getTotalPages .collapse">
-<h2>Returns the total number of pages available in this listing</h2>
+<h2>Returns the total number of pages in the list</h2>
 <pre>getTotalPages() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -187,18 +184,14 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div></div>
 </div>
 <a name="load" id="load"></a><div class="element clickable method public load" data-toggle="collapse" data-target=".load .collapse">
-<h2>Loads the list from Yetti</h2>
-<pre>load(int $typeId, int $page) : bool</pre>
+<h2>Load a list of filters for the given filter type</h2>
+<pre>load(int $filterTypeId) : bool</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$typeId</h4>
-<code>int</code>
-</div>
-<div class="subelement argument">
-<h4>$page</h4>
+<h4>$filterTypeId</h4>
 <code>int</code>
 </div>
 <h3>Returns</h3>
@@ -265,19 +258,8 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 </div></div>
 </div>
-<a name="getNewItemObject" id="getNewItemObject"></a><div class="element clickable method protected getNewItemObject" data-toggle="collapse" data-target=".getNewItemObject .collapse">
-<h2>Returns a new object for population from the list</h2>
-<pre>getNewItemObject() : object</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>object</code>\Yetti\API\Resource_BaseAbstract</div>
-</div></div>
-</div>
 <a name="loadItemObjects" id="loadItemObjects"></a><div class="element clickable method protected loadItemObjects" data-toggle="collapse" data-target=".loadItemObjects .collapse">
-<h2>Loads the list of resource objects</h2>
+<h2>Load the filter objects in this list</h2>
 <pre>loadItemObjects() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -307,33 +289,8 @@ Must be called after everything else has been set up</h2>
 <div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
 </div></div>
 </div>
-<a name="setPath" id="setPath"></a><div class="element clickable method protected setPath" data-toggle="collapse" data-target=".setPath .collapse">
-<h2>Set the request path</h2>
-<pre>setPath(string $path) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$path</h4>
-<code>string</code>
-</div>
-</div></div>
-</div>
-<a name="loadItemList" id="loadItemList"></a><div class="element clickable method private loadItemList" data-toggle="collapse" data-target=".loadItemList .collapse">
-<h2>Returns an item list, paginating automatically where appropriate</h2>
-<pre>loadItemList() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a name="%24_counter" id="$_counter"> </a><div class="element clickable property private $_counter" data-toggle="collapse" data-target=".$_counter .collapse">
-<h2>$_counter</h2>
-<pre>$_counter </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
 <a name="%24_items" id="$_items"> </a><div class="element clickable property private $_items" data-toggle="collapse" data-target=".$_items .collapse">
 <h2>$_items</h2>
 <pre>$_items </pre>
@@ -363,18 +320,6 @@ Must be called after everything else has been set up</h2>
 </tr>
 </table>
 </div></div>
-</div>
-<a name="%24_path" id="$_path"> </a><div class="element clickable property private $_path" data-toggle="collapse" data-target=".$_path .collapse">
-<h2>$_path</h2>
-<pre>$_path </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
-<a name="%24_typeId" id="$_typeId"> </a><div class="element clickable property private $_typeId" data-toggle="collapse" data-target=".$_typeId .collapse">
-<h2>$_typeId</h2>
-<pre>$_typeId </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24_webservice" id="$_webservice"> </a><div class="element clickable property private $_webservice" data-toggle="collapse" data-target=".$_webservice .collapse">
 <h2>$_webservice</h2>

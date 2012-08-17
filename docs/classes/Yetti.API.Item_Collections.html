@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">47</span></a></li>
+                <span class="label label-info">56</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -58,11 +58,12 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#addCollection" title="addCollection :: Adds a new collection ID to the list"><span class="description">Adds a new collection ID to the list</span><pre>addCollection()</pre></a></li>
+<li class="method public "><a href="#clearCollections" title="clearCollections :: Clear all assigned collections"><span class="description">Clear all assigned collections</span><pre>clearCollections()</pre></a></li>
 <li class="method public "><a href="#getCollectionIds" title="getCollectionIds :: Returns an array of collection IDs"><span class="description">Returns an array of collection IDs</span><pre>getCollectionIds()</pre></a></li>
 <li class="method public inherited"><a href="#getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public "><a href="#load" title="load :: Loads an item's collections"><span class="description">Loads an item's collections</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#load" title="load :: Loads a list of collections to which the given item is assigned"><span class="description">Loads a list of collections to which the given item is assigned</span><pre>load()</pre></a></li>
 <li class="method public "><a href="#removeCollection" title="removeCollection :: Removes a collection from the list"><span class="description">Removes a collection from the list</span><pre>removeCollection()</pre></a></li>
-<li class="method public "><a href="#save" title="save :: (non-PHPdoc)"><span class="description">(non-PHPdoc)</span><pre>save()</pre></a></li>
+<li class="method public "><a href="#save" title="save :: Save this item's collection data"><span class="description">Save this item's collection data</span><pre>save()</pre></a></li>
 <li class="method public inherited"><a href="#setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
 <li class="method public inherited"><a href="#webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
@@ -123,6 +124,12 @@ And assigning an item to one or more collections.</p>
 </div>
 </div></div>
 </div>
+<a name="clearCollections" id="clearCollections"></a><div class="element clickable method public clearCollections" data-toggle="collapse" data-target=".clearCollections .collapse">
+<h2>Clear all assigned collections</h2>
+<pre>clearCollections() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="getCollectionIds" id="getCollectionIds"></a><div class="element clickable method public getCollectionIds" data-toggle="collapse" data-target=".getCollectionIds .collapse">
 <h2>Returns an array of collection IDs</h2>
 <pre>getCollectionIds() : array</pre>
@@ -135,7 +142,7 @@ And assigning an item to one or more collections.</p>
 </div>
 <a name="getJson" id="getJson"></a><div class="element clickable method public getJson" data-toggle="collapse" data-target=".getJson .collapse">
 <h2>Returns the JSON object</h2>
-<pre>getJson() : \Yetti\API\stdClass</pre>
+<pre>getJson() : <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -149,11 +156,11 @@ And assigning an item to one or more collections.</p>
 <td></td>
 </tr></table>
 <h3>Returns</h3>
-<div class="subelement response"><code>\Yetti\API\stdClass</code></div>
+<div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
 </div></div>
 </div>
 <a name="load" id="load"></a><div class="element clickable method public load" data-toggle="collapse" data-target=".load .collapse">
-<h2>Loads an item's collections</h2>
+<h2>Loads a list of collections to which the given item is assigned</h2>
 <pre>load(mixed $resourceId) : bool</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -182,15 +189,13 @@ And assigning an item to one or more collections.</p>
 </div></div>
 </div>
 <a name="save" id="save"></a><div class="element clickable method public save" data-toggle="collapse" data-target=".save .collapse">
-<h2>(non-PHPdoc)</h2>
-<pre>save() </pre>
+<h2>Save this item's collection data</h2>
+<pre>save() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>see</th>
-<td>\Yetti\API\Resource_BaseAbstract::update()</td>
-</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
 </div></div>
 </div>
 <a name="setJson" id="setJson"></a><div class="element clickable method public setJson" data-toggle="collapse" data-target=".setJson .collapse">
@@ -278,7 +283,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-08-16T13:42:18+01:00.<br></footer></div>
+            generated on 2012-08-17T16:24:15+01:00.<br></footer></div>
 </div>
 </body>
 </html>
