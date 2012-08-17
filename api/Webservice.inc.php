@@ -334,7 +334,7 @@ class Webservice
 		if (!$request = curl_init($requestUri)) {
 			throw new Exception('Failed to initialise cURL');
 		}
-
+		
 		switch ($this->_requestMethod)
 		{
 			case 'HEAD':

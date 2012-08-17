@@ -44,7 +44,7 @@ abstract class BaseAbstract
 	 * Returns the JSON object
 	 * 
 	 * @throws Exception
-	 * @return stdClass
+	 * @return \stdClass
 	 */
 	public function getJson()
 	{
@@ -70,10 +70,16 @@ abstract class BaseAbstract
 		{
 			$response = $this->webservice()->getResponseJsonObject();
 			
-			if (isset($response) && isset($response->errors))
+			if (isset($response))
 			{
-				foreach ($response->errors as $error) {
-					$result->addError((string)$error->message, (string)$error->key);
+				if (isset($response->errors))
+				{
+					foreach ($response->errors as $error) {
+						$result->addError($error->message, $error->key);
+					}
+				}
+				elseif (isset($response->message)) {
+					$result->addError($response->message, 'error');
 				}
 			}
 		}
