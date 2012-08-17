@@ -167,6 +167,27 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	}
 	
 	/**
+	 * Set whether or not this resource is available in the current language
+	 * 
+	 * @param bool $active
+	 * @return void
+	 */
+	public function setLanguageActive($active=true)
+	{
+		$this->getJson()->resource->languageActive = (bool)$active;
+	}
+	
+	/**
+	 * Returns whether or not this resource is active in the current language
+	 * 
+	 * @return bool
+	 */
+	public function isLanguageActive()
+	{
+		return (bool)$this->getJson()->resource->languageActive;
+	}
+	
+	/**
 	 * Set the resource name (identifier)
 	 *
 	 * @param string $name

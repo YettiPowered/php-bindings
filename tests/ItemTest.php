@@ -61,6 +61,7 @@ class ItemTest extends AuthAbstract
 		$this->assertFalse($item->load(-1)); // Invalid item
 		$this->assertTrue($item->load($inItem->getId()));
 		
+		$this->assertTrue($item->isLanguageActive());
 		$this->assertEquals('a-test-item', substr($item->getName(), 0, 11));
 		$this->assertEquals('Test item', $item->getPropertyValue('Name'));
 		
@@ -89,5 +90,21 @@ class ItemTest extends AuthAbstract
 		$item = new \Yetti\API\Item();
 		$this->assertTrue($item->load($inItem->getId()));
 		$this->assertEquals(1, count($item->getCollectionIds()));
+	}
+	
+	public function testSetLanguageActive()
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->loadTemplate(4));
+		$item->setLanguageActive(false);
+		$item->setName('A test item ' . microtime(true));
+		$item->setPropertyValue('Name', 'Test item');
+		$item->setPropertyValue('Body', 'A test body');
+		$this->assertTrue($item->save()->success());
+		$itemId = $item->getId();
+		
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($itemId));
+		$this->assertFalse($item->isLanguageActive());
 	}
 }
