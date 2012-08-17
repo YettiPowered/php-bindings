@@ -231,7 +231,7 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	 */
 	public function getRevisionComment()
 	{
-		return (string)$this->getJson()->resource->name;
+		return (string)$this->getJson()->revision->comment;
 	}
 	
 	/**
