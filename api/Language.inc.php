@@ -3,7 +3,7 @@
 namespace Yetti\API;
 
 /**
- * API for interfacing with Yetti languages over web services.
+ * Language model.
  * 
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2012, Yetti Ltd.

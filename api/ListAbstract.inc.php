@@ -47,7 +47,7 @@ abstract class ListAbstract extends BaseAbstract
 	 */
 	public function getTotalItemCount()
 	{
-		return count($this->_items);
+		return count($this->getItems());
 	}
 	
 	/**
