@@ -13,7 +13,19 @@ namespace Yetti\API;
 abstract class BaseAbstract
 {
 	private
+	
+		/**
+		 * The webservice object
+		 * 
+		 * @var \Yetti\API\Webservice
+		 */
 		$_webservice,
+		
+		/**
+		 * Holds the json object that represents the derived model's data
+		 * 
+		 * @var \stdClass
+		 */
 		$_json;
 	
 	/**

@@ -14,25 +14,133 @@ spl_autoload_register(__NAMESPACE__ . '\Webservice::autoload', true, true);
 class Webservice
 {
 	private
+	
+		/**
+		 * The base URI to call.
+		 * 
+		 * @var string
+		 */
 		$_baseUri,
+		
+		/**
+		 * Contains the request path.
+		 * 
+		 * @var string
+		 */
 		$_requestUri,
+		
+		/**
+		 * The webservice access key.
+		 * 
+		 * @var string
+		 */
 		$_accessKey,
+		
+		/**
+		 * The webservice private key.
+		 * 
+		 * @var string
+		 */
 		$_privateKey,
+		
+		/**
+		 * The API version to use.
+		 * 
+		 * @var string
+		 */
 		$_version = '2',
+		
+		/**
+		 * The HTTP request method.
+		 * 
+		 * @var string
+		 */
 		$_requestMethod = 'GET',
+		
+		/**
+		 * Optional request parameters.
+		 * 
+		 * @var array
+		 */
 		$_requestParams = array(),
+		
+		/**
+		 * Holds the auth signature.
+		 * 
+		 * @var string
+		 */
 		$_requestSignature,
+		
+		/**
+		 * Optional request headers.
+		 * 
+		 * @var array
+		 */
 		$_requestHeaders = array(),
+		
+		/**
+		 * Any data to send (via POST or PUT).
+		 * 
+		 * @var string
+		 */
 		$_postData,
+		
+		/**
+		 * Holds the response code received from the last request.
+		 * 
+		 * @var string
+		 */
 		$_responseCode,
+		
+		/**
+		 * Any headers received from the last request.
+		 * 
+		 * @var string
+		 */
 		$_responseHeaders,
+		
+		/**
+		 * Will contain the body of the last response.
+		 * 
+		 * @var string
+		 */
 		$_response,
+		
+		/**
+		 * Holds the stdClass object decoded from the last JSON string received.
+		 * 
+		 * @var string
+		 */
 		$_responseJsonObject,
+		
+		/**
+		 * The raw response from the last request (headers and body).
+		 * 
+		 * @var string
+		 */
 		$_rawResponse;
 	
-	private static 
+	private static
+	
+		/**
+		 * A default base URI, will be used if an instance-specific URI hasn't been set.
+		 * 
+		 * @var string
+		 */
 		$_defaultBaseUri,
+		
+		/**
+		 * A default access key, will be used if an instance-specific access key hasn't been set.
+		 * 
+		 * @var string
+		 */
 		$_defaultAccessKey,
+		
+		/**
+		 * A default private key, will be used if an instance-specific private key hasn't been set.
+		 * 
+		 * @var string
+		 */
 		$_defaultPrivateKey;
 	
 	/**
@@ -398,6 +506,7 @@ class Webservice
 		if (substr($response, 0, 21) == 'HTTP/1.1 100 Continue') {
 			$headerCount = 3;
 		}
+		
 		$headers		= explode("\r\n\r\n", $response, $headerCount);
 		$responseCode	= false;
 		$responseBody	= array_pop($headers);

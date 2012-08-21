@@ -13,6 +13,12 @@ namespace Yetti\API;
 class Result
 {
 	private
+	
+		/**
+		 * Holds error strings
+		 * 
+		 * @var array
+		 */
 		$_errors = array();
 	
 	/**

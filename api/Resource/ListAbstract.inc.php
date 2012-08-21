@@ -13,8 +13,26 @@ namespace Yetti\API;
 abstract class Resource_ListAbstract extends ListAbstract
 {
 	private
+		
+		/**
+		 * The request path
+		 * 
+		 * @var string
+		 */
 		$_path,
+		
+		/**
+		 * The resource's type ID
+		 * 
+		 * @var int
+		 */
 		$_typeId,
+		
+		/**
+		 * An internal counter used when auto-paginating over resource items
+		 * 
+		 * @var int
+		 */
 		$_counter;
 	
 	/**

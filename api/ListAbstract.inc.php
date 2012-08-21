@@ -13,6 +13,12 @@ namespace Yetti\API;
 abstract class ListAbstract extends BaseAbstract
 {
 	private
+	
+		/**
+		 * Holds the list items
+		 * 
+		 * @var array
+		 */
 		$_items = array();
 	
 	/**
