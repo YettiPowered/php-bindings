@@ -57,7 +57,13 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#addConditionalFilter" title="addConditionalFilter :: Add a conditional filter by ID"><span class="description">Add a conditional filter by ID</span><pre>addConditionalFilter()</pre></a></li>
+<li class="method public "><a href="#addItem" title="addItem :: Add an item to this filter"><span class="description">Add an item to this filter</span><pre>addItem()</pre></a></li>
+<li class="method public "><a href="#delete" title="delete :: Delete this filter"><span class="description">Delete this filter</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#getConditionalFilters" title="getConditionalFilters :: Returns an array of conditional filter IDs"><span class="description">Returns an array of conditional filter IDs</span><pre>getConditionalFilters()</pre></a></li>
+<li class="method public "><a href="#getFilterTypeId" title="getFilterTypeId :: Return the filter type ID"><span class="description">Return the filter type ID</span><pre>getFilterTypeId()</pre></a></li>
 <li class="method public "><a href="#getId" title="getId :: Returns the filter ID"><span class="description">Returns the filter ID</span><pre>getId()</pre></a></li>
+<li class="method public "><a href="#getItems" title="getItems :: Returns an array of items in this filter"><span class="description">Returns an array of items in this filter</span><pre>getItems()</pre></a></li>
 <li class="method public "><a href="#getJson" title="getJson :: Returns the json object"><span class="description">Returns the json object</span><pre>getJson()</pre></a></li>
 <li class="method public "><a href="#getName" title="getName :: Returns the name of this filter"><span class="description">Returns the name of this filter</span><pre>getName()</pre></a></li>
 <li class="method public "><a href="#load" title="load :: Load a filter by ID"><span class="description">Load a filter by ID</span><pre>load()</pre></a></li>
@@ -109,6 +115,62 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="addConditionalFilter" id="addConditionalFilter"></a><div class="element clickable method public addConditionalFilter" data-toggle="collapse" data-target=".addConditionalFilter .collapse">
+<h2>Add a conditional filter by ID</h2>
+<pre>addConditionalFilter(int $filterId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filterId</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a name="addItem" id="addItem"></a><div class="element clickable method public addItem" data-toggle="collapse" data-target=".addItem .collapse">
+<h2>Add an item to this filter</h2>
+<pre>addItem(int $itemId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$itemId</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
+<h2>Delete this filter</h2>
+<pre>delete() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
+<a name="getConditionalFilters" id="getConditionalFilters"></a><div class="element clickable method public getConditionalFilters" data-toggle="collapse" data-target=".getConditionalFilters .collapse">
+<h2>Returns an array of conditional filter IDs</h2>
+<pre>getConditionalFilters() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="getFilterTypeId" id="getFilterTypeId"></a><div class="element clickable method public getFilterTypeId" data-toggle="collapse" data-target=".getFilterTypeId .collapse">
+<h2>Return the filter type ID</h2>
+<pre>getFilterTypeId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
 <a name="getId" id="getId"></a><div class="element clickable method public getId" data-toggle="collapse" data-target=".getId .collapse">
 <h2>Returns the filter ID</h2>
 <pre>getId() : int</pre>
@@ -117,6 +179,16 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a name="getItems" id="getItems"></a><div class="element clickable method public getItems" data-toggle="collapse" data-target=".getItems .collapse">
+<h2>Returns an array of items in this filter</h2>
+<pre>getItems() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
 <a name="getJson" id="getJson"></a><div class="element clickable method public getJson" data-toggle="collapse" data-target=".getJson .collapse">
@@ -278,7 +350,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-08-17T16:24:15+01:00.<br></footer></div>
+            generated on 2012-08-21T11:48:44+01:00.<br></footer></div>
 </div>
 </body>
 </html>
