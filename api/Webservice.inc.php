@@ -521,8 +521,13 @@ class Webservice
 			}
 			else
 			{
-				list($header, $value) = explode(': ', $line, 2);
-				$headerArray[$header] = $value;
+				$headerParts = explode(': ', $line, 2);
+				
+				if (count($headerParts) == 2)
+				{
+					list($header, $value) = $headerParts;
+					$headerArray[$header] = $value;
+				}
 			}
 		}
 		

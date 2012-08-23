@@ -1179,7 +1179,7 @@ And assigning an item to one or more collections.]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file Language.inc.php</error>
     </parse_markers>
   </file>
-  <file path="ListAbstract.inc.php" hash="24a538b4a917f3e12ec2808256f1a367" package="Default">
+  <file path="ListAbstract.inc.php" hash="d2f7680316c94cbe52f65c7734bdd4da" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\BaseAbstract</extends>
       <name>ListAbstract</name>
@@ -1193,78 +1193,112 @@ And assigning an item to one or more collections.]]></description>
       </docblock>
       <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
         <name>$_items</name>
-        <default><![CDATA[array()]]></default>
+        <default><![CDATA[]]></default>
       </property>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="30" package="yetti-api">
+      <property final="false" static="false" visibility="private" line="29" namespace="Yetti\API" package="Default">
+        <name>$_autoPagination</name>
+        <default><![CDATA[false]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="37" package="yetti-api">
         <name>addItem</name>
         <full_name>addItem</full_name>
-        <docblock line="24">
+        <docblock line="31">
           <description><![CDATA[Add an item to the list]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="24" name="param" description="" type="mixed" variable="$item">
+          <tag line="31" name="param" description="" type="mixed" variable="$item">
             <type by_reference="false">mixed</type>
           </tag>
-          <tag line="24" name="return" description="" type="void">
+          <tag line="31" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="30">
+        <argument line="37">
           <name>$item</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="40" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="57" package="yetti-api">
         <name>getItems</name>
         <full_name>getItems</full_name>
-        <docblock line="35">
-          <description><![CDATA[Returns an array of items in this listing]]></description>
+        <docblock line="52">
+          <description><![CDATA[Returns a list iterator object containing items in this listing]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="35" name="return" description="" type="array">
-            <type by_reference="false">array</type>
+          <tag line="52" name="return" description="" type="\Yetti\API\ListIterator">
+            <type by_reference="false">\Yetti\API\ListIterator</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="54" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="71" package="yetti-api">
         <name>getTotalItemCount</name>
         <full_name>getTotalItemCount</full_name>
-        <docblock line="49">
-          <description><![CDATA[Returns the total number of items avaliable for this listing]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="49" name="return" description="" type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="true" static="false" visibility="protected" namespace="Yetti\API" line="64" package="yetti-api">
-        <name>loadItemObjects</name>
-        <full_name>loadItemObjects</full_name>
-        <docblock line="59">
-          <description><![CDATA[Load the item objects]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="59" name="return" description="" type="void">
-            <type by_reference="false">void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="Yetti\API" line="71" package="yetti-api">
-        <name>getTotalPages</name>
-        <full_name>getTotalPages</full_name>
         <docblock line="66">
-          <description><![CDATA[Returns the total number of pages available in this listing]]></description>
+          <description><![CDATA[Returns the total number of items avaliable for this listing]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="66" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="Yetti\API" line="78" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="82" package="yetti-api">
+        <name>setAutoPaginate</name>
+        <full_name>setAutoPaginate</full_name>
+        <docblock line="76">
+          <description><![CDATA[Set whether or not getItems() should auto paginate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="param" description="" type="bool" variable="$autoPaginate">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="76" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="82">
+          <name>$autoPaginate</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="92" package="yetti-api">
+        <name>shouldAutoPaginate</name>
+        <full_name>shouldAutoPaginate</full_name>
+        <docblock line="87">
+          <description><![CDATA[Returns whether or not getItems() should auto paginate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="87" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="Yetti\API" line="102" package="yetti-api">
+        <name>loadItemObjects</name>
+        <full_name>loadItemObjects</full_name>
+        <docblock line="97">
+          <description><![CDATA[Load the item objects]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="97" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="Yetti\API" line="109" package="yetti-api">
+        <name>getTotalPages</name>
+        <full_name>getTotalPages</full_name>
+        <docblock line="104">
+          <description><![CDATA[Returns the total number of pages available in this listing]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="104" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="Yetti\API" line="116" package="yetti-api">
         <name>getCurrentPage</name>
         <full_name>getCurrentPage</full_name>
-        <docblock line="73">
+        <docblock line="111">
           <description><![CDATA[Returns the currently loaded page number]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="73" name="return" description="" type="int">
+          <tag line="111" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
@@ -1273,6 +1307,230 @@ And assigning an item to one or more collections.]]></description>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file ListAbstract.inc.php</error>
       <error line="22" code="50018">No DocBlock was found for property $_items</error>
+      <error line="29" code="50018">No DocBlock was found for property $_autoPagination</error>
+    </parse_markers>
+  </file>
+  <file path="ListIterator.inc.php" hash="86d15ba0efe8d8f24c471752817b5341" package="Default">
+    <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
+      <extends/>
+      <implements>\Iterator</implements>
+      <implements>\Countable</implements>
+      <implements>\ArrayAccess</implements>
+      <name>ListIterator</name>
+      <full_name>\Yetti\API\ListIterator</full_name>
+      <docblock line="5">
+        <description><![CDATA[List iterator object]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
+        <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
+        <tag line="5" name="package" description="yetti-api"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
+        <name>$_items</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="29" namespace="Yetti\API" package="Default">
+        <name>$_totalItemCount</name>
+        <default><![CDATA[0]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="37" namespace="Yetti\API" package="Default">
+        <name>$_listModel</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="45" package="yetti-api">
+        <name>addItem</name>
+        <full_name>addItem</full_name>
+        <docblock line="39">
+          <description><![CDATA[Add an item to the iterator list]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="param" description="" type="mixed" variable="$item">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="39" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="45">
+          <name>$item</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="56" package="yetti-api">
+        <name>setTotalItemCount</name>
+        <full_name>setTotalItemCount</full_name>
+        <docblock line="50">
+          <description><![CDATA[Set the total item count]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="param" description="" type="int" variable="$count">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="50" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="56">
+          <name>$count</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="69" package="yetti-api">
+        <name>setListModel</name>
+        <full_name>setListModel</full_name>
+        <docblock line="63">
+          <description><![CDATA[Set the list model that owns this iterator]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="param" description="" type="\Yetti\API\ListAbstract" variable="$model">
+            <type by_reference="false">\Yetti\API\ListAbstract</type>
+          </tag>
+          <tag line="63" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="69">
+          <name>$model</name>
+          <default><![CDATA[]]></default>
+          <type>\Yetti\API\ListAbstract</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="78" package="yetti-api">
+        <name>current</name>
+        <full_name>current</full_name>
+        <docblock line="74">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="74" name="see" description="\Yetti\API\Iterator::current()" refers="\Yetti\API\Iterator::current()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="87" package="yetti-api">
+        <name>next</name>
+        <full_name>next</full_name>
+        <docblock line="83">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="83" name="see" description="\Yetti\API\Iterator::next()" refers="\Yetti\API\Iterator::next()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="105" package="yetti-api">
+        <name>key</name>
+        <full_name>key</full_name>
+        <docblock line="101">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="101" name="see" description="\Yetti\API\Iterator::key()" refers="\Yetti\API\Iterator::key()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="114" package="yetti-api">
+        <name>valid</name>
+        <full_name>valid</full_name>
+        <docblock line="110">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="110" name="see" description="\Yetti\API\Iterator::valid()" refers="\Yetti\API\Iterator::valid()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="123" package="yetti-api">
+        <name>rewind</name>
+        <full_name>rewind</full_name>
+        <docblock line="119">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="119" name="see" description="\Yetti\API\Iterator::rewind()" refers="\Yetti\API\Iterator::rewind()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="132" package="yetti-api">
+        <name>count</name>
+        <full_name>count</full_name>
+        <docblock line="128">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="128" name="see" description="\Yetti\API\Countable::count()" refers="\Yetti\API\Countable::count()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="142" package="yetti-api">
+        <name>offsetExists</name>
+        <full_name>offsetExists</full_name>
+        <docblock line="138">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="138" name="see" description="\Yetti\API\ArrayAccess::offsetExists()" refers="\Yetti\API\ArrayAccess::offsetExists()"/>
+        </docblock>
+        <argument line="142">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="151" package="yetti-api">
+        <name>offsetGet</name>
+        <full_name>offsetGet</full_name>
+        <docblock line="147">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="147" name="see" description="\Yetti\API\ArrayAccess::offsetGet()" refers="\Yetti\API\ArrayAccess::offsetGet()"/>
+        </docblock>
+        <argument line="151">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="160" package="yetti-api">
+        <name>offsetSet</name>
+        <full_name>offsetSet</full_name>
+        <docblock line="156">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="156" name="see" description="\Yetti\API\ArrayAccess::offsetSet()" refers="\Yetti\API\ArrayAccess::offsetSet()"/>
+        </docblock>
+        <argument line="160">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="160">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="169" package="yetti-api">
+        <name>offsetUnset</name>
+        <full_name>offsetUnset</full_name>
+        <docblock line="165">
+          <description><![CDATA[(non-PHPdoc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="165" name="see" description="\Yetti\API\ArrayAccess::offsetUnset()" refers="\Yetti\API\ArrayAccess::offsetUnset()"/>
+        </docblock>
+        <argument line="169">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="179" package="yetti-api">
+        <name>paginate</name>
+        <full_name>paginate</full_name>
+        <docblock line="174">
+          <description><![CDATA[Load the next page of items]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="174" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file ListIterator.inc.php</error>
+      <error line="22" code="50018">No DocBlock was found for property $_items</error>
+      <error line="29" code="50018">No DocBlock was found for property $_totalItemCount</error>
+      <error line="37" code="50018">No DocBlock was found for property $_listModel</error>
+      <error line="138" code="50015">Argument $offset is missing from the Docblock of offsetExists()</error>
+      <error line="147" code="50015">Argument $offset is missing from the Docblock of offsetGet()</error>
+      <error line="156" code="50015">Argument $offset is missing from the Docblock of offsetSet()</error>
+      <error line="156" code="50015">Argument $value is missing from the Docblock of offsetSet()</error>
+      <error line="165" code="50015">Argument $offset is missing from the Docblock of offsetUnset()</error>
     </parse_markers>
   </file>
   <file path="Resource/Asset/Group.inc.php" hash="7b8a71f6c5bea6e93704a6ed0bd4969c" package="Default">
@@ -1376,7 +1634,7 @@ Represents a single asset group for a resource]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file Resource/Asset.inc.php</error>
     </parse_markers>
   </file>
-  <file path="Resource/BaseAbstract.inc.php" hash="2422ecb605fb4651f049c4dbdb0549b4" package="Default">
+  <file path="Resource/BaseAbstract.inc.php" hash="00af4fa895c58305884edc2044517a13" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\BaseAbstract</extends>
       <name>Resource_BaseAbstract</name>
@@ -1782,7 +2040,7 @@ Represents a single asset group for a resource]]></description>
       <error line="16" code="50018">No DocBlock was found for property $_countryCode</error>
     </parse_markers>
   </file>
-  <file path="Resource/ListAbstract.inc.php" hash="819419b4976f065da1750bb54b38af2c" package="Default">
+  <file path="Resource/ListAbstract.inc.php" hash="9843d9acf678f481e6298dc2f3dec118" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\ListAbstract</extends>
       <name>Resource_ListAbstract</name>
@@ -1802,118 +2060,114 @@ Represents a single asset group for a resource]]></description>
         <name>$_typeId</name>
         <default><![CDATA[]]></default>
       </property>
-      <property final="false" static="false" visibility="private" line="36" namespace="Yetti\API" package="Default">
-        <name>$_counter</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="45" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="38" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
-        <docblock line="38">
+        <docblock line="31">
           <description><![CDATA[Loads the list from Yetti]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="38" name="param" description="" type="int" variable="$typeId">
+          <tag line="31" name="param" description="" type="int" variable="$typeId">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="38" name="param" description="" type="int" variable="$page">
+          <tag line="31" name="param" description="" type="int" variable="$page">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="38" name="return" description="" type="bool">
+          <tag line="31" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
-        <argument line="45">
+        <argument line="38">
           <name>$typeId</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="45">
+        <argument line="38">
           <name>$page</name>
-          <default><![CDATA[1]]></default>
+          <default><![CDATA[null]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="67" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="66" package="yetti-api">
+        <name>loadNextPage</name>
+        <full_name>loadNextPage</full_name>
+        <docblock line="61">
+          <description><![CDATA[Load the next page of items]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="61" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="83" package="yetti-api">
         <name>loadItemObjects</name>
         <full_name>loadItemObjects</full_name>
-        <docblock line="62">
+        <docblock line="78">
           <description><![CDATA[Loads the list of resource objects]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="62" name="return" description="" type="array">
+          <tag line="78" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="78" package="yetti-api">
-        <name>loadItemList</name>
-        <full_name>loadItemList</full_name>
-        <docblock line="73">
-          <description><![CDATA[Returns an item list, paginating automatically where appropriate]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="73" name="return" description="" type="void">
-            <type by_reference="false">void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="108" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="99" package="yetti-api">
         <name>getTotalItemCount</name>
         <full_name>getTotalItemCount</full_name>
-        <docblock line="103">
-          <description><![CDATA[Returns the total number of items avaliable for this listing]]></description>
+        <docblock line="94">
+          <description><![CDATA[Returns the total number of items available for this listing]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="103" name="return" description="" type="int">
+          <tag line="94" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="118" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="109" package="yetti-api">
         <name>getTotalPages</name>
         <full_name>getTotalPages</full_name>
-        <docblock line="113">
+        <docblock line="104">
           <description><![CDATA[Returns the total number of pages available in this listing]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="113" name="return" description="" type="int">
+          <tag line="104" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="128" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="119" package="yetti-api">
         <name>getCurrentPage</name>
         <full_name>getCurrentPage</full_name>
-        <docblock line="123">
+        <docblock line="114">
           <description><![CDATA[Returns the currently loaded page number]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="123" name="return" description="" type="int">
+          <tag line="114" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="139" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="130" package="yetti-api">
         <name>setPath</name>
         <full_name>setPath</full_name>
-        <docblock line="133">
+        <docblock line="124">
           <description><![CDATA[Set the request path]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="133" name="param" description="" type="string" variable="$path">
+          <tag line="124" name="param" description="" type="string" variable="$path">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="133" name="return" description="" type="void">
+          <tag line="124" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="139">
+        <argument line="130">
           <name>$path</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="true" static="false" visibility="protected" namespace="Yetti\API" line="151" package="yetti-api">
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="Yetti\API" line="142" package="yetti-api">
         <name>getNewItemObject</name>
         <full_name>getNewItemObject</full_name>
-        <docblock line="146">
+        <docblock line="137">
           <description><![CDATA[Returns a new object for population from the list]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="146" name="return" description="\Yetti\API\Resource_BaseAbstract" type="object">
+          <tag line="137" name="return" description="\Yetti\API\Resource_BaseAbstract" type="object">
             <type by_reference="false">object</type>
           </tag>
         </docblock>
@@ -1923,7 +2177,6 @@ Represents a single asset group for a resource]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file Resource/ListAbstract.inc.php</error>
       <error line="22" code="50018">No DocBlock was found for property $_path</error>
       <error line="29" code="50018">No DocBlock was found for property $_typeId</error>
-      <error line="36" code="50018">No DocBlock was found for property $_counter</error>
     </parse_markers>
   </file>
   <file path="Resource/Property.inc.php" hash="be7902f835fc5a8f2ee70663b92f6159" package="Default">
@@ -2125,7 +2378,7 @@ Represents a single asset group for a resource]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file User.inc.php</error>
     </parse_markers>
   </file>
-  <file path="Webservice.inc.php" hash="2a4bd8a1f3163a9dc06ba03cbe40b01c" package="Default">
+  <file path="Webservice.inc.php" hash="d529d6ecd81377f17cdf732af3ad284d" package="Default">
     <include line="173" type="Include" package="Default">
       <name/>
     </include>
@@ -2579,130 +2832,130 @@ you can safely make another request.]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="540" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="545" package="yetti-api">
         <name>getRequestSignature</name>
         <full_name>getRequestSignature</full_name>
-        <docblock line="535">
+        <docblock line="540">
           <description><![CDATA[Returns the last used request signature]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="535" name="return" description="" type="string">
+          <tag line="540" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="550" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="555" package="yetti-api">
         <name>success</name>
         <full_name>success</full_name>
-        <docblock line="545">
+        <docblock line="550">
           <description><![CDATA[Returns whether or not the request was successful]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="545" name="return" description="" type="bool">
+          <tag line="550" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="560" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="565" package="yetti-api">
         <name>getResponseCode</name>
         <full_name>getResponseCode</full_name>
-        <docblock line="555">
+        <docblock line="560">
           <description><![CDATA[Returns the HTTP response status code]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="555" name="return" description="" type="int">
+          <tag line="560" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="570" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="575" package="yetti-api">
         <name>getRawResponse</name>
         <full_name>getRawResponse</full_name>
-        <docblock line="565">
+        <docblock line="570">
           <description><![CDATA[Returns the full (raw) response string]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="565" name="return" description="" type="string">
+          <tag line="570" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="580" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="585" package="yetti-api">
         <name>getResponse</name>
         <full_name>getResponse</full_name>
-        <docblock line="575">
+        <docblock line="580">
           <description><![CDATA[Returns the response]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="575" name="return" description="" type="string">
+          <tag line="580" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="590" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="595" package="yetti-api">
         <name>getResponseJsonObject</name>
         <full_name>getResponseJsonObject</full_name>
-        <docblock line="585">
+        <docblock line="590">
           <description><![CDATA[Returns a JSON object from response]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="585" name="return" description="" type="\Yetti\API\stdClass">
+          <tag line="590" name="return" description="" type="\Yetti\API\stdClass">
             <type by_reference="false">\Yetti\API\stdClass</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="601" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="606" package="yetti-api">
         <name>getResponseStatus</name>
         <full_name>getResponseStatus</full_name>
-        <docblock line="595">
+        <docblock line="600">
           <description><![CDATA[Returns the status of the response (usually success or failed)]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="595" name="return" description="" type="string">
+          <tag line="600" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="595" name="throws" description="if no valid response" type="\Yetti\API\Exception">
+          <tag line="600" name="throws" description="if no valid response" type="\Yetti\API\Exception">
             <type by_reference="false">\Yetti\API\Exception</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="615" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="620" package="yetti-api">
         <name>getResponseMessage</name>
         <full_name>getResponseMessage</full_name>
-        <docblock line="610">
+        <docblock line="615">
           <description><![CDATA[Returns the response message]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="610" name="return" description="" type="string">
+          <tag line="615" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="626" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="631" package="yetti-api">
         <name>getResponseHeader</name>
         <full_name>getResponseHeader</full_name>
-        <docblock line="620">
+        <docblock line="625">
           <description><![CDATA[Gets the value of a response header]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="620" name="param" description="" type="string" variable="$name">
+          <tag line="625" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="620" name="return" description="" type="string">
+          <tag line="625" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="626">
+        <argument line="631">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="637" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="642" package="yetti-api">
         <name>parseMessageFromResponse</name>
         <full_name>parseMessageFromResponse</full_name>
-        <docblock line="631">
+        <docblock line="636">
           <description><![CDATA[Parses a message from the webservice response JSON]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="631" name="param" description="" type="\Yetti\API\stdClass" variable="$json">
+          <tag line="636" name="param" description="" type="\Yetti\API\stdClass" variable="$json">
             <type by_reference="false">\Yetti\API\stdClass</type>
           </tag>
-          <tag line="631" name="return" description="" type="string">
+          <tag line="636" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="637">
+        <argument line="642">
           <name>$json</name>
           <default><![CDATA[]]></default>
           <type/>

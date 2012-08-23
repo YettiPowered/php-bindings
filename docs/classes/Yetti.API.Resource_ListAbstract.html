@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">56</span></a></li>
+                <span class="label label-info">65</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -58,12 +58,14 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#getCurrentPage" title="getCurrentPage :: Returns the currently loaded page number"><span class="description">Returns the currently loaded page number</span><pre>getCurrentPage()</pre></a></li>
-<li class="method public inherited"><a href="#getItems" title="getItems :: Returns an array of items in this listing"><span class="description">Returns an array of items in this listing</span><pre>getItems()</pre></a></li>
+<li class="method public inherited"><a href="#getItems" title="getItems :: Returns a list iterator object containing items in this listing"><span class="description">Returns a list iterator object containing items in this listing</span><pre>getItems()</pre></a></li>
 <li class="method public inherited"><a href="#getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public "><a href="#getTotalItemCount" title="getTotalItemCount :: Returns the total number of items avaliable for this listing"><span class="description">Returns the total number of items avaliable for this listing</span><pre>getTotalItemCount()</pre></a></li>
+<li class="method public "><a href="#getTotalItemCount" title="getTotalItemCount :: Returns the total number of items available for this listing"><span class="description">Returns the total number of items available for this listing</span><pre>getTotalItemCount()</pre></a></li>
 <li class="method public "><a href="#getTotalPages" title="getTotalPages :: Returns the total number of pages available in this listing"><span class="description">Returns the total number of pages available in this listing</span><pre>getTotalPages()</pre></a></li>
 <li class="method public "><a href="#load" title="load :: Loads the list from Yetti"><span class="description">Loads the list from Yetti</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#loadNextPage" title="loadNextPage :: Load the next page of items"><span class="description">Load the next page of items</span><pre>loadNextPage()</pre></a></li>
 <li class="method public inherited"><a href="#setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
+<li class="method public inherited"><a href="#shouldAutoPaginate" title="shouldAutoPaginate :: Returns whether or not getItems() should auto paginate"><span class="description">Returns whether or not getItems() should auto paginate</span><pre>shouldAutoPaginate()</pre></a></li>
 <li class="method public inherited"><a href="#webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected inherited"><a href="#addItem" title="addItem :: Add an item to the list"><span class="description">Add an item to the list</span><pre>addItem()</pre></a></li>
@@ -72,13 +74,12 @@
 <li class="method protected inherited"><a href="#makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
 Must be called after everything else has been set up"><span class="description">Performs a webservice request and returns a result object
 Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li>
+<li class="method protected inherited"><a href="#setAutoPaginate" title="setAutoPaginate :: Set whether or not getItems() should auto paginate"><span class="description">Set whether or not getItems() should auto paginate</span><pre>setAutoPaginate()</pre></a></li>
 <li class="method protected "><a href="#setPath" title="setPath :: Set the request path"><span class="description">Set the request path</span><pre>setPath()</pre></a></li>
-<li class="nav-header private">» Private</li>
-<li class="method private "><a href="#loadItemList" title="loadItemList :: Returns an item list, paginating automatically where appropriate"><span class="description">Returns an item list, paginating automatically where appropriate</span><pre>loadItemList()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
-<li class="property private "><a href="#%24_counter" title="$_counter :: "><span class="description">$_counter</span><pre>$_counter</pre></a></li>
+<li class="property private inherited"><a href="#%24_autoPagination" title="$_autoPagination :: "><span class="description">$_autoPagination</span><pre>$_autoPagination</pre></a></li>
 <li class="property private inherited"><a href="#%24_items" title="$_items :: "><span class="description">$_items</span><pre>$_items</pre></a></li>
 <li class="property private inherited"><a href="#%24_json" title="$_json :: "><span class="description">$_json</span><pre>$_json</pre></a></li>
 <li class="property private "><a href="#%24_path" title="$_path :: "><span class="description">$_path</span><pre>$_path</pre></a></li>
@@ -128,8 +129,8 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div></div>
 </div>
 <a name="getItems" id="getItems"></a><div class="element clickable method public getItems" data-toggle="collapse" data-target=".getItems .collapse">
-<h2>Returns an array of items in this listing</h2>
-<pre>getItems() : array</pre>
+<h2>Returns a list iterator object containing items in this listing</h2>
+<pre>getItems() : <a href="../classes/Yetti.API.ListIterator.html">\Yetti\API\ListIterator</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -138,7 +139,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <td>\Yetti\API\ListAbstract::getItems()</td>
 </tr></table>
 <h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
+<div class="subelement response"><code><a href="../classes/Yetti.API.ListIterator.html">\Yetti\API\ListIterator</a></code></div>
 </div></div>
 </div>
 <a name="getJson" id="getJson"></a><div class="element clickable method public getJson" data-toggle="collapse" data-target=".getJson .collapse">
@@ -167,7 +168,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div></div>
 </div>
 <a name="getTotalItemCount" id="getTotalItemCount"></a><div class="element clickable method public getTotalItemCount" data-toggle="collapse" data-target=".getTotalItemCount .collapse">
-<h2>Returns the total number of items avaliable for this listing</h2>
+<h2>Returns the total number of items available for this listing</h2>
 <pre>getTotalItemCount() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -205,6 +206,12 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>bool</code></div>
 </div></div>
 </div>
+<a name="loadNextPage" id="loadNextPage"></a><div class="element clickable method public loadNextPage" data-toggle="collapse" data-target=".loadNextPage .collapse">
+<h2>Load the next page of items</h2>
+<pre>loadNextPage() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="setJson" id="setJson"></a><div class="element clickable method public setJson" data-toggle="collapse" data-target=".setJson .collapse">
 <h2>Set the JSON object</h2>
 <pre>setJson(\Yetti\API\stdClass $json) </pre>
@@ -226,6 +233,20 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <h4>$json</h4>
 <code>\Yetti\API\stdClass</code>
 </div>
+</div></div>
+</div>
+<a name="shouldAutoPaginate" id="shouldAutoPaginate"></a><div class="element clickable method public shouldAutoPaginate" data-toggle="collapse" data-target=".shouldAutoPaginate .collapse">
+<h2>Returns whether or not getItems() should auto paginate</h2>
+<pre>shouldAutoPaginate() : bool</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\ListAbstract::shouldAutoPaginate()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
 </div></div>
 </div>
 <a name="webservice" id="webservice"></a><div class="element clickable method public webservice" data-toggle="collapse" data-target=".webservice .collapse">
@@ -307,6 +328,23 @@ Must be called after everything else has been set up</h2>
 <div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
 </div></div>
 </div>
+<a name="setAutoPaginate" id="setAutoPaginate"></a><div class="element clickable method protected setAutoPaginate" data-toggle="collapse" data-target=".setAutoPaginate .collapse">
+<h2>Set whether or not getItems() should auto paginate</h2>
+<pre>setAutoPaginate(bool $autoPaginate) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\ListAbstract::setAutoPaginate()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$autoPaginate</h4>
+<code>bool</code>
+</div>
+</div></div>
+</div>
 <a name="setPath" id="setPath"></a><div class="element clickable method protected setPath" data-toggle="collapse" data-target=".setPath .collapse">
 <h2>Set the request path</h2>
 <pre>setPath(string $path) : void</pre>
@@ -320,19 +358,19 @@ Must be called after everything else has been set up</h2>
 </div>
 </div></div>
 </div>
-<a name="loadItemList" id="loadItemList"></a><div class="element clickable method private loadItemList" data-toggle="collapse" data-target=".loadItemList .collapse">
-<h2>Returns an item list, paginating automatically where appropriate</h2>
-<pre>loadItemList() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a name="%24_counter" id="$_counter"> </a><div class="element clickable property private $_counter" data-toggle="collapse" data-target=".$_counter .collapse">
-<h2>$_counter</h2>
-<pre>$_counter </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<a name="%24_autoPagination" id="$_autoPagination"> </a><div class="element clickable property private $_autoPagination" data-toggle="collapse" data-target=".$_autoPagination .collapse">
+<h2>$_autoPagination</h2>
+<pre>$_autoPagination </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\ListAbstract::$$_autoPagination</td>
+</tr></table>
+</div></div>
 </div>
 <a name="%24_items" id="$_items"> </a><div class="element clickable property private $_items" data-toggle="collapse" data-target=".$_items .collapse">
 <h2>$_items</h2>
@@ -401,7 +439,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-08-21T12:32:07+01:00.<br></footer></div>
+            generated on 2012-08-23T16:12:36+01:00.<br></footer></div>
 </div>
 </body>
 </html>

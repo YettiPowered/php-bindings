@@ -17,9 +17,16 @@ abstract class ListAbstract extends BaseAbstract
 		/**
 		 * Holds the list items
 		 * 
-		 * @var array
+		 * @var \Yetti\API\ListIterator
 		 */
-		$_items = array();
+		$_items,
+		
+		/**
+		 * Whether or not getItems() should auto paginate
+		 * 
+		 * @var bool
+		 */
+		$_autoPagination = false;
 	
 	/**
 	 * Add an item to the list
@@ -29,13 +36,23 @@ abstract class ListAbstract extends BaseAbstract
 	 */
 	protected function addItem($item)
 	{
-		$this->_items[] = $item;
+		if (!$this->_items)
+		{
+			$this->_items = new \Yetti\API\ListIterator();
+			$this->_items->setListModel($this);
+		}
+		
+		$this->_items->addItem($item);
+		
+		if ($this->shouldAutoPaginate()) {
+			$this->_items->setTotalItemCount($this->getTotalItemCount());
+		}
 	}
 	
 	/**
-	 * Returns an array of items in this listing
+	 * Returns a list iterator object containing items in this listing
 	 * 
-	 * @return array
+	 * @return \Yetti\API\ListIterator
 	 */
 	public function getItems()
 	{
@@ -54,6 +71,27 @@ abstract class ListAbstract extends BaseAbstract
 	public function getTotalItemCount()
 	{
 		return count($this->getItems());
+	}
+	
+	/**
+	 * Set whether or not getItems() should auto paginate
+	 * 
+	 * @param bool $autoPaginate
+	 * @return void
+	 */
+	protected function setAutoPaginate($autoPaginate=true)
+	{
+		$this->_autoPagination = (bool)$autoPaginate;
+	}
+	
+	/**
+	 * Returns whether or not getItems() should auto paginate
+	 * 
+	 * @return bool
+	 */
+	public function shouldAutoPaginate()
+	{
+		return (bool)$this->_autoPagination;
 	}
 	
 	/**

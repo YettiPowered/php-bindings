@@ -215,7 +215,7 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	 */
 	public function getDisplayName()
 	{
-		return (string)$this->getJson()->item->resource->name;
+		return (string)$this->getJson()->resource->name;
 	}
 	
 	/**

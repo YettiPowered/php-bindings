@@ -26,29 +26,28 @@ abstract class Resource_ListAbstract extends ListAbstract
 		 * 
 		 * @var int
 		 */
-		$_typeId,
-		
-		/**
-		 * An internal counter used when auto-paginating over resource items
-		 * 
-		 * @var int
-		 */
-		$_counter;
+		$_typeId;
 	
 	/**
 	 * Loads the list from Yetti
-	 *
+	 * 
 	 * @param int $typeId
 	 * @param int $page
 	 * @return bool
 	 */
-	public function load($typeId, $page=1)
+	public function load($typeId, $page=null)
 	{
 		$this->_typeId = $typeId;
 		
 		$this->webservice()->setRequestMethod('get');
 		$this->webservice()->setRequestPath('/' . $this->_path . '/' . $typeId . '.ws');
-		$this->webservice()->setRequestParam('page', (int)$page);
+		
+		if ($page) {
+			$this->webservice()->setRequestParam('page', (int)$page);
+		}
+		else {
+			$this->setAutoPaginate();
+		}
 		
 		if ($this->webservice()->makeRequest())
 		{
@@ -60,48 +59,40 @@ abstract class Resource_ListAbstract extends ListAbstract
 	}
 	
 	/**
+	 * Load the next page of items
+	 * 
+	 * @return void
+	 */
+	public function loadNextPage()
+	{
+		if ($this->shouldAutoPaginate())
+		{
+			$currentPage = $this->getJson()->listing->currentPage;
+			
+			if ($this->load($this->_typeId, $currentPage+1)) {
+				$this->loadItemObjects();
+			}
+		}
+	}
+	
+	/**
 	 * Loads the list of resource objects
 	 * 
 	 * @return array
 	 */
 	protected function loadItemObjects()
 	{
-		$this->_counter = 1;
-		$this->loadItemList();
-	}
-	
-	/**
-	 * Returns an item list, paginating automatically where appropriate
-	 * 
-	 * @return void
-	 */
-	private function loadItemList()
-	{
-		$items		 = $this->getJson()->listing->items;
-		$currentMax  = $this->getJson()->listing->currentMax;
-		$currentPage = $this->getJson()->listing->currentPage;
-		$totalPages  = $this->getJson()->listing->totalPages;
-		
-		foreach ($items as $json)
+		foreach ($this->getJson()->listing->items as $json)
 		{
 			$item = $this->getNewItemObject();
 			
 			$item->setJson($json);
 			$this->addItem($item);
-			
-			$this->_counter++;
-			
-			if ($this->_counter == $currentMax && $currentPage < $totalPages)
-			{
-				if ($this->load($this->_typeId, $currentPage+1)) {
-					$this->loadItemList();
-				}
-			}
 		}
 	}
 	
 	/**
-	 * Returns the total number of items avaliable for this listing
+	 * Returns the total number of items available for this listing
 	 * 
 	 * @return int
 	 */

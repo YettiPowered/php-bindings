@@ -13,6 +13,9 @@ namespace Yetti\API\Tests;
 
 class Item_ListTest extends AuthAbstract
 {
+	const
+		ITEMS_PER_PAGE = 30;
+	
 	public function testInvalidTypeFailsToLoad()
 	{
 		$list = new \Yetti\API\Item_List();
@@ -25,6 +28,57 @@ class Item_ListTest extends AuthAbstract
 		$this->assertTrue($list->load(4));
 		
 		$this->assertGreaterThan(0, $list->getTotalItemCount());
+	}
+	
+	public function testGetItemsPaginatesAutomatically()
+	{
+		$list = new \Yetti\API\Item_List();
+		$this->assertTrue($list->load(4));
+		
+		if ($list->getTotalPages() > 1)
+		{
+			$counter 	  = 0;
+			$items		  = $list->getItems();
+			
+			$this->assertEquals($list->getTotalItemCount(), count($items));
+			
+			foreach ($items as $item)
+			{
+				$counter++;
+				
+				if ($counter > self::ITEMS_PER_PAGE) {
+					return;
+				}
+			}
+			
+			$this->fail("List didn't paginate. (Counter reached $counter)");
+		}
+		else {
+			$this->markTestSkipped('Only one page of items');
+		}
+	}
+	
+	public function testGetItemsDoesNotPaginateWhenASpecificPageIsRequested()
+	{
+		$list = new \Yetti\API\Item_List();
+		$this->assertTrue($list->load(4, 2));
+		
+		if ($list->getTotalPages() > 2)
+		{
+			$counter = 0;
+			$items	 = $list->getItems();
+			
+			foreach ($items as $item) {
+				$counter++;
+			}
+			
+			$this->assertTrue(count($items) <= self::ITEMS_PER_PAGE);
+			$this->assertTrue($counter <= self::ITEMS_PER_PAGE);
+			$this->assertEquals($counter, count($items));
+		}
+		else {
+			$this->markTestSkipped('Not enough pages of items for this test');
+		}
 	}
 	
 	public function testListLoadsItemsMarkedUnavailable()
