@@ -11,6 +11,7 @@ namespace Yetti\API\Tests;
  * @subpackage tests
  */
 
-require_once 'api/Webservice.inc.php';
-require_once 'tests/Config.inc.php';
-require_once 'tests/AuthAbstract.inc.php';
+require_once 'API/Autoloader.php';
+\Yetti\API\Autoloader::register();
+require_once 'tests/Config.php';
+require_once 'tests/AuthAbstract.php';

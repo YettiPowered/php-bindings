@@ -61,7 +61,7 @@ class WebserviceTest extends \PHPUnit_Framework_TestCase
 			$this->assertTrue($webservice->makeRequest());
 		}
 		catch (\Yetti\API\Exception $e) {
-			$this->fail('Auth failed. Have you configured your site settings in Config.inc.php?');
+			$this->fail('Auth failed. Have you configured your site settings in Config.php?');
 		}
 	}
 }
