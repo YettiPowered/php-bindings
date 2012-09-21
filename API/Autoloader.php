@@ -20,7 +20,8 @@ class Autoloader
      */
     public static function autoload($className)
     {
-        if (substr($className, 0, 9) == 'Yetti\API') {
+        if (substr($className, 0, 9) == 'Yetti\API')
+        {
             $className = substr($className, 10);
             $classPath = '';
 
