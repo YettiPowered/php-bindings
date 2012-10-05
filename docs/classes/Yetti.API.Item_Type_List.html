@@ -60,7 +60,7 @@
 <li class="method public "><a href="#getCurrentPage" title="getCurrentPage :: Returns the current page"><span class="description">Returns the current page</span><pre>getCurrentPage()</pre></a></li>
 <li class="method public inherited"><a href="#getItems" title="getItems :: Returns a list iterator object containing items in this listing"><span class="description">Returns a list iterator object containing items in this listing</span><pre>getItems()</pre></a></li>
 <li class="method public inherited"><a href="#getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public inherited"><a href="#getTotalItemCount" title="getTotalItemCount :: Returns the total number of items avaliable for this listing"><span class="description">Returns the total number of items avaliable for this listing</span><pre>getTotalItemCount()</pre></a></li>
+<li class="method public inherited"><a href="#getTotalItemCount" title="getTotalItemCount :: Returns the total number of items available for this listing"><span class="description">Returns the total number of items available for this listing</span><pre>getTotalItemCount()</pre></a></li>
 <li class="method public "><a href="#getTotalPages" title="getTotalPages :: Returns the total number of pages in the list"><span class="description">Returns the total number of pages in the list</span><pre>getTotalPages()</pre></a></li>
 <li class="method public "><a href="#load" title="load :: Load a list of available item types"><span class="description">Load a list of available item types</span><pre>load()</pre></a></li>
 <li class="method public inherited"><a href="#setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
@@ -73,6 +73,8 @@
 Must be called after everything else has been set up"><span class="description">Performs a webservice request and returns a result object
 Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li>
 <li class="method protected inherited"><a href="#setAutoPaginate" title="setAutoPaginate :: Set whether or not getItems() should auto paginate"><span class="description">Set whether or not getItems() should auto paginate</span><pre>setAutoPaginate()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private inherited"><a href="#getArrayAsObject" title="getArrayAsObject :: Recursively convert the given array into a stdClass object"><span class="description">Recursively convert the given array into a stdClass object</span><pre>getArrayAsObject()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
@@ -163,7 +165,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div></div>
 </div>
 <a name="getTotalItemCount" id="getTotalItemCount"></a><div class="element clickable method public getTotalItemCount" data-toggle="collapse" data-target=".getTotalItemCount .collapse">
-<h2>Returns the total number of items avaliable for this listing</h2>
+<h2>Returns the total number of items available for this listing</h2>
 <pre>getTotalItemCount() : int</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
@@ -318,6 +320,31 @@ Must be called after everything else has been set up</h2>
 </div>
 </div></div>
 </div>
+<a name="getArrayAsObject" id="getArrayAsObject"></a><div class="element clickable method private getArrayAsObject" data-toggle="collapse" data-target=".getArrayAsObject .collapse">
+<h2>Recursively convert the given array into a stdClass object</h2>
+<pre>getArrayAsObject(array $array) : \Yetti\API\stdClass</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::getArrayAsObject()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\ListAbstract::getArrayAsObject()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Yetti\API\stdClass</code></div>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a name="%24_autoPagination" id="$_autoPagination"> </a><div class="element clickable property private $_autoPagination" data-toggle="collapse" data-target=".$_autoPagination .collapse">
@@ -387,7 +414,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-21T09:32:57+01:00.<br></footer></div>
+            generated on 2012-10-05T12:02:23+01:00.<br></footer></div>
 </div>
 </body>
 </html>

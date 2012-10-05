@@ -91,6 +91,7 @@ Must be called after everything else has been set up"><span class="description">
 Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li>
 <li class="method protected inherited"><a href="#update" title="update :: Update an existing resource"><span class="description">Update an existing resource</span><pre>update()</pre></a></li>
 <li class="nav-header private">» Private</li>
+<li class="method private inherited"><a href="#getArrayAsObject" title="getArrayAsObject :: Recursively convert the given array into a stdClass object"><span class="description">Recursively convert the given array into a stdClass object</span><pre>getArrayAsObject()</pre></a></li>
 <li class="method private inherited"><a href="#getPluralName" title="getPluralName :: Returns a plural name for resources of this type"><span class="description">Returns a plural name for resources of this type</span><pre>getPluralName()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
@@ -179,7 +180,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 <a name="getAttachedAssets" id="getAttachedAssets"></a><div class="element clickable method public getAttachedAssets" data-toggle="collapse" data-target=".getAttachedAssets .collapse">
 <h2>Returns an array of attached asset group elements</h2>
-<pre>getAttachedAssets() : array</pre>
+<pre>getAttachedAssets(string $requestedGroup) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -187,6 +188,11 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <th>inherited_from</th>
 <td>\Yetti\API\Resource_BaseAbstract::getAttachedAssets()</td>
 </tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$requestedGroup</h4>
+<code>string</code>
+</div>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
@@ -622,6 +628,31 @@ Must be called after everything else has been set up</h2>
 <div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
 </div></div>
 </div>
+<a name="getArrayAsObject" id="getArrayAsObject"></a><div class="element clickable method private getArrayAsObject" data-toggle="collapse" data-target=".getArrayAsObject .collapse">
+<h2>Recursively convert the given array into a stdClass object</h2>
+<pre>getArrayAsObject(array $array) : \Yetti\API\stdClass</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::getArrayAsObject()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::getArrayAsObject()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Yetti\API\stdClass</code></div>
+</div></div>
+</div>
 <a name="getPluralName" id="getPluralName"></a><div class="element clickable method private getPluralName" data-toggle="collapse" data-target=".getPluralName .collapse">
 <h2>Returns a plural name for resources of this type</h2>
 <pre>getPluralName() : string</pre>
@@ -693,7 +724,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-09-21T09:32:57+01:00.<br></footer></div>
+            generated on 2012-10-05T12:02:23+01:00.<br></footer></div>
 </div>
 </body>
 </html>
