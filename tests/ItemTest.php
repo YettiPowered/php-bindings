@@ -68,8 +68,49 @@ class ItemTest extends AuthAbstract
 		return $item;
 	}
 	
+	
 	/**
 	 * @depends testLoadItem
+	 */
+	public function testAttachedAssets(\Yetti\API\Item $inItem)
+	{
+		$relatedItem = new \Yetti\API\Item();
+		$relatedItem->loadTemplate(4);
+		$relatedItem->setName('A test related item' . microtime(true));
+		$relatedItem->setPropertyValue('Name', 'Test item');
+		$relatedItem->setPropertyValue('Body', 'A test body');
+		$this->assertTrue($relatedItem->save()->success());
+		
+		$this->assertEmpty($inItem->getAttachedAssets());
+		$this->assertEmpty($inItem->getAttachedAssets('Related'));
+		$this->assertEmpty($inItem->getAttachedAssets('Test'));
+		
+		$inItem->addAsset('Related', $relatedItem->getId());
+		$this->assertTrue($inItem->save()->success());
+		
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($inItem->getId()));
+		
+		$fullAttachedAssets = $inItem->getAttachedAssets();
+		$relatedArticles	= $inItem->getAttachedAssets('Related');
+		
+		$this->assertNotEmpty($fullAttachedAssets);
+		$this->assertNotEmpty($relatedArticles);
+		$this->assertEmpty($inItem->getAttachedAssets('Test'));
+		
+		$this->assertInternalType('array', $fullAttachedAssets);
+		$this->assertInstanceOf('\Yetti\API\Resource_Asset_Group', $fullAttachedAssets['Related']);
+		$this->assertInstanceOf('\Yetti\API\Resource_Asset_Group', $relatedArticles);
+		
+		$this->assertCount(1, $fullAttachedAssets);
+		$this->assertCount(1, $relatedArticles->getItems());
+		$this->assertEquals($relatedItem->getId(), $relatedArticles->getItems()->first()->getId());
+		
+		return $item;
+	}
+	
+	/**
+	 * @depends testAttachedAssets
 	 */
 	public function testAssignItemToCategory(\Yetti\API\Item $inItem)
 	{

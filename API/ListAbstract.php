@@ -64,7 +64,7 @@ abstract class ListAbstract extends BaseAbstract
 	}
 	
 	/**
-	 * Returns the total number of items avaliable for this listing
+	 * Returns the total number of items available for this listing
 	 * 
 	 * @return int
 	 */

@@ -20,8 +20,6 @@ class CollectionTest extends AuthAbstract
 		$this->assertFalse($collection->save()->success());
 		
 		$collection->setName('A test collection ' . microtime(true));
-		$this->assertFalse($collection->save()->success());
-		
 		$collection->setPropertyValue('Name', 'Test collection');
 		$this->assertTrue($collection->save()->success());
 		

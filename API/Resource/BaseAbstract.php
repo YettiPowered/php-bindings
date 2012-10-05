@@ -325,16 +325,24 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	/**
 	 * Returns an array of attached asset group elements
 	 * 
+	 * @param string $requestedGroup
 	 * @return array
 	 */
-	public function getAttachedAssets()
+	public function getAttachedAssets($requestedGroup=null)
 	{
 		$assets = array();
 		
 		foreach ($this->getJson()->assets as $name => $group)
 		{
-			$assets[$name] = new \Yetti\API\Resource_Asset_Group();
-			$assets[$name]->setJson($group);
+			$assetGroup = new \Yetti\API\Resource_Asset_Group();
+			$assetGroup->setJson($group);
+			
+			if (!$requestedGroup) {
+				$assets[$name] = $assetGroup;
+			}
+			elseif ($requestedGroup == $name) {
+				$assets = $assetGroup;
+			}
 		}
 		
 		return $assets;

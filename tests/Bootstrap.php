@@ -13,5 +13,6 @@ namespace Yetti\API\Tests;
 
 require_once 'API/Autoloader.php';
 \Yetti\API\Autoloader::register();
+
 require_once 'tests/Config.php';
 require_once 'tests/AuthAbstract.php';

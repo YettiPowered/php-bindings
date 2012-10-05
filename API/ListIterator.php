@@ -72,6 +72,18 @@ class ListIterator implements \Iterator, \Countable, \ArrayAccess
 	}
 	
 	/**
+	 * Returns the first item in the list
+	 * 
+	 * @return mixed
+	 */
+	public function first()
+	{
+		if ($this->count()) {
+			return $this->_items[0];
+		}
+	}
+	
+	/**
 	 * (non-PHPdoc)
 	 * @see Iterator::current()
 	 */

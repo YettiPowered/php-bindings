@@ -49,6 +49,10 @@ abstract class BaseAbstract
 	 */
 	public function setJson($json)
 	{
+		if (is_array($json)) {
+			$json = $this->getArrayAsObject($json);
+		}
+		
 		$this->_json = $json;
 	}
 	
@@ -97,5 +101,20 @@ abstract class BaseAbstract
 		}
 		
 		return $result;
+	}
+	
+	/**
+	 * Recursively convert the given array into a stdClass object
+	 * 
+	 * @param array $array
+	 * @return stdClass
+	 */
+	private function getArrayAsObject($array)
+	{
+		if (is_array($array)) {
+			return (object)array_map(array(__CLASS__, __FUNCTION__), $array);
+		}
+		
+		return $array;
 	}
 }
