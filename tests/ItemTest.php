@@ -148,4 +148,31 @@ class ItemTest extends AuthAbstract
 		$this->assertTrue($item->load($itemId));
 		$this->assertFalse($item->isLanguageActive());
 	}
+	
+	public function testAddPricingTier()
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->loadTemplate(5));
+		
+		$item->setName('A test product' . microtime(true));
+		$item->setPropertyValue('Name', 'Test product');
+		$item->setPropertyValue('Description', 'A test product');
+		$this->assertFalse($item->save()->success());
+		
+		$item->addPricingTier(10.00);
+		$this->assertTrue($item->save()->success());
+		
+		return $item;
+	}
+	
+	/**
+	 * @depends testAddPricingTier
+	 */
+	public function testLoadProduct(\Yetti\API\Item $inItem)
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($inItem->getId()));
+		
+		$this->assertEquals(10, $item->getPrice());
+	}
 }
