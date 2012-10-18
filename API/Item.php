@@ -12,6 +12,11 @@ namespace Yetti\API;
 
 class Item extends Resource_BaseAbstract
 {
+	const
+		RESOURCE_ID_TYPE_ALL		= 100,
+		RESOURCE_ID_TYPE_USER_TYPE 	= 300,
+		RESOURCE_ID_TYPE_GROUP		= 400;
+	
 	/**
 	 * Returns a singular name for this type of resource
 	 * 
@@ -85,14 +90,44 @@ class Item extends Resource_BaseAbstract
 	 * @param int $appliesToIdType
 	 * @return void
 	 */
-	public function addPricingTier($price, $appliesToId=-1, $appliesToIdType=100)
+	public function addPricingTier($price, $appliesToId=-1, $appliesToIdType=self::RESOURCE_ID_TYPE_ALL)
 	{
-		$this->getJson()->pricingTiers[] = array
-		(
-			'price' 		  => $price,
-			'appliesToId'	  => $appliesToId,
-			'appliesToIdType' => $appliesToIdType,
+		$newElement = array(
+			'price' 		  		  => $price,
+			'appliesToResourceId'	  => $appliesToId,
+			'appliesToResourceIdType' => $appliesToIdType,
 		);
+		
+		$emptyFirstTier = isset($this->getJson()->pricingTiers[0]) && 
+			$this->getJson()->pricingTiers[0]->price == 0 && 
+			$this->getJson()->pricingTiers[0]->appliesToResourceId == -1 && 
+			$this->getJson()->pricingTiers[0]->appliesToResourceIdType == 100;
+		
+		if ($emptyFirstTier) {
+			$this->getJson()->pricingTiers[0] = $newElement;
+		}
+		else {
+			$this->getJson()->pricingTiers[] = $newElement;
+		}
+	}
+	
+	/**
+	 * Returns the price of this item (if applicable).
+	 * 
+	 * @param int $appliesToId
+	 * @param int $appliesToIdType
+	 * @return float
+	 */
+	public function getPrice($appliesToId=-1, $appliesToIdType=self::RESOURCE_ID_TYPE_ALL)
+	{
+		foreach ($this->getJson()->pricingTiers as $tier)
+		{
+			$tier = (array)$tier;
+			
+			if ($tier['appliesToResourceId'] == $appliesToId && $tier['appliesToResourceIdType'] == $appliesToIdType) {
+				return (float)$tier['price'];
+			}
+		}
 	}
 	
 	/**
