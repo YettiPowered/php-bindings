@@ -13,6 +13,12 @@ namespace Yetti\API;
 abstract class Resource_BaseAbstract extends BaseAbstract
 {
 	private
+	
+		/**
+		 * The country code for the current resource
+		 * 
+		 * @var string
+		 */
 		$_countryCode;
 	
 	/**

@@ -13,6 +13,13 @@ namespace Yetti\API;
 class Item extends Resource_BaseAbstract
 {
 	const
+	
+		/**
+		 * Resource ID type constants are used in conjunction with a resource ID.
+		 * Eg. (1, 300) would point to the user type with ID 1.
+		 * 
+		 * @var int
+		 */
 		RESOURCE_ID_TYPE_ALL		= 100,
 		RESOURCE_ID_TYPE_USER_TYPE 	= 300,
 		RESOURCE_ID_TYPE_GROUP		= 400;
