@@ -23,13 +23,6 @@ class UserTest extends AuthAbstract
 		$user->save();
 	}
 	
-	public function testFailToSaveInvalidUser()
-	{
-		$user = new User();
-		$this->assertTrue($user->loadTemplate(9999));
-		$this->assertFalse($user->save()->success());
-	}
-	
 	public function testSaveValidUser()
 	{
 		$user = new User();
@@ -61,8 +54,23 @@ class UserTest extends AuthAbstract
 		$this->assertEquals('test-user', substr($user->getName(), 0, 9));
 		$this->assertEquals('test', substr($user->getEmail(), 0, 4));
 		$this->assertEquals('@example.org', substr($user->getEmail(), -12));
-		$this->assertNotEmpty($user->getPassHash());
 		
-		return $user;
+		$passHash = $user->getPassHash();
+		$this->assertNotEmpty($passHash);
+		$this->assertTrue($user->save()->success());
+		
+		$user = new User();
+		$this->assertTrue($user->load($inUser->getId()));
+		$this->assertEquals($passHash, $user->getPassHash());
+	}
+	
+	/**
+	 * @expectedException \Yetti\API\Exception_Auth
+	 */
+	public function testSaveSuperadminFails()
+	{
+		$user = new User();
+		$this->assertTrue($user->load(1));
+		$this->assertFalse($user->save()->success());
 	}
 }
