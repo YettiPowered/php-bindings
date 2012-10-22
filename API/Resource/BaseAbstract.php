@@ -12,6 +12,18 @@ namespace Yetti\API;
 
 abstract class Resource_BaseAbstract extends BaseAbstract
 {
+	const
+	
+		/**
+		 * Resource ID type constants are used in conjunction with a resource ID.
+		 * Eg. (1, 300) would point to the user type with ID 1.
+		 * 
+		 * @var int
+		 */
+		ID_TYPE_ALL		  = 100,
+		ID_TYPE_USER_TYPE = 300,
+		ID_TYPE_GROUP	  = 400;
+	
 	private
 	
 		/**

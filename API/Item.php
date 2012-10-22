@@ -12,18 +12,6 @@ namespace Yetti\API;
 
 class Item extends Resource_BaseAbstract
 {
-	const
-	
-		/**
-		 * Resource ID type constants are used in conjunction with a resource ID.
-		 * Eg. (1, 300) would point to the user type with ID 1.
-		 * 
-		 * @var int
-		 */
-		RESOURCE_ID_TYPE_ALL		= 100,
-		RESOURCE_ID_TYPE_USER_TYPE 	= 300,
-		RESOURCE_ID_TYPE_GROUP		= 400;
-	
 	/**
 	 * Returns a singular name for this type of resource
 	 * 
@@ -97,7 +85,7 @@ class Item extends Resource_BaseAbstract
 	 * @param int $appliesToIdType
 	 * @return void
 	 */
-	public function addPricingTier($price, $appliesToId=-1, $appliesToIdType=self::RESOURCE_ID_TYPE_ALL)
+	public function addPricingTier($price, $appliesToId=-1, $appliesToIdType=Resource_BaseAbstract::ID_TYPE_ALL)
 	{
 		$newElement = array(
 			'price' 		  		  => $price,
@@ -125,7 +113,7 @@ class Item extends Resource_BaseAbstract
 	 * @param int $appliesToIdType
 	 * @return float
 	 */
-	public function getPrice($appliesToId=-1, $appliesToIdType=self::RESOURCE_ID_TYPE_ALL)
+	public function getPrice($appliesToId=-1, $appliesToIdType=Resource_BaseAbstract::ID_TYPE_ALL)
 	{
 		foreach ($this->getJson()->pricingTiers as $tier)
 		{
