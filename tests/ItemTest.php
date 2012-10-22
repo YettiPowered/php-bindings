@@ -68,7 +68,6 @@ class ItemTest extends AuthAbstract
 		return $item;
 	}
 	
-	
 	/**
 	 * @depends testLoadItem
 	 */
