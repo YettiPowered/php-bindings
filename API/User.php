@@ -23,13 +23,35 @@ class User extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Set the user's password
+	 * 
+	 * @param string $password
+	 * @return void
+	 */
+	public function setPassword($password)
+	{
+		$this->getJson()->resource->password = (string)$password;
+	}
+	
+	/**
 	 * Returns the hashed password for this user
 	 * 
 	 * @return string
 	 */
 	public function getPassHash()
 	{
-		return (string)$this->getJson()->item->resource->password;
+		return (string)$this->getJson()->resource->password;
+	}
+	
+	/**
+	 * Set the user's email address
+	 * 
+	 * @param string $email
+	 * @return void
+	 */
+	public function setEmail($email)
+	{
+		$this->getJson()->resource->email = (string)$email;
 	}
 	
 	/**
@@ -39,6 +61,6 @@ class User extends Resource_BaseAbstract
 	*/
 	public function getEmail()
 	{
-		return (string)$this->getJson()->item->resource->email;
+		return (string)$this->getJson()->resource->email;
 	}
 }
