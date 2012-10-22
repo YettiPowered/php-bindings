@@ -2458,7 +2458,7 @@ Represents a single asset group for a resource]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file User/List.php</error>
     </parse_markers>
   </file>
-  <file path="User.php" hash="9abb92dcbd50606ad5f1ee0e8a21153b" package="Default">
+  <file path="User.php" hash="fd4a678a80b5dada12a8337a46a8c802" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\Resource_BaseAbstract</extends>
       <name>User</name>
@@ -2481,24 +2481,62 @@ Represents a single asset group for a resource]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="30" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="31" package="yetti-api">
+        <name>setPassword</name>
+        <full_name>setPassword</full_name>
+        <docblock line="25">
+          <description><![CDATA[Set the user's password]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="param" description="" type="string" variable="$password">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="25" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="41" package="yetti-api">
         <name>getPassHash</name>
         <full_name>getPassHash</full_name>
-        <docblock line="25">
+        <docblock line="36">
           <description><![CDATA[Returns the hashed password for this user]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="25" name="return" description="" type="string">
+          <tag line="36" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="40" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="52" package="yetti-api">
+        <name>setEmail</name>
+        <full_name>setEmail</full_name>
+        <docblock line="46">
+          <description><![CDATA[Set the user's email address]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="46" name="param" description="" type="string" variable="$email">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="46" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="52">
+          <name>$email</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="62" package="yetti-api">
         <name>getEmail</name>
         <full_name>getEmail</full_name>
-        <docblock line="35">
+        <docblock line="57">
           <description><![CDATA[Returns the email address for this user]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="35" name="return" description="" type="string">
+          <tag line="57" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
