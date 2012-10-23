@@ -84,7 +84,7 @@ class ItemTest extends AuthAbstract
 		$this->assertEmpty($inItem->getAttachedAssets('Related'));
 		$this->assertEmpty($inItem->getAttachedAssets('Test'));
 		
-		$inItem->addAsset('Related', $relatedItem->getId());
+		$inItem->addAsset('Related', $relatedItem->getId(), 'alt', 'url');
 		$this->assertTrue($inItem->save()->success());
 		
 		$item = new \Yetti\API\Item();
@@ -103,7 +103,10 @@ class ItemTest extends AuthAbstract
 		
 		$this->assertCount(1, $fullAttachedAssets);
 		$this->assertCount(1, $relatedArticles->getItems());
+		
 		$this->assertEquals($relatedItem->getId(), $relatedArticles->getItems()->first()->getId());
+		$this->assertEquals('alt', $relatedArticles->getItems()->first()->getAltText());
+		$this->assertEquals('url', $relatedArticles->getItems()->first()->getUrl());
 		
 		return $item;
 	}
