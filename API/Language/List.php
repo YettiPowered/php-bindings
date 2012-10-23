@@ -42,7 +42,6 @@ class Language_List extends ListAbstract
 		{
 			$item = new \Yetti\API\Language();
 			$item->setJson($json);
-			
 			$this->addItem($item);
 		}
 	}

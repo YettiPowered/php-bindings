@@ -28,7 +28,12 @@ class Language_ListTest extends AuthAbstract
 		
 		$languageArray = $languages->getItems();
 		
+		$this->assertEquals(1, $languageArray[0]->getId());
 		$this->assertEquals('GB', $languageArray[0]->getCountryCode());
+		$this->assertEquals(true, $languageArray[0]->isDefault());
+		
+		$this->assertEquals(2, $languageArray[1]->getId());
 		$this->assertEquals('FR', $languageArray[1]->getCountryCode());
+		$this->assertEquals(false, $languageArray[1]->isDefault());
 	}
 }
