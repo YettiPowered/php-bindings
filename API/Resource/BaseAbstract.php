@@ -31,7 +31,21 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		 * 
 		 * @var string
 		 */
-		$_countryCode;
+		$_countryCode,
+		
+		/**
+		 * The original author of this resource
+		 * 
+		 * @var User
+		 */
+		$_originalAuthor,
+		
+		/**
+		 * The author of the current revision
+		 * 
+		 * @var User
+		 */
+		$_revisionAuthor;
 	
 	/**
 	 * Loads a resource by ID or identifier
@@ -264,6 +278,38 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		if (isset($this->getJson()->properties->{$name})) {
 			return (string)$this->getJson()->properties->{$name}->value;
 		}
+	}
+	
+	/**
+	 * Return a user object based on the original author of this resource
+	 * 
+	 * @return \Yetti\API\User
+	 */
+	public function getOriginalAuthor()
+	{
+		if (!$this->_originalAuthor)
+		{
+			$this->_originalAuthor = new User();
+			$this->_originalAuthor->load($this->getJson()->resource->author->id);
+		}
+		
+		return $this->_originalAuthor;
+	}
+	
+	/**
+	 * Return a user object based on the author of this revision
+	 * 
+	 * @return \Yetti\API\User
+	 */
+	public function getRevisionAuthor()
+	{
+		if (!$this->_revisionAuthor)
+		{
+			$this->_revisionAuthor = new User();
+			$this->_revisionAuthor->load($this->getJson()->revision->author->id);
+		}
+		
+		return $this->_revisionAuthor;
 	}
 	
 	/**

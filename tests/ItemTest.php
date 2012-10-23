@@ -130,6 +130,20 @@ class ItemTest extends AuthAbstract
 		$item = new \Yetti\API\Item();
 		$this->assertTrue($item->load($inItem->getId()));
 		$this->assertEquals(1, count($item->getCollectionIds()));
+		
+		return $item;
+	}
+	
+	/**
+	 * @depends testAssignItemToCategory
+	 */
+	public function testGetAuthor(\Yetti\API\Item $inItem)
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($inItem->getId()));
+		
+		$this->assertEquals('api-test', $item->getOriginalAuthor()->getName());
+		$this->assertEquals('api-test', $item->getRevisionAuthor()->getName());
 	}
 	
 	public function testSetLanguageActive()
