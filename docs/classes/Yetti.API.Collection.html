@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">66</span></a></li>
+                <span class="label label-info">68</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -65,9 +65,11 @@
 <li class="method public inherited"><a href="#getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
 <li class="method public inherited"><a href="#getLanguageId" title="getLanguageId :: Returns the language ID"><span class="description">Returns the language ID</span><pre>getLanguageId()</pre></a></li>
 <li class="method public inherited"><a href="#getName" title="getName :: Returns the resource name"><span class="description">Returns the resource name</span><pre>getName()</pre></a></li>
+<li class="method public inherited"><a href="#getOriginalAuthor" title="getOriginalAuthor :: Return a user object based on the original author of this resource"><span class="description">Return a user object based on the original author of this resource</span><pre>getOriginalAuthor()</pre></a></li>
 <li class="method public "><a href="#getParentId" title="getParentId :: Returns the ID of this collection's parent"><span class="description">Returns the ID of this collection's parent</span><pre>getParentId()</pre></a></li>
 <li class="method public inherited"><a href="#getProperties" title="getProperties :: Returns an array of property elements"><span class="description">Returns an array of property elements</span><pre>getProperties()</pre></a></li>
 <li class="method public inherited"><a href="#getPropertyValue" title="getPropertyValue :: Returns a property value"><span class="description">Returns a property value</span><pre>getPropertyValue()</pre></a></li>
+<li class="method public inherited"><a href="#getRevisionAuthor" title="getRevisionAuthor :: Return a user object based on the author of this revision"><span class="description">Return a user object based on the author of this revision</span><pre>getRevisionAuthor()</pre></a></li>
 <li class="method public inherited"><a href="#getRevisionComment" title="getRevisionComment :: Returns the revision comment for the current revision"><span class="description">Returns the revision comment for the current revision</span><pre>getRevisionComment()</pre></a></li>
 <li class="method public inherited"><a href="#getRevisionId" title="getRevisionId :: Returns the revision ID"><span class="description">Returns the revision ID</span><pre>getRevisionId()</pre></a></li>
 <li class="method public inherited"><a href="#getTypeId" title="getTypeId :: Returns the resource type ID"><span class="description">Returns the resource type ID</span><pre>getTypeId()</pre></a></li>
@@ -98,6 +100,8 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <li class="nav-header private">» Private</li>
 <li class="property private inherited"><a href="#%24_countryCode" title="$_countryCode :: "><span class="description">$_countryCode</span><pre>$_countryCode</pre></a></li>
 <li class="property private inherited"><a href="#%24_json" title="$_json :: "><span class="description">$_json</span><pre>$_json</pre></a></li>
+<li class="property private inherited"><a href="#%24_originalAuthor" title="$_originalAuthor :: "><span class="description">$_originalAuthor</span><pre>$_originalAuthor</pre></a></li>
+<li class="property private inherited"><a href="#%24_revisionAuthor" title="$_revisionAuthor :: "><span class="description">$_revisionAuthor</span><pre>$_revisionAuthor</pre></a></li>
 <li class="property private inherited"><a href="#%24_webservice" title="$_webservice :: "><span class="description">$_webservice</span><pre>$_webservice</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
@@ -283,6 +287,20 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
+<a name="getOriginalAuthor" id="getOriginalAuthor"></a><div class="element clickable method public getOriginalAuthor" data-toggle="collapse" data-target=".getOriginalAuthor .collapse">
+<h2>Return a user object based on the original author of this resource</h2>
+<pre>getOriginalAuthor() : <a href="../classes/Yetti.API.User.html">\Yetti\API\User</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::getOriginalAuthor()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.User.html">\Yetti\API\User</a></code></div>
+</div></div>
+</div>
 <a name="getParentId" id="getParentId"></a><div class="element clickable method public getParentId" data-toggle="collapse" data-target=".getParentId .collapse">
 <h2>Returns the ID of this collection's parent</h2>
 <pre>getParentId() : int</pre>
@@ -324,6 +342,20 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 <h3>Returns</h3>
 <div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getRevisionAuthor" id="getRevisionAuthor"></a><div class="element clickable method public getRevisionAuthor" data-toggle="collapse" data-target=".getRevisionAuthor .collapse">
+<h2>Return a user object based on the author of this revision</h2>
+<pre>getRevisionAuthor() : <a href="../classes/Yetti.API.User.html">\Yetti\API\User</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::getRevisionAuthor()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.User.html">\Yetti\API\User</a></code></div>
 </div></div>
 </div>
 <a name="getRevisionComment" id="getRevisionComment"></a><div class="element clickable method public getRevisionComment" data-toggle="collapse" data-target=".getRevisionComment .collapse">
@@ -704,6 +736,30 @@ Must be called after everything else has been set up</h2>
 </table>
 </div></div>
 </div>
+<a name="%24_originalAuthor" id="$_originalAuthor"> </a><div class="element clickable property private $_originalAuthor" data-toggle="collapse" data-target=".$_originalAuthor .collapse">
+<h2>$_originalAuthor</h2>
+<pre>$_originalAuthor </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::$$_originalAuthor</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24_revisionAuthor" id="$_revisionAuthor"> </a><div class="element clickable property private $_revisionAuthor" data-toggle="collapse" data-target=".$_revisionAuthor .collapse">
+<h2>$_revisionAuthor</h2>
+<pre>$_revisionAuthor </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::$$_revisionAuthor</td>
+</tr></table>
+</div></div>
+</div>
 <a name="%24_webservice" id="$_webservice"> </a><div class="element clickable property private $_webservice" data-toggle="collapse" data-target=".$_webservice .collapse">
 <h2>$_webservice</h2>
 <pre>$_webservice </pre>
@@ -767,7 +823,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-10-22T15:23:28+01:00.<br></footer></div>
+            generated on 2012-10-23T09:12:27+01:00.<br></footer></div>
 </div>
 </body>
 </html>
