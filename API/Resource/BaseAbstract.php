@@ -119,6 +119,20 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	}
 	
 	/**
+	 * Delete this resource
+	 * 
+	 * @return \Yetti\API\Result
+	 */
+	public function delete()
+	{
+		$this->webservice()->setRequestPath($this->_countryCode . '/' . $this->getPluralName() . '.ws');
+		$this->webservice()->setRequestParam('typeId', $this->getTypeId());
+		$this->webservice()->setRequestParam('resourceId', $this->getId());
+		$this->webservice()->setRequestMethod('delete');
+		return $this->makeRequestReturnResult();
+	}
+	
+	/**
 	 * Create a new resource
 	 * 
 	 * @return \Yetti\API\Result
