@@ -165,6 +165,32 @@ class ItemTest extends AuthAbstract
 		$this->assertFalse($item->load($inItem->getId()));
 	}
 	
+	public function testSpecialCharacters()
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->loadTemplate(4));
+		$item->setName('This & That ' . microtime(true));
+		$item->setPropertyValue('Name', 'This & That');
+		$item->setPropertyValue('Body', '<div>This & That</div>');
+		$this->assertTrue($item->save()->success());
+		$itemId = $item->getId();
+		
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($itemId));
+		
+		$this->assertEquals('this--that', substr($item->getName(), 0, 10));
+		$this->assertEquals('This & That', $item->getPropertyValue('Name'));
+		$this->assertEquals('<div>This & That</div>', $item->getPropertyValue('Body'));
+		$this->assertTrue($item->save()->success());
+		
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($itemId));
+		
+		$this->assertEquals('this--that', substr($item->getName(), 0, 10));
+		$this->assertEquals('This & That', $item->getPropertyValue('Name'));
+		$this->assertEquals('<div>This & That</div>', $item->getPropertyValue('Body'));
+	}
+	
 	public function testSetLanguageActive()
 	{
 		$item = new \Yetti\API\Item();
