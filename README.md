@@ -13,7 +13,30 @@ For more details on Yetti, please refer to http://yetti.co.uk. We welcome commen
 
 ## Examples
 
-Please see the included docs and tests directories for help using these bindings.
+Creating an item is simple:
+
+```php
+use Yetti\API\Webservice as Webservice;
+use Yetti\API\Item as Item;
+
+include 'Yetti/php-bindings/API/Autoloader.php';
+Yetti\API\Autoloader::register();
+
+Webservice::setDefaultBaseUri('https://yoursite.secure.yetti.co.uk');
+Webservice::setDefaultAccessKey('your-access-key');
+Webservice::setDefaultPrivateKey('your-private-key');
+
+$item = new Item();
+$item->loadTemplate(1);
+$item->setName('my-big-news');
+$item->setPropertyValue('Name', 'My big news..!');
+$item->setPropertyValue('Body', 'I have decided to become a whale.');
+
+echo $item->save()->success() ? 'Item saved' : 'Save failed';
+```
+
+And there really isn't anything much more complicated than that.
+Please see the included docs and tests directories for additional help and examples.
 
 ## Docs
 
