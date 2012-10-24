@@ -2589,7 +2589,7 @@ Represents a single asset group for a resource]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file User.php</error>
     </parse_markers>
   </file>
-  <file path="Webservice.php" hash="9fad16b912922761ca2b39283b4c0d87" package="Default">
+  <file path="Webservice.php" hash="bec9d6447b2fa4c97ea53e5e9ad214dc" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends/>
       <name>Webservice</name>
