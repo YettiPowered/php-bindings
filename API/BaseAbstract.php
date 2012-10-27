@@ -43,6 +43,16 @@ abstract class BaseAbstract
 	}
 	
 	/**
+	 * Set the webservice object
+	 *
+	 * @param WebService $webservice
+	 */
+	public function setWebservice(WebService $webservice)
+	{
+		$this->_webservice = $webservice;
+	}
+
+	/**
 	 * Set the JSON object
 	 *
 	 * @param stdClass $json
