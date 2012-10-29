@@ -87,6 +87,7 @@
 <li class="method public inherited"><a href="#setName" title="setName :: Set the resource name (identifier)"><span class="description">Set the resource name (identifier)</span><pre>setName()</pre></a></li>
 <li class="method public inherited"><a href="#setPropertyValue" title="setPropertyValue :: Set a property value"><span class="description">Set a property value</span><pre>setPropertyValue()</pre></a></li>
 <li class="method public inherited"><a href="#setRevisionComment" title="setRevisionComment :: Sets the revision comment for the current revision"><span class="description">Sets the revision comment for the current revision</span><pre>setRevisionComment()</pre></a></li>
+<li class="method public inherited"><a href="#setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
 <li class="method public inherited"><a href="#webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#_afterSave" title="_afterSave :: Perform post save actions"><span class="description">Perform post save actions</span><pre>_afterSave()</pre></a></li>
@@ -556,7 +557,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 <a name="setJson" id="setJson"></a><div class="element clickable method public setJson" data-toggle="collapse" data-target=".setJson .collapse">
 <h2>Set the JSON object</h2>
-<pre>setJson(\Yetti\API\stdClass $json) </pre>
+<pre>setJson(\Yetti\API\stdClass $json) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -649,9 +650,32 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 </div></div>
 </div>
+<a name="setWebservice" id="setWebservice"></a><div class="element clickable method public setWebservice" data-toggle="collapse" data-target=".setWebservice .collapse">
+<h2>Set the webservice object</h2>
+<pre>setWebservice(\Yetti\API\Webservice $webservice) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\BaseAbstract::setWebservice()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::setWebservice()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$webservice</h4>
+<code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code>
+</div>
+</div></div>
+</div>
 <a name="webservice" id="webservice"></a><div class="element clickable method public webservice" data-toggle="collapse" data-target=".webservice .collapse">
 <h2>Returns the webservice object</h2>
-<pre>webservice() : \Yetti\API\WebService</pre>
+<pre>webservice() : <a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -666,7 +690,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </tr>
 </table>
 <h3>Returns</h3>
-<div class="subelement response"><code>\Yetti\API\WebService</code></div>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code></div>
 </div></div>
 </div>
 <a name="_afterSave" id="_afterSave"></a><div class="element clickable method protected _afterSave" data-toggle="collapse" data-target="._afterSave .collapse">
@@ -898,7 +922,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-10-24T10:18:34+01:00.<br></footer></div>
+            generated on 2012-10-29T11:53:16Z.<br></footer></div>
 </div>
 </body>
 </html>

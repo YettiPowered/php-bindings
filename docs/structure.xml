@@ -50,7 +50,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file Autoloader.php</error>
     </parse_markers>
   </file>
-  <file path="BaseAbstract.php" hash="7c32754e6427f44401ca54d01201b5aa" package="Default">
+  <file path="BaseAbstract.php" hash="fc20a8c6c0bc0608a228ecd38d6a01f8" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends/>
       <name>BaseAbstract</name>
@@ -70,73 +70,95 @@
         <name>$_json</name>
         <default><![CDATA[]]></default>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="36" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="37" package="yetti-api">
+        <name>setWebservice</name>
+        <full_name>setWebservice</full_name>
+        <docblock line="31">
+          <description><![CDATA[Set the webservice object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="31" name="param" description="" type="\Yetti\API\Webservice" variable="$webservice">
+            <type by_reference="false">\Yetti\API\Webservice</type>
+          </tag>
+          <tag line="31" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="37">
+          <name>$webservice</name>
+          <default><![CDATA[]]></default>
+          <type>\Yetti\API\Webservice</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="47" package="yetti-api">
         <name>webservice</name>
         <full_name>webservice</full_name>
-        <docblock line="31">
+        <docblock line="42">
           <description><![CDATA[Returns the webservice object]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="31" name="return" description="" type="\Yetti\API\WebService">
-            <type by_reference="false">\Yetti\API\WebService</type>
+          <tag line="42" name="return" description="" type="\Yetti\API\Webservice">
+            <type by_reference="false">\Yetti\API\Webservice</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="50" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="62" package="yetti-api">
         <name>setJson</name>
         <full_name>setJson</full_name>
-        <docblock line="45">
+        <docblock line="56">
           <description><![CDATA[Set the JSON object]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="45" name="param" description="" type="\Yetti\API\stdClass" variable="$json">
+          <tag line="56" name="param" description="" type="\Yetti\API\stdClass" variable="$json">
             <type by_reference="false">\Yetti\API\stdClass</type>
           </tag>
+          <tag line="56" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
         </docblock>
-        <argument line="50">
+        <argument line="62">
           <name>$json</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="65" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="77" package="yetti-api">
         <name>getJson</name>
         <full_name>getJson</full_name>
-        <docblock line="59">
+        <docblock line="71">
           <description><![CDATA[Returns the JSON object]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="59" name="throws" description="" type="\Yetti\API\Exception">
+          <tag line="71" name="throws" description="" type="\Yetti\API\Exception">
             <type by_reference="false">\Yetti\API\Exception</type>
           </tag>
-          <tag line="59" name="return" description="" type="\stdClass">
+          <tag line="71" name="return" description="" type="\stdClass">
             <type by_reference="false">\stdClass</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="80" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="92" package="yetti-api">
         <name>makeRequestReturnResult</name>
         <full_name>makeRequestReturnResult</full_name>
-        <docblock line="74">
+        <docblock line="86">
           <description><![CDATA[Performs a webservice request and returns a result object
 Must be called after everything else has been set up]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="74" name="return" description="" type="\Yetti\API\Result">
+          <tag line="86" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="112" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="124" package="yetti-api">
         <name>getArrayAsObject</name>
         <full_name>getArrayAsObject</full_name>
-        <docblock line="106">
+        <docblock line="118">
           <description><![CDATA[Recursively convert the given array into a stdClass object]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="106" name="param" description="" type="array" variable="$array">
+          <tag line="118" name="param" description="" type="array" variable="$array">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="106" name="return" description="" type="\Yetti\API\stdClass">
+          <tag line="118" name="return" description="" type="\Yetti\API\stdClass">
             <type by_reference="false">\Yetti\API\stdClass</type>
           </tag>
         </docblock>
-        <argument line="112">
+        <argument line="124">
           <name>$array</name>
           <default><![CDATA[]]></default>
           <type/>
