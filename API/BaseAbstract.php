@@ -29,9 +29,20 @@ abstract class BaseAbstract
 		$_json;
 	
 	/**
+	 * Set the webservice object
+	 *
+	 * @param Webservice $webservice
+	 * @return void
+	 */
+	public function setWebservice(Webservice $webservice)
+	{
+		$this->_webservice = $webservice;
+	}
+	
+	/**
 	 * Returns the webservice object
 	 *
-	 * @return WebService
+	 * @return Webservice
 	 */
 	public function webservice()
 	{
@@ -43,19 +54,10 @@ abstract class BaseAbstract
 	}
 	
 	/**
-	 * Set the webservice object
-	 *
-	 * @param WebService $webservice
-	 */
-	public function setWebservice(WebService $webservice)
-	{
-		$this->_webservice = $webservice;
-	}
-
-	/**
 	 * Set the JSON object
 	 *
 	 * @param stdClass $json
+	 * @return void
 	 */
 	public function setJson($json)
 	{
