@@ -80,6 +80,7 @@ class Item extends Resource_BaseAbstract
 	private function saveCollections()
 	{
 		$itemCollections = new \Yetti\API\Item_Collections();
+		$itemCollections->setWebservice($this->webservice());
 		$itemCollections->load($this->getId());
 		$itemCollections->clearCollections();
 		
