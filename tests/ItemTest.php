@@ -233,4 +233,24 @@ class ItemTest extends AuthAbstract
 		
 		$this->assertEquals(10, $item->getPrice());
 	}
+
+	/**
+	 * @depends testAddPricingTier
+	 */
+	public function testPricingTierErrorNotPresent(\Yetti\API\Item $inItem)
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->loadTemplate(5));
+
+		$item->setName($inItem->getName());
+		$item->setPropertyValue('Name', 'Test product 2');
+		$item->setPropertyValue('Description', 'A test product 2');
+		$result = $item->save();
+		$this->assertFalse($result->success());
+		$errors = $result->getErrors();
+
+		// we expect that the "identifier" error is present, but not the "tiers" error
+		$this->assertArrayHasKey('identifier', $errors);
+		$this->assertArrayNotHasKey('tiers', $errors);
+	}
 }
