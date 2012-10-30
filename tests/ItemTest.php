@@ -245,11 +245,23 @@ class ItemTest extends AuthAbstract
 		$item->setName($inItem->getName());
 		$item->setPropertyValue('Name', 'Test product 2');
 		$item->setPropertyValue('Description', 'A test product 2');
+		
 		$result = $item->save();
 		$this->assertFalse($result->success());
 		$errors = $result->getErrors();
-
-		// we expect that the "identifier" error is present, but not the "tiers" error
+		
+		// Should be errors based on identifier *and* tiers (as a tier must have a price > 0)
+		$this->assertArrayHasKey('identifier', $errors);
+		$this->assertArrayHasKey('tiers', $errors);
+		
+		// Add a pricing tier
+		$item->addPricingTier(11.00);
+		
+		$result = $item->save();
+		$this->assertFalse($result->success());
+		$errors = $result->getErrors();
+		
+		// We expect that the "identifier" error is present, but not the "tiers" error
 		$this->assertArrayHasKey('identifier', $errors);
 		$this->assertArrayNotHasKey('tiers', $errors);
 	}
