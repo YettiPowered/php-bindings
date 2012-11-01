@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">68</span></a></li>
+                <span class="label label-info">76</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -59,6 +59,7 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public inherited"><a href="#addAsset" title="addAsset :: Adds a new asset to the resource"><span class="description">Adds a new asset to the resource</span><pre>addAsset()</pre></a></li>
 <li class="method public "><a href="#addPricingTier" title="addPricingTier :: Adds a new pricing tier to this item"><span class="description">Adds a new pricing tier to this item</span><pre>addPricingTier()</pre></a></li>
+<li class="method public "><a href="#addVariation" title="addVariation :: Add a new product variation to this item"><span class="description">Add a new product variation to this item</span><pre>addVariation()</pre></a></li>
 <li class="method public "><a href="#assignToCollection" title="assignToCollection :: Assign this item to the collection with the given ID"><span class="description">Assign this item to the collection with the given ID</span><pre>assignToCollection()</pre></a></li>
 <li class="method public inherited"><a href="#clearAttachedAssets" title="clearAttachedAssets :: Clear the current attached assets"><span class="description">Clear the current attached assets</span><pre>clearAttachedAssets()</pre></a></li>
 <li class="method public inherited"><a href="#delete" title="delete :: Delete this resource"><span class="description">Delete this resource</span><pre>delete()</pre></a></li>
@@ -77,6 +78,7 @@
 <li class="method public inherited"><a href="#getRevisionComment" title="getRevisionComment :: Returns the revision comment for the current revision"><span class="description">Returns the revision comment for the current revision</span><pre>getRevisionComment()</pre></a></li>
 <li class="method public inherited"><a href="#getRevisionId" title="getRevisionId :: Returns the revision ID"><span class="description">Returns the revision ID</span><pre>getRevisionId()</pre></a></li>
 <li class="method public inherited"><a href="#getTypeId" title="getTypeId :: Returns the resource type ID"><span class="description">Returns the resource type ID</span><pre>getTypeId()</pre></a></li>
+<li class="method public "><a href="#getVariations" title="getVariations :: Returns an array of variation objects for this item"><span class="description">Returns an array of variation objects for this item</span><pre>getVariations()</pre></a></li>
 <li class="method public inherited"><a href="#isLanguageActive" title="isLanguageActive :: Returns whether or not this resource is active in the current language"><span class="description">Returns whether or not this resource is active in the current language</span><pre>isLanguageActive()</pre></a></li>
 <li class="method public inherited"><a href="#load" title="load :: Loads a resource by ID or identifier"><span class="description">Loads a resource by ID or identifier</span><pre>load()</pre></a></li>
 <li class="method public inherited"><a href="#loadTemplate" title="loadTemplate :: Load a resource template for the given type ID"><span class="description">Load a resource template for the given type ID</span><pre>loadTemplate()</pre></a></li>
@@ -91,6 +93,7 @@
 <li class="method public inherited"><a href="#webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#_afterSave" title="_afterSave :: Perform post save actions"><span class="description">Perform post save actions</span><pre>_afterSave()</pre></a></li>
+<li class="method protected "><a href="#_beforeSave" title="_beforeSave :: Perform pre save actions"><span class="description">Perform pre save actions</span><pre>_beforeSave()</pre></a></li>
 <li class="method protected inherited"><a href="#create" title="create :: Create a new resource"><span class="description">Create a new resource</span><pre>create()</pre></a></li>
 <li class="method protected "><a href="#getSingularName" title="getSingularName :: Returns a singular name for this type of resource"><span class="description">Returns a singular name for this type of resource</span><pre>getSingularName()</pre></a></li>
 <li class="method protected inherited"><a href="#makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
@@ -100,6 +103,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <li class="nav-header private">» Private</li>
 <li class="method private inherited"><a href="#getArrayAsObject" title="getArrayAsObject :: Recursively convert the given array into a stdClass object"><span class="description">Recursively convert the given array into a stdClass object</span><pre>getArrayAsObject()</pre></a></li>
 <li class="method private inherited"><a href="#getPluralName" title="getPluralName :: Returns a plural name for resources of this type"><span class="description">Returns a plural name for resources of this type</span><pre>getPluralName()</pre></a></li>
+<li class="method private "><a href="#processVariations" title="processVariations :: Process variations from the internal array into JSON data"><span class="description">Process variations from the internal array into JSON data</span><pre>processVariations()</pre></a></li>
 <li class="method private "><a href="#saveCollections" title="saveCollections :: Save the list of associated collections for this item"><span class="description">Save the list of associated collections for this item</span><pre>saveCollections()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
@@ -107,7 +111,9 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <li class="property private inherited"><a href="#%24_countryCode" title="$_countryCode :: "><span class="description">$_countryCode</span><pre>$_countryCode</pre></a></li>
 <li class="property private inherited"><a href="#%24_json" title="$_json :: "><span class="description">$_json</span><pre>$_json</pre></a></li>
 <li class="property private inherited"><a href="#%24_originalAuthor" title="$_originalAuthor :: "><span class="description">$_originalAuthor</span><pre>$_originalAuthor</pre></a></li>
+<li class="property private "><a href="#%24_parsedVariations" title="$_parsedVariations :: "><span class="description">$_parsedVariations</span><pre>$_parsedVariations</pre></a></li>
 <li class="property private inherited"><a href="#%24_revisionAuthor" title="$_revisionAuthor :: "><span class="description">$_revisionAuthor</span><pre>$_revisionAuthor</pre></a></li>
+<li class="property private "><a href="#%24_variations" title="$_variations :: "><span class="description">$_variations</span><pre>$_variations</pre></a></li>
 <li class="property private inherited"><a href="#%24_webservice" title="$_webservice :: "><span class="description">$_webservice</span><pre>$_webservice</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
@@ -195,6 +201,21 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <h4>$appliesToIdType</h4>
 <code>int</code>
 </div>
+</div></div>
+</div>
+<a name="addVariation" id="addVariation"></a><div class="element clickable method public addVariation" data-toggle="collapse" data-target=".addVariation .collapse">
+<h2>Add a new product variation to this item</h2>
+<pre>addVariation(string $variationName) : <a href="../classes/Yetti.API.Item_Variation.html">\Yetti\API\Item_Variation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$variationName</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Item_Variation.html">\Yetti\API\Item_Variation</a></code></div>
 </div></div>
 </div>
 <a name="assignToCollection" id="assignToCollection"></a><div class="element clickable method public assignToCollection" data-toggle="collapse" data-target=".assignToCollection .collapse">
@@ -473,6 +494,16 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
+<a name="getVariations" id="getVariations"></a><div class="element clickable method public getVariations" data-toggle="collapse" data-target=".getVariations .collapse">
+<h2>Returns an array of variation objects for this item</h2>
+<pre>getVariations() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
 <a name="isLanguageActive" id="isLanguageActive"></a><div class="element clickable method public isLanguageActive" data-toggle="collapse" data-target=".isLanguageActive .collapse">
 <h2>Returns whether or not this resource is active in the current language</h2>
 <pre>isLanguageActive() : bool</pre>
@@ -699,6 +730,12 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
+<a name="_beforeSave" id="_beforeSave"></a><div class="element clickable method protected _beforeSave" data-toggle="collapse" data-target="._beforeSave .collapse">
+<h2>Perform pre save actions</h2>
+<pre>_beforeSave() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="create" id="create"></a><div class="element clickable method protected create" data-toggle="collapse" data-target=".create .collapse">
 <h2>Create a new resource</h2>
 <pre>create() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
@@ -797,6 +834,12 @@ Must be called after everything else has been set up</h2>
 <div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
+<a name="processVariations" id="processVariations"></a><div class="element clickable method private processVariations" data-toggle="collapse" data-target=".processVariations .collapse">
+<h2>Process variations from the internal array into JSON data</h2>
+<pre>processVariations() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="saveCollections" id="saveCollections"></a><div class="element clickable method private saveCollections" data-toggle="collapse" data-target=".saveCollections .collapse">
 <h2>Save the list of associated collections for this item</h2>
 <pre>saveCollections() : void</pre>
@@ -847,6 +890,12 @@ Must be called after everything else has been set up</h2>
 </tr></table>
 </div></div>
 </div>
+<a name="%24_parsedVariations" id="$_parsedVariations"> </a><div class="element clickable property private $_parsedVariations" data-toggle="collapse" data-target=".$_parsedVariations .collapse">
+<h2>$_parsedVariations</h2>
+<pre>$_parsedVariations </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="%24_revisionAuthor" id="$_revisionAuthor"> </a><div class="element clickable property private $_revisionAuthor" data-toggle="collapse" data-target=".$_revisionAuthor .collapse">
 <h2>$_revisionAuthor</h2>
 <pre>$_revisionAuthor </pre>
@@ -858,6 +907,12 @@ Must be called after everything else has been set up</h2>
 <td>\Yetti\API\Resource_BaseAbstract::$$_revisionAuthor</td>
 </tr></table>
 </div></div>
+</div>
+<a name="%24_variations" id="$_variations"> </a><div class="element clickable property private $_variations" data-toggle="collapse" data-target=".$_variations .collapse">
+<h2>$_variations</h2>
+<pre>$_variations </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24_webservice" id="$_webservice"> </a><div class="element clickable property private $_webservice" data-toggle="collapse" data-target=".$_webservice .collapse">
 <h2>$_webservice</h2>
@@ -922,7 +977,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-10-30T12:18:56Z.<br></footer></div>
+            generated on 2012-11-01T12:20:34Z.<br></footer></div>
 </div>
 </body>
 </html>
