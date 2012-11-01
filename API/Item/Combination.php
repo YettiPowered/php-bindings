@@ -39,11 +39,10 @@ class Item_Combination extends BaseAbstract
 	 */
 	public function save()
 	{
-		$this->webservice()->setRequestPath('/items/combinations.ws');
+		$this->webservice()->setRequestPath('/items/combinations/null/' . $this->getId() . '.ws');
 		$this->webservice()->setRequestMethod('put');
-		$this->webservice()->setRequestParam('combinationId', $this->getId());
 		
-		$this->webservice()->setPostData(json_encode($this->getJson()));
+		$this->webservice()->setPostData(json_encode(array('combination' => $this->getJson())));
 		return $this->makeRequestReturnResult();
 	}
 	
