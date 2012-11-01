@@ -10,7 +10,7 @@ namespace Yetti\API;
  * @package yetti-api
  */
 
-class Item_Variation extends BaseAbstract
+class Item_Variation
 {
 	const
 		/**

@@ -1,8 +1,9 @@
 <?php
 
 namespace Yetti\API\Tests;
-use Yetti\API\Item;
-use Yetti\API\Item_Combination_List;
+use Yetti\API\Item_Combination;
+
+use Yetti\API\Item, Yetti\API\Item_Combination_List;
 
 /**
  * Test methods for listing item combinations
@@ -15,7 +16,7 @@ use Yetti\API\Item_Combination_List;
 
 class Item_Combination_ListTest extends AuthAbstract
 {
-	public function testLoad()
+	public function testLoadList()
 	{
 		/**
 		 * First need a product
@@ -35,5 +36,60 @@ class Item_Combination_ListTest extends AuthAbstract
 		$combinations = new Item_Combination_List();
 		$combinations->load($item->getId());
 		$this->assertEquals(1, $combinations->getTotalItemCount());
+		
+		/**
+		 * Add some item variations
+		 */
+		
+		$variation1 = $item->addVariation('Variation 1');
+		$variation2 = $item->addVariation('Variation 2');
+		
+		$variation1->addOption('Option 1');
+		$variation1->addOption('Option 2');
+		$variation2->addOption('Option 3');
+		$variation2->addOption('Option 4');
+		
+		$this->assertTrue($item->save()->success());
+		
+		/**
+		 * Should be more combinations now...
+		 */
+		$combinations = new Item_Combination_List();
+		$combinations->load($item->getId());
+		$this->assertEquals(5, $combinations->getTotalItemCount());
+		
+		/**
+		 * Let's check a couple of them
+		 */
+		$combination = $combinations->getItems()->first();
+		$this->assertEmpty($combination->getOptions()); // This is the default combination, therefore no options.
+		
+		$combination = $combinations->getItems()->next();
+		$this->assertTrue($combination->isAvailable());
+		$this->assertEquals(0, $combination->getStock());
+		$this->assertEmpty($combination->getSku());
+		$this->assertEquals(10, $combination->getPrice());
+		
+		$options = $combination->getOptions();
+		$this->assertEquals('Option 1', $options['Variation 1']);
+		$this->assertEquals('Option 3', $options['Variation 2']);
+		
+		return $combination;
+	}
+	
+	/**
+	 * @depends testLoadList
+	 */
+	public function testSaveCombination(Item_Combination $inCombination)
+	{
+		$inCombination->setStock(10);
+		$inCombination->setSku('sku123');
+		$this->assertTrue($inCombination->save()->success());
+		
+		$combination = new Item_Combination();
+		$this->assertTrue($combination->load($inCombination->getId()));
+		
+		$this->assertEquals(10, $combination->getStock());
+		$this->assertEquals('sku123', $combination->getSku());
 	}
 }
