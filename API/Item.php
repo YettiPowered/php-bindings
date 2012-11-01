@@ -12,6 +12,21 @@ namespace Yetti\API;
 
 class Item extends Resource_BaseAbstract
 {
+	private
+		/**
+		 * Whether or not variations have been parsed into objects from JSON yet.
+		 * 
+		 * @var bool
+		 */
+		$_parsedVariations = false,
+	
+		/**
+		 * An array of new variation objects
+		 * 
+		 * @var array
+		 */
+		$_variations = array();
+	
 	/**
 	 * Returns a singular name for this type of resource
 	 * 
@@ -23,6 +38,16 @@ class Item extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Perform pre save actions
+	 * 
+	 * @return void
+	 */
+	protected function _beforeSave()
+	{
+		$this->processVariations();
+	}
+	
+	/**
 	 * Perform post save actions
 	 * 
 	 * @return void
@@ -30,6 +55,21 @@ class Item extends Resource_BaseAbstract
 	protected function _afterSave()
 	{
 		$this->saveCollections();
+	}
+	
+	/**
+	 * Process variations from the internal array into JSON data
+	 * 
+	 * @return void
+	 */
+	private function processVariations()
+	{
+		$existingVariations = $this->getVariations();
+		$this->getJson()->variations = array();
+		
+		foreach ($existingVariations as $variation) {
+			$this->getJson()->variations[] = $variation->getAsArray();
+		}
 	}
 	
 	/**
@@ -123,6 +163,67 @@ class Item extends Resource_BaseAbstract
 				return (float)$tier['price'];
 			}
 		}
+	}
+	
+	/**
+	 * Add a new product variation to this item
+	 * 
+	 * @param string $variationName
+	 * @return \Yetti\API\Item_Variation
+	 */
+	public function addVariation($variationName)
+	{
+		$variation = new \Yetti\API\Item_Variation();
+		$variation->setName($variationName);
+		
+		return $this->_variations[] = $variation;
+	}
+	
+	/**
+	 * Returns an array of variation objects for this item
+	 * 
+	 * @return array
+	 */
+	public function getVariations()
+	{
+		if (!$this->_parsedVariations)
+		{
+			$variations = isset($this->getJson()->variations) ? $this->getJson()->variations : null;
+			
+			if (is_array($variations))
+			{
+				foreach ($variations as $variationData)
+				{
+					$variationId   = isset($variationData->id) ? $variationData->id : null;
+					$variationName = isset($variationData->name) ? $variationData->name : null;
+					$options 	   = isset($variationData->options) ? $variationData->options : null;
+					
+					if (!empty($variationName))
+					{
+						$variation = $this->addVariation($variationName);
+						$variation->setId($variationId);
+						
+						if (is_array($options))
+						{
+							foreach ($options as $optionData)
+							{
+								$name	 = isset($optionData->name) ? $optionData->name : null;
+								$price	 = isset($optionData->price) ? $optionData->price : null;
+								$pricing = isset($optionData->pricing) ? $optionData->pricing : null;
+								
+								if (!empty($name)) {
+									$variation->addOption($name, $price, $pricing);
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			$this->_parsedVariations = true;
+		}
+		
+		return $this->_variations;
 	}
 	
 	/**

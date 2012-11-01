@@ -104,6 +104,8 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	 */
 	public function save()
 	{
+		$this->_beforeSave();
+		
 		if (!$this->getId()) {
 			$result = $this->create();
 		}
@@ -167,6 +169,13 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		$this->webservice()->setPostData(json_encode(array('item' => $this->getJson())));
 		return $this->makeRequestReturnResult();
 	}
+	
+	/**
+	 * This method can be overridden by derived classes to perform actions before the object saves
+	 * 
+	 * @return void
+	 */
+	protected function _beforeSave() {}
 	
 	/**
 	 * This method can be overridden by derived classes to perform actions after a successful save

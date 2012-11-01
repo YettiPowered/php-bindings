@@ -233,7 +233,7 @@ class ItemTest extends AuthAbstract
 		
 		$this->assertEquals(10, $item->getPrice());
 	}
-
+	
 	/**
 	 * @depends testAddPricingTier
 	 */
@@ -264,5 +264,41 @@ class ItemTest extends AuthAbstract
 		// We expect that the "identifier" error is present, but not the "tiers" error
 		$this->assertArrayHasKey('identifier', $errors);
 		$this->assertArrayNotHasKey('tiers', $errors);
+	}
+	
+	public function testAddVariations()
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->loadTemplate(5));
+		$this->assertCount(0, $item->getVariations());
+		
+		$item->setName('A test product' . microtime(true));
+		$item->setPropertyValue('Name', 'Test product');
+		$item->setPropertyValue('Description', 'A test product');
+		$item->addPricingTier(10.00);
+		
+		$variation1 = $item->addVariation('Variation 1');
+		$variation1->addOption('Option 1');
+		$variation1->addOption('Option 2');
+		
+		$variation2 = $item->addVariation('Variation 2');
+		$variation2->addOption('Option 3');
+		$variation2->addOption('Option 4');
+		
+		$this->assertTrue($item->save()->success());
+		$itemId = $item->getId();
+		
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($itemId));
+		
+		$this->assertCount(2, $item->getVariations());
+		
+		foreach ($item->getVariations() as $key => $variation)
+		{
+			$this->assertEquals('Variation ' . ($key+1), $variation->getName());
+			$this->assertCount(2, $variation->getOptions());
+		}
+		
+		return $item;
 	}
 }
