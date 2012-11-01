@@ -454,7 +454,7 @@ Responsible for listing combinations for a product item.]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file Item/Combination/List.php</error>
     </parse_markers>
   </file>
-  <file path="Item/Combination.php" hash="75ca655ef4da0bced2d5b7145f5e6bac" package="Default">
+  <file path="Item/Combination.php" hash="8597e4792ebb9a01a6dafd16b8357acd" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\BaseAbstract</extends>
       <name>Item_Combination</name>
@@ -496,125 +496,125 @@ Responsible for listing combinations for a product item.]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="55" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="54" package="yetti-api">
         <name>getId</name>
         <full_name>getId</full_name>
-        <docblock line="50">
+        <docblock line="49">
           <description><![CDATA[Returns the combination ID]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="50" name="return" description="" type="int">
+          <tag line="49" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="66" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="65" package="yetti-api">
         <name>setAvailable</name>
         <full_name>setAvailable</full_name>
-        <docblock line="60">
+        <docblock line="59">
           <description><![CDATA[Set whether or not this combination is available for purchase]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="60" name="param" description="" type="bool" variable="$available">
+          <tag line="59" name="param" description="" type="bool" variable="$available">
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="60" name="return" description="" type="void">
+          <tag line="59" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="66">
+        <argument line="65">
           <name>$available</name>
           <default><![CDATA[true]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="76" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="75" package="yetti-api">
         <name>isAvailable</name>
         <full_name>isAvailable</full_name>
-        <docblock line="71">
+        <docblock line="70">
           <description><![CDATA[Returns whether or not this combination is marked as available for purchase.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="71" name="return" description="" type="bool">
+          <tag line="70" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="87" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="86" package="yetti-api">
         <name>setStock</name>
         <full_name>setStock</full_name>
-        <docblock line="81">
+        <docblock line="80">
           <description><![CDATA[Set the stock level]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="81" name="param" description="" type="int" variable="$stock">
+          <tag line="80" name="param" description="" type="int" variable="$stock">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="81" name="return" description="" type="void">
+          <tag line="80" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="87">
+        <argument line="86">
           <name>$stock</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="99" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="98" package="yetti-api">
         <name>getStock</name>
         <full_name>getStock</full_name>
-        <docblock line="94">
+        <docblock line="93">
           <description><![CDATA[Returns this combination's stock level]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="94" name="return" description="" type="int">
+          <tag line="93" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="110" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="109" package="yetti-api">
         <name>setSku</name>
         <full_name>setSku</full_name>
-        <docblock line="104">
+        <docblock line="103">
           <description><![CDATA[Set the SKU]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="104" name="param" description="" type="string" variable="$sku">
+          <tag line="103" name="param" description="" type="string" variable="$sku">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="104" name="return" description="" type="void">
+          <tag line="103" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="110">
+        <argument line="109">
           <name>$sku</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="122" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="121" package="yetti-api">
         <name>getSku</name>
         <full_name>getSku</full_name>
-        <docblock line="117">
+        <docblock line="116">
           <description><![CDATA[Returns this combination's SKU]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="117" name="return" description="" type="string">
+          <tag line="116" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="132" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="131" package="yetti-api">
         <name>getPrice</name>
         <full_name>getPrice</full_name>
-        <docblock line="127">
+        <docblock line="126">
           <description><![CDATA[Returns this combination's price]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="127" name="return" description="" type="float">
+          <tag line="126" name="return" description="" type="float">
             <type by_reference="false">float</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="142" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="141" package="yetti-api">
         <name>getOptions</name>
         <full_name>getOptions</full_name>
-        <docblock line="137">
+        <docblock line="136">
           <description><![CDATA[Returns this combination's options]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="137" name="var" description="" type="array">
+          <tag line="136" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
