@@ -15,6 +15,11 @@ namespace Yetti\API;
 class Item_Collections extends BaseAbstract
 {
 	private
+		/**
+		 * The ID of the parent item for loaded collections
+		 * 
+		 * @var int
+		 */
 		$_resourceId;
 		
 	/**
