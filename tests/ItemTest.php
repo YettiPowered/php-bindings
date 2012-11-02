@@ -49,6 +49,10 @@ class ItemTest extends AuthAbstract
 		$item->setPropertyValue('Body', 'A test body');
 		$this->assertTrue($item->save()->success());
 		
+		$item->setMetaTitle('Test title');
+		$item->setMetaDescription('Test description');
+		$this->assertTrue($item->save()->success());
+		
 		return $item;
 	}
 	
@@ -64,6 +68,9 @@ class ItemTest extends AuthAbstract
 		$this->assertTrue($item->isLanguageActive());
 		$this->assertEquals('a-test-item', substr($item->getName(), 0, 11));
 		$this->assertEquals('Test item', $item->getPropertyValue('Name'));
+		
+		$this->assertEquals('Test title', $item->getMetaTitle());
+		$this->assertEquals('Test description', $item->getMetaDescription());
 		
 		return $item;
 	}

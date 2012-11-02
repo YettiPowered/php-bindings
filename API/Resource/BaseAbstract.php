@@ -304,6 +304,52 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	}
 	
 	/**
+	 * Set the meta title
+	 * 
+	 * @param string $title
+	 * @return void
+	 */
+	public function setMetaTitle($title)
+	{
+		if (is_string($title)) {
+			$this->getJson()->metaInfo->title = $title;
+		}
+	}
+	
+	/**
+	 * Returns the meta title
+	 * 
+	 * @return string
+	 */
+	public function getMetaTitle()
+	{
+		return $this->getJson()->metaInfo->title;
+	}
+	
+	/**
+	 * Set the meta description
+	 * 
+	 * @param string $description
+	 * @return void
+	 */
+	public function setMetaDescription($description)
+	{
+		if (is_string($description)) {
+			$this->getJson()->metaInfo->description = $description;
+		}
+	}
+	
+	/**
+	 * Returns the meta description
+	 * 
+	 * @return string
+	 */
+	public function getMetaDescription()
+	{
+		return $this->getJson()->metaInfo->description;
+	}
+	
+	/**
 	 * Return a user object based on the original author of this resource
 	 * 
 	 * @return \Yetti\API\User
