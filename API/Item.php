@@ -118,6 +118,16 @@ class Item extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Clear all existing pricing tiers
+	 * 
+	 * @return void
+	 */
+	public function clearPricingTiers()
+	{
+		$this->getJson()->pricingTiers = array();
+	}
+	
+	/**
 	 * Adds a new pricing tier to this item
 	 * 
 	 * @param float $price
@@ -163,6 +173,16 @@ class Item extends Resource_BaseAbstract
 				return (float)$tier['price'];
 			}
 		}
+	}
+	
+	/**
+	 * Clear existing variations
+	 * 
+	 * @return void
+	 */
+	public function clearVariations()
+	{
+		$this->getJson()->variations = $this->_variations = array();
 	}
 	
 	/**
