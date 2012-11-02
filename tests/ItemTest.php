@@ -254,6 +254,10 @@ class ItemTest extends AuthAbstract
 		$this->assertArrayHasKey('identifier', $errors);
 		$this->assertArrayHasKey('tiers', $errors);
 		
+		// Should indicate conflicting resource in header
+		$this->assertEquals(409, $item->webservice()->getResponseCode());
+		$this->assertEquals($inItem->getId(), $item->webservice()->getResponseHeader('X-ResourceId'));
+		
 		// Add a pricing tier
 		$item->addPricingTier(11.00);
 		
