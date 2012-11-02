@@ -16,7 +16,7 @@ class Item_Combination extends BaseAbstract
 	 * Load a combination by ID
 	 * 
 	 * @param int $combinationId
-	 * @return void
+	 * @return bool
 	 */
 	public function load($combinationId)
 	{

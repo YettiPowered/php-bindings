@@ -17,7 +17,7 @@ class UserTest extends AuthAbstract
 	/**
 	 * @expectedException \Yetti\API\Exception
 	 */
-	public function testSomething()
+	public function testSaveWithoutInfoThrowsException()
 	{
 		$user = new User();
 		$user->save();
