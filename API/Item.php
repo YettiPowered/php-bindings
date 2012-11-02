@@ -229,11 +229,16 @@ class Item extends Resource_BaseAbstract
 	/**
 	 * Sets the file content to be sent for saving
 	 * 
-	 * @param string $data
+	 * Example usage:
+	 * 	$item->setFileData(file_get_contents($filepath));
+	 * 
+	 * @param string $fileData
 	 * @return void
 	 */
-	public function setFileData($data)
+	public function setFileData($fileData)
 	{
-		$this->getJson()->fileData = base64_encode($data);
+		if (is_string($fileData)) {
+			$this->getJson()->fileData = base64_encode($fileData);
+		}
 	}
 }
