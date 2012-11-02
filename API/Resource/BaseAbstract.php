@@ -384,6 +384,8 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	 */
 	public function addAsset($assetGroupName, $resourceId, $altText=null, $url=null)
 	{
+		$this->getJson()->assets = (array)$this->getJson()->assets;
+		
 		$this->getJson()->assets[$assetGroupName][] = array
 		(
 			'item'    => array(
