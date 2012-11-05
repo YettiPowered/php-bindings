@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">76</span></a></li>
+                <span class="label label-info">78</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -62,6 +62,8 @@
 <li class="method public "><a href="#addVariation" title="addVariation :: Add a new product variation to this item"><span class="description">Add a new product variation to this item</span><pre>addVariation()</pre></a></li>
 <li class="method public "><a href="#assignToCollection" title="assignToCollection :: Assign this item to the collection with the given ID"><span class="description">Assign this item to the collection with the given ID</span><pre>assignToCollection()</pre></a></li>
 <li class="method public inherited"><a href="#clearAttachedAssets" title="clearAttachedAssets :: Clear the current attached assets"><span class="description">Clear the current attached assets</span><pre>clearAttachedAssets()</pre></a></li>
+<li class="method public "><a href="#clearPricingTiers" title="clearPricingTiers :: Clear all existing pricing tiers"><span class="description">Clear all existing pricing tiers</span><pre>clearPricingTiers()</pre></a></li>
+<li class="method public "><a href="#clearVariations" title="clearVariations :: Clear existing variations"><span class="description">Clear existing variations</span><pre>clearVariations()</pre></a></li>
 <li class="method public inherited"><a href="#delete" title="delete :: Delete this resource"><span class="description">Delete this resource</span><pre>delete()</pre></a></li>
 <li class="method public inherited"><a href="#getAttachedAssets" title="getAttachedAssets :: Returns an array of attached asset group elements"><span class="description">Returns an array of attached asset group elements</span><pre>getAttachedAssets()</pre></a></li>
 <li class="method public "><a href="#getCollectionIds" title="getCollectionIds :: Returns an array of collection IDs that the loaded item is assigned to"><span class="description">Returns an array of collection IDs that the loaded item is assigned to</span><pre>getCollectionIds()</pre></a></li>
@@ -69,6 +71,8 @@
 <li class="method public inherited"><a href="#getId" title="getId :: Returns the resource ID"><span class="description">Returns the resource ID</span><pre>getId()</pre></a></li>
 <li class="method public inherited"><a href="#getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
 <li class="method public inherited"><a href="#getLanguageId" title="getLanguageId :: Returns the language ID"><span class="description">Returns the language ID</span><pre>getLanguageId()</pre></a></li>
+<li class="method public inherited"><a href="#getMetaDescription" title="getMetaDescription :: Returns the meta description"><span class="description">Returns the meta description</span><pre>getMetaDescription()</pre></a></li>
+<li class="method public inherited"><a href="#getMetaTitle" title="getMetaTitle :: Returns the meta title"><span class="description">Returns the meta title</span><pre>getMetaTitle()</pre></a></li>
 <li class="method public inherited"><a href="#getName" title="getName :: Returns the resource name"><span class="description">Returns the resource name</span><pre>getName()</pre></a></li>
 <li class="method public inherited"><a href="#getOriginalAuthor" title="getOriginalAuthor :: Return a user object based on the original author of this resource"><span class="description">Return a user object based on the original author of this resource</span><pre>getOriginalAuthor()</pre></a></li>
 <li class="method public "><a href="#getPrice" title="getPrice :: Returns the price of this item (if applicable)."><span class="description">Returns the price of this item (if applicable).</span><pre>getPrice()</pre></a></li>
@@ -79,6 +83,7 @@
 <li class="method public inherited"><a href="#getRevisionId" title="getRevisionId :: Returns the revision ID"><span class="description">Returns the revision ID</span><pre>getRevisionId()</pre></a></li>
 <li class="method public inherited"><a href="#getTypeId" title="getTypeId :: Returns the resource type ID"><span class="description">Returns the resource type ID</span><pre>getTypeId()</pre></a></li>
 <li class="method public "><a href="#getVariations" title="getVariations :: Returns an array of variation objects for this item"><span class="description">Returns an array of variation objects for this item</span><pre>getVariations()</pre></a></li>
+<li class="method public "><a href="#getVatBandId" title="getVatBandId :: Returns the VAT band ID"><span class="description">Returns the VAT band ID</span><pre>getVatBandId()</pre></a></li>
 <li class="method public inherited"><a href="#isLanguageActive" title="isLanguageActive :: Returns whether or not this resource is active in the current language"><span class="description">Returns whether or not this resource is active in the current language</span><pre>isLanguageActive()</pre></a></li>
 <li class="method public inherited"><a href="#load" title="load :: Loads a resource by ID or identifier"><span class="description">Loads a resource by ID or identifier</span><pre>load()</pre></a></li>
 <li class="method public inherited"><a href="#loadTemplate" title="loadTemplate :: Load a resource template for the given type ID"><span class="description">Load a resource template for the given type ID</span><pre>loadTemplate()</pre></a></li>
@@ -86,9 +91,12 @@
 <li class="method public "><a href="#setFileData" title="setFileData :: Sets the file content to be sent for saving"><span class="description">Sets the file content to be sent for saving</span><pre>setFileData()</pre></a></li>
 <li class="method public inherited"><a href="#setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
 <li class="method public inherited"><a href="#setLanguageActive" title="setLanguageActive :: Set whether or not this resource is available in the current language"><span class="description">Set whether or not this resource is available in the current language</span><pre>setLanguageActive()</pre></a></li>
+<li class="method public inherited"><a href="#setMetaDescription" title="setMetaDescription :: Set the meta description"><span class="description">Set the meta description</span><pre>setMetaDescription()</pre></a></li>
+<li class="method public inherited"><a href="#setMetaTitle" title="setMetaTitle :: Set the meta title"><span class="description">Set the meta title</span><pre>setMetaTitle()</pre></a></li>
 <li class="method public inherited"><a href="#setName" title="setName :: Set the resource name (identifier)"><span class="description">Set the resource name (identifier)</span><pre>setName()</pre></a></li>
 <li class="method public inherited"><a href="#setPropertyValue" title="setPropertyValue :: Set a property value"><span class="description">Set a property value</span><pre>setPropertyValue()</pre></a></li>
 <li class="method public inherited"><a href="#setRevisionComment" title="setRevisionComment :: Sets the revision comment for the current revision"><span class="description">Sets the revision comment for the current revision</span><pre>setRevisionComment()</pre></a></li>
+<li class="method public "><a href="#setVatBandId" title="setVatBandId :: Set the VAT band ID"><span class="description">Set the VAT band ID</span><pre>setVatBandId()</pre></a></li>
 <li class="method public inherited"><a href="#setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
 <li class="method public inherited"><a href="#webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
@@ -248,6 +256,18 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 </div></div>
 </div>
+<a name="clearPricingTiers" id="clearPricingTiers"></a><div class="element clickable method public clearPricingTiers" data-toggle="collapse" data-target=".clearPricingTiers .collapse">
+<h2>Clear all existing pricing tiers</h2>
+<pre>clearPricingTiers() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="clearVariations" id="clearVariations"></a><div class="element clickable method public clearVariations" data-toggle="collapse" data-target=".clearVariations .collapse">
+<h2>Clear existing variations</h2>
+<pre>clearVariations() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>Delete this resource</h2>
 <pre>delete() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
@@ -356,6 +376,34 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a name="getMetaDescription" id="getMetaDescription"></a><div class="element clickable method public getMetaDescription" data-toggle="collapse" data-target=".getMetaDescription .collapse">
+<h2>Returns the meta description</h2>
+<pre>getMetaDescription() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::getMetaDescription()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getMetaTitle" id="getMetaTitle"></a><div class="element clickable method public getMetaTitle" data-toggle="collapse" data-target=".getMetaTitle .collapse">
+<h2>Returns the meta title</h2>
+<pre>getMetaTitle() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::getMetaTitle()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
 <a name="getName" id="getName"></a><div class="element clickable method public getName" data-toggle="collapse" data-target=".getName .collapse">
@@ -504,6 +552,16 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
+<a name="getVatBandId" id="getVatBandId"></a><div class="element clickable method public getVatBandId" data-toggle="collapse" data-target=".getVatBandId .collapse">
+<h2>Returns the VAT band ID</h2>
+<pre>getVatBandId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
 <a name="isLanguageActive" id="isLanguageActive"></a><div class="element clickable method public isLanguageActive" data-toggle="collapse" data-target=".isLanguageActive .collapse">
 <h2>Returns whether or not this resource is active in the current language</h2>
 <pre>isLanguageActive() : bool</pre>
@@ -575,13 +633,14 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 <a name="setFileData" id="setFileData"></a><div class="element clickable method public setFileData" data-toggle="collapse" data-target=".setFileData .collapse">
 <h2>Sets the file content to be sent for saving</h2>
-<pre>setFileData(string $data) : void</pre>
+<pre>setFileData(string $fileData) : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<p class="long_description"><p>Example usage:
+    $item->setFileData(file_get_contents($filepath));</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$data</h4>
+<h4>$fileData</h4>
 <code>string</code>
 </div>
 </div></div>
@@ -623,6 +682,40 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement argument">
 <h4>$active</h4>
 <code>bool</code>
+</div>
+</div></div>
+</div>
+<a name="setMetaDescription" id="setMetaDescription"></a><div class="element clickable method public setMetaDescription" data-toggle="collapse" data-target=".setMetaDescription .collapse">
+<h2>Set the meta description</h2>
+<pre>setMetaDescription(string $description) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::setMetaDescription()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$description</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setMetaTitle" id="setMetaTitle"></a><div class="element clickable method public setMetaTitle" data-toggle="collapse" data-target=".setMetaTitle .collapse">
+<h2>Set the meta title</h2>
+<pre>setMetaTitle(string $title) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::setMetaTitle()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code>
 </div>
 </div></div>
 </div>
@@ -678,6 +771,19 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement argument">
 <h4>$comment</h4>
 <code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setVatBandId" id="setVatBandId"></a><div class="element clickable method public setVatBandId" data-toggle="collapse" data-target=".setVatBandId .collapse">
+<h2>Set the VAT band ID</h2>
+<pre>setVatBandId(int $bandId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$bandId</h4>
+<code>int</code>
 </div>
 </div></div>
 </div>
@@ -977,7 +1083,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-11-01T12:49:22Z.<br></footer></div>
+            generated on 2012-11-05T15:49:43Z.<br></footer></div>
 </div>
 </body>
 </html>

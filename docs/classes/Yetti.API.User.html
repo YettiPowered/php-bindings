@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">76</span></a></li>
+                <span class="label label-info">78</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -66,6 +66,8 @@
 <li class="method public inherited"><a href="#getId" title="getId :: Returns the resource ID"><span class="description">Returns the resource ID</span><pre>getId()</pre></a></li>
 <li class="method public inherited"><a href="#getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
 <li class="method public inherited"><a href="#getLanguageId" title="getLanguageId :: Returns the language ID"><span class="description">Returns the language ID</span><pre>getLanguageId()</pre></a></li>
+<li class="method public inherited"><a href="#getMetaDescription" title="getMetaDescription :: Returns the meta description"><span class="description">Returns the meta description</span><pre>getMetaDescription()</pre></a></li>
+<li class="method public inherited"><a href="#getMetaTitle" title="getMetaTitle :: Returns the meta title"><span class="description">Returns the meta title</span><pre>getMetaTitle()</pre></a></li>
 <li class="method public inherited"><a href="#getName" title="getName :: Returns the resource name"><span class="description">Returns the resource name</span><pre>getName()</pre></a></li>
 <li class="method public inherited"><a href="#getOriginalAuthor" title="getOriginalAuthor :: Return a user object based on the original author of this resource"><span class="description">Return a user object based on the original author of this resource</span><pre>getOriginalAuthor()</pre></a></li>
 <li class="method public "><a href="#getPassHash" title="getPassHash :: Returns the hashed password for this user"><span class="description">Returns the hashed password for this user</span><pre>getPassHash()</pre></a></li>
@@ -82,6 +84,8 @@
 <li class="method public "><a href="#setEmail" title="setEmail :: Set the user's email address"><span class="description">Set the user's email address</span><pre>setEmail()</pre></a></li>
 <li class="method public inherited"><a href="#setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
 <li class="method public inherited"><a href="#setLanguageActive" title="setLanguageActive :: Set whether or not this resource is available in the current language"><span class="description">Set whether or not this resource is available in the current language</span><pre>setLanguageActive()</pre></a></li>
+<li class="method public inherited"><a href="#setMetaDescription" title="setMetaDescription :: Set the meta description"><span class="description">Set the meta description</span><pre>setMetaDescription()</pre></a></li>
+<li class="method public inherited"><a href="#setMetaTitle" title="setMetaTitle :: Set the meta title"><span class="description">Set the meta title</span><pre>setMetaTitle()</pre></a></li>
 <li class="method public inherited"><a href="#setName" title="setName :: Set the resource name (identifier)"><span class="description">Set the resource name (identifier)</span><pre>setName()</pre></a></li>
 <li class="method public "><a href="#setPassword" title="setPassword :: Set the user's password"><span class="description">Set the user's password</span><pre>setPassword()</pre></a></li>
 <li class="method public inherited"><a href="#setPropertyValue" title="setPropertyValue :: Set a property value"><span class="description">Set a property value</span><pre>setPropertyValue()</pre></a></li>
@@ -300,6 +304,34 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a name="getMetaDescription" id="getMetaDescription"></a><div class="element clickable method public getMetaDescription" data-toggle="collapse" data-target=".getMetaDescription .collapse">
+<h2>Returns the meta description</h2>
+<pre>getMetaDescription() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::getMetaDescription()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getMetaTitle" id="getMetaTitle"></a><div class="element clickable method public getMetaTitle" data-toggle="collapse" data-target=".getMetaTitle .collapse">
+<h2>Returns the meta title</h2>
+<pre>getMetaTitle() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::getMetaTitle()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
 <a name="getName" id="getName"></a><div class="element clickable method public getName" data-toggle="collapse" data-target=".getName .collapse">
@@ -548,6 +580,40 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement argument">
 <h4>$active</h4>
 <code>bool</code>
+</div>
+</div></div>
+</div>
+<a name="setMetaDescription" id="setMetaDescription"></a><div class="element clickable method public setMetaDescription" data-toggle="collapse" data-target=".setMetaDescription .collapse">
+<h2>Set the meta description</h2>
+<pre>setMetaDescription(string $description) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::setMetaDescription()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$description</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setMetaTitle" id="setMetaTitle"></a><div class="element clickable method public setMetaTitle" data-toggle="collapse" data-target=".setMetaTitle .collapse">
+<h2>Set the meta title</h2>
+<pre>setMetaTitle(string $title) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_BaseAbstract::setMetaTitle()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code>
 </div>
 </div></div>
 </div>
@@ -903,7 +969,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
-            generated on 2012-11-01T12:49:23Z.<br></footer></div>
+            generated on 2012-11-05T15:49:43Z.<br></footer></div>
 </div>
 </body>
 </html>
