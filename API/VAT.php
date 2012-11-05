@@ -25,8 +25,11 @@ class VAT extends BaseAbstract
 		
 		if ($this->webservice()->makeRequest())
 		{
-			$this->setJson($this->webservice()->getResponseJsonObject()->band);
-			return true;
+			if ($band = isset($this->webservice()->getResponseJsonObject()->band) ? $this->webservice()->getResponseJsonObject()->band : null)
+			{
+				$this->setJson($band);
+				return true;
+			}
 		}
 		
 		return false;
@@ -73,7 +76,7 @@ class VAT extends BaseAbstract
 		$this->webservice()->setPostData(json_encode(array('band' => $this->getJson())));
 		$result = $this->makeRequestReturnResult();
 		
-		if ($result->success()) {
+		if ($result->success() && !$this->getId()) {
 			$this->getJson()->id = (int)$this->webservice()->getResponseHeader('X-ResourceId');
 		}
 		
@@ -88,5 +91,68 @@ class VAT extends BaseAbstract
 	public function getId()
 	{
 		return (int)$this->getJson()->id;
+	}
+	
+	/**
+	 * Set the VAT band name
+	 * 
+	 * @param string $name
+	 * @return void
+	 */
+	public function setName($name)
+	{
+		$this->getJson()->name = $name;
+	}
+	
+	/**
+	 * Returns the VAT band name
+	 * 
+	 * @return string
+	 */
+	public function getName()
+	{
+		return $this->getJson()->name;
+	}
+	
+	/**
+	 * Set the VAT percentage
+	 * 
+	 * @param float $percentage
+	 * @return void
+	 */
+	public function setPercentage($percentage)
+	{
+		$this->getJson()->percentage = $percentage;
+	}
+	
+	/**
+	 * Returns the VAT percentage
+	 * 
+	 * @return float
+	 */
+	public function getPercentage()
+	{
+		return $this->getJson()->percentage;
+	}
+	
+	/**
+	 * Set whether or not this VAT band should become the default
+	 * 
+	 * @param bool $default
+	 * @return void
+	 */
+	public function setDefault($default=true)
+	{
+		$this->getJson()->default = (bool)$default;
+	}
+	
+	/**
+	 * Returns whether or not this VAT band is the default
+	 * 
+	 * @return bool
+	 */
+	public function isDefault()
+	{
+		return (bool)$this->getJson()->default;
 	}
 }
