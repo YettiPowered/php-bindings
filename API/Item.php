@@ -125,6 +125,12 @@ class Item extends Resource_BaseAbstract
 	 */
 	public function setVatBandId($bandId)
 	{
+		if (!isset($this->getJson()->pricing))
+		{
+			$this->getJson()->pricing 	   = new \stdClass();
+			$this->getJson()->pricing->vat = new \stdClass();
+		}
+		
 		$this->getJson()->pricing->vat->bandId = $bandId;
 	}
 	
