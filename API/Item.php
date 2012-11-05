@@ -118,6 +118,27 @@ class Item extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Set the VAT band ID
+	 * 
+	 * @param int $bandId
+	 * @return void
+	 */
+	public function setVatBandId($bandId)
+	{
+		$this->getJson()->pricing->vat->bandId = $bandId;
+	}
+	
+	/**
+	 * Returns the VAT band ID
+	 * 
+	 * @return int
+	 */
+	public function getVatBandId()
+	{
+		return (int)$this->getJson()->pricing->vat->bandId;
+	}
+	
+	/**
 	 * Clear all existing pricing tiers
 	 * 
 	 * @return void

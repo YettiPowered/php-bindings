@@ -214,6 +214,24 @@ class ItemTest extends AuthAbstract
 		$this->assertFalse($item->isLanguageActive());
 	}
 	
+	public function testVATBand()
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->loadTemplate(5));
+		
+		$item->setName('A test product' . microtime(true));
+		$item->setPropertyValue('Name', 'Test product');
+		$item->setPropertyValue('Description', 'A test product');
+		$item->addPricingTier(10.00);
+		$item->setVatBandId(1);
+		$this->assertTrue($item->save()->success());
+		$itemId = $item->getId();
+		
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($itemId));
+		$this->assertEquals(1, $item->getVatBandId());
+	}
+	
 	public function testAddPricingTier()
 	{
 		$item = new \Yetti\API\Item();
