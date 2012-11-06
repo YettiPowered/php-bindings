@@ -40,9 +40,10 @@
 </g>
 <!-- \\Yetti\\API\\BaseAbstract -->
 <g id="node4" class="node"><title>\\Yetti\\API\\BaseAbstract</title>
-<a xlink:href="BaseAbstract.html" xlink:title="BaseAbstract" target="_parent">
-<polygon fill="none" stroke="black" points="119.713,-474 24.2869,-474 24.2869,-438 119.713,-438 119.713,-474"/>
-<text text-anchor="middle" x="72" y="-451.6" font-family="Courier,monospace" font-size="11.00">BaseAbstract</text>
+<a xlink:href="BaseAbstract.html" xlink:title="«abstract»&lt;br/&gt;BaseAbstract" target="_parent">
+<polygon fill="none" stroke="black" points="120,-474 24,-474 24,-438 120,-438 120,-474"/>
+<text text-anchor="start" x="39" y="-457.5" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="32.5" y="-446.5" font-family="Courier,monospace" font-size="11.00">BaseAbstract</text>
 </a>
 </g>
 <!-- \\Yetti\\API\\Collection_List -->
@@ -54,9 +55,10 @@
 </g>
 <!-- \\Yetti\\API\\Resource_ListAbstract -->
 <g id="node28" class="node"><title>\\Yetti\\API\\Resource_ListAbstract</title>
-<a xlink:href="Resource.ListAbstract.html" xlink:title="Resource_ListAbstract" target="_parent">
-<polygon fill="none" stroke="black" points="575.123,-474 420.877,-474 420.877,-438 575.123,-438 575.123,-474"/>
-<text text-anchor="middle" x="498" y="-451.6" font-family="Courier,monospace" font-size="11.00">Resource_ListAbstract</text>
+<a xlink:href="Resource.ListAbstract.html" xlink:title="«abstract»&lt;br/&gt;Resource_ListAbstract" target="_parent">
+<polygon fill="none" stroke="black" points="575.5,-474 420.5,-474 420.5,-438 575.5,-438 575.5,-474"/>
+<text text-anchor="start" x="465" y="-457.5" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="429" y="-446.5" font-family="Courier,monospace" font-size="11.00">Resource_ListAbstract</text>
 </a>
 </g>
 <!-- \\Yetti\\API\\Collection_List&#45;&gt;\\Yetti\\API\\Resource_ListAbstract -->
@@ -73,9 +75,10 @@
 </g>
 <!-- \\Yetti\\API\\Resource_BaseAbstract -->
 <g id="node27" class="node"><title>\\Yetti\\API\\Resource_BaseAbstract</title>
-<a xlink:href="Resource.BaseAbstract.html" xlink:title="Resource_BaseAbstract" target="_parent">
-<polygon fill="none" stroke="black" points="347.123,-312 192.877,-312 192.877,-276 347.123,-276 347.123,-312"/>
-<text text-anchor="middle" x="270" y="-289.6" font-family="Courier,monospace" font-size="11.00">Resource_BaseAbstract</text>
+<a xlink:href="Resource.BaseAbstract.html" xlink:title="«abstract»&lt;br/&gt;Resource_BaseAbstract" target="_parent">
+<polygon fill="none" stroke="black" points="347.5,-312 192.5,-312 192.5,-276 347.5,-276 347.5,-312"/>
+<text text-anchor="start" x="237" y="-295.5" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="201" y="-284.5" font-family="Courier,monospace" font-size="11.00">Resource_BaseAbstract</text>
 </a>
 </g>
 <!-- \\Yetti\\API\\Collection&#45;&gt;\\Yetti\\API\\Resource_BaseAbstract -->
@@ -133,8 +136,8 @@
 </g>
 <!-- \\Yetti\\API\\Item_Combination_List&#45;&gt;\\Yetti\\API\\Resource_ListAbstract -->
 <g id="edge14" class="edge"><title>\\Yetti\\API\\Item_Combination_List&#45;&gt;\\Yetti\\API\\Resource_ListAbstract</title>
-<path fill="none" stroke="black" d="M648.802,-456C628.429,-456 606.264,-456 585.385,-456"/>
-<polygon fill="none" stroke="black" points="585.252,-452.5 575.252,-456 585.252,-459.5 585.252,-452.5"/>
+<path fill="none" stroke="black" d="M648.802,-456C628.539,-456 606.504,-456 585.724,-456"/>
+<polygon fill="none" stroke="black" points="585.636,-452.5 575.636,-456 585.636,-459.5 585.636,-452.5"/>
 </g>
 <!-- \\Yetti\\API\\Item_Combination -->
 <g id="node11" class="node"><title>\\Yetti\\API\\Item_Combination</title>
@@ -157,15 +160,16 @@
 </g>
 <!-- \\Yetti\\API\\ListAbstract -->
 <g id="node23" class="node"><title>\\Yetti\\API\\ListAbstract</title>
-<a xlink:href="ListAbstract.html" xlink:title="ListAbstract" target="_parent">
-<polygon fill="none" stroke="black" points="317.713,-258 222.287,-258 222.287,-222 317.713,-222 317.713,-258"/>
-<text text-anchor="middle" x="270" y="-235.6" font-family="Courier,monospace" font-size="11.00">ListAbstract</text>
+<a xlink:href="ListAbstract.html" xlink:title="«abstract»&lt;br/&gt;ListAbstract" target="_parent">
+<polygon fill="none" stroke="black" points="318,-258 222,-258 222,-222 318,-222 318,-258"/>
+<text text-anchor="start" x="237" y="-241.5" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="230.5" y="-230.5" font-family="Courier,monospace" font-size="11.00">ListAbstract</text>
 </a>
 </g>
 <!-- \\Yetti\\API\\Item_Filter_List&#45;&gt;\\Yetti\\API\\ListAbstract -->
 <g id="edge18" class="edge"><title>\\Yetti\\API\\Item_Filter_List&#45;&gt;\\Yetti\\API\\ListAbstract</title>
-<path fill="none" stroke="black" d="M438.986,-329.834C432.454,-327.153 425.998,-324.202 420,-321 384.714,-302.162 383.286,-285.838 348,-267 341.556,-263.56 334.585,-260.41 327.559,-257.574"/>
-<polygon fill="none" stroke="black" points="328.58,-254.217 317.99,-253.902 326.072,-260.752 328.58,-254.217"/>
+<path fill="none" stroke="black" d="M438.986,-329.834C432.454,-327.153 425.998,-324.202 420,-321 384.714,-302.162 383.286,-285.838 348,-267 341.642,-263.606 334.771,-260.494 327.84,-257.687"/>
+<polygon fill="none" stroke="black" points="328.986,-254.378 318.396,-254.05 326.47,-260.91 328.986,-254.378"/>
 </g>
 <!-- \\Yetti\\API\\Item_Filter_Type_List -->
 <g id="node13" class="node"><title>\\Yetti\\API\\Item_Filter_Type_List</title>
@@ -176,8 +180,8 @@
 </g>
 <!-- \\Yetti\\API\\Item_Filter_Type_List&#45;&gt;\\Yetti\\API\\ListAbstract -->
 <g id="edge20" class="edge"><title>\\Yetti\\API\\Item_Filter_Type_List&#45;&gt;\\Yetti\\API\\ListAbstract</title>
-<path fill="none" stroke="black" d="M421.431,-275.944C390.783,-268.621 355.994,-260.308 327.596,-253.523"/>
-<polygon fill="none" stroke="black" points="328.375,-250.111 317.835,-251.191 326.748,-256.919 328.375,-250.111"/>
+<path fill="none" stroke="black" d="M421.431,-275.944C390.898,-268.648 356.254,-260.371 327.916,-253.599"/>
+<polygon fill="none" stroke="black" points="328.711,-250.191 318.172,-251.271 327.085,-256.999 328.711,-250.191"/>
 </g>
 <!-- \\Yetti\\API\\Item_Filter_Type -->
 <g id="node14" class="node"><title>\\Yetti\\API\\Item_Filter_Type</title>
@@ -224,8 +228,8 @@
 </g>
 <!-- \\Yetti\\API\\Item_Type_List&#45;&gt;\\Yetti\\API\\ListAbstract -->
 <g id="edge28" class="edge"><title>\\Yetti\\API\\Item_Type_List&#45;&gt;\\Yetti\\API\\ListAbstract</title>
-<path fill="none" stroke="black" d="M443.727,-240C408.926,-240 363.519,-240 327.995,-240"/>
-<polygon fill="none" stroke="black" points="327.784,-236.5 317.784,-240 327.784,-243.5 327.784,-236.5"/>
+<path fill="none" stroke="black" d="M443.727,-240C409.045,-240 363.829,-240 328.359,-240"/>
+<polygon fill="none" stroke="black" points="328.16,-236.5 318.16,-240 328.16,-243.5 328.16,-236.5"/>
 </g>
 <!-- \\Yetti\\API\\Item_Type -->
 <g id="node18" class="node"><title>\\Yetti\\API\\Item_Type</title>
@@ -236,8 +240,8 @@
 </g>
 <!-- \\Yetti\\API\\Item_Type&#45;&gt;\\Yetti\\API\\BaseAbstract -->
 <g id="edge30" class="edge"><title>\\Yetti\\API\\Item_Type&#45;&gt;\\Yetti\\API\\BaseAbstract</title>
-<path fill="none" stroke="black" d="M232.134,-499.843C203.292,-491.897 162.687,-480.71 129.713,-471.625"/>
-<polygon fill="none" stroke="black" points="130.317,-468.161 119.746,-468.879 128.458,-474.91 130.317,-468.161"/>
+<path fill="none" stroke="black" d="M232.134,-499.843C203.392,-491.924 162.97,-480.788 130.058,-471.72"/>
+<polygon fill="none" stroke="black" points="130.677,-468.26 120.107,-468.978 128.818,-475.009 130.677,-468.26"/>
 </g>
 <!-- \\Yetti\\API\\Item_Variation -->
 <g id="node19" class="node"><title>\\Yetti\\API\\Item_Variation</title>
@@ -267,8 +271,8 @@
 </g>
 <!-- \\Yetti\\API\\Language_List&#45;&gt;\\Yetti\\API\\ListAbstract -->
 <g id="edge34" class="edge"><title>\\Yetti\\API\\Language_List&#45;&gt;\\Yetti\\API\\ListAbstract</title>
-<path fill="none" stroke="black" d="M447.18,-554.441C437.074,-550.488 427.316,-544.899 420,-537 335.611,-445.882 432.389,-358.118 348,-267 342.188,-260.725 334.835,-255.908 326.991,-252.21"/>
-<polygon fill="none" stroke="black" points="328.2,-248.923 317.62,-248.364 325.542,-255.399 328.2,-248.923"/>
+<path fill="none" stroke="black" d="M447.18,-554.441C437.074,-550.488 427.316,-544.899 420,-537 335.611,-445.882 432.389,-358.118 348,-267 342.258,-260.8 335.01,-256.023 327.271,-252.343"/>
+<polygon fill="none" stroke="black" points="328.598,-249.105 318.021,-248.507 325.917,-255.571 328.598,-249.105"/>
 </g>
 <!-- \\Yetti\\API\\Language -->
 <g id="node22" class="node"><title>\\Yetti\\API\\Language</title>
@@ -279,12 +283,12 @@
 </g>
 <!-- \\Yetti\\API\\Language&#45;&gt;\\Yetti\\API\\BaseAbstract -->
 <g id="edge36" class="edge"><title>\\Yetti\\API\\Language&#45;&gt;\\Yetti\\API\\BaseAbstract</title>
-<path fill="none" stroke="black" d="M235.306,-456C206.442,-456 164.252,-456 130.121,-456"/>
-<polygon fill="none" stroke="black" points="129.812,-452.5 119.812,-456 129.812,-459.5 129.812,-452.5"/>
+<path fill="none" stroke="black" d="M235.306,-456C206.541,-456 164.542,-456 130.474,-456"/>
+<polygon fill="none" stroke="black" points="130.179,-452.5 120.179,-456 130.179,-459.5 130.179,-452.5"/>
 </g>
 <!-- \\Yetti\\API\\ListAbstract&#45;&gt;\\Yetti\\API\\BaseAbstract -->
 <g id="edge38" class="edge"><title>\\Yetti\\API\\ListAbstract&#45;&gt;\\Yetti\\API\\BaseAbstract</title>
-<path fill="none" stroke="black" d="M222.022,-250.868C211.433,-254.782 200.751,-260.024 192,-267 136.962,-310.879 100.142,-387.564 83.3786,-428.465"/>
+<path fill="none" stroke="black" d="M221.62,-251.017C211.163,-254.915 200.64,-260.112 192,-267 136.962,-310.879 100.142,-387.564 83.3786,-428.465"/>
 <polygon fill="none" stroke="black" points="80.1034,-427.229 79.642,-437.814 86.6035,-429.827 80.1034,-427.229"/>
 </g>
 <!-- \\Yetti\\API\\ListIterator -->
@@ -333,8 +337,8 @@
 </g>
 <!-- \\Yetti\\API\\Resource_Asset_Group&#45;&gt;\\Yetti\\API\\ListAbstract -->
 <g id="edge40" class="edge"><title>\\Yetti\\API\\Resource_Asset_Group&#45;&gt;\\Yetti\\API\\ListAbstract</title>
-<path fill="none" stroke="black" d="M430.975,-491.813C426.994,-489.252 423.28,-486.331 420,-483 349.003,-410.893 418.997,-339.107 348,-267 342.071,-260.978 334.724,-256.297 326.941,-252.658"/>
-<polygon fill="none" stroke="black" points="328.244,-249.409 317.664,-248.847 325.585,-255.884 328.244,-249.409"/>
+<path fill="none" stroke="black" d="M430.975,-491.813C426.994,-489.252 423.28,-486.331 420,-483 349.003,-410.893 418.997,-339.107 348,-267 342.206,-261.115 335.058,-256.511 327.472,-252.908"/>
+<polygon fill="none" stroke="black" points="328.642,-249.604 318.065,-248.992 325.952,-256.067 328.642,-249.604"/>
 </g>
 <!-- \\Yetti\\API\\Resource_Asset -->
 <g id="node26" class="node"><title>\\Yetti\\API\\Resource_Asset</title>
@@ -345,8 +349,8 @@
 </g>
 <!-- \\Yetti\\API\\Resource_Asset&#45;&gt;\\Yetti\\API\\BaseAbstract -->
 <g id="edge42" class="edge"><title>\\Yetti\\API\\Resource_Asset&#45;&gt;\\Yetti\\API\\BaseAbstract</title>
-<path fill="none" stroke="black" d="M215.701,-416.684C188.947,-424.056 156.535,-432.985 129.368,-440.47"/>
-<polygon fill="none" stroke="black" points="128.327,-437.126 119.616,-443.157 130.186,-443.875 128.327,-437.126"/>
+<path fill="none" stroke="black" d="M215.701,-416.684C189.149,-424 157.024,-432.85 129.984,-440.3"/>
+<polygon fill="none" stroke="black" points="128.982,-436.946 120.271,-442.976 130.841,-443.694 128.982,-436.946"/>
 </g>
 <!-- \\Yetti\\API\\Resource_BaseAbstract&#45;&gt;\\Yetti\\API\\BaseAbstract -->
 <g id="edge44" class="edge"><title>\\Yetti\\API\\Resource_BaseAbstract&#45;&gt;\\Yetti\\API\\BaseAbstract</title>
@@ -355,8 +359,8 @@
 </g>
 <!-- \\Yetti\\API\\Resource_ListAbstract&#45;&gt;\\Yetti\\API\\ListAbstract -->
 <g id="edge46" class="edge"><title>\\Yetti\\API\\Resource_ListAbstract&#45;&gt;\\Yetti\\API\\ListAbstract</title>
-<path fill="none" stroke="black" d="M432.074,-437.891C427.733,-435.308 423.645,-432.361 420,-429 362.077,-375.587 405.923,-320.413 348,-267 342.069,-261.531 334.966,-257.158 327.505,-253.666"/>
-<polygon fill="none" stroke="black" points="328.505,-250.291 317.926,-249.696 325.825,-256.758 328.505,-250.291"/>
+<path fill="none" stroke="black" d="M432.074,-437.891C427.733,-435.308 423.645,-432.361 420,-429 362.077,-375.587 405.923,-320.413 348,-267 342.142,-261.598 335.141,-257.267 327.782,-253.796"/>
+<polygon fill="none" stroke="black" points="328.904,-250.471 318.328,-249.844 326.204,-256.93 328.904,-250.471"/>
 </g>
 <!-- \\Yetti\\API\\Resource_Property -->
 <g id="node29" class="node"><title>\\Yetti\\API\\Resource_Property</title>
@@ -410,8 +414,8 @@
 </g>
 <!-- \\Yetti\\API\\VAT_List&#45;&gt;\\Yetti\\API\\ListAbstract -->
 <g id="edge54" class="edge"><title>\\Yetti\\API\\VAT_List&#45;&gt;\\Yetti\\API\\ListAbstract</title>
-<path fill="none" stroke="black" d="M463.601,-395.325C449.13,-391.226 432.646,-384.815 420,-375 374.427,-339.629 393.573,-302.371 348,-267 341.784,-262.175 334.64,-258.173 327.264,-254.864"/>
-<polygon fill="none" stroke="black" points="328.43,-251.56 317.849,-251.033 325.792,-258.044 328.43,-251.56"/>
+<path fill="none" stroke="black" d="M463.601,-395.325C449.13,-391.226 432.646,-384.815 420,-375 374.427,-339.629 393.573,-302.371 348,-267 341.863,-262.236 334.821,-258.275 327.544,-254.99"/>
+<polygon fill="none" stroke="black" points="328.831,-251.735 318.251,-251.182 326.177,-258.212 328.831,-251.735"/>
 </g>
 <!-- \\Yetti\\API\\VAT -->
 <g id="node34" class="node"><title>\\Yetti\\API\\VAT</title>
