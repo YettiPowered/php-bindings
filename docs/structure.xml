@@ -1393,7 +1393,7 @@ Responsible for listing combinations for a product item.]]></description>
       <error line="44" code="50018">No DocBlock was found for property $_options</error>
     </parse_markers>
   </file>
-  <file path="Item.php" hash="349b9d4d12ca66299fb2aa033215f154" package="Default">
+  <file path="Item.php" hash="a0496aa01e47f3e3afe2e5e9a61b9310" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\Resource_BaseAbstract</extends>
       <name>Item</name>
@@ -1528,135 +1528,165 @@ Responsible for listing combinations for a product item.]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="152" package="yetti-api">
-        <name>clearPricingTiers</name>
-        <full_name>clearPricingTiers</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="153" package="yetti-api">
+        <name>setWeight</name>
+        <full_name>setWeight</full_name>
         <docblock line="147">
-          <description><![CDATA[Clear all existing pricing tiers]]></description>
+          <description><![CDATA[Set the product weight]]></description>
           <long-description><![CDATA[]]></long-description>
+          <tag line="147" name="param" description="" type="float" variable="$weight">
+            <type by_reference="false">float</type>
+          </tag>
           <tag line="147" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
+        <argument line="153">
+          <name>$weight</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="165" package="yetti-api">
-        <name>addPricingTier</name>
-        <full_name>addPricingTier</full_name>
-        <docblock line="157">
-          <description><![CDATA[Adds a new pricing tier to this item]]></description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="163" package="yetti-api">
+        <name>getWeight</name>
+        <full_name>getWeight</full_name>
+        <docblock line="158">
+          <description><![CDATA[Returns the product weight]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="157" name="param" description="" type="float" variable="$price">
+          <tag line="158" name="return" description="" type="float">
             <type by_reference="false">float</type>
           </tag>
-          <tag line="157" name="param" description="" type="int" variable="$appliesToId">
-            <type by_reference="false">int</type>
-          </tag>
-          <tag line="157" name="param" description="" type="int" variable="$appliesToIdType">
-            <type by_reference="false">int</type>
-          </tag>
-          <tag line="157" name="return" description="" type="void">
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="173" package="yetti-api">
+        <name>clearPricingTiers</name>
+        <full_name>clearPricingTiers</full_name>
+        <docblock line="168">
+          <description><![CDATA[Clear all existing pricing tiers]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="168" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="165">
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="186" package="yetti-api">
+        <name>addPricingTier</name>
+        <full_name>addPricingTier</full_name>
+        <docblock line="178">
+          <description><![CDATA[Adds a new pricing tier to this item]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="178" name="param" description="" type="float" variable="$price">
+            <type by_reference="false">float</type>
+          </tag>
+          <tag line="178" name="param" description="" type="int" variable="$appliesToId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="178" name="param" description="" type="int" variable="$appliesToIdType">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="178" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="186">
           <name>$price</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="165">
+        <argument line="186">
           <name>$appliesToId</name>
           <default><![CDATA[-1]]></default>
           <type/>
         </argument>
-        <argument line="165">
+        <argument line="186">
           <name>$appliesToIdType</name>
           <default><![CDATA[\Yetti\API\Resource_BaseAbstract::ID_TYPE_ALL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="193" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="214" package="yetti-api">
         <name>getPrice</name>
         <full_name>getPrice</full_name>
-        <docblock line="186">
+        <docblock line="207">
           <description><![CDATA[Returns the price of this item (if applicable).]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="186" name="param" description="" type="int" variable="$appliesToId">
+          <tag line="207" name="param" description="" type="int" variable="$appliesToId">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="186" name="param" description="" type="int" variable="$appliesToIdType">
+          <tag line="207" name="param" description="" type="int" variable="$appliesToIdType">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="186" name="return" description="" type="float">
+          <tag line="207" name="return" description="" type="float">
             <type by_reference="false">float</type>
           </tag>
         </docblock>
-        <argument line="193">
+        <argument line="214">
           <name>$appliesToId</name>
           <default><![CDATA[-1]]></default>
           <type/>
         </argument>
-        <argument line="193">
+        <argument line="214">
           <name>$appliesToIdType</name>
           <default><![CDATA[\Yetti\API\Resource_BaseAbstract::ID_TYPE_ALL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="210" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="231" package="yetti-api">
         <name>clearVariations</name>
         <full_name>clearVariations</full_name>
-        <docblock line="205">
+        <docblock line="226">
           <description><![CDATA[Clear existing variations]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="205" name="return" description="" type="void">
+          <tag line="226" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="221" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="242" package="yetti-api">
         <name>addVariation</name>
         <full_name>addVariation</full_name>
-        <docblock line="215">
+        <docblock line="236">
           <description><![CDATA[Add a new product variation to this item]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="215" name="param" description="" type="string" variable="$variationName">
+          <tag line="236" name="param" description="" type="string" variable="$variationName">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="215" name="return" description="" type="\Yetti\API\Item_Variation">
+          <tag line="236" name="return" description="" type="\Yetti\API\Item_Variation">
             <type by_reference="false">\Yetti\API\Item_Variation</type>
           </tag>
         </docblock>
-        <argument line="221">
+        <argument line="242">
           <name>$variationName</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="234" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="255" package="yetti-api">
         <name>getVariations</name>
         <full_name>getVariations</full_name>
-        <docblock line="229">
+        <docblock line="250">
           <description><![CDATA[Returns an array of variation objects for this item]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="229" name="return" description="" type="array">
+          <tag line="250" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="285" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="306" package="yetti-api">
         <name>setFileData</name>
         <full_name>setFileData</full_name>
-        <docblock line="276">
+        <docblock line="297">
           <description><![CDATA[Sets the file content to be sent for saving]]></description>
           <long-description><![CDATA[<p>Example usage:
     $item->setFileData(file_get_contents($filepath));</p>]]></long-description>
-          <tag line="276" name="param" description="" type="string" variable="$fileData">
+          <tag line="297" name="param" description="" type="string" variable="$fileData">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="276" name="return" description="" type="void">
+          <tag line="297" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="285">
+        <argument line="306">
           <name>$fileData</name>
           <default><![CDATA[]]></default>
           <type/>

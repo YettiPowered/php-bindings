@@ -85,6 +85,7 @@
 <li class="method public inherited"><a href="#method_getTypeId" title="getTypeId :: Returns the resource type ID"><span class="description">Returns the resource type ID</span><pre>getTypeId()</pre></a></li>
 <li class="method public "><a href="#method_getVariations" title="getVariations :: Returns an array of variation objects for this item"><span class="description">Returns an array of variation objects for this item</span><pre>getVariations()</pre></a></li>
 <li class="method public "><a href="#method_getVatBandId" title="getVatBandId :: Returns the VAT band ID"><span class="description">Returns the VAT band ID</span><pre>getVatBandId()</pre></a></li>
+<li class="method public "><a href="#method_getWeight" title="getWeight :: Returns the product weight"><span class="description">Returns the product weight</span><pre>getWeight()</pre></a></li>
 <li class="method public inherited"><a href="#method_isLanguageActive" title="isLanguageActive :: Returns whether or not this resource is active in the current language"><span class="description">Returns whether or not this resource is active in the current language</span><pre>isLanguageActive()</pre></a></li>
 <li class="method public inherited"><a href="#method_load" title="load :: Loads a resource by ID or identifier"><span class="description">Loads a resource by ID or identifier</span><pre>load()</pre></a></li>
 <li class="method public inherited"><a href="#method_loadTemplate" title="loadTemplate :: Load a resource template for the given type ID"><span class="description">Load a resource template for the given type ID</span><pre>loadTemplate()</pre></a></li>
@@ -99,6 +100,7 @@
 <li class="method public inherited"><a href="#method_setRevisionComment" title="setRevisionComment :: Sets the revision comment for the current revision"><span class="description">Sets the revision comment for the current revision</span><pre>setRevisionComment()</pre></a></li>
 <li class="method public "><a href="#method_setVatBandId" title="setVatBandId :: Set the VAT band ID"><span class="description">Set the VAT band ID</span><pre>setVatBandId()</pre></a></li>
 <li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
+<li class="method public "><a href="#method_setWeight" title="setWeight :: Set the product weight"><span class="description">Set the product weight</span><pre>setWeight()</pre></a></li>
 <li class="method public inherited"><a href="#method_webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 </ul>
 </li>
@@ -581,6 +583,16 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
+<a id="method_getWeight"></a><div class="element clickable method public method_getWeight" data-toggle="collapse" data-target=".method_getWeight .collapse">
+<h2>Returns the product weight</h2>
+<pre>getWeight() : float</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
 <a id="method_isLanguageActive"></a><div class="element clickable method public method_isLanguageActive" data-toggle="collapse" data-target=".method_isLanguageActive .collapse">
 <h2>Returns whether or not this resource is active in the current language</h2>
 <pre>isLanguageActive() : bool</pre>
@@ -826,6 +838,19 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement argument">
 <h4>$webservice</h4>
 <code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code>
+</div>
+</div></div>
+</div>
+<a id="method_setWeight"></a><div class="element clickable method public method_setWeight" data-toggle="collapse" data-target=".method_setWeight .collapse">
+<h2>Set the product weight</h2>
+<pre>setWeight(float $weight) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$weight</h4>
+<code>float</code>
 </div>
 </div></div>
 </div>
@@ -1102,7 +1127,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-11-06T16:12:50Z.<br></footer></div>
+            generated on 2012-11-08T14:47:26Z.<br></footer></div>
 </div>
 </body>
 </html>
