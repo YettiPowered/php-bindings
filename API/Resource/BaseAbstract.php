@@ -225,6 +225,16 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	}
 	
 	/**
+	 * Returns the date this resource was created (in ISO 8601 format)
+	 * 
+	 * @return string
+	 */
+	public function getCreatedDate()
+	{
+		return $this->getJson()->resource->created;
+	}
+	
+	/**
 	 * Set whether or not this resource is available in the current language
 	 * 
 	 * @param bool $active
