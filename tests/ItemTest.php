@@ -232,6 +232,24 @@ class ItemTest extends AuthAbstract
 		$this->assertEquals(1, $item->getVatBandId());
 	}
 	
+	public function testSetWeight()
+	{
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->loadTemplate(5));
+		
+		$item->setName('A test product' . microtime(true));
+		$item->setPropertyValue('Name', 'Test product');
+		$item->setPropertyValue('Description', 'A test product');
+		$item->addPricingTier(10.00);
+		$item->setWeight(16);
+		$this->assertTrue($item->save()->success());
+		$itemId = $item->getId();
+		
+		$item = new \Yetti\API\Item();
+		$this->assertTrue($item->load($itemId));
+		$this->assertEquals(16, $item->getWeight());
+	}
+	
 	public function testAddPricingTier()
 	{
 		$item = new \Yetti\API\Item();

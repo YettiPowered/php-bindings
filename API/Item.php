@@ -145,6 +145,27 @@ class Item extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Set the product weight
+	 * 
+	 * @param float $weight
+	 * @return void
+	 */
+	public function setWeight($weight)
+	{
+		$this->getJson()->weight = $weight;
+	}
+	
+	/**
+	 * Returns the product weight
+	 * 
+	 * @return float
+	 */
+	public function getWeight()
+	{
+		return $this->getJson()->weight;
+	}
+	
+	/**
 	 * Clear all existing pricing tiers
 	 * 
 	 * @return void
