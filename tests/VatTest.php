@@ -26,6 +26,7 @@ class VatTest extends AuthAbstract
 		
 		$this->assertFalse($vatBand->isDefault());
 		$vatBand->setDefault();
+		$this->assertTrue($vatBand->isDefault());
 		$this->assertTrue($vatBand->save()->success());
 		
 		return $vatBand;
@@ -41,26 +42,5 @@ class VatTest extends AuthAbstract
 		
 		$this->assertEquals('VAT band', $vatBand->getName());
 		$this->assertEquals(20, $vatBand->getPercentage());
-		$this->assertTrue($vatBand->isDefault());
-		
-		return $vatBand;
-	}
-	
-	/**
-	 * @depends testLoad
-	 */
-	public function testDefault(VAT $inVatBand)
-	{
-		$this->assertTrue($inVatBand->isDefault());
-		
-		$vatBand = new VAT();
-		$vatBand->loadTemplate();
-		$vatBand->setName('A VAT band');
-		$vatBand->setPercentage(10);
-		$vatBand->setDefault();
-		$this->assertTrue($vatBand->save()->success());
-		
-		$this->assertTrue($inVatBand->load($inVatBand->getId()));
-		$this->assertFalse($inVatBand->isDefault());
 	}
 }
