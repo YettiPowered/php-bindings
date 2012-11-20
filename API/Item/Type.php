@@ -44,6 +44,16 @@ class Item_Type extends BaseAbstract
 	 */
 	public function getId()
 	{
-		return $this->getJson()->id;
+		return (int)$this->getJson()->id;
+	}
+	
+	/**
+	 * Returns the name of this item type
+	 * 
+	 * @return string
+	 */
+	public function getName()
+	{
+		return (string)$this->getJson()->name;
 	}
 }

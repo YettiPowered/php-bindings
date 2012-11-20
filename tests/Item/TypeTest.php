@@ -25,5 +25,6 @@ class Item_TypeTest extends AuthAbstract
 		$this->assertTrue($itemType->load(4));
 		
 		$this->assertEquals(4, $itemType->getId());
+		$this->assertEquals('Articles', $itemType->getName());
 	}
 }
