@@ -13,13 +13,23 @@ namespace Yetti\API;
 class Resource_Property extends BaseAbstract
 {
 	/**
+	 * Returns the property ID
+	 * 
+	 * @return int
+	 */
+	public function getId()
+	{
+		return (int)$this->getJson()->id;
+	}
+	
+	/**
 	 * Returns the data type of this property
 	 * 
 	 * @return string
 	 */
 	public function getDataType()
 	{
-		return $this->getJson()->dataType;
+		return (string)$this->getJson()->dataType;
 	}
 
 	/**
@@ -29,6 +39,6 @@ class Resource_Property extends BaseAbstract
 	 */
 	public function getValue()
 	{
-		return $this->getJson()->value;
+		return (string)$this->getJson()->value;
 	}
 }

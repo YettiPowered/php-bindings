@@ -311,6 +311,8 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 		if (isset($this->getJson()->properties->{$name})) {
 			return (string)$this->getJson()->properties->{$name}->value;
 		}
+		
+		return '';
 	}
 	
 	/**
