@@ -19,7 +19,17 @@ class Language extends BaseAbstract
 	 */
 	public function getId()
 	{
-		return $this->getJson()->id;
+		return (int)$this->getJson()->id;
+	}
+	
+	/**
+	 * Returns the name of this language
+	 * 
+	 * @return string
+	 */
+	public function getName()
+	{
+		return (string)$this->getJson()->name;
 	}
 	
 	/**
@@ -29,7 +39,7 @@ class Language extends BaseAbstract
 	 */
 	public function getCountryCode()
 	{
-		return $this->getJson()->countryCode;
+		return (string)$this->getJson()->countryCode;
 	}
 	
 	/**
