@@ -19,7 +19,7 @@ abstract class ListAbstract extends BaseAbstract
 		 * 
 		 * @var \Yetti\API\ListIterator
 		 */
-		$_items,
+		$_items = array(),
 		
 		/**
 		 * Whether or not getItems() should auto paginate
