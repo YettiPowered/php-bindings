@@ -87,6 +87,7 @@ class ItemTest extends AuthAbstract
 		$relatedItem->setPropertyValue('Body', 'A test body');
 		$this->assertTrue($relatedItem->save()->success());
 		
+		$inItem->clearAttachedAssets();
 		$this->assertEmpty($inItem->getAttachedAssets());
 		$this->assertEmpty($inItem->getAttachedAssets('Related'));
 		$this->assertEmpty($inItem->getAttachedAssets('Test'));
