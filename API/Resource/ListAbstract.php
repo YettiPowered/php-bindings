@@ -33,14 +33,19 @@ abstract class Resource_ListAbstract extends ListAbstract
 	 * 
 	 * @param int $typeId
 	 * @param int $page
+	 * @param string $countryCode
 	 * @return bool
 	 */
-	public function load($typeId, $page=null)
+	public function load($typeId, $page=null, $countryCode=null)
 	{
 		$this->_typeId = $typeId;
 		
+		if ($countryCode && is_string($countryCode)) {
+			$countryCode = '/' . strtolower($countryCode);
+		}
+		
 		$this->webservice()->setRequestMethod('get');
-		$this->webservice()->setRequestPath('/' . $this->_path . '/' . $typeId . '.ws');
+		$this->webservice()->setRequestPath($countryCode . '/' . $this->_path . '/' . $typeId . '.ws');
 		
 		if ($page) {
 			$this->webservice()->setRequestParam('page', (int)$page);
