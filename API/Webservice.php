@@ -43,6 +43,13 @@ class Webservice
 		$_privateKey,
 		
 		/**
+		 * The webservice access token.
+		 * 
+		 * @var string
+		 */
+		$_accessToken,
+		
+		/**
 		 * The API version to use.
 		 * 
 		 * @var string
@@ -140,7 +147,14 @@ class Webservice
 		 * 
 		 * @var string
 		 */
-		$_defaultPrivateKey;
+		$_defaultPrivateKey,
+		
+		/**
+		 * A default access token used for authentication as an alternative to access key and private key.
+		 * 
+		 * @var string
+		 */
+		$_defaultAccessToken;
 	
 	/**
 	 * Constructs a new webservice object
@@ -186,6 +200,19 @@ class Webservice
 		if (is_string($privateKey)) {
 			self::$_defaultPrivateKey = $privateKey;
 		}
+	}
+	
+	/**
+	 * Set a default access token to use for authentication
+	 * (Alternative to authenticating with an access key / private key)
+	 * 
+	 * 
+	 * @param string $token
+	 * @return void
+	 */
+	public static function setDefaultAccessToken($token)
+	{
+		self::$_defaultAccessToken = $token;
 	}
 	
 	/**
@@ -273,6 +300,29 @@ class Webservice
 	public function getPrivateKey()
 	{
 		return $this->_privateKey ? $this->_privateKey : self::$_defaultPrivateKey;
+	}
+	
+	/**
+	 * Set your webservice access token for authentication
+	 *
+	 * @param string $token
+	 * @return void
+	 */
+	public function setAccessToken($token)
+	{
+		if (is_string($token)) {
+			$this->_accessToken = $token;
+		}
+	}
+	
+	/**
+	 * Returns the access token
+	 * 
+	 * @return string
+	 */
+	public function getAccessToken()
+	{
+		return $this->_accessToken ? $this->_accessToken : self::$_defaultAccessToken;
 	}
 	
 	/**
@@ -437,6 +487,7 @@ class Webservice
 		curl_setopt($request, CURLOPT_HEADER, true);
 		curl_setopt($request, CURLOPT_HTTPHEADER, array_merge(array(
 			'X-Authorization: ' . $this->getAccessKey() . ':' . $this->getRequestSignature(),
+			'X-Access-Token: ' . $this->getAccessToken(),
 		), $this->_requestHeaders));
 		curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($request, CURLOPT_USERAGENT, 'Official-PHP-Bindings');
