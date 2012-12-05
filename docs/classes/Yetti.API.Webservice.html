@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">78</span></a></li>
+                <span class="label label-info">84</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -61,6 +61,7 @@
 <li class="method public "><a href="#method___construct" title="__construct :: Constructs a new webservice object"><span class="description">Constructs a new webservice object</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#method_addRequestHeader" title="addRequestHeader :: Add a request header"><span class="description">Add a request header</span><pre>addRequestHeader()</pre></a></li>
 <li class="method public "><a href="#method_getAccessKey" title="getAccessKey :: Returns the access key"><span class="description">Returns the access key</span><pre>getAccessKey()</pre></a></li>
+<li class="method public "><a href="#method_getAccessToken" title="getAccessToken :: Returns the access token"><span class="description">Returns the access token</span><pre>getAccessToken()</pre></a></li>
 <li class="method public "><a href="#method_getBaseUri" title="getBaseUri :: Returns the base URI"><span class="description">Returns the base URI</span><pre>getBaseUri()</pre></a></li>
 <li class="method public "><a href="#method_getPrivateKey" title="getPrivateKey :: Returns the private key"><span class="description">Returns the private key</span><pre>getPrivateKey()</pre></a></li>
 <li class="method public "><a href="#method_getRawResponse" title="getRawResponse :: Returns the full (raw) response string"><span class="description">Returns the full (raw) response string</span><pre>getRawResponse()</pre></a></li>
@@ -80,8 +81,12 @@ you can safely make another request."><span class="description">Resets any previ
 Call this method to reset your webservice object so that
 you can safely make another request.</span><pre>resetRequest()</pre></a></li>
 <li class="method public "><a href="#method_setAccessKey" title="setAccessKey :: Set your webservice access key"><span class="description">Set your webservice access key</span><pre>setAccessKey()</pre></a></li>
+<li class="method public "><a href="#method_setAccessToken" title="setAccessToken :: Set your webservice access token for authentication"><span class="description">Set your webservice access token for authentication</span><pre>setAccessToken()</pre></a></li>
 <li class="method public "><a href="#method_setBaseUri" title="setBaseUri :: Set the base URI for all requests"><span class="description">Set the base URI for all requests</span><pre>setBaseUri()</pre></a></li>
 <li class="method public "><a href="#method_setDefaultAccessKey" title="setDefaultAccessKey :: Set a default access key (used when no other key has been set)"><span class="description">Set a default access key (used when no other key has been set)</span><pre>setDefaultAccessKey()</pre></a></li>
+<li class="method public "><a href="#method_setDefaultAccessToken" title="setDefaultAccessToken :: Set a default access token to use for authentication
+(Alternative to authenticating with an access key / private key)"><span class="description">Set a default access token to use for authentication
+(Alternative to authenticating with an access key / private key)</span><pre>setDefaultAccessToken()</pre></a></li>
 <li class="method public "><a href="#method_setDefaultBaseUri" title="setDefaultBaseUri :: Set a default base URI (used when no other base URI has been set)"><span class="description">Set a default base URI (used when no other base URI has been set)</span><pre>setDefaultBaseUri()</pre></a></li>
 <li class="method public "><a href="#method_setDefaultPrivateKey" title="setDefaultPrivateKey :: Set a default private key (used when no other key has been set)"><span class="description">Set a default private key (used when no other key has been set)</span><pre>setDefaultPrivateKey()</pre></a></li>
 <li class="method public "><a href="#method_setPostData" title="setPostData :: Set raw post data to be sent"><span class="description">Set raw post data to be sent</span><pre>setPostData()</pre></a></li>
@@ -106,8 +111,10 @@ you can safely make another request.</span><pre>resetRequest()</pre></a></li>
 <li class="nav-header private">» Private
                     <ul>
 <li class="property private "><a href="#property__accessKey" title="$_accessKey :: "><span class="description"></span><pre>$_accessKey</pre></a></li>
+<li class="property private "><a href="#property__accessToken" title="$_accessToken :: "><span class="description"></span><pre>$_accessToken</pre></a></li>
 <li class="property private "><a href="#property__baseUri" title="$_baseUri :: "><span class="description"></span><pre>$_baseUri</pre></a></li>
 <li class="property private "><a href="#property__defaultAccessKey" title="$_defaultAccessKey :: "><span class="description"></span><pre>$_defaultAccessKey</pre></a></li>
+<li class="property private "><a href="#property__defaultAccessToken" title="$_defaultAccessToken :: "><span class="description"></span><pre>$_defaultAccessToken</pre></a></li>
 <li class="property private "><a href="#property__defaultBaseUri" title="$_defaultBaseUri :: "><span class="description"></span><pre>$_defaultBaseUri</pre></a></li>
 <li class="property private "><a href="#property__defaultPrivateKey" title="$_defaultPrivateKey :: "><span class="description"></span><pre>$_defaultPrivateKey</pre></a></li>
 <li class="property private "><a href="#property__postData" title="$_postData :: "><span class="description"></span><pre>$_postData</pre></a></li>
@@ -182,6 +189,16 @@ you can safely make another request.</span><pre>resetRequest()</pre></a></li>
 <a id="method_getAccessKey"></a><div class="element clickable method public method_getAccessKey" data-toggle="collapse" data-target=".method_getAccessKey .collapse">
 <h2>Returns the access key</h2>
 <pre>getAccessKey() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getAccessToken"></a><div class="element clickable method public method_getAccessToken" data-toggle="collapse" data-target=".method_getAccessToken .collapse">
+<h2>Returns the access token</h2>
+<pre>getAccessToken() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -355,6 +372,19 @@ you can safely make another request.</h2>
 </div>
 </div></div>
 </div>
+<a id="method_setAccessToken"></a><div class="element clickable method public method_setAccessToken" data-toggle="collapse" data-target=".method_setAccessToken .collapse">
+<h2>Set your webservice access token for authentication</h2>
+<pre>setAccessToken(string $token) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$token</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
 <a id="method_setBaseUri"></a><div class="element clickable method public method_setBaseUri" data-toggle="collapse" data-target=".method_setBaseUri .collapse">
 <h2>Set the base URI for all requests</h2>
 <pre>setBaseUri(string $uri) : void</pre>
@@ -377,6 +407,20 @@ you can safely make another request.</h2>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$accessKey</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setDefaultAccessToken"></a><div class="element clickable method public method_setDefaultAccessToken" data-toggle="collapse" data-target=".method_setDefaultAccessToken .collapse">
+<h2>Set a default access token to use for authentication
+(Alternative to authenticating with an access key / private key)</h2>
+<pre>setDefaultAccessToken(string $token) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$token</h4>
 <code>string</code>
 </div>
 </div></div>
@@ -539,6 +583,12 @@ you can safely make another request.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property__accessToken"> </a><div class="element clickable property private property__accessToken" data-toggle="collapse" data-target=".property__accessToken .collapse">
+<h2></h2>
+<pre>$_accessToken </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property__baseUri"> </a><div class="element clickable property private property__baseUri" data-toggle="collapse" data-target=".property__baseUri .collapse">
 <h2></h2>
 <pre>$_baseUri </pre>
@@ -548,6 +598,12 @@ you can safely make another request.</h2>
 <a id="property__defaultAccessKey"> </a><div class="element clickable property private property__defaultAccessKey" data-toggle="collapse" data-target=".property__defaultAccessKey .collapse">
 <h2></h2>
 <pre>$_defaultAccessKey </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__defaultAccessToken"> </a><div class="element clickable property private property__defaultAccessToken" data-toggle="collapse" data-target=".property__defaultAccessToken .collapse">
+<h2></h2>
+<pre>$_defaultAccessToken </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -648,7 +704,7 @@ you can safely make another request.</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a11</a> and<br>
-            generated on 2012-11-22T11:52:07Z.<br></footer></div>
+            generated on 2012-12-05T15:09:21Z.<br></footer></div>
 </div>
 </body>
 </html>

@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a11" title="Yetti API - PHP Bindings">
+  <file path="Auth/Details.php" hash="4e42209c5013fcd66ccca13b6b1ee398" package="Default">
+    <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
+      <extends>\Yetti\API\BaseAbstract</extends>
+      <name>Auth_Details</name>
+      <full_name>\Yetti\API\Auth_Details</full_name>
+      <docblock line="5">
+        <description>Auth details model.</description>
+        <long-description></long-description>
+        <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
+        <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
+        <tag line="5" name="package" description="yetti-api"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
+        <name>$_user</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="29" package="yetti-api">
+        <name>load</name>
+        <full_name>load</full_name>
+        <docblock line="24">
+          <description>Load auth details</description>
+          <long-description></long-description>
+          <tag line="24" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="48" package="yetti-api">
+        <name>getUser</name>
+        <full_name>getUser</full_name>
+        <docblock line="43">
+          <description>Returns an object representing the authenticated user</description>
+          <long-description></long-description>
+          <tag line="43" name="return" description="" type="\Yetti\API\User">
+            <type by_reference="false">\Yetti\API\User</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="64" package="yetti-api">
+        <name>getScopes</name>
+        <full_name>getScopes</full_name>
+        <docblock line="59">
+          <description>Returns an array of authorised scopes</description>
+          <long-description></long-description>
+          <tag line="59" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Auth/Details.php</error>
+      <error line="22" code="50018">No DocBlock was found for property $_user</error>
+    </parse_markers>
+  </file>
   <file path="Autoloader.php" hash="151f59ecf5cd6f712eea6423d2a3fbcc" package="Default">
     <include line="35" type="Include" package="Default">
       <name/>
@@ -1778,7 +1833,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Language</full_name>
       <docblock line="5">
         <description>Language model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -1788,7 +1843,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getId</full_name>
         <docblock line="15">
           <description>Returns the language ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1799,7 +1854,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getName</full_name>
         <docblock line="25">
           <description>Returns the name of this language</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -1810,7 +1865,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getCountryCode</full_name>
         <docblock line="35">
           <description>Returns the country code</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="35" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -1821,7 +1876,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>isDefault</full_name>
         <docblock line="45">
           <description>Returns whether or not this language is set as default</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="45" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -2197,6 +2252,126 @@ Responsible for listing combinations for a product item.</description>
       <error line="177" code="50015">Argument $offset is missing from the Docblock of offsetUnset()</error>
     </parse_markers>
   </file>
+  <file path="Oauth/Access/Token.php" hash="77f4490b8b05f5cd486ac83929c9540d" package="Default">
+    <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
+      <extends>\Yetti\API\BaseAbstract</extends>
+      <name>Oauth_Access_Token</name>
+      <full_name>\Yetti\API\Oauth_Access_Token</full_name>
+      <docblock line="5">
+        <description>Oauth access token model.</description>
+        <long-description></long-description>
+        <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
+        <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
+        <tag line="5" name="package" description="yetti-api"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="21" namespace="Yetti\API" package="Default">
+        <name>$_values</name>
+        <default>array('client_id' =&gt; null, 'client_secret' =&gt; null, 'code' =&gt; null, 'state' =&gt; null)</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="34" package="yetti-api">
+        <name>setClientId</name>
+        <full_name>setClientId</full_name>
+        <docblock line="28">
+          <description>Set the client ID</description>
+          <long-description></long-description>
+          <tag line="28" name="param" description="" type="string" variable="$clientId">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$clientId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="47" package="yetti-api">
+        <name>setClientSecret</name>
+        <full_name>setClientSecret</full_name>
+        <docblock line="41">
+          <description>Set the client secret</description>
+          <long-description></long-description>
+          <tag line="41" name="param" description="" type="string" variable="$secret">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="41" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="47">
+          <name>$secret</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="60" package="yetti-api">
+        <name>setCode</name>
+        <full_name>setCode</full_name>
+        <docblock line="54">
+          <description>Set the code</description>
+          <long-description></long-description>
+          <tag line="54" name="param" description="" type="string" variable="$code">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="54" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="60">
+          <name>$code</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="73" package="yetti-api">
+        <name>setState</name>
+        <full_name>setState</full_name>
+        <docblock line="67">
+          <description>Set the state</description>
+          <long-description></long-description>
+          <tag line="67" name="param" description="" type="string" variable="$state">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="73">
+          <name>$state</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="85" package="yetti-api">
+        <name>getAccessToken</name>
+        <full_name>getAccessToken</full_name>
+        <docblock line="80">
+          <description>Returns an access token</description>
+          <long-description></long-description>
+          <tag line="80" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="100" package="yetti-api">
+        <name>makeRequest</name>
+        <full_name>makeRequest</full_name>
+        <docblock line="95">
+          <description>Make a webservice request</description>
+          <long-description></long-description>
+          <tag line="95" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Oauth/Access/Token.php</error>
+      <error line="21" code="50018">No DocBlock was found for property $_values</error>
+    </parse_markers>
+  </file>
   <file path="Resource/Asset/Group.php" hash="7b8a71f6c5bea6e93704a6ed0bd4969c" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="14" package="yetti-api">
       <extends>\Yetti\API\ListAbstract</extends>
@@ -2305,7 +2480,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\Resource_BaseAbstract</full_name>
       <docblock line="5">
         <description>Abstract base class for resource models.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -2327,22 +2502,22 @@ Represents a single asset group for a resource</description>
       </constant>
       <property final="false" static="false" visibility="private" line="34" namespace="Yetti\API" package="Default">
         <name>$_countryCode</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="41" namespace="Yetti\API" package="Default">
         <name>$_originalAuthor</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="48" namespace="Yetti\API" package="Default">
         <name>$_revisionAuthor</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="57" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
         <docblock line="50">
           <description>Loads a resource by ID or identifier</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="param" description="int ID or string identifier" type="mixed" variable="$resourceId">
             <type by_reference="false">mixed</type>
           </tag>
@@ -2355,7 +2530,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="57">
           <name>$resourceId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="57">
@@ -2369,7 +2544,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadTemplate</full_name>
         <docblock line="77">
           <description>Load a resource template for the given type ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="77" name="param" description="" type="int" variable="$typeId">
             <type by_reference="false">int</type>
           </tag>
@@ -2388,7 +2563,7 @@ Represents a single asset group for a resource</description>
         <full_name>save</full_name>
         <docblock line="100">
           <description>Save this resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="100" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -2399,7 +2574,7 @@ Represents a single asset group for a resource</description>
         <full_name>delete</full_name>
         <docblock line="123">
           <description>Delete this resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="123" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -2410,7 +2585,7 @@ Represents a single asset group for a resource</description>
         <full_name>create</full_name>
         <docblock line="137">
           <description>Create a new resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="137" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -2421,7 +2596,7 @@ Represents a single asset group for a resource</description>
         <full_name>update</full_name>
         <docblock line="157">
           <description>Update an existing resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="157" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -2432,7 +2607,7 @@ Represents a single asset group for a resource</description>
         <full_name>_beforeSave</full_name>
         <docblock line="173">
           <description>This method can be overridden by derived classes to perform actions before the object saves</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="173" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -2443,7 +2618,7 @@ Represents a single asset group for a resource</description>
         <full_name>_afterSave</full_name>
         <docblock line="180">
           <description>This method can be overridden by derived classes to perform actions after a successful save</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="180" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -2454,7 +2629,7 @@ Represents a single asset group for a resource</description>
         <full_name>getId</full_name>
         <docblock line="187">
           <description>Returns the resource ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="187" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2465,7 +2640,7 @@ Represents a single asset group for a resource</description>
         <full_name>getLanguageId</full_name>
         <docblock line="197">
           <description>Returns the language ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="197" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2476,7 +2651,7 @@ Represents a single asset group for a resource</description>
         <full_name>getRevisionId</full_name>
         <docblock line="207">
           <description>Returns the revision ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="207" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2487,7 +2662,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTypeId</full_name>
         <docblock line="217">
           <description>Returns the resource type ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="217" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2498,7 +2673,7 @@ Represents a single asset group for a resource</description>
         <full_name>getCreatedDate</full_name>
         <docblock line="227">
           <description>Returns the date this resource was created (in ISO 8601 format)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="227" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2509,7 +2684,7 @@ Represents a single asset group for a resource</description>
         <full_name>setLanguageActive</full_name>
         <docblock line="237">
           <description>Set whether or not this resource is available in the current language</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="237" name="param" description="" type="bool" variable="$active">
             <type by_reference="false">bool</type>
           </tag>
@@ -2528,7 +2703,7 @@ Represents a single asset group for a resource</description>
         <full_name>isLanguageActive</full_name>
         <docblock line="248">
           <description>Returns whether or not this resource is active in the current language</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="248" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -2539,7 +2714,7 @@ Represents a single asset group for a resource</description>
         <full_name>setName</full_name>
         <docblock line="258">
           <description>Set the resource name (identifier)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="258" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -2549,7 +2724,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="264">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2558,7 +2733,7 @@ Represents a single asset group for a resource</description>
         <full_name>getName</full_name>
         <docblock line="269">
           <description>Returns the resource name</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="269" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2569,7 +2744,7 @@ Represents a single asset group for a resource</description>
         <full_name>getDisplayName</full_name>
         <docblock line="279">
           <description>Returns the resource's display name</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="279" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2580,7 +2755,7 @@ Represents a single asset group for a resource</description>
         <full_name>setPropertyValue</full_name>
         <docblock line="289">
           <description>Set a property value</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="289" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -2593,12 +2768,12 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="296">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="296">
           <name>$value</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2607,7 +2782,7 @@ Represents a single asset group for a resource</description>
         <full_name>getPropertyValue</full_name>
         <docblock line="303">
           <description>Returns a property value</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="303" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -2617,7 +2792,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="309">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2626,7 +2801,7 @@ Represents a single asset group for a resource</description>
         <full_name>setMetaTitle</full_name>
         <docblock line="318">
           <description>Set the meta title</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="318" name="param" description="" type="string" variable="$title">
             <type by_reference="false">string</type>
           </tag>
@@ -2636,7 +2811,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="324">
           <name>$title</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2645,7 +2820,7 @@ Represents a single asset group for a resource</description>
         <full_name>getMetaTitle</full_name>
         <docblock line="331">
           <description>Returns the meta title</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="331" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2656,7 +2831,7 @@ Represents a single asset group for a resource</description>
         <full_name>setMetaDescription</full_name>
         <docblock line="341">
           <description>Set the meta description</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="341" name="param" description="" type="string" variable="$description">
             <type by_reference="false">string</type>
           </tag>
@@ -2666,7 +2841,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="347">
           <name>$description</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2675,7 +2850,7 @@ Represents a single asset group for a resource</description>
         <full_name>getMetaDescription</full_name>
         <docblock line="354">
           <description>Returns the meta description</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="354" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2686,7 +2861,7 @@ Represents a single asset group for a resource</description>
         <full_name>getOriginalAuthor</full_name>
         <docblock line="364">
           <description>Return a user object based on the original author of this resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="364" name="return" description="" type="\Yetti\API\User">
             <type by_reference="false">\Yetti\API\User</type>
           </tag>
@@ -2697,7 +2872,7 @@ Represents a single asset group for a resource</description>
         <full_name>getRevisionAuthor</full_name>
         <docblock line="380">
           <description>Return a user object based on the author of this revision</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="380" name="return" description="" type="\Yetti\API\User">
             <type by_reference="false">\Yetti\API\User</type>
           </tag>
@@ -2708,7 +2883,7 @@ Represents a single asset group for a resource</description>
         <full_name>getRevisionComment</full_name>
         <docblock line="396">
           <description>Returns the revision comment for the current revision</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="396" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2719,7 +2894,7 @@ Represents a single asset group for a resource</description>
         <full_name>setRevisionComment</full_name>
         <docblock line="406">
           <description>Sets the revision comment for the current revision</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="406" name="param" description="" type="string" variable="$comment">
             <type by_reference="false">string</type>
           </tag>
@@ -2729,7 +2904,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="412">
           <name>$comment</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2738,7 +2913,7 @@ Represents a single asset group for a resource</description>
         <full_name>clearAttachedAssets</full_name>
         <docblock line="417">
           <description>Clear the current attached assets</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="417" name="param" description="" type="string" variable="$assetGroupName">
             <type by_reference="false">string</type>
           </tag>
@@ -2757,7 +2932,7 @@ Represents a single asset group for a resource</description>
         <full_name>addAsset</full_name>
         <docblock line="435">
           <description>Adds a new asset to the resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="435" name="param" description="" type="string" variable="$assetGroupName">
             <type by_reference="false">string</type>
           </tag>
@@ -2773,12 +2948,12 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="443">
           <name>$assetGroupName</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="443">
           <name>$resourceId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="443">
@@ -2797,7 +2972,7 @@ Represents a single asset group for a resource</description>
         <full_name>getProperties</full_name>
         <docblock line="457">
           <description>Returns an array of property elements</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="457" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -2808,7 +2983,7 @@ Represents a single asset group for a resource</description>
         <full_name>getAttachedAssets</full_name>
         <docblock line="475">
           <description>Returns an array of attached asset group elements</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="475" name="param" description="" type="string" variable="$requestedGroup">
             <type by_reference="false">string</type>
           </tag>
@@ -2827,7 +3002,7 @@ Represents a single asset group for a resource</description>
         <full_name>getPluralName</full_name>
         <docblock line="501">
           <description>Returns a plural name for resources of this type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="501" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2838,7 +3013,7 @@ Represents a single asset group for a resource</description>
         <full_name>getSingularName</full_name>
         <docblock line="511">
           <description>Return a singular name for this resource type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="511" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2859,25 +3034,25 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\Resource_ListAbstract</full_name>
       <docblock line="5">
         <description>Abstract class for resource list models</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
       </docblock>
       <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
         <name>$_path</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="29" namespace="Yetti\API" package="Default">
         <name>$_typeId</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="39" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
         <docblock line="31">
           <description>Loads the list from Yetti</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="31" name="param" description="" type="int" variable="$typeId">
             <type by_reference="false">int</type>
           </tag>
@@ -2893,7 +3068,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="39">
           <name>$typeId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="39">
@@ -2912,7 +3087,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadNextPage</full_name>
         <docblock line="66">
           <description>Load the next page of items</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="66" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -2923,7 +3098,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="83">
           <description>Loads the list of resource objects</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="83" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -2934,7 +3109,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTotalItemCount</full_name>
         <docblock line="99">
           <description>Returns the total number of items available for this listing</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="99" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2945,7 +3120,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTotalPages</full_name>
         <docblock line="109">
           <description>Returns the total number of pages available in this listing</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="109" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2956,7 +3131,7 @@ Represents a single asset group for a resource</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="119">
           <description>Returns the currently loaded page number</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="119" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2967,7 +3142,7 @@ Represents a single asset group for a resource</description>
         <full_name>setPath</full_name>
         <docblock line="129">
           <description>Set the request path</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="129" name="param" description="" type="string" variable="$path">
             <type by_reference="false">string</type>
           </tag>
@@ -2977,7 +3152,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="135">
           <name>$path</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2986,7 +3161,7 @@ Represents a single asset group for a resource</description>
         <full_name>getNewItemObject</full_name>
         <docblock line="142">
           <description>Returns a new object for population from the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="142" name="return" description="\Yetti\API\Resource_BaseAbstract" type="object">
             <type by_reference="false">object</type>
           </tag>
@@ -3006,7 +3181,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\Resource_Property</full_name>
       <docblock line="5">
         <description>Model represents a single property (of a resource)</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -3016,7 +3191,7 @@ Represents a single asset group for a resource</description>
         <full_name>getId</full_name>
         <docblock line="15">
           <description>Returns the property ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3027,7 +3202,7 @@ Represents a single asset group for a resource</description>
         <full_name>getDataType</full_name>
         <docblock line="25">
           <description>Returns the data type of this property</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3038,7 +3213,7 @@ Represents a single asset group for a resource</description>
         <full_name>getValue</full_name>
         <docblock line="35">
           <description>Returns the value of this property</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="35" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3467,564 +3642,622 @@ Represents a single asset group for a resource</description>
       <error line="0" code="50007">No page-level DocBlock was found in file VAT.php</error>
     </parse_markers>
   </file>
-  <file path="Webservice.php" hash="bec9d6447b2fa4c97ea53e5e9ad214dc" package="Default">
+  <file path="Webservice.php" hash="830841df8189899f309b2928893258ba" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends/>
       <name>Webservice</name>
       <full_name>\Yetti\API\Webservice</full_name>
       <docblock line="5">
         <description>Webservice class handles the actual cURL calls and responses to and from Yetti</description>
-        <long-description/>
+        <long-description></long-description>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
       </docblock>
       <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
         <name>$_baseUri</name>
-        <default/>
+        <default></default>
       </property>
       <property final="false" static="false" visibility="private" line="29" namespace="Yetti\API" package="Default">
         <name>$_requestUri</name>
-        <default/>
+        <default></default>
       </property>
       <property final="false" static="false" visibility="private" line="36" namespace="Yetti\API" package="Default">
         <name>$_accessKey</name>
-        <default/>
+        <default></default>
       </property>
       <property final="false" static="false" visibility="private" line="43" namespace="Yetti\API" package="Default">
         <name>$_privateKey</name>
-        <default/>
+        <default></default>
       </property>
       <property final="false" static="false" visibility="private" line="50" namespace="Yetti\API" package="Default">
+        <name>$_accessToken</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="57" namespace="Yetti\API" package="Default">
         <name>$_version</name>
         <default>'2'</default>
       </property>
-      <property final="false" static="false" visibility="private" line="57" namespace="Yetti\API" package="Default">
+      <property final="false" static="false" visibility="private" line="64" namespace="Yetti\API" package="Default">
         <name>$_requestMethod</name>
         <default>'GET'</default>
       </property>
-      <property final="false" static="false" visibility="private" line="64" namespace="Yetti\API" package="Default">
+      <property final="false" static="false" visibility="private" line="71" namespace="Yetti\API" package="Default">
         <name>$_requestParams</name>
         <default>array()</default>
       </property>
-      <property final="false" static="false" visibility="private" line="71" namespace="Yetti\API" package="Default">
-        <name>$_requestSignature</name>
-        <default/>
-      </property>
       <property final="false" static="false" visibility="private" line="78" namespace="Yetti\API" package="Default">
+        <name>$_requestSignature</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="85" namespace="Yetti\API" package="Default">
         <name>$_requestHeaders</name>
         <default>array()</default>
       </property>
-      <property final="false" static="false" visibility="private" line="85" namespace="Yetti\API" package="Default">
-        <name>$_postData</name>
-        <default/>
-      </property>
       <property final="false" static="false" visibility="private" line="92" namespace="Yetti\API" package="Default">
-        <name>$_responseCode</name>
-        <default/>
+        <name>$_postData</name>
+        <default></default>
       </property>
       <property final="false" static="false" visibility="private" line="99" namespace="Yetti\API" package="Default">
-        <name>$_responseHeaders</name>
-        <default/>
+        <name>$_responseCode</name>
+        <default></default>
       </property>
       <property final="false" static="false" visibility="private" line="106" namespace="Yetti\API" package="Default">
-        <name>$_response</name>
-        <default/>
+        <name>$_responseHeaders</name>
+        <default></default>
       </property>
       <property final="false" static="false" visibility="private" line="113" namespace="Yetti\API" package="Default">
-        <name>$_responseJsonObject</name>
-        <default/>
+        <name>$_response</name>
+        <default></default>
       </property>
       <property final="false" static="false" visibility="private" line="120" namespace="Yetti\API" package="Default">
-        <name>$_rawResponse</name>
-        <default/>
+        <name>$_responseJsonObject</name>
+        <default></default>
       </property>
-      <property final="false" static="true" visibility="private" line="129" namespace="Yetti\API" package="Default">
-        <name>$_defaultBaseUri</name>
-        <default/>
+      <property final="false" static="false" visibility="private" line="127" namespace="Yetti\API" package="Default">
+        <name>$_rawResponse</name>
+        <default></default>
       </property>
       <property final="false" static="true" visibility="private" line="136" namespace="Yetti\API" package="Default">
-        <name>$_defaultAccessKey</name>
-        <default/>
+        <name>$_defaultBaseUri</name>
+        <default></default>
       </property>
       <property final="false" static="true" visibility="private" line="143" namespace="Yetti\API" package="Default">
-        <name>$_defaultPrivateKey</name>
-        <default/>
+        <name>$_defaultAccessKey</name>
+        <default></default>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="150" package="yetti-api">
+      <property final="false" static="true" visibility="private" line="150" namespace="Yetti\API" package="Default">
+        <name>$_defaultPrivateKey</name>
+        <default></default>
+      </property>
+      <property final="false" static="true" visibility="private" line="157" namespace="Yetti\API" package="Default">
+        <name>$_defaultAccessToken</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="164" package="yetti-api">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="145">
+        <docblock line="159">
           <description>Constructs a new webservice object</description>
-          <long-description/>
-          <tag line="145" name="return" description="" type="void">
+          <long-description></long-description>
+          <tag line="159" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Yetti\API" line="158" package="yetti-api">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Yetti\API" line="172" package="yetti-api">
         <name>setDefaultBaseUri</name>
         <full_name>setDefaultBaseUri</full_name>
-        <docblock line="152">
+        <docblock line="166">
           <description>Set a default base URI (used when no other base URI has been set)</description>
-          <long-description/>
-          <tag line="152" name="param" description="" type="string" variable="$uri">
+          <long-description></long-description>
+          <tag line="166" name="param" description="" type="string" variable="$uri">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="152" name="return" description="" type="void">
+          <tag line="166" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="158">
+        <argument line="172">
           <name>$uri</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Yetti\API" line="171" package="yetti-api">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Yetti\API" line="185" package="yetti-api">
         <name>setDefaultAccessKey</name>
         <full_name>setDefaultAccessKey</full_name>
-        <docblock line="165">
+        <docblock line="179">
           <description>Set a default access key (used when no other key has been set)</description>
-          <long-description/>
-          <tag line="165" name="param" description="" type="string" variable="$accessKey">
+          <long-description></long-description>
+          <tag line="179" name="param" description="" type="string" variable="$accessKey">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="165" name="return" description="" type="void">
+          <tag line="179" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="171">
+        <argument line="185">
           <name>$accessKey</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Yetti\API" line="184" package="yetti-api">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Yetti\API" line="198" package="yetti-api">
         <name>setDefaultPrivateKey</name>
         <full_name>setDefaultPrivateKey</full_name>
-        <docblock line="178">
+        <docblock line="192">
           <description>Set a default private key (used when no other key has been set)</description>
-          <long-description/>
-          <tag line="178" name="param" description="" type="string" variable="$privateKey">
+          <long-description></long-description>
+          <tag line="192" name="param" description="" type="string" variable="$privateKey">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="178" name="return" description="" type="void">
+          <tag line="192" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="184">
+        <argument line="198">
           <name>$privateKey</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="197" package="yetti-api">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Yetti\API" line="213" package="yetti-api">
+        <name>setDefaultAccessToken</name>
+        <full_name>setDefaultAccessToken</full_name>
+        <docblock line="205">
+          <description>Set a default access token to use for authentication
+(Alternative to authenticating with an access key / private key)</description>
+          <long-description></long-description>
+          <tag line="205" name="param" description="" type="string" variable="$token">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="205" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="213">
+          <name>$token</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="224" package="yetti-api">
         <name>setBaseUri</name>
         <full_name>setBaseUri</full_name>
-        <docblock line="191">
+        <docblock line="218">
           <description>Set the base URI for all requests</description>
-          <long-description/>
-          <tag line="191" name="param" description="" type="string" variable="$uri">
+          <long-description></long-description>
+          <tag line="218" name="param" description="" type="string" variable="$uri">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="191" name="return" description="" type="void">
+          <tag line="218" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="197">
+        <argument line="224">
           <name>$uri</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="209" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="236" package="yetti-api">
         <name>getBaseUri</name>
         <full_name>getBaseUri</full_name>
-        <docblock line="204">
+        <docblock line="231">
           <description>Returns the base URI</description>
-          <long-description/>
-          <tag line="204" name="return" description="" type="string">
+          <long-description></long-description>
+          <tag line="231" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="220" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="247" package="yetti-api">
         <name>setRequestPath</name>
         <full_name>setRequestPath</full_name>
-        <docblock line="214">
+        <docblock line="241">
           <description>Set the URI path for the specific webservice request</description>
-          <long-description/>
-          <tag line="214" name="param" description="" type="string" variable="$path">
+          <long-description></long-description>
+          <tag line="241" name="param" description="" type="string" variable="$path">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="214" name="return" description="" type="void">
+          <tag line="241" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="220">
+        <argument line="247">
           <name>$path</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="238" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="265" package="yetti-api">
         <name>setAccessKey</name>
         <full_name>setAccessKey</full_name>
-        <docblock line="232">
+        <docblock line="259">
           <description>Set your webservice access key</description>
-          <long-description/>
-          <tag line="232" name="param" description="" type="string" variable="$accessKey">
+          <long-description></long-description>
+          <tag line="259" name="param" description="" type="string" variable="$accessKey">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="232" name="return" description="" type="void">
+          <tag line="259" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="238">
+        <argument line="265">
           <name>$accessKey</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="250" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="277" package="yetti-api">
         <name>getAccessKey</name>
         <full_name>getAccessKey</full_name>
-        <docblock line="245">
+        <docblock line="272">
           <description>Returns the access key</description>
-          <long-description/>
-          <tag line="245" name="return" description="" type="string">
+          <long-description></long-description>
+          <tag line="272" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="261" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="288" package="yetti-api">
         <name>setPrivateKey</name>
         <full_name>setPrivateKey</full_name>
-        <docblock line="255">
+        <docblock line="282">
           <description>Set your webservice private key for authentication</description>
-          <long-description/>
-          <tag line="255" name="param" description="" type="string" variable="$privateKey">
+          <long-description></long-description>
+          <tag line="282" name="param" description="" type="string" variable="$privateKey">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="255" name="return" description="" type="void">
+          <tag line="282" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="261">
+        <argument line="288">
           <name>$privateKey</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="273" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="300" package="yetti-api">
         <name>getPrivateKey</name>
         <full_name>getPrivateKey</full_name>
-        <docblock line="268">
+        <docblock line="295">
           <description>Returns the private key</description>
-          <long-description/>
-          <tag line="268" name="return" description="" type="string">
+          <long-description></long-description>
+          <tag line="295" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="284" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="311" package="yetti-api">
+        <name>setAccessToken</name>
+        <full_name>setAccessToken</full_name>
+        <docblock line="305">
+          <description>Set your webservice access token for authentication</description>
+          <long-description></long-description>
+          <tag line="305" name="param" description="" type="string" variable="$token">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="305" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="311">
+          <name>$token</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="323" package="yetti-api">
+        <name>getAccessToken</name>
+        <full_name>getAccessToken</full_name>
+        <docblock line="318">
+          <description>Returns the access token</description>
+          <long-description></long-description>
+          <tag line="318" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="334" package="yetti-api">
         <name>setVersion</name>
         <full_name>setVersion</full_name>
-        <docblock line="278">
+        <docblock line="328">
           <description>Set your webservice API version</description>
-          <long-description/>
-          <tag line="278" name="param" description="" type="string" variable="$version">
+          <long-description></long-description>
+          <tag line="328" name="param" description="" type="string" variable="$version">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="278" name="return" description="" type="void">
+          <tag line="328" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="284">
+        <argument line="334">
           <name>$version</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="295" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="345" package="yetti-api">
         <name>setRequestMethod</name>
         <full_name>setRequestMethod</full_name>
-        <docblock line="289">
+        <docblock line="339">
           <description>Set the type of request (post or get)</description>
-          <long-description/>
-          <tag line="289" name="param" description="" type="string" variable="$method">
+          <long-description></long-description>
+          <tag line="339" name="param" description="" type="string" variable="$method">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="289" name="return" description="" type="void">
+          <tag line="339" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="295">
+        <argument line="345">
           <name>$method</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="309" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="359" package="yetti-api">
         <name>getRequestMethod</name>
         <full_name>getRequestMethod</full_name>
-        <docblock line="304">
+        <docblock line="354">
           <description>Returns the request method</description>
-          <long-description/>
-          <tag line="304" name="return" description="" type="string">
+          <long-description></long-description>
+          <tag line="354" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="319" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="369" package="yetti-api">
         <name>getRequestUri</name>
         <full_name>getRequestUri</full_name>
-        <docblock line="314">
+        <docblock line="364">
           <description>Returns the full request URI</description>
-          <long-description/>
-          <tag line="314" name="return" description="" type="string">
+          <long-description></long-description>
+          <tag line="364" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="346" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="396" package="yetti-api">
         <name>setRequestParam</name>
         <full_name>setRequestParam</full_name>
-        <docblock line="339">
+        <docblock line="389">
           <description>Set a parameter to be sent with your request</description>
-          <long-description/>
-          <tag line="339" name="param" description="" type="string" variable="$name">
+          <long-description></long-description>
+          <tag line="389" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="339" name="param" description="" type="string" variable="$value">
+          <tag line="389" name="param" description="" type="string" variable="$value">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="339" name="return" description="" type="bool">
+          <tag line="389" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
-        <argument line="346">
+        <argument line="396">
           <name>$name</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
-        <argument line="346">
+        <argument line="396">
           <name>$value</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="363" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="413" package="yetti-api">
         <name>setPostData</name>
         <full_name>setPostData</full_name>
-        <docblock line="357">
+        <docblock line="407">
           <description>Set raw post data to be sent</description>
-          <long-description/>
-          <tag line="357" name="param" description="" type="string" variable="$data">
+          <long-description></long-description>
+          <tag line="407" name="param" description="" type="string" variable="$data">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="357" name="return" description="" type="bool">
+          <tag line="407" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
-        <argument line="363">
+        <argument line="413">
           <name>$data</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="380" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="430" package="yetti-api">
         <name>addRequestHeader</name>
         <full_name>addRequestHeader</full_name>
-        <docblock line="374">
+        <docblock line="424">
           <description>Add a request header</description>
-          <long-description/>
-          <tag line="374" name="param" description="" type="string" variable="$header">
+          <long-description></long-description>
+          <tag line="424" name="param" description="" type="string" variable="$header">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="374" name="return" description="" type="void">
+          <tag line="424" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="380">
+        <argument line="430">
           <name>$header</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="394" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="444" package="yetti-api">
         <name>resetRequest</name>
         <full_name>resetRequest</full_name>
-        <docblock line="387">
+        <docblock line="437">
           <description>Resets any previously set request parameters and response
 Call this method to reset your webservice object so that
 you can safely make another request.</description>
-          <long-description/>
-          <tag line="387" name="return" description="" type="void">
+          <long-description></long-description>
+          <tag line="437" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="407" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="457" package="yetti-api">
         <name>makeRequest</name>
         <full_name>makeRequest</full_name>
-        <docblock line="401">
+        <docblock line="451">
           <description>Make the webservice request</description>
-          <long-description/>
-          <tag line="401" name="return" description="" type="bool">
+          <long-description></long-description>
+          <tag line="451" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="401" name="throws" description="if required values not yet set" type="\Yetti\API\Exception">
+          <tag line="451" name="throws" description="if required values not yet set" type="\Yetti\API\Exception">
             <type by_reference="false">\Yetti\API\Exception</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="476" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="527" package="yetti-api">
         <name>parseResponse</name>
         <full_name>parseResponse</full_name>
-        <docblock line="470">
+        <docblock line="521">
           <description>Parses the response into headers and body</description>
-          <long-description/>
-          <tag line="470" name="param" description="" type="string" variable="$response">
+          <long-description></long-description>
+          <tag line="521" name="param" description="" type="string" variable="$response">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="470" name="return" description="" type="void">
+          <tag line="521" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="476">
+        <argument line="527">
           <name>$response</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="519" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="570" package="yetti-api">
         <name>getRequestSignature</name>
         <full_name>getRequestSignature</full_name>
-        <docblock line="514">
+        <docblock line="565">
           <description>Returns the last used request signature</description>
-          <long-description/>
-          <tag line="514" name="return" description="" type="string">
+          <long-description></long-description>
+          <tag line="565" name="return" description="" type="string">
             <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="529" package="yetti-api">
-        <name>success</name>
-        <full_name>success</full_name>
-        <docblock line="524">
-          <description>Returns whether or not the request was successful</description>
-          <long-description/>
-          <tag line="524" name="return" description="" type="bool">
-            <type by_reference="false">bool</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="539" package="yetti-api">
-        <name>getResponseCode</name>
-        <full_name>getResponseCode</full_name>
-        <docblock line="534">
-          <description>Returns the HTTP response status code</description>
-          <long-description/>
-          <tag line="534" name="return" description="" type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="549" package="yetti-api">
-        <name>getRawResponse</name>
-        <full_name>getRawResponse</full_name>
-        <docblock line="544">
-          <description>Returns the full (raw) response string</description>
-          <long-description/>
-          <tag line="544" name="return" description="" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="559" package="yetti-api">
-        <name>getResponse</name>
-        <full_name>getResponse</full_name>
-        <docblock line="554">
-          <description>Returns the response</description>
-          <long-description/>
-          <tag line="554" name="return" description="" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="569" package="yetti-api">
-        <name>getResponseJsonObject</name>
-        <full_name>getResponseJsonObject</full_name>
-        <docblock line="564">
-          <description>Returns a JSON object from response</description>
-          <long-description/>
-          <tag line="564" name="return" description="" type="\Yetti\API\stdClass">
-            <type by_reference="false">\Yetti\API\stdClass</type>
           </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="580" package="yetti-api">
-        <name>getResponseStatus</name>
-        <full_name>getResponseStatus</full_name>
-        <docblock line="574">
-          <description>Returns the status of the response (usually success or failed)</description>
-          <long-description/>
-          <tag line="574" name="return" description="" type="string">
+        <name>success</name>
+        <full_name>success</full_name>
+        <docblock line="575">
+          <description>Returns whether or not the request was successful</description>
+          <long-description></long-description>
+          <tag line="575" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="590" package="yetti-api">
+        <name>getResponseCode</name>
+        <full_name>getResponseCode</full_name>
+        <docblock line="585">
+          <description>Returns the HTTP response status code</description>
+          <long-description></long-description>
+          <tag line="585" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="600" package="yetti-api">
+        <name>getRawResponse</name>
+        <full_name>getRawResponse</full_name>
+        <docblock line="595">
+          <description>Returns the full (raw) response string</description>
+          <long-description></long-description>
+          <tag line="595" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="574" name="throws" description="if no valid response" type="\Yetti\API\Exception">
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="610" package="yetti-api">
+        <name>getResponse</name>
+        <full_name>getResponse</full_name>
+        <docblock line="605">
+          <description>Returns the response</description>
+          <long-description></long-description>
+          <tag line="605" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="620" package="yetti-api">
+        <name>getResponseJsonObject</name>
+        <full_name>getResponseJsonObject</full_name>
+        <docblock line="615">
+          <description>Returns a JSON object from response</description>
+          <long-description></long-description>
+          <tag line="615" name="return" description="" type="\Yetti\API\stdClass">
+            <type by_reference="false">\Yetti\API\stdClass</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="631" package="yetti-api">
+        <name>getResponseStatus</name>
+        <full_name>getResponseStatus</full_name>
+        <docblock line="625">
+          <description>Returns the status of the response (usually success or failed)</description>
+          <long-description></long-description>
+          <tag line="625" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="625" name="throws" description="if no valid response" type="\Yetti\API\Exception">
             <type by_reference="false">\Yetti\API\Exception</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="594" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="645" package="yetti-api">
         <name>getResponseMessage</name>
         <full_name>getResponseMessage</full_name>
-        <docblock line="589">
+        <docblock line="640">
           <description>Returns the response message</description>
-          <long-description/>
-          <tag line="589" name="return" description="" type="string">
+          <long-description></long-description>
+          <tag line="640" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="605" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="656" package="yetti-api">
         <name>getResponseHeader</name>
         <full_name>getResponseHeader</full_name>
-        <docblock line="599">
+        <docblock line="650">
           <description>Gets the value of a response header</description>
-          <long-description/>
-          <tag line="599" name="param" description="" type="string" variable="$name">
+          <long-description></long-description>
+          <tag line="650" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="599" name="return" description="" type="string">
+          <tag line="650" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="605">
+        <argument line="656">
           <name>$name</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="616" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Yetti\API" line="667" package="yetti-api">
         <name>parseMessageFromResponse</name>
         <full_name>parseMessageFromResponse</full_name>
-        <docblock line="610">
+        <docblock line="661">
           <description>Parses a message from the webservice response JSON</description>
-          <long-description/>
-          <tag line="610" name="param" description="" type="\Yetti\API\stdClass" variable="$json">
+          <long-description></long-description>
+          <tag line="661" name="param" description="" type="\Yetti\API\stdClass" variable="$json">
             <type by_reference="false">\Yetti\API\stdClass</type>
           </tag>
-          <tag line="610" name="return" description="" type="string">
+          <tag line="661" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="616">
+        <argument line="667">
           <name>$json</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
@@ -4035,20 +4268,22 @@ you can safely make another request.</description>
       <error line="29" code="50018">No DocBlock was found for property $_requestUri</error>
       <error line="36" code="50018">No DocBlock was found for property $_accessKey</error>
       <error line="43" code="50018">No DocBlock was found for property $_privateKey</error>
-      <error line="50" code="50018">No DocBlock was found for property $_version</error>
-      <error line="57" code="50018">No DocBlock was found for property $_requestMethod</error>
-      <error line="64" code="50018">No DocBlock was found for property $_requestParams</error>
-      <error line="71" code="50018">No DocBlock was found for property $_requestSignature</error>
-      <error line="78" code="50018">No DocBlock was found for property $_requestHeaders</error>
-      <error line="85" code="50018">No DocBlock was found for property $_postData</error>
-      <error line="92" code="50018">No DocBlock was found for property $_responseCode</error>
-      <error line="99" code="50018">No DocBlock was found for property $_responseHeaders</error>
-      <error line="106" code="50018">No DocBlock was found for property $_response</error>
-      <error line="113" code="50018">No DocBlock was found for property $_responseJsonObject</error>
-      <error line="120" code="50018">No DocBlock was found for property $_rawResponse</error>
-      <error line="129" code="50018">No DocBlock was found for property $_defaultBaseUri</error>
-      <error line="136" code="50018">No DocBlock was found for property $_defaultAccessKey</error>
-      <error line="143" code="50018">No DocBlock was found for property $_defaultPrivateKey</error>
+      <error line="50" code="50018">No DocBlock was found for property $_accessToken</error>
+      <error line="57" code="50018">No DocBlock was found for property $_version</error>
+      <error line="64" code="50018">No DocBlock was found for property $_requestMethod</error>
+      <error line="71" code="50018">No DocBlock was found for property $_requestParams</error>
+      <error line="78" code="50018">No DocBlock was found for property $_requestSignature</error>
+      <error line="85" code="50018">No DocBlock was found for property $_requestHeaders</error>
+      <error line="92" code="50018">No DocBlock was found for property $_postData</error>
+      <error line="99" code="50018">No DocBlock was found for property $_responseCode</error>
+      <error line="106" code="50018">No DocBlock was found for property $_responseHeaders</error>
+      <error line="113" code="50018">No DocBlock was found for property $_response</error>
+      <error line="120" code="50018">No DocBlock was found for property $_responseJsonObject</error>
+      <error line="127" code="50018">No DocBlock was found for property $_rawResponse</error>
+      <error line="136" code="50018">No DocBlock was found for property $_defaultBaseUri</error>
+      <error line="143" code="50018">No DocBlock was found for property $_defaultAccessKey</error>
+      <error line="150" code="50018">No DocBlock was found for property $_defaultPrivateKey</error>
+      <error line="157" code="50018">No DocBlock was found for property $_defaultAccessToken</error>
     </parse_markers>
   </file>
   <package name="Default" full_name="Default"/>

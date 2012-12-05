@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Yetti API - PHP Bindings » \Yetti\API\Item_Type</title>
+<title>Yetti API - PHP Bindings » \Yetti\API\Oauth_Access_Token</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,11 +58,13 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_getId" title="getId :: Returns the item type ID"><span class="description">Returns the item type ID</span><pre>getId()</pre></a></li>
+<li class="method public "><a href="#method_getAccessToken" title="getAccessToken :: Returns an access token"><span class="description">Returns an access token</span><pre>getAccessToken()</pre></a></li>
 <li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public "><a href="#method_getName" title="getName :: Returns the name of this item type"><span class="description">Returns the name of this item type</span><pre>getName()</pre></a></li>
-<li class="method public "><a href="#method_load" title="load :: Load an item type by ID"><span class="description">Load an item type by ID</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#method_setClientId" title="setClientId :: Set the client ID"><span class="description">Set the client ID</span><pre>setClientId()</pre></a></li>
+<li class="method public "><a href="#method_setClientSecret" title="setClientSecret :: Set the client secret"><span class="description">Set the client secret</span><pre>setClientSecret()</pre></a></li>
+<li class="method public "><a href="#method_setCode" title="setCode :: Set the code"><span class="description">Set the code</span><pre>setCode()</pre></a></li>
 <li class="method public inherited"><a href="#method_setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
+<li class="method public "><a href="#method_setState" title="setState :: Set the state"><span class="description">Set the state</span><pre>setState()</pre></a></li>
 <li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
 <li class="method public inherited"><a href="#method_webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 </ul>
@@ -73,7 +75,10 @@ Must be called after everything else has been set up"><span class="description">
 Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li></ul>
 </li>
 <li class="nav-header private">» Private
-                    <ul><li class="method private inherited"><a href="#method_getArrayAsObject" title="getArrayAsObject :: Recursively convert the given array into a stdClass object"><span class="description">Recursively convert the given array into a stdClass object</span><pre>getArrayAsObject()</pre></a></li></ul>
+                    <ul>
+<li class="method private inherited"><a href="#method_getArrayAsObject" title="getArrayAsObject :: Recursively convert the given array into a stdClass object"><span class="description">Recursively convert the given array into a stdClass object</span><pre>getArrayAsObject()</pre></a></li>
+<li class="method private "><a href="#method_makeRequest" title="makeRequest :: Make a webservice request"><span class="description">Make a webservice request</span><pre>makeRequest()</pre></a></li>
+</ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
@@ -82,13 +87,14 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <li class="nav-header private">» Private
                     <ul>
 <li class="property private inherited"><a href="#property__json" title="$_json :: "><span class="description"></span><pre>$_json</pre></a></li>
+<li class="property private "><a href="#property__values" title="$_values :: "><span class="description"></span><pre>$_values</pre></a></li>
 <li class="property private inherited"><a href="#property__webservice" title="$_webservice :: "><span class="description"></span><pre>$_webservice</pre></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\Yetti\API\Item_Type"></a><ul class="breadcrumb">
+<a id="\Yetti\API\Oauth_Access_Token"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -97,11 +103,11 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <span class="divider">\</span><a href="../namespaces/Yetti.API.html">API</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Yetti.API.Item_Type.html">Item_Type</a>
+<span class="divider">\</span><a href="../classes/Yetti.API.Oauth_Access_Token.html">Oauth_Access_Token</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Item type model.</p>
+<p class="short_description">Oauth access token model.</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -120,14 +126,14 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_getId"></a><div class="element clickable method public method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
-<h2>Returns the item type ID</h2>
-<pre>getId() : int</pre>
+<a id="method_getAccessToken"></a><div class="element clickable method public method_getAccessToken" data-toggle="collapse" data-target=".method_getAccessToken .collapse">
+<h2>Returns an access token</h2>
+<pre>getAccessToken() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response"><code>int</code></div>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
 <a id="method_getJson"></a><div class="element clickable method public method_getJson" data-toggle="collapse" data-target=".method_getJson .collapse">
@@ -149,29 +155,43 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
 </div></div>
 </div>
-<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
-<h2>Returns the name of this item type</h2>
-<pre>getName() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_load"></a><div class="element clickable method public method_load" data-toggle="collapse" data-target=".method_load .collapse">
-<h2>Load an item type by ID</h2>
-<pre>load(int $typeId) : bool</pre>
+<a id="method_setClientId"></a><div class="element clickable method public method_setClientId" data-toggle="collapse" data-target=".method_setClientId .collapse">
+<h2>Set the client ID</h2>
+<pre>setClientId(string $clientId) : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$typeId</h4>
-<code>int</code>
+<h4>$clientId</h4>
+<code>string</code>
 </div>
-<h3>Returns</h3>
-<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a id="method_setClientSecret"></a><div class="element clickable method public method_setClientSecret" data-toggle="collapse" data-target=".method_setClientSecret .collapse">
+<h2>Set the client secret</h2>
+<pre>setClientSecret(string $secret) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$secret</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setCode"></a><div class="element clickable method public method_setCode" data-toggle="collapse" data-target=".method_setCode .collapse">
+<h2>Set the code</h2>
+<pre>setCode(string $code) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$code</h4>
+<code>string</code>
+</div>
 </div></div>
 </div>
 <a id="method_setJson"></a><div class="element clickable method public method_setJson" data-toggle="collapse" data-target=".method_setJson .collapse">
@@ -188,6 +208,19 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement argument">
 <h4>$json</h4>
 <code>\Yetti\API\stdClass</code>
+</div>
+</div></div>
+</div>
+<a id="method_setState"></a><div class="element clickable method public method_setState" data-toggle="collapse" data-target=".method_setState .collapse">
+<h2>Set the state</h2>
+<pre>setState(string $state) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$state</h4>
+<code>string</code>
 </div>
 </div></div>
 </div>
@@ -256,6 +289,16 @@ Must be called after everything else has been set up</h2>
 <div class="subelement response"><code>\Yetti\API\stdClass</code></div>
 </div></div>
 </div>
+<a id="method_makeRequest"></a><div class="element clickable method private method_makeRequest" data-toggle="collapse" data-target=".method_makeRequest .collapse">
+<h2>Make a webservice request</h2>
+<pre>makeRequest() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property__json"> </a><div class="element clickable property private property__json" data-toggle="collapse" data-target=".property__json .collapse">
@@ -269,6 +312,12 @@ Must be called after everything else has been set up</h2>
 <td>\Yetti\API\BaseAbstract::$$_json</td>
 </tr></table>
 </div></div>
+</div>
+<a id="property__values"> </a><div class="element clickable property private property__values" data-toggle="collapse" data-target=".property__values .collapse">
+<h2></h2>
+<pre>$_values </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property__webservice"> </a><div class="element clickable property private property__webservice" data-toggle="collapse" data-target=".property__webservice .collapse">
 <h2></h2>
