@@ -485,10 +485,21 @@ class Webservice
 		curl_setopt($request, CURLOPT_CUSTOMREQUEST, $this->_requestMethod);
 		curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($request, CURLOPT_HEADER, true);
-		curl_setopt($request, CURLOPT_HTTPHEADER, array_merge(array(
-			'X-Authorization: ' . $this->getAccessKey() . ':' . $this->getRequestSignature(),
-			'X-Access-Token: ' . $this->getAccessToken(),
-		), $this->_requestHeaders));
+		
+		if ($token = $this->getAccessToken())
+		{
+			$headers = array_merge(array(
+				'Authorization: Bearer ' . $token,
+			), $this->_requestHeaders);
+		}
+		else
+		{
+			$headers = array_merge(array(
+				'X-Authorization: ' . $this->getAccessKey() . ':' . $this->getRequestSignature(),
+			), $this->_requestHeaders);
+		}
+		
+		curl_setopt($request, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($request, CURLOPT_USERAGENT, 'Official-PHP-Bindings');
 		
