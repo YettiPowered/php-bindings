@@ -213,12 +213,15 @@ class Item extends Resource_BaseAbstract
 	 */
 	public function getPrice($appliesToId=-1, $appliesToIdType=Resource_BaseAbstract::ID_TYPE_ALL)
 	{
-		foreach ($this->getJson()->pricingTiers as $tier)
+		if ($this->getJson()->pricingTiers)
 		{
-			$tier = (array)$tier;
-			
-			if ($tier['appliesToResourceId'] == $appliesToId && $tier['appliesToResourceIdType'] == $appliesToIdType) {
-				return (float)$tier['price'];
+			foreach ($this->getJson()->pricingTiers as $tier)
+			{
+				$tier = (array)$tier;
+				
+				if ($tier['appliesToResourceId'] == $appliesToId && $tier['appliesToResourceIdType'] == $appliesToIdType) {
+					return (float)$tier['price'];
+				}
 			}
 		}
 	}
