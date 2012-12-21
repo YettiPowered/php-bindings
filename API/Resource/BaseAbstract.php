@@ -415,6 +415,16 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	}
 	
 	/**
+	* Returns a timestamp based on the creation date of the current revision
+	*
+	* @return int
+	*/
+	public function getRevisionTimestamp()
+	{
+	    return strtotime((string)$this->getJson()->revision->created);
+	}
+	
+	/**
 	 * Clear the current attached assets
 	 * 
 	 * @param string $assetGroupName
