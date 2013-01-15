@@ -233,7 +233,7 @@ class Item extends Resource_BaseAbstract
 	 */
 	public function getPrice($appliesToId=-1, $appliesToIdType=Resource_BaseAbstract::ID_TYPE_ALL)
 	{
-		if ($this->getJson()->pricingTiers)
+		if (isset($this->getJson()->pricingTiers))
 		{
 			foreach ($this->getJson()->pricingTiers as $tier)
 			{
