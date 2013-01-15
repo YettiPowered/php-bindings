@@ -251,6 +251,26 @@ class Item extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Remove a variation from this item by ID
+	 * 
+	 * @param int $variationId
+	 * @return bool
+	 */
+	public function removeVariation($variationId)
+	{
+		foreach ($this->getVariations() as $key => $variation)
+		{
+			if ($variation->getId() == $variationId)
+			{
+				unset($this->_variations[$key]);
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	/**
 	 * Returns an array of variation objects for this item
 	 * 
 	 * @return array

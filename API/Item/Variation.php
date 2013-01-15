@@ -57,6 +57,16 @@ class Item_Variation
 	}
 	
 	/**
+	 * Returns this variation's ID
+	 * 
+	 * @return int
+	 */
+	public function getId()
+	{
+		return (int)$this->_id;
+	}
+	
+	/**
 	 * Set this variation's name
 	 * 
 	 * @param string $name
