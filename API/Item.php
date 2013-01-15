@@ -145,6 +145,26 @@ class Item extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Returns the VAT rate for this product (if applicable)
+	 * 
+	 * @return float
+	 */
+	public function getVatRate()
+	{
+		return (float)$this->getJson()->pricing->vat->rate;
+	}
+	
+	/**
+	 * Returns the price of this product including VAT
+	 * 
+	 * @return float
+	 */
+	public function getPriceIncVat()
+	{
+		return (float)$this->getJson()->pricing->price->incVat;
+	}
+	
+	/**
 	 * Set the product weight
 	 * 
 	 * @param float $weight
