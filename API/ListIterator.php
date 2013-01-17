@@ -104,7 +104,7 @@ class ListIterator implements \Iterator, \Countable, \ArrayAccess
 		if ($next === false && ($key+1) < $this->count())
 		{
 			$this->paginate();
-			$next = next($this->_items);
+			$next = current($this->_items);
 		}
 		
 		return $next;
