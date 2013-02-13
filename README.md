@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/YettiPowered/php-bindings.png?branch=master)](http://travis-ci.org/YettiPowered/php-bindings)
 
-This package contains PHP API bindings for the [Yetti API](/YettiPowered/api-docs).
+This package contains PHP API bindings for the [Yetti API](https://github.com/YettiPowered/api-docs).
 
 For more details on Yetti, please refer to http://yetti.co.uk. We welcome comments, feedback and bug reports at support@yetti.co.uk.
 
