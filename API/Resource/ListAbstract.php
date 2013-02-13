@@ -90,6 +90,7 @@ abstract class Resource_ListAbstract extends ListAbstract
 		foreach ($this->getJson()->listing->items as $json)
 		{
 			$item = $this->getNewItemObject();
+			$item->setWebservice($this->webservice());
 			
 			$item->setJson($json);
 			$this->addItem($item);
