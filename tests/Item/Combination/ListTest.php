@@ -74,11 +74,28 @@ class Item_Combination_ListTest extends AuthAbstract
 		$this->assertEquals('Option 1', $options['Variation 1']);
 		$this->assertEquals('Option 3', $options['Variation 2']);
 		
-		return $combination;
+		return $combinations;
 	}
 	
 	/**
 	 * @depends testLoadList
+	 */
+	public function testSetUseStockControl(Item_Combination_List $combinations)
+	{
+		$this->assertFalse($combinations->isUsingStockControl());
+		$combinations->setUsingStockControl();
+		$this->assertTrue($combinations->save()->success());
+		$itemId = $combinations->getItemId();
+		
+		$combinations = new Item_Combination_List();
+		$this->assertTrue($combinations->load($itemId));
+		$this->assertTrue($combinations->isUsingStockControl());
+		
+		return $combinations->getItems()->first();
+	}
+	
+	/**
+	 * @depends testSetUseStockControl
 	 */
 	public function testSaveCombination(Item_Combination $inCombination)
 	{

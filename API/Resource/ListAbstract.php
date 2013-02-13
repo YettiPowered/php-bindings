@@ -140,6 +140,26 @@ abstract class Resource_ListAbstract extends ListAbstract
 	}
 	
 	/**
+	 * Returns the request path
+	 * 
+	 * @return string
+	 */
+	protected function getPath()
+	{
+		return $this->_path;
+	}
+	
+	/**
+	 * Returns the type ID for this list
+	 * 
+	 * @return int
+	 */
+	public function getTypeId()
+	{
+		return $this->_typeId;
+	}
+	
+	/**
 	 * Returns a new object for population from the list
 	 * 
 	 * @return object \Yetti\API\Resource_BaseAbstract
