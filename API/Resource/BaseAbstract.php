@@ -277,6 +277,29 @@ abstract class Resource_BaseAbstract extends BaseAbstract
 	}
 	
 	/**
+	 * Set the resource identifier (same as name)
+	 * 
+	 * @alias setName
+	 * @param string $identifier
+	 * @return void
+	 */
+	public function setIdentifier($identifier)
+	{
+		return $this->setName($identifier);
+	}
+	
+	/**
+	 * Returns the resource identifier (same as name)
+	 * 
+	 * @alias getName
+	 * @return string
+	 */
+	public function getIdentifier()
+	{
+		return $this->getName();
+	}
+	
+	/**
 	 * Returns the resource's display name
 	 *
 	 * @return string
