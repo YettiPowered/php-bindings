@@ -52,7 +52,7 @@ if (is_array($headersArray))
 
 $response .= 'X-Authorization: ' . $accessKey . ':' . $webservice->getRequestSignature() . "\n";
 
-if (strlen($postData) && ($method == 'POST' || $method == 'PUT'))
+if (strlen($postData) && ($method == 'POST' || $method == 'PUT' || $method == 'PATCH'))
 {
 	$response .= 'Content-Length: ' . strlen($postData) . "\n";
 	$response .= "Content-Type: application/x-www-form-urlencoded\n";
@@ -132,6 +132,7 @@ $response .= $webservice->getRawResponse();
 							<option <?php if ($method=='GET')	 { echo 'selected="selected"'; } ?>>GET</option>
 							<option <?php if ($method=='POST')	 { echo 'selected="selected"'; } ?>>POST</option>
 							<option <?php if ($method=='PUT')  	 { echo 'selected="selected"'; } ?>>PUT</option>
+							<option <?php if ($method=='PATCH')  { echo 'selected="selected"'; } ?>>PATCH</option>
 							<option <?php if ($method=='DELETE') { echo 'selected="selected"'; } ?>>DELETE</option>
 						</select>
 					</li>

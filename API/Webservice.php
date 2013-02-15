@@ -346,7 +346,7 @@ class Webservice
 	{
 		$method = strtoupper($method);
 		
-		if ($method == 'POST' || $method == 'PUT' || $method == 'DELETE' || $method == 'GET' || $method == 'HEAD') {
+		if ($method == 'POST' || $method == 'PUT' || $method == 'PATCH' || $method == 'DELETE' || $method == 'GET' || $method == 'HEAD') {
 			$this->_requestMethod = $method;
 		}
 	}
