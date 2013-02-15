@@ -60,13 +60,18 @@
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Construct a new item combination list model"><span class="description">Construct a new item combination list model</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method_getCurrentPage" title="getCurrentPage :: Returns the currently loaded page number"><span class="description">Returns the currently loaded page number</span><pre>getCurrentPage()</pre></a></li>
+<li class="method public "><a href="#method_getItemId" title="getItemId :: Returns the item ID for this combination set"><span class="description">Returns the item ID for this combination set</span><pre>getItemId()</pre></a></li>
 <li class="method public inherited"><a href="#method_getItems" title="getItems :: Returns a list iterator object containing items in this listing"><span class="description">Returns a list iterator object containing items in this listing</span><pre>getItems()</pre></a></li>
 <li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
 <li class="method public inherited"><a href="#method_getTotalItemCount" title="getTotalItemCount :: Returns the total number of items available for this listing"><span class="description">Returns the total number of items available for this listing</span><pre>getTotalItemCount()</pre></a></li>
 <li class="method public inherited"><a href="#method_getTotalPages" title="getTotalPages :: Returns the total number of pages available in this listing"><span class="description">Returns the total number of pages available in this listing</span><pre>getTotalPages()</pre></a></li>
+<li class="method public inherited"><a href="#method_getTypeId" title="getTypeId :: Returns the type ID for this list"><span class="description">Returns the type ID for this list</span><pre>getTypeId()</pre></a></li>
+<li class="method public "><a href="#method_isUsingStockControl" title="isUsingStockControl :: Returns whether or not stock control is enabled for this item combination set"><span class="description">Returns whether or not stock control is enabled for this item combination set</span><pre>isUsingStockControl()</pre></a></li>
 <li class="method public inherited"><a href="#method_load" title="load :: Loads the list from Yetti"><span class="description">Loads the list from Yetti</span><pre>load()</pre></a></li>
 <li class="method public inherited"><a href="#method_loadNextPage" title="loadNextPage :: Load the next page of items"><span class="description">Load the next page of items</span><pre>loadNextPage()</pre></a></li>
+<li class="method public "><a href="#method_save" title="save :: Save info related to this combination set"><span class="description">Save info related to this combination set</span><pre>save()</pre></a></li>
 <li class="method public inherited"><a href="#method_setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
+<li class="method public "><a href="#method_setUsingStockControl" title="setUsingStockControl :: Set whether or not stock control is being used"><span class="description">Set whether or not stock control is being used</span><pre>setUsingStockControl()</pre></a></li>
 <li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
 <li class="method public inherited"><a href="#method_shouldAutoPaginate" title="shouldAutoPaginate :: Returns whether or not getItems() should auto paginate"><span class="description">Returns whether or not getItems() should auto paginate</span><pre>shouldAutoPaginate()</pre></a></li>
 <li class="method public inherited"><a href="#method_webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
@@ -76,6 +81,7 @@
                     <ul>
 <li class="method protected inherited"><a href="#method_addItem" title="addItem :: Add an item to the list"><span class="description">Add an item to the list</span><pre>addItem()</pre></a></li>
 <li class="method protected "><a href="#method_getNewItemObject" title="getNewItemObject :: Returns a new item combination object"><span class="description">Returns a new item combination object</span><pre>getNewItemObject()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getPath" title="getPath :: Returns the request path"><span class="description">Returns the request path</span><pre>getPath()</pre></a></li>
 <li class="method protected inherited"><a href="#method_loadItemObjects" title="loadItemObjects :: Loads the list of resource objects"><span class="description">Loads the list of resource objects</span><pre>loadItemObjects()</pre></a></li>
 <li class="method protected inherited"><a href="#method_makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
 Must be called after everything else has been set up"><span class="description">Performs a webservice request and returns a result object
@@ -157,6 +163,16 @@ Responsible for listing combinations for a product item.</p>
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
+<a id="method_getItemId"></a><div class="element clickable method public method_getItemId" data-toggle="collapse" data-target=".method_getItemId .collapse">
+<h2>Returns the item ID for this combination set</h2>
+<pre>getItemId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
 <a id="method_getItems"></a><div class="element clickable method public method_getItems" data-toggle="collapse" data-target=".method_getItems .collapse">
 <h2>Returns a list iterator object containing items in this listing</h2>
 <pre>getItems() : <a href="../classes/Yetti.API.ListIterator.html">\Yetti\API\ListIterator</a></pre>
@@ -234,6 +250,30 @@ Responsible for listing combinations for a product item.</p>
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
+<a id="method_getTypeId"></a><div class="element clickable method public method_getTypeId" data-toggle="collapse" data-target=".method_getTypeId .collapse">
+<h2>Returns the type ID for this list</h2>
+<pre>getTypeId() : int</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_ListAbstract::getTypeId()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_isUsingStockControl"></a><div class="element clickable method public method_isUsingStockControl" data-toggle="collapse" data-target=".method_isUsingStockControl .collapse">
+<h2>Returns whether or not stock control is enabled for this item combination set</h2>
+<pre>isUsingStockControl() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
 <a id="method_load"></a><div class="element clickable method public method_load" data-toggle="collapse" data-target=".method_load .collapse">
 <h2>Loads the list from Yetti</h2>
 <pre>load(int $typeId, int $page, string $countryCode) : bool</pre>
@@ -273,6 +313,16 @@ Responsible for listing combinations for a product item.</p>
 </tr></table>
 </div></div>
 </div>
+<a id="method_save"></a><div class="element clickable method public method_save" data-toggle="collapse" data-target=".method_save .collapse">
+<h2>Save info related to this combination set</h2>
+<pre>save() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
 <a id="method_setJson"></a><div class="element clickable method public method_setJson" data-toggle="collapse" data-target=".method_setJson .collapse">
 <h2>Set the JSON object</h2>
 <pre>setJson(\Yetti\API\stdClass $json) : void</pre>
@@ -297,6 +347,19 @@ Responsible for listing combinations for a product item.</p>
 <div class="subelement argument">
 <h4>$json</h4>
 <code>\Yetti\API\stdClass</code>
+</div>
+</div></div>
+</div>
+<a id="method_setUsingStockControl"></a><div class="element clickable method public method_setUsingStockControl" data-toggle="collapse" data-target=".method_setUsingStockControl .collapse">
+<h2>Set whether or not stock control is being used</h2>
+<pre>setUsingStockControl(bool $usingStockControl) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$usingStockControl</h4>
+<code>bool</code>
 </div>
 </div></div>
 </div>
@@ -403,6 +466,20 @@ Responsible for listing combinations for a product item.</p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>object</code>\Yetti\API\Item_Combination</div>
+</div></div>
+</div>
+<a id="method_getPath"></a><div class="element clickable method protected method_getPath" data-toggle="collapse" data-target=".method_getPath .collapse">
+<h2>Returns the request path</h2>
+<pre>getPath() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Resource_ListAbstract::getPath()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
 <a id="method_loadItemObjects"></a><div class="element clickable method protected method_loadItemObjects" data-toggle="collapse" data-target=".method_loadItemObjects .collapse">
@@ -625,8 +702,8 @@ Must be called after everything else has been set up</h2>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a11</a> and<br>
-            generated on 2012-12-05T15:09:21Z.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-02-15T09:35:40Z.<br></footer></div>
 </div>
 </body>
 </html>
