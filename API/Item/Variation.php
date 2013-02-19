@@ -97,11 +97,12 @@ class Item_Variation
 	 * @param int $pricing
 	 * @return void
 	 */
-	public function addOption($name, $price=0, $pricing=self::PRICING_SAME)
+	public function addOption($name, $price=0, $pricing=self::PRICING_SAME, $optionId=null)
 	{
 		if (is_string($name))
 		{
 			$this->_options[] = array(
+				'id'	  => $optionId,
 				'name'	  => $name,
 				'price'	  => (float)$price,
 				'pricing' => (int)$pricing,

@@ -319,12 +319,13 @@ class Item extends Resource_BaseAbstract
 						{
 							foreach ($options as $optionData)
 							{
-								$name	 = isset($optionData->name) ? $optionData->name : null;
-								$price	 = isset($optionData->price) ? $optionData->price : null;
-								$pricing = isset($optionData->pricing) ? $optionData->pricing : null;
+								$optionId = isset($optionData->id) ? $optionData->id : null;
+								$name	  = isset($optionData->name) ? $optionData->name : null;
+								$price	  = isset($optionData->price) ? $optionData->price : null;
+								$pricing  = isset($optionData->pricing) ? $optionData->pricing : null;
 								
 								if (!empty($name)) {
-									$variation->addOption($name, $price, $pricing);
+									$variation->addOption($name, $price, $pricing, $optionId);
 								}
 							}
 						}
