@@ -56,10 +56,7 @@ abstract class ListAbstract extends BaseAbstract
 	 */
 	public function getItems()
 	{
-		if (empty($this->_items)) {
-			$this->loadItemObjects();
-		}
-		
+		$this->loadItemObjects();
 		return $this->_items;
 	}
 	

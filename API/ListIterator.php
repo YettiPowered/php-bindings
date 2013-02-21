@@ -103,6 +103,10 @@ class ListIterator implements \Iterator, \Countable, \ArrayAccess
 		
 		if ($next === false && ($key+1) < $this->count())
 		{
+			foreach ($this->_items as &$item) {
+				$item = null;
+			}
+			
 			$this->paginate();
 			$next = current($this->_items);
 		}
