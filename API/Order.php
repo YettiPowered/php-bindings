@@ -13,6 +13,29 @@ namespace Yetti\API;
 class Order extends BaseAbstract
 {
 	/**
+	 * Load an order by ID
+	 * 
+	 * @param int $orderId
+	 * @return bool
+	 */
+	public function load($orderId)
+	{
+		$this->webservice()->setRequestPath('/orders/' . $orderId . '.ws');
+		$this->webservice()->setRequestMethod('get');
+		
+		if ($this->webservice()->makeRequest())
+		{
+			if ($order = isset($this->webservice()->getResponseJsonObject()->order) ? $this->webservice()->getResponseJsonObject()->order : null)
+			{
+				$this->setJson($order);
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	/**
 	 * Load an order template
 	 * 
 	 * @return bool
@@ -110,5 +133,85 @@ class Order extends BaseAbstract
 	public function getUserId()
 	{
 		return (int)$this->getJson()->user->id;
+	}
+	
+	/**
+	 * Sets the shipping address ID
+	 * 
+	 * @param int $id
+	 * @return void
+	 */
+	public function setShippingAddressId($id)
+	{
+		$this->getJson()->user->addresses->shipping->id = (int)$id;
+	}
+	
+	/**
+	 * Returns the shipping address ID
+	 * 
+	 * @return int
+	 */
+	public function getShippingAddressId()
+	{
+		return (int)$this->getJson()->user->addresses->shipping->id;
+	}
+	
+	/**
+	 * Sets the billing address ID
+	 * 
+	 * @param int $id
+	 * @return void
+	 */
+	public function setBillingAddressId($id)
+	{
+		$this->getJson()->user->addresses->billing->id = (int)$id;
+	}
+	
+	/**
+	 * Returns the billing address ID
+	 * 
+	 * @return int
+	 */
+	public function getBillingAddressId()
+	{
+		return (int)$this->getJson()->user->addresses->billing->id;
+	}
+	
+	/**
+	 * Set the courier ID
+	 * 
+	 * @param int $id
+	 * @return void
+	 */
+	public function setCourierId($id)
+	{
+		$this->getJson()->courier->id = (int)$id;
+	}
+	
+	/**
+	 * Returns the courier ID
+	 * 
+	 * @return int
+	 */
+	public function getCourierId()
+	{
+		return (int)$this->getJson()->courier->id;
+	}
+	
+	/**
+	 * Add an item to this order
+	 * 
+	 * @param int $itemId
+	 * @param float $quantity
+	 * @return void
+	 */
+	public function addItem($itemId, $quantity)
+	{
+		$this->getJson()->items[] = array(
+			'quantity' => (float)$quantity,
+			'resource' => array(
+				'resourceId' => $itemId,
+			),
+		);
 	}
 }
