@@ -76,13 +76,15 @@ class User_Address extends BaseAbstract
 	 */
 	public function save()
 	{
-		$this->webservice()->setRequestPath('/users/na/' . $this->getUserId() . '/addresses.ws');
-		$this->webservice()->setRequestMethod('post');
-		
-		if ($this->getId())
+		if ($addressId = $this->getId())
 		{
+			$this->webservice()->setRequestPath('/users/na/' . $this->getUserId() . '/addresses/' . $addressId . '.ws');
 			$this->webservice()->setRequestMethod('put');
-			$this->webservice()->setRequestParam('addressId', $this->getId());
+		}
+		else
+		{
+			$this->webservice()->setRequestPath('/users/na/' . $this->getUserId() . '/addresses.ws');
+			$this->webservice()->setRequestMethod('post');
 		}
 		
 		$this->webservice()->setPostData(json_encode(array('address' => $this->getJson())));

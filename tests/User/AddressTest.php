@@ -65,5 +65,20 @@ class User_AddressTest extends AuthAbstract
 		$this->assertEquals('01234 567890', $address->getTelephone());
 		$this->assertEquals('United Kingdom', $address->getCountryName());
 		$this->assertEquals(233, $address->getCountryId());
+		
+		return $address;
+	}
+	
+	/**
+	 * @depends testLoadAddress
+	 */
+	public function testUpdateAddress(User_Address $inAddress)
+	{
+		$inAddress->setIdentifier('Changed address');
+		$this->assertTrue($inAddress->save()->success());
+		
+		$address = new User_Address();
+		$this->assertTrue($address->load($inAddress->getUserId(), $inAddress->getId()));
+		$this->assertEquals('Changed address', $address->getIdentifier());
 	}
 }
