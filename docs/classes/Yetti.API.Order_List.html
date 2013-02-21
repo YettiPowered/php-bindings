@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Yetti API - PHP Bindings » \Yetti\API\User_List</title>
+<title>Yetti API - PHP Bindings » \Yetti\API\Order_List</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,14 +58,13 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: Construct a new user list model"><span class="description">Construct a new user list model</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method_getCurrentPage" title="getCurrentPage :: Returns the currently loaded page number"><span class="description">Returns the currently loaded page number</span><pre>getCurrentPage()</pre></a></li>
 <li class="method public inherited"><a href="#method_getItems" title="getItems :: Returns a list iterator object containing items in this listing"><span class="description">Returns a list iterator object containing items in this listing</span><pre>getItems()</pre></a></li>
 <li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
 <li class="method public inherited"><a href="#method_getTotalItemCount" title="getTotalItemCount :: Returns the total number of items available for this listing"><span class="description">Returns the total number of items available for this listing</span><pre>getTotalItemCount()</pre></a></li>
 <li class="method public inherited"><a href="#method_getTotalPages" title="getTotalPages :: Returns the total number of pages available in this listing"><span class="description">Returns the total number of pages available in this listing</span><pre>getTotalPages()</pre></a></li>
 <li class="method public inherited"><a href="#method_getTypeId" title="getTypeId :: Returns the type ID for this list"><span class="description">Returns the type ID for this list</span><pre>getTypeId()</pre></a></li>
-<li class="method public inherited"><a href="#method_load" title="load :: Loads the list from Yetti"><span class="description">Loads the list from Yetti</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#method_load" title="load :: Load a list of orders"><span class="description">Load a list of orders</span><pre>load()</pre></a></li>
 <li class="method public inherited"><a href="#method_loadNextPage" title="loadNextPage :: Load the next page of items"><span class="description">Load the next page of items</span><pre>loadNextPage()</pre></a></li>
 <li class="method public inherited"><a href="#method_setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
 <li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
@@ -76,7 +75,7 @@
 <li class="nav-header protected">» Protected
                     <ul>
 <li class="method protected inherited"><a href="#method_addItem" title="addItem :: Add an item to the list"><span class="description">Add an item to the list</span><pre>addItem()</pre></a></li>
-<li class="method protected "><a href="#method_getNewItemObject" title="getNewItemObject :: Returns a new user object"><span class="description">Returns a new user object</span><pre>getNewItemObject()</pre></a></li>
+<li class="method protected "><a href="#method_getNewItemObject" title="getNewItemObject :: Returns a new order object"><span class="description">Returns a new order object</span><pre>getNewItemObject()</pre></a></li>
 <li class="method protected inherited"><a href="#method_getPath" title="getPath :: Returns the request path"><span class="description">Returns the request path</span><pre>getPath()</pre></a></li>
 <li class="method protected inherited"><a href="#method_loadItemObjects" title="loadItemObjects :: Loads the list of resource objects"><span class="description">Loads the list of resource objects</span><pre>loadItemObjects()</pre></a></li>
 <li class="method protected inherited"><a href="#method_makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
@@ -106,7 +105,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </ul>
 </div>
 <div class="span8">
-<a id="\Yetti\API\User_List"></a><ul class="breadcrumb">
+<a id="\Yetti\API\Order_List"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -115,11 +114,11 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <span class="divider">\</span><a href="../namespaces/Yetti.API.html">API</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Yetti.API.User_List.html">User_List</a>
+<span class="divider">\</span><a href="../classes/Yetti.API.Order_List.html">Order_List</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">User list model</p>
+<p class="short_description">Order list model</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -129,7 +128,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </tr>
 <tr>
 <th>copyright</th>
-<td>Copyright (c) 2011-2012, Yetti Ltd.</td>
+<td>Copyright (c) 2011-2013, Yetti Ltd.</td>
 </tr>
 <tr>
 <th>package</th>
@@ -138,12 +137,6 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>Construct a new user list model</h2>
-<pre>__construct() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
 <a id="method_getCurrentPage"></a><div class="element clickable method public method_getCurrentPage" data-toggle="collapse" data-target=".method_getCurrentPage .collapse">
 <h2>Returns the currently loaded page number</h2>
 <pre>getCurrentPage() : int</pre>
@@ -250,28 +243,13 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div></div>
 </div>
 <a id="method_load"></a><div class="element clickable method public method_load" data-toggle="collapse" data-target=".method_load .collapse">
-<h2>Loads the list from Yetti</h2>
-<pre>load(int $typeId, int $page, string $countryCode) : bool</pre>
-<div class="labels"><span class="label">Inherited</span></div>
+<h2>Load a list of orders</h2>
+<pre>load($status) : bool</pre>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\Resource_ListAbstract::load()</td>
-</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$typeId</h4>
-<code>int</code>
-</div>
-<div class="subelement argument">
-<h4>$page</h4>
-<code>int</code>
-</div>
-<div class="subelement argument">
-<h4>$countryCode</h4>
-<code>string</code>
-</div>
+<div class="subelement argument"><h4>$status</h4></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>bool</code></div>
 </div></div>
@@ -410,14 +388,13 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div></div>
 </div>
 <a id="method_getNewItemObject"></a><div class="element clickable method protected method_getNewItemObject" data-toggle="collapse" data-target=".method_getNewItemObject .collapse">
-<h2>Returns a new user object</h2>
-<pre>getNewItemObject() : object</pre>
+<h2>Returns a new order object</h2>
+<pre>getNewItemObject() : <a href="../classes/Yetti.API.Order.html">\Yetti\API\Order</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response">
-<code>object</code>\Yetti\API\User</div>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Order.html">\Yetti\API\Order</a></code></div>
 </div></div>
 </div>
 <a id="method_getPath"></a><div class="element clickable method protected method_getPath" data-toggle="collapse" data-target=".method_getPath .collapse">

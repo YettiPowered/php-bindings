@@ -7,21 +7,21 @@
       <full_name>\Yetti\API\Auth_Details</full_name>
       <docblock line="5">
         <description>Auth details model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
       </docblock>
       <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
         <name>$_user</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="29" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
         <docblock line="24">
           <description>Load auth details</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="24" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -32,7 +32,7 @@
         <full_name>getUser</full_name>
         <docblock line="43">
           <description>Returns an object representing the authenticated user</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="43" name="return" description="" type="\Yetti\API\User">
             <type by_reference="false">\Yetti\API\User</type>
           </tag>
@@ -43,7 +43,7 @@
         <full_name>getScopes</full_name>
         <docblock line="59">
           <description>Returns an array of authorised scopes</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="59" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -65,7 +65,7 @@
       <full_name>\Yetti\API\Autoloader</full_name>
       <docblock line="5">
         <description>Class loader</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Chris Buckley &lt;chris@cmbuckley.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -75,7 +75,7 @@
         <full_name>autoload</full_name>
         <docblock line="15">
           <description>Autoload class files</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="param" description="" type="string" variable="$className">
             <type by_reference="false">string</type>
           </tag>
@@ -85,7 +85,7 @@
         </docblock>
         <argument line="21">
           <name>$className</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -94,7 +94,7 @@
         <full_name>register</full_name>
         <docblock line="40">
           <description>Register this class as the autoloader</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="40" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -112,25 +112,25 @@
       <full_name>\Yetti\API\BaseAbstract</full_name>
       <docblock line="5">
         <description>Abstract base class for Yetti API bindings</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
       </docblock>
       <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
         <name>$_webservice</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="29" namespace="Yetti\API" package="Default">
         <name>$_json</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="37" package="yetti-api">
         <name>setWebservice</name>
         <full_name>setWebservice</full_name>
         <docblock line="31">
           <description>Set the webservice object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="31" name="param" description="" type="\Yetti\API\Webservice" variable="$webservice">
             <type by_reference="false">\Yetti\API\Webservice</type>
           </tag>
@@ -140,7 +140,7 @@
         </docblock>
         <argument line="37">
           <name>$webservice</name>
-          <default></default>
+          <default/>
           <type>\Yetti\API\Webservice</type>
         </argument>
       </method>
@@ -149,7 +149,7 @@
         <full_name>webservice</full_name>
         <docblock line="42">
           <description>Returns the webservice object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="42" name="return" description="" type="\Yetti\API\Webservice">
             <type by_reference="false">\Yetti\API\Webservice</type>
           </tag>
@@ -160,7 +160,7 @@
         <full_name>setJson</full_name>
         <docblock line="56">
           <description>Set the JSON object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="56" name="param" description="" type="\Yetti\API\stdClass" variable="$json">
             <type by_reference="false">\Yetti\API\stdClass</type>
           </tag>
@@ -170,7 +170,7 @@
         </docblock>
         <argument line="62">
           <name>$json</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -179,7 +179,7 @@
         <full_name>getJson</full_name>
         <docblock line="71">
           <description>Returns the JSON object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="71" name="throws" description="" type="\Yetti\API\Exception">
             <type by_reference="false">\Yetti\API\Exception</type>
           </tag>
@@ -194,7 +194,7 @@
         <docblock line="86">
           <description>Performs a webservice request and returns a result object
 Must be called after everything else has been set up</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="86" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -205,7 +205,7 @@ Must be called after everything else has been set up</description>
         <full_name>getArrayAsObject</full_name>
         <docblock line="118">
           <description>Recursively convert the given array into a stdClass object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="118" name="param" description="" type="array" variable="$array">
             <type by_reference="false">array</type>
           </tag>
@@ -215,7 +215,7 @@ Must be called after everything else has been set up</description>
         </docblock>
         <argument line="124">
           <name>$array</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -233,7 +233,7 @@ Must be called after everything else has been set up</description>
       <full_name>\Yetti\API\Collection_List</full_name>
       <docblock line="5">
         <description>Collection list model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -243,7 +243,7 @@ Must be called after everything else has been set up</description>
         <full_name>__construct</full_name>
         <docblock line="15">
           <description>Construct a new collection list model</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -254,7 +254,7 @@ Must be called after everything else has been set up</description>
         <full_name>getNewItemObject</full_name>
         <docblock line="25">
           <description>Returns a new collection object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="return" description="\Yetti\API\Collection" type="object">
             <type by_reference="false">object</type>
           </tag>
@@ -272,7 +272,7 @@ Must be called after everything else has been set up</description>
       <full_name>\Yetti\API\Collection</full_name>
       <docblock line="5">
         <description>Individual collection model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -282,7 +282,7 @@ Must be called after everything else has been set up</description>
         <full_name>getSingularName</full_name>
         <docblock line="15">
           <description>Returns a singular name for this type of resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -293,7 +293,7 @@ Must be called after everything else has been set up</description>
         <full_name>setParentId</full_name>
         <docblock line="25">
           <description>Sets the parent ID for the collection</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="param" description="" type="\Yetti\API\" variable="$parentId"/>
           <tag line="25" name="return" description="" type="void">
             <type by_reference="false">void</type>
@@ -301,7 +301,7 @@ Must be called after everything else has been set up</description>
         </docblock>
         <argument line="31">
           <name>$parentId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -310,7 +310,7 @@ Must be called after everything else has been set up</description>
         <full_name>getParentId</full_name>
         <docblock line="36">
           <description>Returns the ID of this collection's parent</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="36" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -328,7 +328,7 @@ Must be called after everything else has been set up</description>
       <full_name>\Yetti\API\Exception_Auth</full_name>
       <docblock line="5">
         <description>Authentication exception</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -345,7 +345,7 @@ Must be called after everything else has been set up</description>
       <full_name>\Yetti\API\Exception</full_name>
       <docblock line="5">
         <description>Base exception</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -364,21 +364,21 @@ Must be called after everything else has been set up</description>
         <description>Item collections model
 Responsible for listing collections to which an item is assigned
 And assigning an item to one or more collections.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
       </docblock>
       <property final="false" static="false" visibility="private" line="23" namespace="Yetti\API" package="Default">
         <name>$_resourceId</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="31" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
         <docblock line="25">
           <description>Loads a list of collections to which the given item is assigned</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="param" description="int ID or string identifier" type="mixed" variable="$resourceId">
             <type by_reference="false">mixed</type>
           </tag>
@@ -388,7 +388,7 @@ And assigning an item to one or more collections.</description>
         </docblock>
         <argument line="31">
           <name>$resourceId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -397,7 +397,7 @@ And assigning an item to one or more collections.</description>
         <full_name>save</full_name>
         <docblock line="47">
           <description>Save this item's collection data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="47" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -408,7 +408,7 @@ And assigning an item to one or more collections.</description>
         <full_name>getCollectionIds</full_name>
         <docblock line="67">
           <description>Returns an array of collection IDs</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="67" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -419,7 +419,7 @@ And assigning an item to one or more collections.</description>
         <full_name>addCollection</full_name>
         <docblock line="83">
           <description>Adds a new collection ID to the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="83" name="param" description="" type="int" variable="$collectionId">
             <type by_reference="false">int</type>
           </tag>
@@ -429,7 +429,7 @@ And assigning an item to one or more collections.</description>
         </docblock>
         <argument line="89">
           <name>$collectionId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -438,7 +438,7 @@ And assigning an item to one or more collections.</description>
         <full_name>removeCollection</full_name>
         <docblock line="94">
           <description>Removes a collection from the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="94" name="param" description="" type="int" variable="$collectionId">
             <type by_reference="false">int</type>
           </tag>
@@ -448,7 +448,7 @@ And assigning an item to one or more collections.</description>
         </docblock>
         <argument line="100">
           <name>$collectionId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -457,7 +457,7 @@ And assigning an item to one or more collections.</description>
         <full_name>clearCollections</full_name>
         <docblock line="114">
           <description>Clear all assigned collections</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="114" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -477,7 +477,7 @@ And assigning an item to one or more collections.</description>
       <docblock line="5">
         <description>Item combinations list model
 Responsible for listing combinations for a product item.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -487,7 +487,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>__construct</full_name>
         <docblock line="16">
           <description>Construct a new item combination list model</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="16" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -498,7 +498,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>save</full_name>
         <docblock line="26">
           <description>Save info related to this combination set</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="26" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -509,7 +509,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getItemId</full_name>
         <docblock line="40">
           <description>Returns the item ID for this combination set</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="40" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -520,7 +520,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setUsingStockControl</full_name>
         <docblock line="50">
           <description>Set whether or not stock control is being used</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="param" description="" type="bool" variable="$usingStockControl">
             <type by_reference="false">bool</type>
           </tag>
@@ -539,7 +539,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>isUsingStockControl</full_name>
         <docblock line="61">
           <description>Returns whether or not stock control is enabled for this item combination set</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="61" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -550,7 +550,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getNewItemObject</full_name>
         <docblock line="71">
           <description>Returns a new item combination object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="71" name="return" description="\Yetti\API\Item_Combination" type="object">
             <type by_reference="false">object</type>
           </tag>
@@ -568,7 +568,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Item_Combination</full_name>
       <docblock line="5">
         <description>Item combination model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -578,7 +578,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>load</full_name>
         <docblock line="15">
           <description>Load a combination by ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="param" description="" type="int" variable="$combinationId">
             <type by_reference="false">int</type>
           </tag>
@@ -588,7 +588,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="21">
           <name>$combinationId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -597,7 +597,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>save</full_name>
         <docblock line="35">
           <description>Save this combination</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="35" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -608,7 +608,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getId</full_name>
         <docblock line="49">
           <description>Returns the combination ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="49" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -619,7 +619,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setAvailable</full_name>
         <docblock line="59">
           <description>Set whether or not this combination is available for purchase</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="59" name="param" description="" type="bool" variable="$available">
             <type by_reference="false">bool</type>
           </tag>
@@ -638,7 +638,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>isAvailable</full_name>
         <docblock line="70">
           <description>Returns whether or not this combination is marked as available for purchase.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="70" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -649,7 +649,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setStock</full_name>
         <docblock line="80">
           <description>Set the stock level</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="80" name="param" description="" type="int" variable="$stock">
             <type by_reference="false">int</type>
           </tag>
@@ -659,7 +659,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="86">
           <name>$stock</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -668,7 +668,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getStock</full_name>
         <docblock line="93">
           <description>Returns this combination's stock level</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="93" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -679,7 +679,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setSku</full_name>
         <docblock line="103">
           <description>Set the SKU</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="103" name="param" description="" type="string" variable="$sku">
             <type by_reference="false">string</type>
           </tag>
@@ -689,7 +689,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="109">
           <name>$sku</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -698,7 +698,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getSku</full_name>
         <docblock line="116">
           <description>Returns this combination's SKU</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="116" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -709,7 +709,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getPrice</full_name>
         <docblock line="126">
           <description>Returns this combination's price</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="126" name="return" description="" type="float">
             <type by_reference="false">float</type>
           </tag>
@@ -720,7 +720,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getOptions</full_name>
         <docblock line="136">
           <description>Returns this combination's options</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="136" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -738,7 +738,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Item_Filter_List</full_name>
       <docblock line="5">
         <description>Filter list model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -748,7 +748,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>load</full_name>
         <docblock line="15">
           <description>Load a list of filters for the given filter type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="param" description="" type="int" variable="$filterTypeId">
             <type by_reference="false">int</type>
           </tag>
@@ -758,7 +758,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="21">
           <name>$filterTypeId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -767,7 +767,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="35">
           <description>Load the filter objects in this list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="35" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -778,7 +778,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getTotalPages</full_name>
         <docblock line="50">
           <description>Returns the total number of pages in the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -789,7 +789,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="60">
           <description>Returns the current page</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="60" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -807,7 +807,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Item_Filter_Type_List</full_name>
       <docblock line="5">
         <description>Item filter type list model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -817,14 +817,14 @@ Responsible for listing combinations for a product item.</description>
         <full_name>load</full_name>
         <docblock line="15">
           <description>Load a list of filter types for the given item type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
         <argument line="20">
           <name>$itemTypeId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -833,7 +833,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="34">
           <description>Load the item type objects in this list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="34" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -844,7 +844,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getTotalPages</full_name>
         <docblock line="49">
           <description>Returns the total number of pages in the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="49" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -855,7 +855,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="59">
           <description>Returns the current page</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="59" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -874,21 +874,21 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Item_Filter_Type</full_name>
       <docblock line="5">
         <description>Item filter type model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
       </docblock>
       <property final="false" static="false" visibility="private" line="16" namespace="Yetti\API" package="Default">
         <name>$_itemTypeId</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="24" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
         <docblock line="18">
           <description>Load a filter type by ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="18" name="param" description="" type="int" variable="$filterTypeId">
             <type by_reference="false">int</type>
           </tag>
@@ -898,7 +898,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="24">
           <name>$filterTypeId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -907,7 +907,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>save</full_name>
         <docblock line="38">
           <description>Save this filter type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="38" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -918,7 +918,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setItemTypeId</full_name>
         <docblock line="64">
           <description>Set the item type ID for this filter type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="64" name="param" description="" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
@@ -928,7 +928,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="70">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -937,7 +937,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getId</full_name>
         <docblock line="77">
           <description>Returns the filter type ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="77" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -948,7 +948,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setName</full_name>
         <docblock line="87">
           <description>Set the name of this filter type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="87" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -958,7 +958,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="93">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -967,7 +967,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getName</full_name>
         <docblock line="98">
           <description>Returns the name of this filter type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="98" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -978,7 +978,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getJson</full_name>
         <docblock line="108">
           <description>Returns the json object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="108" name="return" description="" type="\stdClass">
             <type by_reference="false">\stdClass</type>
           </tag>
@@ -997,21 +997,21 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Item_Filter</full_name>
       <docblock line="5">
         <description>Item filter model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
       </docblock>
       <property final="false" static="false" visibility="private" line="16" namespace="Yetti\API" package="Default">
         <name>$_filterTypeId</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="24" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
         <docblock line="18">
           <description>Load a filter by ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="18" name="param" description="" type="int" variable="$filterId">
             <type by_reference="false">int</type>
           </tag>
@@ -1021,7 +1021,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="24">
           <name>$filterId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1030,7 +1030,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>save</full_name>
         <docblock line="39">
           <description>Save this filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="39" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -1041,7 +1041,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>delete</full_name>
         <docblock line="65">
           <description>Delete this filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="65" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -1052,7 +1052,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setFilterTypeId</full_name>
         <docblock line="77">
           <description>Set the filter type ID for this filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="77" name="param" description="" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
@@ -1062,7 +1062,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="83">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1071,7 +1071,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getFilterTypeId</full_name>
         <docblock line="90">
           <description>Return the filter type ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="90" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1082,7 +1082,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getId</full_name>
         <docblock line="100">
           <description>Returns the filter ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="100" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1093,7 +1093,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setName</full_name>
         <docblock line="110">
           <description>Set the name of this filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="110" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -1103,7 +1103,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="116">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1112,7 +1112,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getName</full_name>
         <docblock line="121">
           <description>Returns the name of this filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="121" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -1123,7 +1123,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>addConditionalFilter</full_name>
         <docblock line="131">
           <description>Add a conditional filter by ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="131" name="param" description="" type="int" variable="$filterId">
             <type by_reference="false">int</type>
           </tag>
@@ -1133,7 +1133,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="137">
           <name>$filterId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1142,7 +1142,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getConditionalFilters</full_name>
         <docblock line="144">
           <description>Returns an array of conditional filter IDs</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="144" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -1153,7 +1153,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>addItem</full_name>
         <docblock line="154">
           <description>Add an item to this filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="154" name="param" description="" type="int" variable="$itemId">
             <type by_reference="false">int</type>
           </tag>
@@ -1163,7 +1163,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="160">
           <name>$itemId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1172,7 +1172,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getItems</full_name>
         <docblock line="167">
           <description>Returns an array of items in this filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="167" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -1183,7 +1183,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getJson</full_name>
         <docblock line="177">
           <description>Returns the json object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="177" name="return" description="" type="\stdClass">
             <type by_reference="false">\stdClass</type>
           </tag>
@@ -1202,7 +1202,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Item_List</full_name>
       <docblock line="5">
         <description>Item list model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -1212,7 +1212,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>__construct</full_name>
         <docblock line="15">
           <description>Construct a new item list model</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -1223,7 +1223,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getNewItemObject</full_name>
         <docblock line="25">
           <description>Returns a new item object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="return" description="\Yetti\API\Item" type="object">
             <type by_reference="false">object</type>
           </tag>
@@ -1241,7 +1241,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Item_Type_List</full_name>
       <docblock line="5">
         <description>Item type list model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -1251,7 +1251,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>load</full_name>
         <docblock line="15">
           <description>Load a list of available item types</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -1262,7 +1262,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="34">
           <description>Load the item type objects in this list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="34" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -1273,7 +1273,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getTotalPages</full_name>
         <docblock line="50">
           <description>Returns the total number of pages in the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1284,7 +1284,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="60">
           <description>Returns the current page</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="60" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1302,7 +1302,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Item_Type</full_name>
       <docblock line="5">
         <description>Item type model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -1312,7 +1312,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>load</full_name>
         <docblock line="15">
           <description>Load an item type by ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="param" description="" type="int" variable="$typeId">
             <type by_reference="false">int</type>
           </tag>
@@ -1322,7 +1322,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="21">
           <name>$typeId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1331,7 +1331,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getId</full_name>
         <docblock line="40">
           <description>Returns the item type ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="40" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1342,7 +1342,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getName</full_name>
         <docblock line="50">
           <description>Returns the name of this item type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -1353,7 +1353,7 @@ Responsible for listing combinations for a product item.</description>
       <error line="0" code="50007">No page-level DocBlock was found in file Item/Type.php</error>
     </parse_markers>
   </file>
-  <file path="Item/Variation.php" hash="0c5792a28c37ed34f492db60050f659b" package="Default">
+  <file path="Item/Variation.php" hash="2f2571988f8332545367040d3e4bd611" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends/>
       <name>Item_Variation</name>
@@ -1491,25 +1491,30 @@ Responsible for listing combinations for a product item.</description>
           <default>self::PRICING_SAME</default>
           <type/>
         </argument>
+        <argument line="100">
+          <name>$optionId</name>
+          <default>null</default>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="117" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="118" package="yetti-api">
         <name>getOptions</name>
         <full_name>getOptions</full_name>
-        <docblock line="112">
+        <docblock line="113">
           <description>Returns an array of options for this variation</description>
           <long-description></long-description>
-          <tag line="112" name="return" description="" type="array">
+          <tag line="113" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="127" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="128" package="yetti-api">
         <name>getAsArray</name>
         <full_name>getAsArray</full_name>
-        <docblock line="122">
+        <docblock line="123">
           <description>Present this object as an array</description>
           <long-description></long-description>
-          <tag line="122" name="return" description="" type="array">
+          <tag line="123" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
@@ -1520,9 +1525,10 @@ Responsible for listing combinations for a product item.</description>
       <error line="30" code="50018">No DocBlock was found for property $_id</error>
       <error line="37" code="50018">No DocBlock was found for property $_name</error>
       <error line="44" code="50018">No DocBlock was found for property $_options</error>
+      <error line="92" code="50015">Argument $optionId is missing from the Docblock of addOption()</error>
     </parse_markers>
   </file>
-  <file path="Item.php" hash="c5abecc034e41b858e6c37ff896e7c44" package="Default">
+  <file path="Item.php" hash="c37efabfe6608f7f0ff08a43d5acdac8" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\Resource_BaseAbstract</extends>
       <name>Item</name>
@@ -1842,21 +1848,21 @@ Responsible for listing combinations for a product item.</description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="350" package="yetti-api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="351" package="yetti-api">
         <name>setFileData</name>
         <full_name>setFileData</full_name>
-        <docblock line="341">
+        <docblock line="342">
           <description>Sets the file content to be sent for saving</description>
           <long-description>&lt;p&gt;Example usage:
     $item-&gt;setFileData(file_get_contents($filepath));&lt;/p&gt;</long-description>
-          <tag line="341" name="param" description="" type="string" variable="$fileData">
+          <tag line="342" name="param" description="" type="string" variable="$fileData">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="341" name="return" description="" type="void">
+          <tag line="342" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="350">
+        <argument line="351">
           <name>$fileData</name>
           <default></default>
           <type/>
@@ -1876,7 +1882,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Language_List</full_name>
       <docblock line="5">
         <description>Language list model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -1886,7 +1892,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>load</full_name>
         <docblock line="15">
           <description>Load a list of available languages</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -1897,7 +1903,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="34">
           <description>Load the language objects in this list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="34" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -1908,7 +1914,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getTotalPages</full_name>
         <docblock line="49">
           <description>Returns the total number of pages in the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="49" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1919,7 +1925,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="59">
           <description>Returns the current page</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="59" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1937,7 +1943,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Language</full_name>
       <docblock line="5">
         <description>Language model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -1947,7 +1953,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getId</full_name>
         <docblock line="15">
           <description>Returns the language ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -1958,7 +1964,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getName</full_name>
         <docblock line="25">
           <description>Returns the name of this language</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -1969,7 +1975,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getCountryCode</full_name>
         <docblock line="35">
           <description>Returns the country code</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="35" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -1980,7 +1986,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>isDefault</full_name>
         <docblock line="45">
           <description>Returns whether or not this language is set as default</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="45" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -1998,7 +2004,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\ListAbstract</full_name>
       <docblock line="5">
         <description>Abstract class for list models</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -2016,7 +2022,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>addItem</full_name>
         <docblock line="31">
           <description>Add an item to the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="31" name="param" description="" type="mixed" variable="$item">
             <type by_reference="false">mixed</type>
           </tag>
@@ -2026,7 +2032,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="37">
           <name>$item</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2035,7 +2041,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getItems</full_name>
         <docblock line="52">
           <description>Returns a list iterator object containing items in this listing</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="52" name="return" description="" type="\Yetti\API\ListIterator">
             <type by_reference="false">\Yetti\API\ListIterator</type>
           </tag>
@@ -2046,7 +2052,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getTotalItemCount</full_name>
         <docblock line="66">
           <description>Returns the total number of items available for this listing</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="66" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2057,7 +2063,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setAutoPaginate</full_name>
         <docblock line="76">
           <description>Set whether or not getItems() should auto paginate</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="76" name="param" description="" type="bool" variable="$autoPaginate">
             <type by_reference="false">bool</type>
           </tag>
@@ -2076,7 +2082,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>shouldAutoPaginate</full_name>
         <docblock line="87">
           <description>Returns whether or not getItems() should auto paginate</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="87" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -2087,7 +2093,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="97">
           <description>Load the item objects</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="97" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -2098,7 +2104,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getTotalPages</full_name>
         <docblock line="104">
           <description>Returns the total number of pages available in this listing</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="104" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2109,7 +2115,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="111">
           <description>Returns the currently loaded page number</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="111" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2132,7 +2138,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\ListIterator</full_name>
       <docblock line="5">
         <description>List iterator object</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -2147,14 +2153,14 @@ Responsible for listing combinations for a product item.</description>
       </property>
       <property final="false" static="false" visibility="private" line="37" namespace="Yetti\API" package="Default">
         <name>$_listModel</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="45" package="yetti-api">
         <name>addItem</name>
         <full_name>addItem</full_name>
         <docblock line="39">
           <description>Add an item to the iterator list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="39" name="param" description="" type="mixed" variable="$item">
             <type by_reference="false">mixed</type>
           </tag>
@@ -2164,7 +2170,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="45">
           <name>$item</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2173,7 +2179,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setTotalItemCount</full_name>
         <docblock line="50">
           <description>Set the total item count</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="param" description="" type="int" variable="$count">
             <type by_reference="false">int</type>
           </tag>
@@ -2183,7 +2189,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="56">
           <name>$count</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2192,7 +2198,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setListModel</full_name>
         <docblock line="63">
           <description>Set the list model that owns this iterator</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="63" name="param" description="" type="\Yetti\API\ListAbstract" variable="$model">
             <type by_reference="false">\Yetti\API\ListAbstract</type>
           </tag>
@@ -2202,7 +2208,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="69">
           <name>$model</name>
-          <default></default>
+          <default/>
           <type>\Yetti\API\ListAbstract</type>
         </argument>
       </method>
@@ -2211,7 +2217,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>first</full_name>
         <docblock line="74">
           <description>Returns the first item in the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="74" name="return" description="" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
@@ -2222,7 +2228,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>current</full_name>
         <docblock line="86">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="86" name="see" description="\Yetti\API\Iterator::current()" refers="\Yetti\API\Iterator::current()"/>
         </docblock>
       </method>
@@ -2231,7 +2237,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>next</full_name>
         <docblock line="95">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="95" name="see" description="\Yetti\API\Iterator::next()" refers="\Yetti\API\Iterator::next()"/>
         </docblock>
       </method>
@@ -2240,7 +2246,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>key</full_name>
         <docblock line="113">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="113" name="see" description="\Yetti\API\Iterator::key()" refers="\Yetti\API\Iterator::key()"/>
         </docblock>
       </method>
@@ -2249,7 +2255,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>valid</full_name>
         <docblock line="122">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="122" name="see" description="\Yetti\API\Iterator::valid()" refers="\Yetti\API\Iterator::valid()"/>
         </docblock>
       </method>
@@ -2258,7 +2264,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>rewind</full_name>
         <docblock line="131">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="131" name="see" description="\Yetti\API\Iterator::rewind()" refers="\Yetti\API\Iterator::rewind()"/>
         </docblock>
       </method>
@@ -2267,7 +2273,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>count</full_name>
         <docblock line="140">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="140" name="see" description="\Yetti\API\Countable::count()" refers="\Yetti\API\Countable::count()"/>
         </docblock>
       </method>
@@ -2276,12 +2282,12 @@ Responsible for listing combinations for a product item.</description>
         <full_name>offsetExists</full_name>
         <docblock line="150">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="150" name="see" description="\Yetti\API\ArrayAccess::offsetExists()" refers="\Yetti\API\ArrayAccess::offsetExists()"/>
         </docblock>
         <argument line="154">
           <name>$offset</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2290,12 +2296,12 @@ Responsible for listing combinations for a product item.</description>
         <full_name>offsetGet</full_name>
         <docblock line="159">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="159" name="see" description="\Yetti\API\ArrayAccess::offsetGet()" refers="\Yetti\API\ArrayAccess::offsetGet()"/>
         </docblock>
         <argument line="163">
           <name>$offset</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2304,17 +2310,17 @@ Responsible for listing combinations for a product item.</description>
         <full_name>offsetSet</full_name>
         <docblock line="168">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="168" name="see" description="\Yetti\API\ArrayAccess::offsetSet()" refers="\Yetti\API\ArrayAccess::offsetSet()"/>
         </docblock>
         <argument line="172">
           <name>$offset</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="172">
           <name>$value</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2323,12 +2329,12 @@ Responsible for listing combinations for a product item.</description>
         <full_name>offsetUnset</full_name>
         <docblock line="177">
           <description>(non-PHPdoc)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="177" name="see" description="\Yetti\API\ArrayAccess::offsetUnset()" refers="\Yetti\API\ArrayAccess::offsetUnset()"/>
         </docblock>
         <argument line="181">
           <name>$offset</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2337,7 +2343,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>paginate</full_name>
         <docblock line="186">
           <description>Load the next page of items</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="186" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -2363,7 +2369,7 @@ Responsible for listing combinations for a product item.</description>
       <full_name>\Yetti\API\Oauth_Access_Token</full_name>
       <docblock line="5">
         <description>Oauth access token model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -2377,7 +2383,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setClientId</full_name>
         <docblock line="28">
           <description>Set the client ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="28" name="param" description="" type="string" variable="$clientId">
             <type by_reference="false">string</type>
           </tag>
@@ -2387,7 +2393,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="34">
           <name>$clientId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2396,7 +2402,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setClientSecret</full_name>
         <docblock line="41">
           <description>Set the client secret</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="41" name="param" description="" type="string" variable="$secret">
             <type by_reference="false">string</type>
           </tag>
@@ -2406,7 +2412,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="47">
           <name>$secret</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2415,7 +2421,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setCode</full_name>
         <docblock line="54">
           <description>Set the code</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="54" name="param" description="" type="string" variable="$code">
             <type by_reference="false">string</type>
           </tag>
@@ -2425,7 +2431,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="60">
           <name>$code</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2434,7 +2440,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>setState</full_name>
         <docblock line="67">
           <description>Set the state</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="67" name="param" description="" type="string" variable="$state">
             <type by_reference="false">string</type>
           </tag>
@@ -2444,7 +2450,7 @@ Responsible for listing combinations for a product item.</description>
         </docblock>
         <argument line="73">
           <name>$state</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2453,7 +2459,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>getAccessToken</full_name>
         <docblock line="80">
           <description>Returns an access token</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="80" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2464,7 +2470,7 @@ Responsible for listing combinations for a product item.</description>
         <full_name>makeRequest</full_name>
         <docblock line="95">
           <description>Make a webservice request</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="95" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -2476,6 +2482,297 @@ Responsible for listing combinations for a product item.</description>
       <error line="21" code="50018">No DocBlock was found for property $_values</error>
     </parse_markers>
   </file>
+  <file path="Order/List.php" hash="77c21b8918acc4d9f8fcf2c38f18c6f1" package="Default">
+    <class final="false" abstract="false" namespace="Yetti\API" line="14" package="yetti-api">
+      <extends>\Yetti\API\Resource_ListAbstract</extends>
+      <name>Order_List</name>
+      <full_name>\Yetti\API\Order_List</full_name>
+      <docblock line="6">
+        <description>Order list model</description>
+        <long-description></long-description>
+        <tag line="6" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
+        <tag line="6" name="copyright" description="Copyright (c) 2011-2013, Yetti Ltd."/>
+        <tag line="6" name="package" description="yetti-api"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="21" package="yetti-api">
+        <name>load</name>
+        <full_name>load</full_name>
+        <docblock line="16">
+          <description>Load a list of orders</description>
+          <long-description></long-description>
+          <tag line="16" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$status</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="41" package="yetti-api">
+        <name>getNewItemObject</name>
+        <full_name>getNewItemObject</full_name>
+        <docblock line="36">
+          <description>Returns a new order object</description>
+          <long-description></long-description>
+          <tag line="36" name="return" description="" type="\Yetti\API\Order">
+            <type by_reference="false">\Yetti\API\Order</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Order/List.php</error>
+      <error line="16" code="50015">Argument $status is missing from the Docblock of load()</error>
+    </parse_markers>
+  </file>
+  <file path="Order.php" hash="3e2093b2eaa203ac5976b52568dd8359" package="Default">
+    <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
+      <extends>\Yetti\API\BaseAbstract</extends>
+      <name>Order</name>
+      <full_name>\Yetti\API\Order</full_name>
+      <docblock line="5">
+        <description>Order model.</description>
+        <long-description></long-description>
+        <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
+        <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
+        <tag line="5" name="package" description="yetti-api"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="21" package="yetti-api">
+        <name>load</name>
+        <full_name>load</full_name>
+        <docblock line="15">
+          <description>Load an order by ID</description>
+          <long-description></long-description>
+          <tag line="15" name="param" description="" type="int" variable="$orderId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="15" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$orderId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="43" package="yetti-api">
+        <name>loadTemplate</name>
+        <full_name>loadTemplate</full_name>
+        <docblock line="38">
+          <description>Load an order template</description>
+          <long-description></long-description>
+          <tag line="38" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="65" package="yetti-api">
+        <name>save</name>
+        <full_name>save</full_name>
+        <docblock line="60">
+          <description>Save this order</description>
+          <long-description></long-description>
+          <tag line="60" name="return" description="" type="\Yetti\API\Result">
+            <type by_reference="false">\Yetti\API\Result</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="91" package="yetti-api">
+        <name>getId</name>
+        <full_name>getId</full_name>
+        <docblock line="86">
+          <description>Returns the order ID</description>
+          <long-description></long-description>
+          <tag line="86" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="102" package="yetti-api">
+        <name>setStatusId</name>
+        <full_name>setStatusId</full_name>
+        <docblock line="96">
+          <description>Set the status ID</description>
+          <long-description></long-description>
+          <tag line="96" name="param" description="" type="int" variable="$statusId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="96" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="102">
+          <name>$statusId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="112" package="yetti-api">
+        <name>getStatusId</name>
+        <full_name>getStatusId</full_name>
+        <docblock line="107">
+          <description>Returns the order's status ID</description>
+          <long-description></long-description>
+          <tag line="107" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="123" package="yetti-api">
+        <name>setUserId</name>
+        <full_name>setUserId</full_name>
+        <docblock line="117">
+          <description>Set the ID of the user who "owns" this order</description>
+          <long-description></long-description>
+          <tag line="117" name="param" description="" type="int" variable="$userId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="117" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="123">
+          <name>$userId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="133" package="yetti-api">
+        <name>getUserId</name>
+        <full_name>getUserId</full_name>
+        <docblock line="128">
+          <description>Returns the ID of the user who "owns" this order</description>
+          <long-description></long-description>
+          <tag line="128" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="144" package="yetti-api">
+        <name>setShippingAddressId</name>
+        <full_name>setShippingAddressId</full_name>
+        <docblock line="138">
+          <description>Sets the shipping address ID</description>
+          <long-description></long-description>
+          <tag line="138" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="138" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="144">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="154" package="yetti-api">
+        <name>getShippingAddressId</name>
+        <full_name>getShippingAddressId</full_name>
+        <docblock line="149">
+          <description>Returns the shipping address ID</description>
+          <long-description></long-description>
+          <tag line="149" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="165" package="yetti-api">
+        <name>setBillingAddressId</name>
+        <full_name>setBillingAddressId</full_name>
+        <docblock line="159">
+          <description>Sets the billing address ID</description>
+          <long-description></long-description>
+          <tag line="159" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="159" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="165">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="175" package="yetti-api">
+        <name>getBillingAddressId</name>
+        <full_name>getBillingAddressId</full_name>
+        <docblock line="170">
+          <description>Returns the billing address ID</description>
+          <long-description></long-description>
+          <tag line="170" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="186" package="yetti-api">
+        <name>setCourierId</name>
+        <full_name>setCourierId</full_name>
+        <docblock line="180">
+          <description>Set the courier ID</description>
+          <long-description></long-description>
+          <tag line="180" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="180" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="186">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="196" package="yetti-api">
+        <name>getCourierId</name>
+        <full_name>getCourierId</full_name>
+        <docblock line="191">
+          <description>Returns the courier ID</description>
+          <long-description></long-description>
+          <tag line="191" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="208" package="yetti-api">
+        <name>addItem</name>
+        <full_name>addItem</full_name>
+        <docblock line="201">
+          <description>Add an item to this order</description>
+          <long-description></long-description>
+          <tag line="201" name="param" description="" type="int" variable="$itemId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="201" name="param" description="" type="float" variable="$quantity">
+            <type by_reference="false">float</type>
+          </tag>
+          <tag line="201" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="208">
+          <name>$itemId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="208">
+          <name>$quantity</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Order.php</error>
+    </parse_markers>
+  </file>
   <file path="Resource/Asset/Group.php" hash="7b8a71f6c5bea6e93704a6ed0bd4969c" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="14" package="yetti-api">
       <extends>\Yetti\API\ListAbstract</extends>
@@ -2484,7 +2781,7 @@ Responsible for listing combinations for a product item.</description>
       <docblock line="5">
         <description>Asset group model
 Represents a single asset group for a resource</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -2494,7 +2791,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="16">
           <description>Load the assets in this group</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="16" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -2505,7 +2802,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTotalPages</full_name>
         <docblock line="32">
           <description>Returns the total number of pages in the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2516,7 +2813,7 @@ Represents a single asset group for a resource</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="42">
           <description>Returns the current page</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="42" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2534,7 +2831,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\Resource_Asset</full_name>
       <docblock line="5">
         <description>Model represents a single asset (attached to a resource)</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -2544,7 +2841,7 @@ Represents a single asset group for a resource</description>
         <full_name>getId</full_name>
         <docblock line="15">
           <description>Returns the language ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2555,7 +2852,7 @@ Represents a single asset group for a resource</description>
         <full_name>getAltText</full_name>
         <docblock line="25">
           <description>Returns the asset alt text</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2566,7 +2863,7 @@ Represents a single asset group for a resource</description>
         <full_name>getUrl</full_name>
         <docblock line="35">
           <description>Return the asset link URL</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="35" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2584,7 +2881,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\Resource_BaseAbstract</full_name>
       <docblock line="5">
         <description>Abstract base class for resource models.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -2606,22 +2903,22 @@ Represents a single asset group for a resource</description>
       </constant>
       <property final="false" static="false" visibility="private" line="34" namespace="Yetti\API" package="Default">
         <name>$_countryCode</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="41" namespace="Yetti\API" package="Default">
         <name>$_originalAuthor</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="48" namespace="Yetti\API" package="Default">
         <name>$_revisionAuthor</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="57" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
         <docblock line="50">
           <description>Loads a resource by ID or identifier</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="param" description="int ID or string identifier" type="mixed" variable="$resourceId">
             <type by_reference="false">mixed</type>
           </tag>
@@ -2634,7 +2931,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="57">
           <name>$resourceId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="57">
@@ -2648,7 +2945,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadTemplate</full_name>
         <docblock line="77">
           <description>Load a resource template for the given type ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="77" name="param" description="" type="int" variable="$typeId">
             <type by_reference="false">int</type>
           </tag>
@@ -2667,7 +2964,7 @@ Represents a single asset group for a resource</description>
         <full_name>save</full_name>
         <docblock line="100">
           <description>Save this resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="100" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -2678,7 +2975,7 @@ Represents a single asset group for a resource</description>
         <full_name>delete</full_name>
         <docblock line="123">
           <description>Delete this resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="123" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -2689,7 +2986,7 @@ Represents a single asset group for a resource</description>
         <full_name>create</full_name>
         <docblock line="137">
           <description>Create a new resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="137" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -2700,7 +2997,7 @@ Represents a single asset group for a resource</description>
         <full_name>update</full_name>
         <docblock line="157">
           <description>Update an existing resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="157" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -2711,7 +3008,7 @@ Represents a single asset group for a resource</description>
         <full_name>_beforeSave</full_name>
         <docblock line="173">
           <description>This method can be overridden by derived classes to perform actions before the object saves</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="173" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -2722,7 +3019,7 @@ Represents a single asset group for a resource</description>
         <full_name>_afterSave</full_name>
         <docblock line="180">
           <description>This method can be overridden by derived classes to perform actions after a successful save</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="180" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -2733,7 +3030,7 @@ Represents a single asset group for a resource</description>
         <full_name>getId</full_name>
         <docblock line="187">
           <description>Returns the resource ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="187" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2744,7 +3041,7 @@ Represents a single asset group for a resource</description>
         <full_name>getLanguageId</full_name>
         <docblock line="197">
           <description>Returns the language ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="197" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2755,7 +3052,7 @@ Represents a single asset group for a resource</description>
         <full_name>getRevisionId</full_name>
         <docblock line="207">
           <description>Returns the revision ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="207" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2766,7 +3063,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTypeId</full_name>
         <docblock line="217">
           <description>Returns the resource type ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="217" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -2777,7 +3074,7 @@ Represents a single asset group for a resource</description>
         <full_name>getCreatedDate</full_name>
         <docblock line="227">
           <description>Returns the date this resource was created (in ISO 8601 format)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="227" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2788,7 +3085,7 @@ Represents a single asset group for a resource</description>
         <full_name>setLanguageActive</full_name>
         <docblock line="237">
           <description>Set whether or not this resource is available in the current language</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="237" name="param" description="" type="bool" variable="$active">
             <type by_reference="false">bool</type>
           </tag>
@@ -2807,7 +3104,7 @@ Represents a single asset group for a resource</description>
         <full_name>isLanguageActive</full_name>
         <docblock line="248">
           <description>Returns whether or not this resource is active in the current language</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="248" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -2818,7 +3115,7 @@ Represents a single asset group for a resource</description>
         <full_name>setName</full_name>
         <docblock line="258">
           <description>Set the resource name (identifier)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="258" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -2828,7 +3125,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="264">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2837,7 +3134,7 @@ Represents a single asset group for a resource</description>
         <full_name>getName</full_name>
         <docblock line="269">
           <description>Returns the resource name</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="269" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2848,7 +3145,7 @@ Represents a single asset group for a resource</description>
         <full_name>setIdentifier</full_name>
         <docblock line="279">
           <description>Set the resource identifier (same as name)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="279" name="alias" description="setName"/>
           <tag line="279" name="param" description="" type="string" variable="$identifier">
             <type by_reference="false">string</type>
@@ -2859,7 +3156,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="286">
           <name>$identifier</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2868,7 +3165,7 @@ Represents a single asset group for a resource</description>
         <full_name>getIdentifier</full_name>
         <docblock line="291">
           <description>Returns the resource identifier (same as name)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="291" name="alias" description="getName"/>
           <tag line="291" name="return" description="" type="string">
             <type by_reference="false">string</type>
@@ -2880,7 +3177,7 @@ Represents a single asset group for a resource</description>
         <full_name>getDisplayName</full_name>
         <docblock line="302">
           <description>Returns the resource's display name</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="302" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2891,7 +3188,7 @@ Represents a single asset group for a resource</description>
         <full_name>setPropertyValue</full_name>
         <docblock line="312">
           <description>Set a property value</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="312" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -2904,12 +3201,12 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="319">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="319">
           <name>$value</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2918,7 +3215,7 @@ Represents a single asset group for a resource</description>
         <full_name>getPropertyValue</full_name>
         <docblock line="326">
           <description>Returns a property value</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="326" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -2928,7 +3225,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="332">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2937,7 +3234,7 @@ Represents a single asset group for a resource</description>
         <full_name>setMetaTitle</full_name>
         <docblock line="341">
           <description>Set the meta title</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="341" name="param" description="" type="string" variable="$title">
             <type by_reference="false">string</type>
           </tag>
@@ -2947,7 +3244,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="347">
           <name>$title</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2956,7 +3253,7 @@ Represents a single asset group for a resource</description>
         <full_name>getMetaTitle</full_name>
         <docblock line="354">
           <description>Returns the meta title</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="354" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2967,7 +3264,7 @@ Represents a single asset group for a resource</description>
         <full_name>setMetaDescription</full_name>
         <docblock line="364">
           <description>Set the meta description</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="364" name="param" description="" type="string" variable="$description">
             <type by_reference="false">string</type>
           </tag>
@@ -2977,7 +3274,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="370">
           <name>$description</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2986,7 +3283,7 @@ Represents a single asset group for a resource</description>
         <full_name>getMetaDescription</full_name>
         <docblock line="377">
           <description>Returns the meta description</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="377" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2997,7 +3294,7 @@ Represents a single asset group for a resource</description>
         <full_name>getOriginalAuthor</full_name>
         <docblock line="387">
           <description>Return a user object based on the original author of this resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="387" name="return" description="" type="\Yetti\API\User">
             <type by_reference="false">\Yetti\API\User</type>
           </tag>
@@ -3008,7 +3305,7 @@ Represents a single asset group for a resource</description>
         <full_name>getRevisionAuthor</full_name>
         <docblock line="403">
           <description>Return a user object based on the author of this revision</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="403" name="return" description="" type="\Yetti\API\User">
             <type by_reference="false">\Yetti\API\User</type>
           </tag>
@@ -3019,7 +3316,7 @@ Represents a single asset group for a resource</description>
         <full_name>getRevisionComment</full_name>
         <docblock line="419">
           <description>Returns the revision comment for the current revision</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="419" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3030,7 +3327,7 @@ Represents a single asset group for a resource</description>
         <full_name>setRevisionComment</full_name>
         <docblock line="429">
           <description>Sets the revision comment for the current revision</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="429" name="param" description="" type="string" variable="$comment">
             <type by_reference="false">string</type>
           </tag>
@@ -3040,7 +3337,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="435">
           <name>$comment</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3049,7 +3346,7 @@ Represents a single asset group for a resource</description>
         <full_name>getRevisionTimestamp</full_name>
         <docblock line="440">
           <description>Returns a timestamp based on the creation date of the current revision</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="440" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3060,7 +3357,7 @@ Represents a single asset group for a resource</description>
         <full_name>clearAttachedAssets</full_name>
         <docblock line="450">
           <description>Clear the current attached assets</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="450" name="param" description="" type="string" variable="$assetGroupName">
             <type by_reference="false">string</type>
           </tag>
@@ -3079,7 +3376,7 @@ Represents a single asset group for a resource</description>
         <full_name>addAsset</full_name>
         <docblock line="468">
           <description>Adds a new asset to the resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="468" name="param" description="" type="string" variable="$assetGroupName">
             <type by_reference="false">string</type>
           </tag>
@@ -3095,12 +3392,12 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="476">
           <name>$assetGroupName</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="476">
           <name>$resourceId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="476">
@@ -3119,7 +3416,7 @@ Represents a single asset group for a resource</description>
         <full_name>getProperties</full_name>
         <docblock line="490">
           <description>Returns an array of property elements</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="490" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -3130,7 +3427,7 @@ Represents a single asset group for a resource</description>
         <full_name>getAttachedAssets</full_name>
         <docblock line="508">
           <description>Returns an array of attached asset group elements</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="508" name="param" description="" type="string" variable="$requestedGroup">
             <type by_reference="false">string</type>
           </tag>
@@ -3149,7 +3446,7 @@ Represents a single asset group for a resource</description>
         <full_name>getPluralName</full_name>
         <docblock line="534">
           <description>Returns a plural name for resources of this type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="534" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3160,7 +3457,7 @@ Represents a single asset group for a resource</description>
         <full_name>getSingularName</full_name>
         <docblock line="544">
           <description>Return a singular name for this resource type</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="544" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3181,25 +3478,25 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\Resource_ListAbstract</full_name>
       <docblock line="5">
         <description>Abstract class for resource list models</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
       </docblock>
       <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
         <name>$_path</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="29" namespace="Yetti\API" package="Default">
         <name>$_typeId</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="39" package="yetti-api">
         <name>load</name>
         <full_name>load</full_name>
         <docblock line="31">
           <description>Loads the list from Yetti</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="31" name="param" description="" type="int" variable="$typeId">
             <type by_reference="false">int</type>
           </tag>
@@ -3215,7 +3512,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="39">
           <name>$typeId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="39">
@@ -3234,7 +3531,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadNextPage</full_name>
         <docblock line="66">
           <description>Load the next page of items</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="66" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -3245,7 +3542,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="83">
           <description>Loads the list of resource objects</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="83" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -3256,7 +3553,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTotalItemCount</full_name>
         <docblock line="100">
           <description>Returns the total number of items available for this listing</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="100" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3267,7 +3564,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTotalPages</full_name>
         <docblock line="110">
           <description>Returns the total number of pages available in this listing</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="110" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3278,7 +3575,7 @@ Represents a single asset group for a resource</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="120">
           <description>Returns the currently loaded page number</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="120" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3289,7 +3586,7 @@ Represents a single asset group for a resource</description>
         <full_name>setPath</full_name>
         <docblock line="130">
           <description>Set the request path</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="130" name="param" description="" type="string" variable="$path">
             <type by_reference="false">string</type>
           </tag>
@@ -3299,7 +3596,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="136">
           <name>$path</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3308,7 +3605,7 @@ Represents a single asset group for a resource</description>
         <full_name>getPath</full_name>
         <docblock line="143">
           <description>Returns the request path</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="143" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3319,7 +3616,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTypeId</full_name>
         <docblock line="153">
           <description>Returns the type ID for this list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="153" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3330,7 +3627,7 @@ Represents a single asset group for a resource</description>
         <full_name>getNewItemObject</full_name>
         <docblock line="163">
           <description>Returns a new object for population from the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="163" name="return" description="\Yetti\API\Resource_BaseAbstract" type="object">
             <type by_reference="false">object</type>
           </tag>
@@ -3350,7 +3647,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\Resource_Property</full_name>
       <docblock line="5">
         <description>Model represents a single property (of a resource)</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -3360,7 +3657,7 @@ Represents a single asset group for a resource</description>
         <full_name>getId</full_name>
         <docblock line="15">
           <description>Returns the property ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3371,7 +3668,7 @@ Represents a single asset group for a resource</description>
         <full_name>getDataType</full_name>
         <docblock line="25">
           <description>Returns the data type of this property</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3382,7 +3679,7 @@ Represents a single asset group for a resource</description>
         <full_name>getValue</full_name>
         <docblock line="35">
           <description>Returns the value of this property</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="35" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3400,7 +3697,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\Result</full_name>
       <docblock line="5">
         <description>Basic result object</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -3414,7 +3711,7 @@ Represents a single asset group for a resource</description>
         <full_name>addError</full_name>
         <docblock line="24">
           <description>Add an error to this result</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="24" name="param" description="" type="string" variable="$error">
             <type by_reference="false">string</type>
           </tag>
@@ -3427,12 +3724,12 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="31">
           <name>$error</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="31">
           <name>$key</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3441,7 +3738,7 @@ Represents a single asset group for a resource</description>
         <full_name>getErrors</full_name>
         <docblock line="36">
           <description>Return an array of errors</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="36" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -3452,7 +3749,7 @@ Represents a single asset group for a resource</description>
         <full_name>success</full_name>
         <docblock line="46">
           <description>Return whether or not this result was a success (no errors)</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="46" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -3464,6 +3761,499 @@ Represents a single asset group for a resource</description>
       <error line="22" code="50018">No DocBlock was found for property $_errors</error>
     </parse_markers>
   </file>
+  <file path="User/Address/List.php" hash="3e5f52ff9afe05750aa9b25491831051" package="Default">
+    <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
+      <extends>\Yetti\API\ListAbstract</extends>
+      <name>User_Address_List</name>
+      <full_name>\Yetti\API\User_Address_List</full_name>
+      <docblock line="5">
+        <description>User address list model</description>
+        <long-description></long-description>
+        <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
+        <tag line="5" name="copyright" description="Copyright (c) 2011-2013, Yetti Ltd."/>
+        <tag line="5" name="package" description="yetti-api"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="21" package="yetti-api">
+        <name>load</name>
+        <full_name>load</full_name>
+        <docblock line="15">
+          <description>Load a list of addresses for a user</description>
+          <long-description></long-description>
+          <tag line="15" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="15" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$userId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Yetti\API" line="40" package="yetti-api">
+        <name>loadItemObjects</name>
+        <full_name>loadItemObjects</full_name>
+        <docblock line="35">
+          <description>Load the address objects in this list</description>
+          <long-description></long-description>
+          <tag line="35" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="55" package="yetti-api">
+        <name>getTotalPages</name>
+        <full_name>getTotalPages</full_name>
+        <docblock line="50">
+          <description>Returns the total number of pages in the list</description>
+          <long-description></long-description>
+          <tag line="50" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="65" package="yetti-api">
+        <name>getCurrentPage</name>
+        <full_name>getCurrentPage</full_name>
+        <docblock line="60">
+          <description>Returns the current page</description>
+          <long-description></long-description>
+          <tag line="60" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file User/Address/List.php</error>
+      <error line="15" code="50015">Argument $userId is missing from the Docblock of load()</error>
+    </parse_markers>
+  </file>
+  <file path="User/Address.php" hash="ed8df6b6f5d2af68483d8a0f142301e1" package="Default">
+    <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
+      <extends>\Yetti\API\BaseAbstract</extends>
+      <name>User_Address</name>
+      <full_name>\Yetti\API\User_Address</full_name>
+      <docblock line="5">
+        <description>User address model.</description>
+        <long-description></long-description>
+        <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
+        <tag line="5" name="copyright" description="Copyright (c) 2011-2013, Yetti Ltd."/>
+        <tag line="5" name="package" description="yetti-api"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="22" namespace="Yetti\API" package="Default">
+        <name>$_userId</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="29" package="yetti-api">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="24">
+          <description>Construct a new address object</description>
+          <long-description></long-description>
+          <tag line="24" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="54" package="yetti-api">
+        <name>load</name>
+        <full_name>load</full_name>
+        <docblock line="47">
+          <description>Load an address by user ID and address ID</description>
+          <long-description></long-description>
+          <tag line="47" name="param" description="" type="int" variable="$userId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="47" name="param" description="" type="int" variable="$addressId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="47" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="54">
+          <name>$userId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="54">
+          <name>$addressId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="77" package="yetti-api">
+        <name>save</name>
+        <full_name>save</full_name>
+        <docblock line="72">
+          <description>Save this address</description>
+          <long-description></long-description>
+          <tag line="72" name="return" description="" type="\Yetti\API\Result">
+            <type by_reference="false">\Yetti\API\Result</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="105" package="yetti-api">
+        <name>getId</name>
+        <full_name>getId</full_name>
+        <docblock line="100">
+          <description>Returns the address ID</description>
+          <long-description></long-description>
+          <tag line="100" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="116" package="yetti-api">
+        <name>setUserId</name>
+        <full_name>setUserId</full_name>
+        <docblock line="110">
+          <description>Set the user ID</description>
+          <long-description></long-description>
+          <tag line="110" name="param" description="" type="int" variable="$userId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="110" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="116">
+          <name>$userId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="128" package="yetti-api">
+        <name>getUserId</name>
+        <full_name>getUserId</full_name>
+        <docblock line="123">
+          <description>Returns the user ID</description>
+          <long-description></long-description>
+          <tag line="123" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="139" package="yetti-api">
+        <name>setIdentifier</name>
+        <full_name>setIdentifier</full_name>
+        <docblock line="133">
+          <description>Sets the address identifier</description>
+          <long-description></long-description>
+          <tag line="133" name="param" description="" type="string" variable="$identifier">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="133" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="139">
+          <name>$identifier</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="149" package="yetti-api">
+        <name>getIdentifier</name>
+        <full_name>getIdentifier</full_name>
+        <docblock line="144">
+          <description>Returns the identifier</description>
+          <long-description></long-description>
+          <tag line="144" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="160" package="yetti-api">
+        <name>setFirstname</name>
+        <full_name>setFirstname</full_name>
+        <docblock line="154">
+          <description>Set the first name</description>
+          <long-description></long-description>
+          <tag line="154" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="154" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="160">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="170" package="yetti-api">
+        <name>getFirstname</name>
+        <full_name>getFirstname</full_name>
+        <docblock line="165">
+          <description>Returns the first name</description>
+          <long-description></long-description>
+          <tag line="165" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="181" package="yetti-api">
+        <name>setSurname</name>
+        <full_name>setSurname</full_name>
+        <docblock line="175">
+          <description>Set the surname</description>
+          <long-description></long-description>
+          <tag line="175" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="175" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="181">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="191" package="yetti-api">
+        <name>getSurname</name>
+        <full_name>getSurname</full_name>
+        <docblock line="186">
+          <description>Returns the surname</description>
+          <long-description></long-description>
+          <tag line="186" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="202" package="yetti-api">
+        <name>setLine1</name>
+        <full_name>setLine1</full_name>
+        <docblock line="196">
+          <description>Set the address line 1</description>
+          <long-description></long-description>
+          <tag line="196" name="param" description="" type="string" variable="$line">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="196" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="202">
+          <name>$line</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="212" package="yetti-api">
+        <name>getLine1</name>
+        <full_name>getLine1</full_name>
+        <docblock line="207">
+          <description>Returns the address line 1</description>
+          <long-description></long-description>
+          <tag line="207" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="223" package="yetti-api">
+        <name>setLine2</name>
+        <full_name>setLine2</full_name>
+        <docblock line="217">
+          <description>Set the address line 2</description>
+          <long-description></long-description>
+          <tag line="217" name="param" description="" type="string" variable="$line">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="217" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="223">
+          <name>$line</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="233" package="yetti-api">
+        <name>getLine2</name>
+        <full_name>getLine2</full_name>
+        <docblock line="228">
+          <description>Returns address line 2</description>
+          <long-description></long-description>
+          <tag line="228" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="244" package="yetti-api">
+        <name>setCity</name>
+        <full_name>setCity</full_name>
+        <docblock line="238">
+          <description>Set the city</description>
+          <long-description></long-description>
+          <tag line="238" name="param" description="" type="string" variable="$city">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="238" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="244">
+          <name>$city</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="254" package="yetti-api">
+        <name>getCity</name>
+        <full_name>getCity</full_name>
+        <docblock line="249">
+          <description>Returns the city</description>
+          <long-description></long-description>
+          <tag line="249" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="265" package="yetti-api">
+        <name>setRegion</name>
+        <full_name>setRegion</full_name>
+        <docblock line="259">
+          <description>Set the region</description>
+          <long-description></long-description>
+          <tag line="259" name="param" description="" type="string" variable="$region">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="259" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="265">
+          <name>$region</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="275" package="yetti-api">
+        <name>getRegion</name>
+        <full_name>getRegion</full_name>
+        <docblock line="270">
+          <description>Returns the region</description>
+          <long-description></long-description>
+          <tag line="270" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="286" package="yetti-api">
+        <name>setPostcode</name>
+        <full_name>setPostcode</full_name>
+        <docblock line="280">
+          <description>Set the postcode</description>
+          <long-description></long-description>
+          <tag line="280" name="param" description="" type="string" variable="$postcode">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="280" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="286">
+          <name>$postcode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="296" package="yetti-api">
+        <name>getPostcode</name>
+        <full_name>getPostcode</full_name>
+        <docblock line="291">
+          <description>Returns the postcode</description>
+          <long-description></long-description>
+          <tag line="291" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="307" package="yetti-api">
+        <name>setTelephone</name>
+        <full_name>setTelephone</full_name>
+        <docblock line="301">
+          <description>Set the telephone number</description>
+          <long-description></long-description>
+          <tag line="301" name="param" description="" type="string" variable="$number">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="301" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="307">
+          <name>$number</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="317" package="yetti-api">
+        <name>getTelephone</name>
+        <full_name>getTelephone</full_name>
+        <docblock line="312">
+          <description>Returns the telephone number</description>
+          <long-description></long-description>
+          <tag line="312" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="328" package="yetti-api">
+        <name>setCountryId</name>
+        <full_name>setCountryId</full_name>
+        <docblock line="322">
+          <description>Set the country ID</description>
+          <long-description></long-description>
+          <tag line="322" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="322" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="328">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="338" package="yetti-api">
+        <name>getCountryId</name>
+        <full_name>getCountryId</full_name>
+        <docblock line="333">
+          <description>Returns the country ID</description>
+          <long-description></long-description>
+          <tag line="333" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Yetti\API" line="348" package="yetti-api">
+        <name>getCountryName</name>
+        <full_name>getCountryName</full_name>
+        <docblock line="343">
+          <description>Returns the country name</description>
+          <long-description></long-description>
+          <tag line="343" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file User/Address.php</error>
+      <error line="22" code="50018">No DocBlock was found for property $_userId</error>
+    </parse_markers>
+  </file>
   <file path="User/List.php" hash="8141a3542f5b30fb700644dd509519c7" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends>\Yetti\API\Resource_ListAbstract</extends>
@@ -3471,7 +4261,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\User_List</full_name>
       <docblock line="5">
         <description>User list model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -3481,7 +4271,7 @@ Represents a single asset group for a resource</description>
         <full_name>__construct</full_name>
         <docblock line="15">
           <description>Construct a new user list model</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
@@ -3492,7 +4282,7 @@ Represents a single asset group for a resource</description>
         <full_name>getNewItemObject</full_name>
         <docblock line="25">
           <description>Returns a new user object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="return" description="\Yetti\API\User" type="object">
             <type by_reference="false">object</type>
           </tag>
@@ -3510,7 +4300,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\User</full_name>
       <docblock line="5">
         <description>Individual user model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -3520,7 +4310,7 @@ Represents a single asset group for a resource</description>
         <full_name>getSingularName</full_name>
         <docblock line="15">
           <description>Returns a singular name for this type of resource</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3531,7 +4321,7 @@ Represents a single asset group for a resource</description>
         <full_name>setPassword</full_name>
         <docblock line="25">
           <description>Set the user's password</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="25" name="param" description="" type="string" variable="$password">
             <type by_reference="false">string</type>
           </tag>
@@ -3541,7 +4331,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="31">
           <name>$password</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3550,7 +4340,7 @@ Represents a single asset group for a resource</description>
         <full_name>getPassHash</full_name>
         <docblock line="36">
           <description>Returns the hashed password for this user</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="36" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3561,7 +4351,7 @@ Represents a single asset group for a resource</description>
         <full_name>setEmail</full_name>
         <docblock line="46">
           <description>Set the user's email address</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="46" name="param" description="" type="string" variable="$email">
             <type by_reference="false">string</type>
           </tag>
@@ -3571,7 +4361,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="52">
           <name>$email</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3580,7 +4370,7 @@ Represents a single asset group for a resource</description>
         <full_name>getEmail</full_name>
         <docblock line="57">
           <description>Returns the email address for this user</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="57" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3598,7 +4388,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\VAT_List</full_name>
       <docblock line="5">
         <description>VAT list model</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -3608,7 +4398,7 @@ Represents a single asset group for a resource</description>
         <full_name>load</full_name>
         <docblock line="15">
           <description>Load a list of available VAT bands</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -3619,7 +4409,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadItemObjects</full_name>
         <docblock line="34">
           <description>Load the VAT objects in this list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="34" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -3630,7 +4420,7 @@ Represents a single asset group for a resource</description>
         <full_name>getTotalPages</full_name>
         <docblock line="49">
           <description>Returns the total number of pages in the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="49" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3641,7 +4431,7 @@ Represents a single asset group for a resource</description>
         <full_name>getCurrentPage</full_name>
         <docblock line="59">
           <description>Returns the current page</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="59" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3659,7 +4449,7 @@ Represents a single asset group for a resource</description>
       <full_name>\Yetti\API\VAT</full_name>
       <docblock line="5">
         <description>VAT band model.</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="Sam Holman &lt;sam@yetti.co.uk&gt;"/>
         <tag line="5" name="copyright" description="Copyright (c) 2011-2012, Yetti Ltd."/>
         <tag line="5" name="package" description="yetti-api"/>
@@ -3669,7 +4459,7 @@ Represents a single asset group for a resource</description>
         <full_name>load</full_name>
         <docblock line="15">
           <description>Load a VAT band by ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="15" name="param" description="" type="int" variable="$bandId">
             <type by_reference="false">int</type>
           </tag>
@@ -3679,7 +4469,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="21">
           <name>$bandId</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3688,7 +4478,7 @@ Represents a single asset group for a resource</description>
         <full_name>loadTemplate</full_name>
         <docblock line="38">
           <description>Load a VAT band template</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="38" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -3699,7 +4489,7 @@ Represents a single asset group for a resource</description>
         <full_name>save</full_name>
         <docblock line="60">
           <description>Save this VAT band</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="60" name="return" description="" type="\Yetti\API\Result">
             <type by_reference="false">\Yetti\API\Result</type>
           </tag>
@@ -3710,7 +4500,7 @@ Represents a single asset group for a resource</description>
         <full_name>getId</full_name>
         <docblock line="86">
           <description>Returns the band ID</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="86" name="return" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
@@ -3721,7 +4511,7 @@ Represents a single asset group for a resource</description>
         <full_name>setName</full_name>
         <docblock line="96">
           <description>Set the VAT band name</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="96" name="param" description="" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
@@ -3731,7 +4521,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="102">
           <name>$name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3740,7 +4530,7 @@ Represents a single asset group for a resource</description>
         <full_name>getName</full_name>
         <docblock line="107">
           <description>Returns the VAT band name</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="107" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -3751,7 +4541,7 @@ Represents a single asset group for a resource</description>
         <full_name>setPercentage</full_name>
         <docblock line="117">
           <description>Set the VAT percentage</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="117" name="param" description="" type="float" variable="$percentage">
             <type by_reference="false">float</type>
           </tag>
@@ -3761,7 +4551,7 @@ Represents a single asset group for a resource</description>
         </docblock>
         <argument line="123">
           <name>$percentage</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3770,7 +4560,7 @@ Represents a single asset group for a resource</description>
         <full_name>getPercentage</full_name>
         <docblock line="128">
           <description>Returns the VAT percentage</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="128" name="return" description="" type="float">
             <type by_reference="false">float</type>
           </tag>
@@ -3781,7 +4571,7 @@ Represents a single asset group for a resource</description>
         <full_name>setDefault</full_name>
         <docblock line="138">
           <description>Set whether or not this VAT band should become the default</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="138" name="param" description="" type="bool" variable="$default">
             <type by_reference="false">bool</type>
           </tag>
@@ -3800,7 +4590,7 @@ Represents a single asset group for a resource</description>
         <full_name>isDefault</full_name>
         <docblock line="149">
           <description>Returns whether or not this VAT band is the default</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="149" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -3811,7 +4601,7 @@ Represents a single asset group for a resource</description>
       <error line="0" code="50007">No page-level DocBlock was found in file VAT.php</error>
     </parse_markers>
   </file>
-  <file path="Webservice.php" hash="aeb859096978f552adc9be8e2b86ae33" package="Default">
+  <file path="Webservice.php" hash="876468f21161db1b8d3479c88a433146" package="Default">
     <class final="false" abstract="false" namespace="Yetti\API" line="13" package="yetti-api">
       <extends/>
       <name>Webservice</name>

@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Yetti API - PHP Bindings » \Yetti\API\Item_Filter_List</title>
+<title>Yetti API - PHP Bindings » \Yetti\API\Order</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,27 +58,31 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_getCurrentPage" title="getCurrentPage :: Returns the current page"><span class="description">Returns the current page</span><pre>getCurrentPage()</pre></a></li>
-<li class="method public inherited"><a href="#method_getItems" title="getItems :: Returns a list iterator object containing items in this listing"><span class="description">Returns a list iterator object containing items in this listing</span><pre>getItems()</pre></a></li>
+<li class="method public "><a href="#method_addItem" title="addItem :: Add an item to this order"><span class="description">Add an item to this order</span><pre>addItem()</pre></a></li>
+<li class="method public "><a href="#method_getBillingAddressId" title="getBillingAddressId :: Returns the billing address ID"><span class="description">Returns the billing address ID</span><pre>getBillingAddressId()</pre></a></li>
+<li class="method public "><a href="#method_getCourierId" title="getCourierId :: Returns the courier ID"><span class="description">Returns the courier ID</span><pre>getCourierId()</pre></a></li>
+<li class="method public "><a href="#method_getId" title="getId :: Returns the order ID"><span class="description">Returns the order ID</span><pre>getId()</pre></a></li>
 <li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public inherited"><a href="#method_getTotalItemCount" title="getTotalItemCount :: Returns the total number of items available for this listing"><span class="description">Returns the total number of items available for this listing</span><pre>getTotalItemCount()</pre></a></li>
-<li class="method public "><a href="#method_getTotalPages" title="getTotalPages :: Returns the total number of pages in the list"><span class="description">Returns the total number of pages in the list</span><pre>getTotalPages()</pre></a></li>
-<li class="method public "><a href="#method_load" title="load :: Load a list of filters for the given filter type"><span class="description">Load a list of filters for the given filter type</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#method_getShippingAddressId" title="getShippingAddressId :: Returns the shipping address ID"><span class="description">Returns the shipping address ID</span><pre>getShippingAddressId()</pre></a></li>
+<li class="method public "><a href="#method_getStatusId" title="getStatusId :: Returns the order's status ID"><span class="description">Returns the order's status ID</span><pre>getStatusId()</pre></a></li>
+<li class="method public "><a href="#method_getUserId" title='getUserId :: Returns the ID of the user who "owns" this order'><span class="description">Returns the ID of the user who "owns" this order</span><pre>getUserId()</pre></a></li>
+<li class="method public "><a href="#method_load" title="load :: Load an order by ID"><span class="description">Load an order by ID</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#method_loadTemplate" title="loadTemplate :: Load an order template"><span class="description">Load an order template</span><pre>loadTemplate()</pre></a></li>
+<li class="method public "><a href="#method_save" title="save :: Save this order"><span class="description">Save this order</span><pre>save()</pre></a></li>
+<li class="method public "><a href="#method_setBillingAddressId" title="setBillingAddressId :: Sets the billing address ID"><span class="description">Sets the billing address ID</span><pre>setBillingAddressId()</pre></a></li>
+<li class="method public "><a href="#method_setCourierId" title="setCourierId :: Set the courier ID"><span class="description">Set the courier ID</span><pre>setCourierId()</pre></a></li>
 <li class="method public inherited"><a href="#method_setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
+<li class="method public "><a href="#method_setShippingAddressId" title="setShippingAddressId :: Sets the shipping address ID"><span class="description">Sets the shipping address ID</span><pre>setShippingAddressId()</pre></a></li>
+<li class="method public "><a href="#method_setStatusId" title="setStatusId :: Set the status ID"><span class="description">Set the status ID</span><pre>setStatusId()</pre></a></li>
+<li class="method public "><a href="#method_setUserId" title='setUserId :: Set the ID of the user who "owns" this order'><span class="description">Set the ID of the user who "owns" this order</span><pre>setUserId()</pre></a></li>
 <li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
-<li class="method public inherited"><a href="#method_shouldAutoPaginate" title="shouldAutoPaginate :: Returns whether or not getItems() should auto paginate"><span class="description">Returns whether or not getItems() should auto paginate</span><pre>shouldAutoPaginate()</pre></a></li>
 <li class="method public inherited"><a href="#method_webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul>
-<li class="method protected inherited"><a href="#method_addItem" title="addItem :: Add an item to the list"><span class="description">Add an item to the list</span><pre>addItem()</pre></a></li>
-<li class="method protected "><a href="#method_loadItemObjects" title="loadItemObjects :: Load the filter objects in this list"><span class="description">Load the filter objects in this list</span><pre>loadItemObjects()</pre></a></li>
-<li class="method protected inherited"><a href="#method_makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
+                    <ul><li class="method protected inherited"><a href="#method_makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
 Must be called after everything else has been set up"><span class="description">Performs a webservice request and returns a result object
-Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li>
-<li class="method protected inherited"><a href="#method_setAutoPaginate" title="setAutoPaginate :: Set whether or not getItems() should auto paginate"><span class="description">Set whether or not getItems() should auto paginate</span><pre>setAutoPaginate()</pre></a></li>
-</ul>
+Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li></ul>
 </li>
 <li class="nav-header private">» Private
                     <ul><li class="method private inherited"><a href="#method_getArrayAsObject" title="getArrayAsObject :: Recursively convert the given array into a stdClass object"><span class="description">Recursively convert the given array into a stdClass object</span><pre>getArrayAsObject()</pre></a></li></ul>
@@ -89,8 +93,6 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </li>
 <li class="nav-header private">» Private
                     <ul>
-<li class="property private inherited"><a href="#property__autoPagination" title="$_autoPagination :: "><span class="description"></span><pre>$_autoPagination</pre></a></li>
-<li class="property private inherited"><a href="#property__items" title="$_items :: "><span class="description"></span><pre>$_items</pre></a></li>
 <li class="property private inherited"><a href="#property__json" title="$_json :: "><span class="description"></span><pre>$_json</pre></a></li>
 <li class="property private inherited"><a href="#property__webservice" title="$_webservice :: "><span class="description"></span><pre>$_webservice</pre></a></li>
 </ul>
@@ -98,7 +100,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </ul>
 </div>
 <div class="span8">
-<a id="\Yetti\API\Item_Filter_List"></a><ul class="breadcrumb">
+<a id="\Yetti\API\Order"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -107,11 +109,11 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <span class="divider">\</span><a href="../namespaces/Yetti.API.html">API</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Yetti.API.Item_Filter_List.html">Item_Filter_List</a>
+<span class="divider">\</span><a href="../classes/Yetti.API.Order.html">Order</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Filter list model</p>
+<p class="short_description">Order model.</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -130,9 +132,26 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_getCurrentPage"></a><div class="element clickable method public method_getCurrentPage" data-toggle="collapse" data-target=".method_getCurrentPage .collapse">
-<h2>Returns the current page</h2>
-<pre>getCurrentPage() : int</pre>
+<a id="method_addItem"></a><div class="element clickable method public method_addItem" data-toggle="collapse" data-target=".method_addItem .collapse">
+<h2>Add an item to this order</h2>
+<pre>addItem(int $itemId, float $quantity) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$itemId</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$quantity</h4>
+<code>float</code>
+</div>
+</div></div>
+</div>
+<a id="method_getBillingAddressId"></a><div class="element clickable method public method_getBillingAddressId" data-toggle="collapse" data-target=".method_getBillingAddressId .collapse">
+<h2>Returns the billing address ID</h2>
+<pre>getBillingAddressId() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -140,18 +159,24 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
-<a id="method_getItems"></a><div class="element clickable method public method_getItems" data-toggle="collapse" data-target=".method_getItems .collapse">
-<h2>Returns a list iterator object containing items in this listing</h2>
-<pre>getItems() : <a href="../classes/Yetti.API.ListIterator.html">\Yetti\API\ListIterator</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
+<a id="method_getCourierId"></a><div class="element clickable method public method_getCourierId" data-toggle="collapse" data-target=".method_getCourierId .collapse">
+<h2>Returns the courier ID</h2>
+<pre>getCourierId() : int</pre>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::getItems()</td>
-</tr></table>
 <h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/Yetti.API.ListIterator.html">\Yetti\API\ListIterator</a></code></div>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_getId"></a><div class="element clickable method public method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
+<h2>Returns the order ID</h2>
+<pre>getId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
 <a id="method_getJson"></a><div class="element clickable method public method_getJson" data-toggle="collapse" data-target=".method_getJson .collapse">
@@ -160,16 +185,10 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
+<table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::getJson()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::getJson()</td>
-</tr>
-</table>
+</tr></table>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="../classes/Yetti.API.Exception.html">\Yetti\API\Exception</a></code></th>
@@ -179,23 +198,29 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
 </div></div>
 </div>
-<a id="method_getTotalItemCount"></a><div class="element clickable method public method_getTotalItemCount" data-toggle="collapse" data-target=".method_getTotalItemCount .collapse">
-<h2>Returns the total number of items available for this listing</h2>
-<pre>getTotalItemCount() : int</pre>
-<div class="labels"><span class="label">Inherited</span></div>
+<a id="method_getShippingAddressId"></a><div class="element clickable method public method_getShippingAddressId" data-toggle="collapse" data-target=".method_getShippingAddressId .collapse">
+<h2>Returns the shipping address ID</h2>
+<pre>getShippingAddressId() : int</pre>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::getTotalItemCount()</td>
-</tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
-<a id="method_getTotalPages"></a><div class="element clickable method public method_getTotalPages" data-toggle="collapse" data-target=".method_getTotalPages .collapse">
-<h2>Returns the total number of pages in the list</h2>
-<pre>getTotalPages() : int</pre>
+<a id="method_getStatusId"></a><div class="element clickable method public method_getStatusId" data-toggle="collapse" data-target=".method_getStatusId .collapse">
+<h2>Returns the order's status ID</h2>
+<pre>getStatusId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_getUserId"></a><div class="element clickable method public method_getUserId" data-toggle="collapse" data-target=".method_getUserId .collapse">
+<h2>Returns the ID of the user who "owns" this order</h2>
+<pre>getUserId() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -204,18 +229,64 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div></div>
 </div>
 <a id="method_load"></a><div class="element clickable method public method_load" data-toggle="collapse" data-target=".method_load .collapse">
-<h2>Load a list of filters for the given filter type</h2>
-<pre>load(int $filterTypeId) : bool</pre>
+<h2>Load an order by ID</h2>
+<pre>load(int $orderId) : bool</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$filterTypeId</h4>
+<h4>$orderId</h4>
 <code>int</code>
 </div>
 <h3>Returns</h3>
 <div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a id="method_loadTemplate"></a><div class="element clickable method public method_loadTemplate" data-toggle="collapse" data-target=".method_loadTemplate .collapse">
+<h2>Load an order template</h2>
+<pre>loadTemplate() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
+</div></div>
+</div>
+<a id="method_save"></a><div class="element clickable method public method_save" data-toggle="collapse" data-target=".method_save .collapse">
+<h2>Save this order</h2>
+<pre>save() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
+<a id="method_setBillingAddressId"></a><div class="element clickable method public method_setBillingAddressId" data-toggle="collapse" data-target=".method_setBillingAddressId .collapse">
+<h2>Sets the billing address ID</h2>
+<pre>setBillingAddressId(int $id) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_setCourierId"></a><div class="element clickable method public method_setCourierId" data-toggle="collapse" data-target=".method_setCourierId .collapse">
+<h2>Set the courier ID</h2>
+<pre>setCourierId(int $id) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a id="method_setJson"></a><div class="element clickable method public method_setJson" data-toggle="collapse" data-target=".method_setJson .collapse">
@@ -224,20 +295,53 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
+<table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::setJson()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::setJson()</td>
-</tr>
-</table>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$json</h4>
 <code>\Yetti\API\stdClass</code>
+</div>
+</div></div>
+</div>
+<a id="method_setShippingAddressId"></a><div class="element clickable method public method_setShippingAddressId" data-toggle="collapse" data-target=".method_setShippingAddressId .collapse">
+<h2>Sets the shipping address ID</h2>
+<pre>setShippingAddressId(int $id) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_setStatusId"></a><div class="element clickable method public method_setStatusId" data-toggle="collapse" data-target=".method_setStatusId .collapse">
+<h2>Set the status ID</h2>
+<pre>setStatusId(int $statusId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statusId</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_setUserId"></a><div class="element clickable method public method_setUserId" data-toggle="collapse" data-target=".method_setUserId .collapse">
+<h2>Set the ID of the user who "owns" this order</h2>
+<pre>setUserId(int $userId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userId</h4>
+<code>int</code>
 </div>
 </div></div>
 </div>
@@ -247,35 +351,15 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
+<table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::setWebservice()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::setWebservice()</td>
-</tr>
-</table>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$webservice</h4>
 <code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code>
 </div>
-</div></div>
-</div>
-<a id="method_shouldAutoPaginate"></a><div class="element clickable method public method_shouldAutoPaginate" data-toggle="collapse" data-target=".method_shouldAutoPaginate .collapse">
-<h2>Returns whether or not getItems() should auto paginate</h2>
-<pre>shouldAutoPaginate() : bool</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::shouldAutoPaginate()</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>bool</code></div>
 </div></div>
 </div>
 <a id="method_webservice"></a><div class="element clickable method public method_webservice" data-toggle="collapse" data-target=".method_webservice .collapse">
@@ -284,45 +368,12 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::webservice()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::webservice()</td>
-</tr>
-</table>
-<h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code></div>
-</div></div>
-</div>
-<a id="method_addItem"></a><div class="element clickable method protected method_addItem" data-toggle="collapse" data-target=".method_addItem .collapse">
-<h2>Add an item to the list</h2>
-<pre>addItem(mixed $item) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::addItem()</td>
+<td>\Yetti\API\BaseAbstract::webservice()</td>
 </tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$item</h4>
-<code>mixed</code>
-</div>
-</div></div>
-</div>
-<a id="method_loadItemObjects"></a><div class="element clickable method protected method_loadItemObjects" data-toggle="collapse" data-target=".method_loadItemObjects .collapse">
-<h2>Load the filter objects in this list</h2>
-<pre>loadItemObjects() : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code></div>
 </div></div>
 </div>
 <a id="method_makeRequestReturnResult"></a><div class="element clickable method protected method_makeRequestReturnResult" data-toggle="collapse" data-target=".method_makeRequestReturnResult .collapse">
@@ -332,35 +383,12 @@ Must be called after everything else has been set up</h2>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::makeRequestReturnResult()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::makeRequestReturnResult()</td>
-</tr>
-</table>
-<h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
-</div></div>
-</div>
-<a id="method_setAutoPaginate"></a><div class="element clickable method protected method_setAutoPaginate" data-toggle="collapse" data-target=".method_setAutoPaginate .collapse">
-<h2>Set whether or not getItems() should auto paginate</h2>
-<pre>setAutoPaginate(bool $autoPaginate) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::setAutoPaginate()</td>
+<td>\Yetti\API\BaseAbstract::makeRequestReturnResult()</td>
 </tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$autoPaginate</h4>
-<code>bool</code>
-</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
 </div></div>
 </div>
 <a id="method_getArrayAsObject"></a><div class="element clickable method private method_getArrayAsObject" data-toggle="collapse" data-target=".method_getArrayAsObject .collapse">
@@ -369,16 +397,10 @@ Must be called after everything else has been set up</h2>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
+<table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::getArrayAsObject()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::getArrayAsObject()</td>
-</tr>
-</table>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$array</h4>
@@ -390,46 +412,16 @@ Must be called after everything else has been set up</h2>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property__autoPagination"> </a><div class="element clickable property private property__autoPagination" data-toggle="collapse" data-target=".property__autoPagination .collapse">
-<h2></h2>
-<pre>$_autoPagination </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::$$_autoPagination</td>
-</tr></table>
-</div></div>
-</div>
-<a id="property__items"> </a><div class="element clickable property private property__items" data-toggle="collapse" data-target=".property__items .collapse">
-<h2></h2>
-<pre>$_items </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::$$_items</td>
-</tr></table>
-</div></div>
-</div>
 <a id="property__json"> </a><div class="element clickable property private property__json" data-toggle="collapse" data-target=".property__json .collapse">
 <h2></h2>
 <pre>$_json </pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
+<table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::$$_json</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::$$_json</td>
-</tr>
-</table>
+</tr></table>
 </div></div>
 </div>
 <a id="property__webservice"> </a><div class="element clickable property private property__webservice" data-toggle="collapse" data-target=".property__webservice .collapse">
@@ -438,16 +430,10 @@ Must be called after everything else has been set up</h2>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
+<table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::$$_webservice</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::$$_webservice</td>
-</tr>
-</table>
+</tr></table>
 </div></div>
 </div>
 </div>

@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Yetti API - PHP Bindings » \Yetti\API\Item_Combination</title>
+<title>Yetti API - PHP Bindings » \Yetti\API\User_Address</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,19 +58,35 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_getId" title="getId :: Returns the combination ID"><span class="description">Returns the combination ID</span><pre>getId()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Construct a new address object"><span class="description">Construct a new address object</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_getCity" title="getCity :: Returns the city"><span class="description">Returns the city</span><pre>getCity()</pre></a></li>
+<li class="method public "><a href="#method_getCountryId" title="getCountryId :: Returns the country ID"><span class="description">Returns the country ID</span><pre>getCountryId()</pre></a></li>
+<li class="method public "><a href="#method_getCountryName" title="getCountryName :: Returns the country name"><span class="description">Returns the country name</span><pre>getCountryName()</pre></a></li>
+<li class="method public "><a href="#method_getFirstname" title="getFirstname :: Returns the first name"><span class="description">Returns the first name</span><pre>getFirstname()</pre></a></li>
+<li class="method public "><a href="#method_getId" title="getId :: Returns the address ID"><span class="description">Returns the address ID</span><pre>getId()</pre></a></li>
+<li class="method public "><a href="#method_getIdentifier" title="getIdentifier :: Returns the identifier"><span class="description">Returns the identifier</span><pre>getIdentifier()</pre></a></li>
 <li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public "><a href="#method_getOptions" title="getOptions :: Returns this combination's options"><span class="description">Returns this combination's options</span><pre>getOptions()</pre></a></li>
-<li class="method public "><a href="#method_getPrice" title="getPrice :: Returns this combination's price"><span class="description">Returns this combination's price</span><pre>getPrice()</pre></a></li>
-<li class="method public "><a href="#method_getSku" title="getSku :: Returns this combination's SKU"><span class="description">Returns this combination's SKU</span><pre>getSku()</pre></a></li>
-<li class="method public "><a href="#method_getStock" title="getStock :: Returns this combination's stock level"><span class="description">Returns this combination's stock level</span><pre>getStock()</pre></a></li>
-<li class="method public "><a href="#method_isAvailable" title="isAvailable :: Returns whether or not this combination is marked as available for purchase."><span class="description">Returns whether or not this combination is marked as available for purchase.</span><pre>isAvailable()</pre></a></li>
-<li class="method public "><a href="#method_load" title="load :: Load a combination by ID"><span class="description">Load a combination by ID</span><pre>load()</pre></a></li>
-<li class="method public "><a href="#method_save" title="save :: Save this combination"><span class="description">Save this combination</span><pre>save()</pre></a></li>
-<li class="method public "><a href="#method_setAvailable" title="setAvailable :: Set whether or not this combination is available for purchase"><span class="description">Set whether or not this combination is available for purchase</span><pre>setAvailable()</pre></a></li>
+<li class="method public "><a href="#method_getLine1" title="getLine1 :: Returns the address line 1"><span class="description">Returns the address line 1</span><pre>getLine1()</pre></a></li>
+<li class="method public "><a href="#method_getLine2" title="getLine2 :: Returns address line 2"><span class="description">Returns address line 2</span><pre>getLine2()</pre></a></li>
+<li class="method public "><a href="#method_getPostcode" title="getPostcode :: Returns the postcode"><span class="description">Returns the postcode</span><pre>getPostcode()</pre></a></li>
+<li class="method public "><a href="#method_getRegion" title="getRegion :: Returns the region"><span class="description">Returns the region</span><pre>getRegion()</pre></a></li>
+<li class="method public "><a href="#method_getSurname" title="getSurname :: Returns the surname"><span class="description">Returns the surname</span><pre>getSurname()</pre></a></li>
+<li class="method public "><a href="#method_getTelephone" title="getTelephone :: Returns the telephone number"><span class="description">Returns the telephone number</span><pre>getTelephone()</pre></a></li>
+<li class="method public "><a href="#method_getUserId" title="getUserId :: Returns the user ID"><span class="description">Returns the user ID</span><pre>getUserId()</pre></a></li>
+<li class="method public "><a href="#method_load" title="load :: Load an address by user ID and address ID"><span class="description">Load an address by user ID and address ID</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#method_save" title="save :: Save this address"><span class="description">Save this address</span><pre>save()</pre></a></li>
+<li class="method public "><a href="#method_setCity" title="setCity :: Set the city"><span class="description">Set the city</span><pre>setCity()</pre></a></li>
+<li class="method public "><a href="#method_setCountryId" title="setCountryId :: Set the country ID"><span class="description">Set the country ID</span><pre>setCountryId()</pre></a></li>
+<li class="method public "><a href="#method_setFirstname" title="setFirstname :: Set the first name"><span class="description">Set the first name</span><pre>setFirstname()</pre></a></li>
+<li class="method public "><a href="#method_setIdentifier" title="setIdentifier :: Sets the address identifier"><span class="description">Sets the address identifier</span><pre>setIdentifier()</pre></a></li>
 <li class="method public inherited"><a href="#method_setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
-<li class="method public "><a href="#method_setSku" title="setSku :: Set the SKU"><span class="description">Set the SKU</span><pre>setSku()</pre></a></li>
-<li class="method public "><a href="#method_setStock" title="setStock :: Set the stock level"><span class="description">Set the stock level</span><pre>setStock()</pre></a></li>
+<li class="method public "><a href="#method_setLine1" title="setLine1 :: Set the address line 1"><span class="description">Set the address line 1</span><pre>setLine1()</pre></a></li>
+<li class="method public "><a href="#method_setLine2" title="setLine2 :: Set the address line 2"><span class="description">Set the address line 2</span><pre>setLine2()</pre></a></li>
+<li class="method public "><a href="#method_setPostcode" title="setPostcode :: Set the postcode"><span class="description">Set the postcode</span><pre>setPostcode()</pre></a></li>
+<li class="method public "><a href="#method_setRegion" title="setRegion :: Set the region"><span class="description">Set the region</span><pre>setRegion()</pre></a></li>
+<li class="method public "><a href="#method_setSurname" title="setSurname :: Set the surname"><span class="description">Set the surname</span><pre>setSurname()</pre></a></li>
+<li class="method public "><a href="#method_setTelephone" title="setTelephone :: Set the telephone number"><span class="description">Set the telephone number</span><pre>setTelephone()</pre></a></li>
+<li class="method public "><a href="#method_setUserId" title="setUserId :: Set the user ID"><span class="description">Set the user ID</span><pre>setUserId()</pre></a></li>
 <li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
 <li class="method public inherited"><a href="#method_webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 </ul>
@@ -90,13 +106,14 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <li class="nav-header private">» Private
                     <ul>
 <li class="property private inherited"><a href="#property__json" title="$_json :: "><span class="description"></span><pre>$_json</pre></a></li>
+<li class="property private "><a href="#property__userId" title="$_userId :: "><span class="description"></span><pre>$_userId</pre></a></li>
 <li class="property private inherited"><a href="#property__webservice" title="$_webservice :: "><span class="description"></span><pre>$_webservice</pre></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\Yetti\API\Item_Combination"></a><ul class="breadcrumb">
+<a id="\Yetti\API\User_Address"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -105,11 +122,11 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <span class="divider">\</span><a href="../namespaces/Yetti.API.html">API</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Yetti.API.Item_Combination.html">Item_Combination</a>
+<span class="divider">\</span><a href="../classes/Yetti.API.User_Address.html">User_Address</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Item combination model.</p>
+<p class="short_description">User address model.</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -119,7 +136,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </tr>
 <tr>
 <th>copyright</th>
-<td>Copyright (c) 2012, Yetti Ltd.</td>
+<td>Copyright (c) 2011-2013, Yetti Ltd.</td>
 </tr>
 <tr>
 <th>package</th>
@@ -128,14 +145,70 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Construct a new address object</h2>
+<pre>__construct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getCity"></a><div class="element clickable method public method_getCity" data-toggle="collapse" data-target=".method_getCity .collapse">
+<h2>Returns the city</h2>
+<pre>getCity() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getCountryId"></a><div class="element clickable method public method_getCountryId" data-toggle="collapse" data-target=".method_getCountryId .collapse">
+<h2>Returns the country ID</h2>
+<pre>getCountryId() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_getCountryName"></a><div class="element clickable method public method_getCountryName" data-toggle="collapse" data-target=".method_getCountryName .collapse">
+<h2>Returns the country name</h2>
+<pre>getCountryName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getFirstname"></a><div class="element clickable method public method_getFirstname" data-toggle="collapse" data-target=".method_getFirstname .collapse">
+<h2>Returns the first name</h2>
+<pre>getFirstname() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
 <a id="method_getId"></a><div class="element clickable method public method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
-<h2>Returns the combination ID</h2>
+<h2>Returns the address ID</h2>
 <pre>getId() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_getIdentifier"></a><div class="element clickable method public method_getIdentifier" data-toggle="collapse" data-target=".method_getIdentifier .collapse">
+<h2>Returns the identifier</h2>
+<pre>getIdentifier() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
 <a id="method_getJson"></a><div class="element clickable method public method_getJson" data-toggle="collapse" data-target=".method_getJson .collapse">
@@ -157,31 +230,9 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
 </div></div>
 </div>
-<a id="method_getOptions"></a><div class="element clickable method public method_getOptions" data-toggle="collapse" data-target=".method_getOptions .collapse">
-<h2>Returns this combination's options</h2>
-<pre>getOptions() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_getPrice"></a><div class="element clickable method public method_getPrice" data-toggle="collapse" data-target=".method_getPrice .collapse">
-<h2>Returns this combination's price</h2>
-<pre>getPrice() : float</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>float</code></div>
-</div></div>
-</div>
-<a id="method_getSku"></a><div class="element clickable method public method_getSku" data-toggle="collapse" data-target=".method_getSku .collapse">
-<h2>Returns this combination's SKU</h2>
-<pre>getSku() : string</pre>
+<a id="method_getLine1"></a><div class="element clickable method public method_getLine1" data-toggle="collapse" data-target=".method_getLine1 .collapse">
+<h2>Returns the address line 1</h2>
+<pre>getLine1() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -189,9 +240,59 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
-<a id="method_getStock"></a><div class="element clickable method public method_getStock" data-toggle="collapse" data-target=".method_getStock .collapse">
-<h2>Returns this combination's stock level</h2>
-<pre>getStock() : int</pre>
+<a id="method_getLine2"></a><div class="element clickable method public method_getLine2" data-toggle="collapse" data-target=".method_getLine2 .collapse">
+<h2>Returns address line 2</h2>
+<pre>getLine2() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getPostcode"></a><div class="element clickable method public method_getPostcode" data-toggle="collapse" data-target=".method_getPostcode .collapse">
+<h2>Returns the postcode</h2>
+<pre>getPostcode() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getRegion"></a><div class="element clickable method public method_getRegion" data-toggle="collapse" data-target=".method_getRegion .collapse">
+<h2>Returns the region</h2>
+<pre>getRegion() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getSurname"></a><div class="element clickable method public method_getSurname" data-toggle="collapse" data-target=".method_getSurname .collapse">
+<h2>Returns the surname</h2>
+<pre>getSurname() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getTelephone"></a><div class="element clickable method public method_getTelephone" data-toggle="collapse" data-target=".method_getTelephone .collapse">
+<h2>Returns the telephone number</h2>
+<pre>getTelephone() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getUserId"></a><div class="element clickable method public method_getUserId" data-toggle="collapse" data-target=".method_getUserId .collapse">
+<h2>Returns the user ID</h2>
+<pre>getUserId() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -199,25 +300,19 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
-<a id="method_isAvailable"></a><div class="element clickable method public method_isAvailable" data-toggle="collapse" data-target=".method_isAvailable .collapse">
-<h2>Returns whether or not this combination is marked as available for purchase.</h2>
-<pre>isAvailable() : bool</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>bool</code></div>
-</div></div>
-</div>
 <a id="method_load"></a><div class="element clickable method public method_load" data-toggle="collapse" data-target=".method_load .collapse">
-<h2>Load a combination by ID</h2>
-<pre>load(int $combinationId) : bool</pre>
+<h2>Load an address by user ID and address ID</h2>
+<pre>load(int $userId, int $addressId) : bool</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$combinationId</h4>
+<h4>$userId</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$addressId</h4>
 <code>int</code>
 </div>
 <h3>Returns</h3>
@@ -225,7 +320,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div></div>
 </div>
 <a id="method_save"></a><div class="element clickable method public method_save" data-toggle="collapse" data-target=".method_save .collapse">
-<h2>Save this combination</h2>
+<h2>Save this address</h2>
 <pre>save() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -234,16 +329,55 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
 </div></div>
 </div>
-<a id="method_setAvailable"></a><div class="element clickable method public method_setAvailable" data-toggle="collapse" data-target=".method_setAvailable .collapse">
-<h2>Set whether or not this combination is available for purchase</h2>
-<pre>setAvailable(bool $available) : void</pre>
+<a id="method_setCity"></a><div class="element clickable method public method_setCity" data-toggle="collapse" data-target=".method_setCity .collapse">
+<h2>Set the city</h2>
+<pre>setCity(string $city) : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$available</h4>
-<code>bool</code>
+<h4>$city</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setCountryId"></a><div class="element clickable method public method_setCountryId" data-toggle="collapse" data-target=".method_setCountryId .collapse">
+<h2>Set the country ID</h2>
+<pre>setCountryId(int $id) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_setFirstname"></a><div class="element clickable method public method_setFirstname" data-toggle="collapse" data-target=".method_setFirstname .collapse">
+<h2>Set the first name</h2>
+<pre>setFirstname(string $name) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setIdentifier"></a><div class="element clickable method public method_setIdentifier" data-toggle="collapse" data-target=".method_setIdentifier .collapse">
+<h2>Sets the address identifier</h2>
+<pre>setIdentifier(string $identifier) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$identifier</h4>
+<code>string</code>
 </div>
 </div></div>
 </div>
@@ -264,28 +398,93 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </div>
 </div></div>
 </div>
-<a id="method_setSku"></a><div class="element clickable method public method_setSku" data-toggle="collapse" data-target=".method_setSku .collapse">
-<h2>Set the SKU</h2>
-<pre>setSku(string $sku) : void</pre>
+<a id="method_setLine1"></a><div class="element clickable method public method_setLine1" data-toggle="collapse" data-target=".method_setLine1 .collapse">
+<h2>Set the address line 1</h2>
+<pre>setLine1(string $line) : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$sku</h4>
+<h4>$line</h4>
 <code>string</code>
 </div>
 </div></div>
 </div>
-<a id="method_setStock"></a><div class="element clickable method public method_setStock" data-toggle="collapse" data-target=".method_setStock .collapse">
-<h2>Set the stock level</h2>
-<pre>setStock(int $stock) : void</pre>
+<a id="method_setLine2"></a><div class="element clickable method public method_setLine2" data-toggle="collapse" data-target=".method_setLine2 .collapse">
+<h2>Set the address line 2</h2>
+<pre>setLine2(string $line) : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$stock</h4>
+<h4>$line</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setPostcode"></a><div class="element clickable method public method_setPostcode" data-toggle="collapse" data-target=".method_setPostcode .collapse">
+<h2>Set the postcode</h2>
+<pre>setPostcode(string $postcode) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$postcode</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setRegion"></a><div class="element clickable method public method_setRegion" data-toggle="collapse" data-target=".method_setRegion .collapse">
+<h2>Set the region</h2>
+<pre>setRegion(string $region) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$region</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setSurname"></a><div class="element clickable method public method_setSurname" data-toggle="collapse" data-target=".method_setSurname .collapse">
+<h2>Set the surname</h2>
+<pre>setSurname(string $name) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setTelephone"></a><div class="element clickable method public method_setTelephone" data-toggle="collapse" data-target=".method_setTelephone .collapse">
+<h2>Set the telephone number</h2>
+<pre>setTelephone(string $number) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$number</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setUserId"></a><div class="element clickable method public method_setUserId" data-toggle="collapse" data-target=".method_setUserId .collapse">
+<h2>Set the user ID</h2>
+<pre>setUserId(int $userId) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userId</h4>
 <code>int</code>
 </div>
 </div></div>
@@ -368,6 +567,12 @@ Must be called after everything else has been set up</h2>
 <td>\Yetti\API\BaseAbstract::$$_json</td>
 </tr></table>
 </div></div>
+</div>
+<a id="property__userId"> </a><div class="element clickable property private property__userId" data-toggle="collapse" data-target=".property__userId .collapse">
+<h2></h2>
+<pre>$_userId </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property__webservice"> </a><div class="element clickable property private property__webservice" data-toggle="collapse" data-target=".property__webservice .collapse">
 <h2></h2>
