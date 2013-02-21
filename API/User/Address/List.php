@@ -1,0 +1,69 @@
+<?php
+
+namespace Yetti\API;
+
+/**
+ * User address list model
+ *
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
+ * @package yetti-api
+ */
+
+class User_Address_List extends ListAbstract
+{
+	/**
+	 * Load a list of addresses for a user
+	 * 
+	 * @var int $userId
+	 * @return bool
+	 */
+	public function load($userId)
+	{
+		$this->webservice()->setRequestMethod('get');
+		$this->webservice()->setRequestPath('/users/na/' . $userId . '/addresses.ws');
+		
+		if ($this->webservice()->makeRequest())
+		{
+			$this->setJson($this->webservice()->getResponseJsonObject());
+			return true;
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * Load the address objects in this list
+	 * 
+	 * @return array
+	 */
+	protected function loadItemObjects()
+	{
+		foreach ($this->getJson()->addresses as $json)
+		{
+			$item = new User_Address();
+			$item->setJson($json);
+			$this->addItem($item);
+		}
+	}
+	
+	/**
+	 * Returns the total number of pages in the list
+	 * 
+	 * @return int
+	 */
+	public function getTotalPages()
+	{
+		return 1;
+	}
+	
+	/**
+	 * Returns the current page
+	 * 
+	 * @return int
+	 */
+	public function getCurrentPage()
+	{
+		return 1;
+	}
+}

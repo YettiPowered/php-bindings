@@ -1,0 +1,350 @@
+<?php
+
+namespace Yetti\API;
+
+/**
+ * User address model.
+ * 
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
+ * @package yetti-api
+ */
+
+class User_Address extends BaseAbstract
+{
+	private
+	
+		/**
+		 * The user who owns this address
+		 * 
+		 * @var int
+		 */
+		$_userId;
+	
+	/**
+	 * Construct a new address object
+	 * 
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->setJson((object)array(
+			'id'		  => null,
+			'identifier'  => null,
+			'firstName'	  => null,
+			'surname'	  => null,
+			'line1'		  => null,
+			'line2'		  => null,
+			'city'		  => null,
+			'region'	  => null,
+			'postcode'	  => null,
+			'telephone'	  => null,
+			'countryName' => null,
+			'countryId'   => null,
+		));
+	}
+	
+	/**
+	 * Load an address by user ID and address ID
+	 * 
+	 * @param int $userId
+	 * @param int $addressId
+	 * @return bool
+	 */
+	public function load($userId, $addressId)
+	{
+		$this->webservice()->setRequestPath('/users/na/' . $userId . '/addresses/' . $addressId . '.ws');
+		$this->webservice()->setRequestMethod('get');
+		
+		if ($this->webservice()->makeRequest())
+		{
+			if ($address = isset($this->webservice()->getResponseJsonObject()->address) ? $this->webservice()->getResponseJsonObject()->address : null)
+			{
+				$this->setUserId($userId);
+				$this->setJson($address);
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * Save this address
+	 * 
+	 * @return \Yetti\API\Result
+	 */
+	public function save()
+	{
+		$this->webservice()->setRequestPath('/users/na/' . $this->getUserId() . '/addresses.ws');
+		$this->webservice()->setRequestMethod('post');
+		
+		if ($this->getId())
+		{
+			$this->webservice()->setRequestMethod('put');
+			$this->webservice()->setRequestParam('addressId', $this->getId());
+		}
+		
+		$this->webservice()->setPostData(json_encode(array('address' => $this->getJson())));
+		$result = $this->makeRequestReturnResult();
+		
+		if ($result->success() && !$this->getId()) {
+			$this->getJson()->id = (int)$this->webservice()->getResponseHeader('X-ResourceId');
+		}
+		
+		return $result;
+	}
+	
+	/**
+	 * Returns the address ID
+	 * 
+	 * @return int
+	 */
+	public function getId()
+	{
+		return (int)$this->getJson()->id;
+	}
+	
+	/**
+	 * Set the user ID
+	 * 
+	 * @param int $userId
+	 * @return void
+	 */
+	public function setUserId($userId)
+	{
+		if (is_numeric($userId)) {
+			$this->_userId = (int)$userId;
+		}
+	}
+	
+	/**
+	 * Returns the user ID
+	 * 
+	 * @return int
+	 */
+	public function getUserId()
+	{
+		return (int)$this->_userId;
+	}
+	
+	/**
+	 * Sets the address identifier
+	 * 
+	 * @param string $identifier
+	 * @return void
+	 */
+	public function setIdentifier($identifier)
+	{
+		$this->getJson()->identifier = $identifier;
+	}
+	
+	/**
+	 * Returns the identifier
+	 * 
+	 * @return string
+	 */
+	public function getIdentifier()
+	{
+		return $this->getJson()->identifier;
+	}
+	
+	/**
+	 * Set the first name
+	 * 
+	 * @param string $name
+	 * @return void
+	 */
+	public function setFirstname($name)
+	{
+		$this->getJson()->firstName = $name;
+	}
+	
+	/**
+	 * Returns the first name
+	 * 
+	 * @return string
+	 */
+	public function getFirstname()
+	{
+		return $this->getJson()->firstName;
+	}
+	
+	/**
+	 * Set the surname
+	 * 
+	 * @param string $name
+	 * @return void
+	 */
+	public function setSurname($name)
+	{
+		$this->getJson()->surname = $name;
+	}
+	
+	/**
+	 * Returns the surname
+	 * 
+	 * @return string
+	 */
+	public function getSurname()
+	{
+		return $this->getJson()->surname;
+	}
+	
+	/**
+	 * Set the address line 1
+	 * 
+	 * @param string $line
+	 * @return void
+	 */
+	public function setLine1($line)
+	{
+		$this->getJson()->line1 = $line;
+	}
+	
+	/**
+	 * Returns the address line 1
+	 * 
+	 * @return string
+	 */
+	public function getLine1()
+	{
+		return $this->getJson()->line1;
+	}
+	
+	/**
+	 * Set the address line 2
+	 * 
+	 * @param string $line
+	 * @return void
+	 */
+	public function setLine2($line)
+	{
+		$this->getJson()->line2 = $line;
+	}
+	
+	/**
+	 * Returns address line 2
+	 * 
+	 * @return string
+	 */
+	public function getLine2()
+	{
+		return $this->getJson()->line2;
+	}
+	
+	/**
+	 * Set the city
+	 * 
+	 * @param string $city
+	 * @return void
+	 */
+	public function setCity($city)
+	{
+		$this->getJson()->city = $city;
+	}
+	
+	/**
+	 * Returns the city
+	 * 
+	 * @return string
+	 */
+	public function getCity()
+	{
+		return $this->getJson()->city;
+	}
+	
+	/**
+	 * Set the region
+	 * 
+	 * @param string $region
+	 * @return void
+	 */
+	public function setRegion($region)
+	{
+		$this->getJson()->region = $region;
+	}
+	
+	/**
+	 * Returns the region
+	 * 
+	 * @return string
+	 */
+	public function getRegion()
+	{
+		return $this->getJson()->region;
+	}
+	
+	/**
+	 * Set the postcode
+	 * 
+	 * @param string $postcode
+	 * @return void
+	 */
+	public function setPostcode($postcode)
+	{
+		$this->getJson()->postcode = $postcode;
+	}
+	
+	/**
+	 * Returns the postcode
+	 * 
+	 * @return string
+	 */
+	public function getPostcode()
+	{
+		return $this->getJson()->postcode;
+	}
+	
+	/**
+	 * Set the telephone number
+	 * 
+	 * @param string $number
+	 * @return void
+	 */
+	public function setTelephone($number)
+	{
+		$this->getJson()->telephone = $number;
+	}
+	
+	/**
+	 * Returns the telephone number
+	 * 
+	 * @return string
+	 */
+	public function getTelephone()
+	{
+		return $this->getJson()->telephone;
+	}
+	
+	/**
+	 * Set the country ID
+	 * 
+	 * @param int $id
+	 * @return void
+	 */
+	public function setCountryId($id)
+	{
+		$this->getJson()->countryId = (int)$id;
+	}
+	
+	/**
+	 * Returns the country ID
+	 * 
+	 * @return int
+	 */
+	public function getCountryId()
+	{
+		return (int)$this->getJson()->countryId;
+	}
+	
+	/**
+	 * Returns the country name
+	 * 
+	 * @return string
+	 */
+	public function getCountryName()
+	{
+		return $this->getJson()->countryName;
+	}
+}
