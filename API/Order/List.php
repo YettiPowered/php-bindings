@@ -16,13 +16,22 @@ class Order_List extends Resource_ListAbstract
 	/**
 	 * Load a list of orders
 	 * 
+	 * @param int $statusId
+	 * @param int $page
 	 * @return bool
 	 */
-	public function load($status=null)
+	public function load($statusId=null, $page=null)
 	{
 		$this->webservice()->setRequestMethod('get');
 		$this->webservice()->setRequestPath('/orders.ws');
-		$this->webservice()->setRequestParam('status', $status);
+		$this->webservice()->setRequestParam('status', $statusId);
+		
+		if ($page) {
+			$this->webservice()->setRequestParam('page', (int)$page);
+		}
+		else {
+			$this->setAutoPaginate();
+		}
 		
 		if ($this->webservice()->makeRequest())
 		{
