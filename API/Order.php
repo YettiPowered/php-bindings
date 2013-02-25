@@ -1,6 +1,7 @@
 <?php
 
 namespace Yetti\API;
+use Yetti\API\User_Address;
 
 /**
  * Order model.
@@ -157,6 +158,19 @@ class Order extends BaseAbstract
 	}
 	
 	/**
+	 * Returns an address object representing shipping details for this order
+	 * 
+	 * @return User_Address
+	 */
+	public function getShippingAddress()
+	{
+		$address = new User_Address();
+		$address->load($this->getUserId(), $this->getShippingAddressId());
+		
+		return $address;
+	}
+	
+	/**
 	 * Sets the billing address ID
 	 * 
 	 * @param int $id
@@ -175,6 +189,19 @@ class Order extends BaseAbstract
 	public function getBillingAddressId()
 	{
 		return (int)$this->getJson()->user->addresses->billing->id;
+	}
+	
+	/**
+	 * Returns an address object representing billing details for this order
+	 * 
+	 * @return User_Address
+	 */
+	public function getBillingAddress()
+	{
+		$address = new User_Address();
+		$address->load($this->getUserId(), $this->getBillingAddressId());
+		
+		return $address;
 	}
 	
 	/**
@@ -202,16 +229,45 @@ class Order extends BaseAbstract
 	 * Add an item to this order
 	 * 
 	 * @param int $itemId
+	 * @param int $combinationId
 	 * @param float $quantity
 	 * @return void
 	 */
-	public function addItem($itemId, $quantity)
+	public function addItem($itemId, $combinationId, $quantity)
 	{
 		$this->getJson()->items[] = array(
-			'quantity' => (float)$quantity,
 			'resource' => array(
-				'resourceId' => $itemId,
+				'resourceId' => (int)$itemId,
 			),
+			'combination' => array(
+				'id' => (int)$combinationId,
+			),
+			'quantity' => (float)$quantity,
 		);
+	}
+	
+	/**
+	 * Returns an array of items in this order
+	 * 
+	 * @return array
+	 */
+	public function getItems()
+	{
+		$items = array();
+		
+		foreach ($this->getJson()->items as $itemData)
+		{
+			$items[] = array(
+				'resource' => array(
+					'resourceId' => (int)$itemData->resource->resourceId,
+				),
+				'combination' => array(
+					'id' => (int)$itemData->combination->id,
+				),
+				'quantity' => (float)$itemData->quantity,
+			);
+		}
+		
+		return $items;
 	}
 }

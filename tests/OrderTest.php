@@ -1,7 +1,7 @@
 <?php
 
 namespace Yetti\API\Tests;
-use Yetti\API\User, Yetti\API\User_Address, Yetti\API\Order;
+use Yetti\API\User, Yetti\API\User_Address, Yetti\API\Item, Yetti\API\Item_Combination_List, Yetti\API\Order;
 
 /**
  * Test methods for the order model.
@@ -44,6 +44,26 @@ class OrderTest extends AuthAbstract
 		$this->assertTrue($address->save()->success());
 		
 		/**
+		 * Create an item
+		 */
+		$item = new Item();
+		$item->loadTemplate(5);
+		$item->setName('Test product' . microtime(true));
+		$item->setPropertyValue('Name', 'Test product for order');
+		$item->setPropertyValue('Description', 'A tasty horse');
+		$item->addPricingTier(19);
+		$variation = $item->addVariation('Variation');
+		$variation->addOption('An option');
+		$this->assertTrue($item->save()->success());
+		
+		$combinationList = new Item_Combination_List();
+		$combinationList->load($item->getId());
+		$this->assertEquals(2, $combinationList->getTotalItemCount());
+		$combination = $combinationList->getItems()->first();
+		$combination->setSku('SKU123');
+		$this->assertTrue($combination->save()->success());
+		
+		/**
 		 * Now create the order
 		 */
 		$order = new Order();
@@ -54,6 +74,7 @@ class OrderTest extends AuthAbstract
 		$order->setUserId($user->getId());
 		$order->setShippingAddressId($address->getId());
 		$order->setBillingAddressId($address->getId());
+		$order->addItem($item->getId(), $combination->getId(), 1);
 		$this->assertTrue($order->save()->success());
 		
 		return $order;
@@ -67,6 +88,16 @@ class OrderTest extends AuthAbstract
 		$order = new Order();
 		$this->assertFalse($order->load(-1));
 		$this->assertTrue($order->load($inOrder->getId()));
+		
+		$this->assertEquals('1 Test Street', $order->getShippingAddress()->getLine1());
+		$this->assertEquals('1 Test Street', $order->getBillingAddress()->getLine1());
+		
+		$items = $order->getItems();
+		$this->assertCount(1, $items);
+		
+		$item = new Item();
+		$this->assertTrue($item->load($items[0]['resource']['resourceId']));
+		$this->assertEquals('Test product for order', $item->getDisplayName());
 		
 		return $order;
 	}
