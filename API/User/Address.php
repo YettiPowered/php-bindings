@@ -53,7 +53,7 @@ class User_Address extends BaseAbstract
 	 */
 	public function load($userId, $addressId)
 	{
-		$this->webservice()->setRequestPath('/users/na/' . $userId . '/addresses/' . $addressId . '.ws');
+		$this->webservice()->setRequestPath('/users/-1/' . $userId . '/addresses/' . $addressId . '.ws');
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -78,12 +78,12 @@ class User_Address extends BaseAbstract
 	{
 		if ($addressId = $this->getId())
 		{
-			$this->webservice()->setRequestPath('/users/na/' . $this->getUserId() . '/addresses/' . $addressId . '.ws');
+			$this->webservice()->setRequestPath('/users/-1/' . $this->getUserId() . '/addresses/' . $addressId . '.ws');
 			$this->webservice()->setRequestMethod('put');
 		}
 		else
 		{
-			$this->webservice()->setRequestPath('/users/na/' . $this->getUserId() . '/addresses.ws');
+			$this->webservice()->setRequestPath('/users/-1/' . $this->getUserId() . '/addresses.ws');
 			$this->webservice()->setRequestMethod('post');
 		}
 		

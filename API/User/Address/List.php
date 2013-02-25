@@ -21,7 +21,7 @@ class User_Address_List extends ListAbstract
 	public function load($userId)
 	{
 		$this->webservice()->setRequestMethod('get');
-		$this->webservice()->setRequestPath('/users/na/' . $userId . '/addresses.ws');
+		$this->webservice()->setRequestPath('/users/-1/' . $userId . '/addresses.ws');
 		
 		if ($this->webservice()->makeRequest())
 		{
