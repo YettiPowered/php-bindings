@@ -96,7 +96,7 @@ class OrderTest extends AuthAbstract
 		$this->assertCount(1, $items);
 		
 		$item = new Item();
-		$this->assertTrue($item->load($items[0]['resource']['resourceId']));
+		$this->assertTrue($item->load($items[0]->getResourceId()));
 		$this->assertEquals('Test product for order', $item->getDisplayName());
 		
 		return $order;

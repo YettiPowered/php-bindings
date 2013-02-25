@@ -257,15 +257,9 @@ class Order extends BaseAbstract
 		
 		foreach ($this->getJson()->items as $itemData)
 		{
-			$items[] = array(
-				'resource' => array(
-					'resourceId' => (int)$itemData->resource->resourceId,
-				),
-				'combination' => array(
-					'id' => (int)$itemData->combination->id,
-				),
-				'quantity' => (float)$itemData->quantity,
-			);
+			$item = new Order_Item();
+			$item->setJson($itemData);
+			$items[] = $item;
 		}
 		
 		return $items;
