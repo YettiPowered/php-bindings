@@ -6,14 +6,27 @@ namespace Yetti\API;
  * Item filter type model.
  * 
  * @author Sam Holman <sam@yetti.co.uk>
- * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  */
 
 class Item_Filter_Type extends BaseAbstract
 {
 	private
-		$_itemTypeId;
+	
+		/**
+		 * The item type ID to which this filter type is associated
+		 * 
+		 * @var int
+		 */
+		$_itemTypeId,
+		
+		/**
+		 * The collection ID to which this filter type is associated
+		 * 
+		 * @var int
+		 */
+		$_collectionId;
 	
 	/**
 	 * Load a filter type by ID
@@ -23,7 +36,7 @@ class Item_Filter_Type extends BaseAbstract
 	 */
 	public function load($filterTypeId)
 	{
-		$this->webservice()->setRequestPath('/items/filters/null/' . $filterTypeId . '.ws');
+		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/null/' . $filterTypeId . '.ws');
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -42,7 +55,7 @@ class Item_Filter_Type extends BaseAbstract
 	 */
 	public function save()
 	{
-		$this->webservice()->setRequestPath('/items/filters/' . $this->_itemTypeId . '.ws');
+		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/' . ($this->_collectionId ?: $this->_itemTypeId) . '.ws');
 		$this->webservice()->setRequestMethod('post');
 		
 		if ($this->getId())
@@ -71,6 +84,19 @@ class Item_Filter_Type extends BaseAbstract
 	{
 		if (is_numeric($id)) {
 			$this->_itemTypeId = (int)$id;
+		}
+	}
+	
+	/**
+	 * Set the collection ID for this filter type
+	 * 
+	 * @param int $id
+	 * @return void
+	 */
+	public function setCollectionId($id)
+	{
+		if (is_numeric($id)) {
+			$this->_collectionId = (int)$id;
 		}
 	}
 	
@@ -125,5 +151,15 @@ class Item_Filter_Type extends BaseAbstract
 		}
 		
 		return parent::getJson();
+	}
+	
+	/**
+	 * Returns the URI base string
+	 * 
+	 * @return string
+	 */
+	protected function getUriBase()
+	{
+		return 'items';
 	}
 }

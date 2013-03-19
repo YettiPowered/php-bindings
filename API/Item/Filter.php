@@ -6,13 +6,19 @@ namespace Yetti\API;
  * Item filter model.
  * 
  * @author Sam Holman <sam@yetti.co.uk>
- * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  */
 
 class Item_Filter extends BaseAbstract
 {
 	private
+	
+		/**
+		 * The filter type ID for this filter
+		 * 
+		 * @var int
+		 */
 		$_filterTypeId;
 	
 	/**
@@ -23,7 +29,7 @@ class Item_Filter extends BaseAbstract
 	 */
 	public function load($filterId)
 	{
-		$this->webservice()->setRequestPath('/items/filters/null/null/' . $filterId . '.ws');
+		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/null/null/' . $filterId . '.ws');
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -43,7 +49,7 @@ class Item_Filter extends BaseAbstract
 	 */
 	public function save()
 	{
-		$this->webservice()->setRequestPath('/items/filters/null/' . $this->_filterTypeId . '.ws');
+		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/null/' . $this->_filterTypeId . '.ws');
 		$this->webservice()->setRequestMethod('post');
 		
 		if ($this->getId())
@@ -69,7 +75,7 @@ class Item_Filter extends BaseAbstract
 	 */
 	public function delete()
 	{
-		$this->webservice()->setRequestPath('/items/filters/null/null/' . $this->getId() . '.ws');
+		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/null/null/' . $this->getId() . '.ws');
 		$this->webservice()->setRequestMethod('delete');
 		return $this->makeRequestReturnResult();
 	}
@@ -196,5 +202,15 @@ class Item_Filter extends BaseAbstract
 		}
 		
 		return parent::getJson();
+	}
+	
+	/**
+	 * Returns the URI base string
+	 * 
+	 * @return string
+	 */
+	protected function getUriBase()
+	{
+		return 'items';
 	}
 }
