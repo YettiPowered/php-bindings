@@ -3,25 +3,25 @@
 namespace Yetti\API;
 
 /**
- * Item filter type list model
+ * Collection filter type list model
  *
  * @author Sam Holman <sam@yetti.co.uk>
  * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  */
 
-class Item_Filter_Type_List extends ListAbstract
+class Collection_Filter_Type_List extends ListAbstract
 {
 	/**
-	 * Load a list of filter types for the given item type
+	 * Load a list of filter types for the given collection
 	 * 
-	 * @param int $itemTypeId
+	 * @param int $collectionId
 	 * @return bool
 	 */
-	public function load($itemTypeId)
+	public function load($collectionId)
 	{
 		$this->webservice()->setRequestMethod('get');
-		$this->webservice()->setRequestPath('/items/filters/' . $itemTypeId . '.ws');
+		$this->webservice()->setRequestPath('/collections/filters/' . $collectionId . '.ws');
 		
 		if ($this->webservice()->makeRequest())
 		{
@@ -41,7 +41,7 @@ class Item_Filter_Type_List extends ListAbstract
 	{
 		foreach ($this->getJson()->types as $json)
 		{
-			$item = new \Yetti\API\Item_Filter_Type();
+			$item = new \Yetti\API\Collection_Filter_Type();
 			$item->setJson($json);
 			$this->addItem($item);
 		}
