@@ -1,7 +1,7 @@
 <?php
 
 namespace Yetti\API\Tests;
-use Yetti\API\User, Yetti\API\User_Address, Yetti\API\Item, Yetti\API\Item_Combination_List, Yetti\API\Order;
+use Yetti\API\User, Yetti\API\User_Address, Yetti\API\Item, Yetti\API\Item_Combination_List, Yetti\API\Order, Yetti\API\Order_Note;
 
 /**
  * Test methods for the order model.
@@ -114,5 +114,22 @@ class OrderTest extends AuthAbstract
 		$order = new Order();
 		$this->assertTrue($order->load($inOrder->getId()));
 		$this->assertEquals(2, $order->getStatusId());
+		
+		return $order;
+	}
+	
+	/**
+	 * @depends testChangeStatus
+	 */
+	public function testAddNote(Order $order)
+	{
+		$note = new Order_Note();
+		$this->assertFalse($note->save()->success());
+		
+		$note->setOrderId($order->getId());
+		$this->assertFalse($note->save()->success());
+		
+		$note->setNote('You arse');
+		$this->assertTrue($note->save()->success());
 	}
 }
