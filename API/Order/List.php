@@ -18,9 +18,10 @@ class Order_List extends Resource_ListAbstract
 	 * 
 	 * @param int $statusId
 	 * @param int $page
+	 * @param string $countryCode
 	 * @return bool
 	 */
-	public function load($statusId=null, $page=null)
+	public function load($statusId=null, $page=null, $countryCode=null)
 	{
 		$this->webservice()->setRequestMethod('get');
 		$this->webservice()->setRequestPath('/orders.ws');
