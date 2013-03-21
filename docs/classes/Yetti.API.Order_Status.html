@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Yetti API - PHP Bindings » \Yetti\API\Resource_Property</title>
+<title>Yetti API - PHP Bindings » \Yetti\API\Order_Status</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,10 +58,9 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_getDataType" title="getDataType :: Returns the data type of this property"><span class="description">Returns the data type of this property</span><pre>getDataType()</pre></a></li>
-<li class="method public "><a href="#method_getId" title="getId :: Returns the property ID"><span class="description">Returns the property ID</span><pre>getId()</pre></a></li>
+<li class="method public "><a href="#method_getId" title="getId :: Returns the status ID"><span class="description">Returns the status ID</span><pre>getId()</pre></a></li>
 <li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public "><a href="#method_getValue" title="getValue :: Returns the value of this property"><span class="description">Returns the value of this property</span><pre>getValue()</pre></a></li>
+<li class="method public "><a href="#method_getName" title="getName :: Returns the name of this status"><span class="description">Returns the name of this status</span><pre>getName()</pre></a></li>
 <li class="method public inherited"><a href="#method_setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
 <li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
 <li class="method public inherited"><a href="#method_webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
@@ -88,7 +87,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </ul>
 </div>
 <div class="span8">
-<a id="\Yetti\API\Resource_Property"></a><ul class="breadcrumb">
+<a id="\Yetti\API\Order_Status"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -97,11 +96,11 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <span class="divider">\</span><a href="../namespaces/Yetti.API.html">API</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Yetti.API.Resource_Property.html">Resource_Property</a>
+<span class="divider">\</span><a href="../classes/Yetti.API.Order_Status.html">Order_Status</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Model represents a single property (of a resource)</p>
+<p class="short_description">Order status model.</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -120,18 +119,8 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_getDataType"></a><div class="element clickable method public method_getDataType" data-toggle="collapse" data-target=".method_getDataType .collapse">
-<h2>Returns the data type of this property</h2>
-<pre>getDataType() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
 <a id="method_getId"></a><div class="element clickable method public method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
-<h2>Returns the property ID</h2>
+<h2>Returns the status ID</h2>
 <pre>getId() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -159,9 +148,9 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
 </div></div>
 </div>
-<a id="method_getValue"></a><div class="element clickable method public method_getValue" data-toggle="collapse" data-target=".method_getValue .collapse">
-<h2>Returns the value of this property</h2>
-<pre>getValue() : string</pre>
+<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+<h2>Returns the name of this status</h2>
+<pre>getName() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>

@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Yetti API - PHP Bindings » \Yetti\API\Resource_Property</title>
+<title>Yetti API - PHP Bindings » \Yetti\API\Collection_Filter</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,19 +58,31 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_getDataType" title="getDataType :: Returns the data type of this property"><span class="description">Returns the data type of this property</span><pre>getDataType()</pre></a></li>
-<li class="method public "><a href="#method_getId" title="getId :: Returns the property ID"><span class="description">Returns the property ID</span><pre>getId()</pre></a></li>
-<li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public "><a href="#method_getValue" title="getValue :: Returns the value of this property"><span class="description">Returns the value of this property</span><pre>getValue()</pre></a></li>
+<li class="method public inherited"><a href="#method_addConditionalFilter" title="addConditionalFilter :: Add a conditional filter by ID"><span class="description">Add a conditional filter by ID</span><pre>addConditionalFilter()</pre></a></li>
+<li class="method public inherited"><a href="#method_addItem" title="addItem :: Add an item to this filter"><span class="description">Add an item to this filter</span><pre>addItem()</pre></a></li>
+<li class="method public inherited"><a href="#method_delete" title="delete :: Delete this filter"><span class="description">Delete this filter</span><pre>delete()</pre></a></li>
+<li class="method public inherited"><a href="#method_getConditionalFilters" title="getConditionalFilters :: Returns an array of conditional filter IDs"><span class="description">Returns an array of conditional filter IDs</span><pre>getConditionalFilters()</pre></a></li>
+<li class="method public inherited"><a href="#method_getFilterTypeId" title="getFilterTypeId :: Return the filter type ID"><span class="description">Return the filter type ID</span><pre>getFilterTypeId()</pre></a></li>
+<li class="method public inherited"><a href="#method_getId" title="getId :: Returns the filter ID"><span class="description">Returns the filter ID</span><pre>getId()</pre></a></li>
+<li class="method public inherited"><a href="#method_getItems" title="getItems :: Returns an array of items in this filter"><span class="description">Returns an array of items in this filter</span><pre>getItems()</pre></a></li>
+<li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the json object"><span class="description">Returns the json object</span><pre>getJson()</pre></a></li>
+<li class="method public inherited"><a href="#method_getName" title="getName :: Returns the name of this filter"><span class="description">Returns the name of this filter</span><pre>getName()</pre></a></li>
+<li class="method public inherited"><a href="#method_load" title="load :: Load a filter by ID"><span class="description">Load a filter by ID</span><pre>load()</pre></a></li>
+<li class="method public inherited"><a href="#method_save" title="save :: Save this filter"><span class="description">Save this filter</span><pre>save()</pre></a></li>
+<li class="method public inherited"><a href="#method_setFilterTypeId" title="setFilterTypeId :: Set the filter type ID for this filter"><span class="description">Set the filter type ID for this filter</span><pre>setFilterTypeId()</pre></a></li>
 <li class="method public inherited"><a href="#method_setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
+<li class="method public inherited"><a href="#method_setName" title="setName :: Set the name of this filter"><span class="description">Set the name of this filter</span><pre>setName()</pre></a></li>
 <li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
 <li class="method public inherited"><a href="#method_webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul><li class="method protected inherited"><a href="#method_makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
+                    <ul>
+<li class="method protected "><a href="#method_getUriBase" title="getUriBase :: (non-PHPdoc)"><span class="description">(non-PHPdoc)</span><pre>getUriBase()</pre></a></li>
+<li class="method protected inherited"><a href="#method_makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
 Must be called after everything else has been set up"><span class="description">Performs a webservice request and returns a result object
-Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li></ul>
+Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li>
+</ul>
 </li>
 <li class="nav-header private">» Private
                     <ul><li class="method private inherited"><a href="#method_getArrayAsObject" title="getArrayAsObject :: Recursively convert the given array into a stdClass object"><span class="description">Recursively convert the given array into a stdClass object</span><pre>getArrayAsObject()</pre></a></li></ul>
@@ -81,6 +93,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </li>
 <li class="nav-header private">» Private
                     <ul>
+<li class="property private inherited"><a href="#property__filterTypeId" title="$_filterTypeId :: "><span class="description"></span><pre>$_filterTypeId</pre></a></li>
 <li class="property private inherited"><a href="#property__json" title="$_json :: "><span class="description"></span><pre>$_json</pre></a></li>
 <li class="property private inherited"><a href="#property__webservice" title="$_webservice :: "><span class="description"></span><pre>$_webservice</pre></a></li>
 </ul>
@@ -88,7 +101,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </ul>
 </div>
 <div class="span8">
-<a id="\Yetti\API\Resource_Property"></a><ul class="breadcrumb">
+<a id="\Yetti\API\Collection_Filter"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -97,11 +110,11 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <span class="divider">\</span><a href="../namespaces/Yetti.API.html">API</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Yetti.API.Resource_Property.html">Resource_Property</a>
+<span class="divider">\</span><a href="../classes/Yetti.API.Collection_Filter.html">Collection_Filter</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Model represents a single property (of a resource)</p>
+<p class="short_description">Collection filter model.</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -111,7 +124,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </tr>
 <tr>
 <th>copyright</th>
-<td>Copyright (c) 2011-2012, Yetti Ltd.</td>
+<td>Copyright (c) 2011-2013, Yetti Ltd.</td>
 </tr>
 <tr>
 <th>package</th>
@@ -120,35 +133,119 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_getDataType"></a><div class="element clickable method public method_getDataType" data-toggle="collapse" data-target=".method_getDataType .collapse">
-<h2>Returns the data type of this property</h2>
-<pre>getDataType() : string</pre>
-<div class="labels"></div>
+<a id="method_addConditionalFilter"></a><div class="element clickable method public method_addConditionalFilter" data-toggle="collapse" data-target=".method_addConditionalFilter .collapse">
+<h2>Add a conditional filter by ID</h2>
+<pre>addConditionalFilter(int $filterId) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::addConditionalFilter()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filterId</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
-<a id="method_getId"></a><div class="element clickable method public method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
-<h2>Returns the property ID</h2>
-<pre>getId() : int</pre>
-<div class="labels"></div>
+<a id="method_addItem"></a><div class="element clickable method public method_addItem" data-toggle="collapse" data-target=".method_addItem .collapse">
+<h2>Add an item to this filter</h2>
+<pre>addItem(int $itemId) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::addItem()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$itemId</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Delete this filter</h2>
+<pre>delete() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::delete()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
+<a id="method_getConditionalFilters"></a><div class="element clickable method public method_getConditionalFilters" data-toggle="collapse" data-target=".method_getConditionalFilters .collapse">
+<h2>Returns an array of conditional filter IDs</h2>
+<pre>getConditionalFilters() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::getConditionalFilters()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getFilterTypeId"></a><div class="element clickable method public method_getFilterTypeId" data-toggle="collapse" data-target=".method_getFilterTypeId .collapse">
+<h2>Return the filter type ID</h2>
+<pre>getFilterTypeId() : int</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::getFilterTypeId()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
+<a id="method_getId"></a><div class="element clickable method public method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
+<h2>Returns the filter ID</h2>
+<pre>getId() : int</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::getId()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_getItems"></a><div class="element clickable method public method_getItems" data-toggle="collapse" data-target=".method_getItems .collapse">
+<h2>Returns an array of items in this filter</h2>
+<pre>getItems() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::getItems()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
 <a id="method_getJson"></a><div class="element clickable method public method_getJson" data-toggle="collapse" data-target=".method_getJson .collapse">
-<h2>Returns the JSON object</h2>
+<h2>Returns the json object</h2>
 <pre>getJson() : <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::getJson()</td>
+<td>\Yetti\API\Item_Filter::getJson()</td>
 </tr></table>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
@@ -159,14 +256,66 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
 </div></div>
 </div>
-<a id="method_getValue"></a><div class="element clickable method public method_getValue" data-toggle="collapse" data-target=".method_getValue .collapse">
-<h2>Returns the value of this property</h2>
-<pre>getValue() : string</pre>
-<div class="labels"></div>
+<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+<h2>Returns the name of this filter</h2>
+<pre>getName() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::getName()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_load"></a><div class="element clickable method public method_load" data-toggle="collapse" data-target=".method_load .collapse">
+<h2>Load a filter by ID</h2>
+<pre>load(int $filterId) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::load()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filterId</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a id="method_save"></a><div class="element clickable method public method_save" data-toggle="collapse" data-target=".method_save .collapse">
+<h2>Save this filter</h2>
+<pre>save() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::save()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
+</div></div>
+</div>
+<a id="method_setFilterTypeId"></a><div class="element clickable method public method_setFilterTypeId" data-toggle="collapse" data-target=".method_setFilterTypeId .collapse">
+<h2>Set the filter type ID for this filter</h2>
+<pre>setFilterTypeId(int $id) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::setFilterTypeId()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a id="method_setJson"></a><div class="element clickable method public method_setJson" data-toggle="collapse" data-target=".method_setJson .collapse">
@@ -175,14 +324,37 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::setJson()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::setJson()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$json</h4>
 <code>\Yetti\API\stdClass</code>
+</div>
+</div></div>
+</div>
+<a id="method_setName"></a><div class="element clickable method public method_setName" data-toggle="collapse" data-target=".method_setName .collapse">
+<h2>Set the name of this filter</h2>
+<pre>setName(string $name) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::setName()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
 </div>
 </div></div>
 </div>
@@ -192,10 +364,16 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::setWebservice()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::setWebservice()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$webservice</h4>
@@ -209,12 +387,32 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::webservice()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::webservice()</td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code></div>
+</div></div>
+</div>
+<a id="method_getUriBase"></a><div class="element clickable method protected method_getUriBase" data-toggle="collapse" data-target=".method_getUriBase .collapse">
+<h2>(non-PHPdoc)</h2>
+<pre>getUriBase() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\Yetti\API.Item_Filter::getUriBase()</a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
 <a id="method_makeRequestReturnResult"></a><div class="element clickable method protected method_makeRequestReturnResult" data-toggle="collapse" data-target=".method_makeRequestReturnResult .collapse">
@@ -224,10 +422,16 @@ Must be called after everything else has been set up</h2>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::makeRequestReturnResult()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::makeRequestReturnResult()</td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
 </div></div>
@@ -238,10 +442,16 @@ Must be called after everything else has been set up</h2>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::getArrayAsObject()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::getArrayAsObject()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$array</h4>
@@ -253,16 +463,34 @@ Must be called after everything else has been set up</h2>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__filterTypeId"> </a><div class="element clickable property private property__filterTypeId" data-toggle="collapse" data-target=".property__filterTypeId .collapse">
+<h2></h2>
+<pre>$_filterTypeId </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::$$_filterTypeId</td>
+</tr></table>
+</div></div>
+</div>
 <a id="property__json"> </a><div class="element clickable property private property__json" data-toggle="collapse" data-target=".property__json .collapse">
 <h2></h2>
 <pre>$_json </pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::$$_json</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::$$_json</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property__webservice"> </a><div class="element clickable property private property__webservice" data-toggle="collapse" data-target=".property__webservice .collapse">
@@ -271,10 +499,16 @@ Must be called after everything else has been set up</h2>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Yetti\API\BaseAbstract::$$_webservice</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Yetti\API\Item_Filter::$$_webservice</td>
+</tr>
+</table>
 </div></div>
 </div>
 </div>

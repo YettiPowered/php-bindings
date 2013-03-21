@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">92</span></a></li>
+                <span class="label label-info">102</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -59,10 +59,15 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method_addItem" title="addItem :: Add an item to this order"><span class="description">Add an item to this order</span><pre>addItem()</pre></a></li>
+<li class="method public "><a href="#method_getBillingAddress" title="getBillingAddress :: Returns an address object representing billing details for this order"><span class="description">Returns an address object representing billing details for this order</span><pre>getBillingAddress()</pre></a></li>
 <li class="method public "><a href="#method_getBillingAddressId" title="getBillingAddressId :: Returns the billing address ID"><span class="description">Returns the billing address ID</span><pre>getBillingAddressId()</pre></a></li>
 <li class="method public "><a href="#method_getCourierId" title="getCourierId :: Returns the courier ID"><span class="description">Returns the courier ID</span><pre>getCourierId()</pre></a></li>
 <li class="method public "><a href="#method_getId" title="getId :: Returns the order ID"><span class="description">Returns the order ID</span><pre>getId()</pre></a></li>
+<li class="method public "><a href="#method_getItems" title="getItems :: Returns an array of items in this order"><span class="description">Returns an array of items in this order</span><pre>getItems()</pre></a></li>
 <li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
+<li class="method public "><a href="#method_getNotes" title="getNotes :: Returns a list of notes for this order"><span class="description">Returns a list of notes for this order</span><pre>getNotes()</pre></a></li>
+<li class="method public "><a href="#method_getShipments" title="getShipments :: Returns a list of shipments for this order"><span class="description">Returns a list of shipments for this order</span><pre>getShipments()</pre></a></li>
+<li class="method public "><a href="#method_getShippingAddress" title="getShippingAddress :: Returns an address object representing shipping details for this order"><span class="description">Returns an address object representing shipping details for this order</span><pre>getShippingAddress()</pre></a></li>
 <li class="method public "><a href="#method_getShippingAddressId" title="getShippingAddressId :: Returns the shipping address ID"><span class="description">Returns the shipping address ID</span><pre>getShippingAddressId()</pre></a></li>
 <li class="method public "><a href="#method_getStatusId" title="getStatusId :: Returns the order's status ID"><span class="description">Returns the order's status ID</span><pre>getStatusId()</pre></a></li>
 <li class="method public "><a href="#method_getUserId" title='getUserId :: Returns the ID of the user who "owns" this order'><span class="description">Returns the ID of the user who "owns" this order</span><pre>getUserId()</pre></a></li>
@@ -134,7 +139,7 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method_addItem"></a><div class="element clickable method public method_addItem" data-toggle="collapse" data-target=".method_addItem .collapse">
 <h2>Add an item to this order</h2>
-<pre>addItem(int $itemId, float $quantity) : void</pre>
+<pre>addItem(int $itemId, int $combinationId, float $quantity) : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -144,9 +149,23 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <code>int</code>
 </div>
 <div class="subelement argument">
+<h4>$combinationId</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
 <h4>$quantity</h4>
 <code>float</code>
 </div>
+</div></div>
+</div>
+<a id="method_getBillingAddress"></a><div class="element clickable method public method_getBillingAddress" data-toggle="collapse" data-target=".method_getBillingAddress .collapse">
+<h2>Returns an address object representing billing details for this order</h2>
+<pre>getBillingAddress() : <a href="../classes/Yetti.API.User_Address.html">\Yetti\API\User_Address</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.User_Address.html">\Yetti\API\User_Address</a></code></div>
 </div></div>
 </div>
 <a id="method_getBillingAddressId"></a><div class="element clickable method public method_getBillingAddressId" data-toggle="collapse" data-target=".method_getBillingAddressId .collapse">
@@ -179,6 +198,16 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 <div class="subelement response"><code>int</code></div>
 </div></div>
 </div>
+<a id="method_getItems"></a><div class="element clickable method public method_getItems" data-toggle="collapse" data-target=".method_getItems .collapse">
+<h2>Returns an array of items in this order</h2>
+<pre>getItems() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
 <a id="method_getJson"></a><div class="element clickable method public method_getJson" data-toggle="collapse" data-target=".method_getJson .collapse">
 <h2>Returns the JSON object</h2>
 <pre>getJson() : <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
@@ -196,6 +225,36 @@ Must be called after everything else has been set up</span><pre>makeRequestRetur
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
+</div></div>
+</div>
+<a id="method_getNotes"></a><div class="element clickable method public method_getNotes" data-toggle="collapse" data-target=".method_getNotes .collapse">
+<h2>Returns a list of notes for this order</h2>
+<pre>getNotes() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getShipments"></a><div class="element clickable method public method_getShipments" data-toggle="collapse" data-target=".method_getShipments .collapse">
+<h2>Returns a list of shipments for this order</h2>
+<pre>getShipments() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getShippingAddress"></a><div class="element clickable method public method_getShippingAddress" data-toggle="collapse" data-target=".method_getShippingAddress .collapse">
+<h2>Returns an address object representing shipping details for this order</h2>
+<pre>getShippingAddress() : <a href="../classes/Yetti.API.User_Address.html">\Yetti\API\User_Address</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Yetti.API.User_Address.html">\Yetti\API\User_Address</a></code></div>
 </div></div>
 </div>
 <a id="method_getShippingAddressId"></a><div class="element clickable method public method_getShippingAddressId" data-toggle="collapse" data-target=".method_getShippingAddressId .collapse">
@@ -443,7 +502,7 @@ Must be called after everything else has been set up</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-21T19:49:25Z.<br></footer></div>
+            generated on 2013-03-21T14:06:12Z.<br></footer></div>
 </div>
 </body>
 </html>
