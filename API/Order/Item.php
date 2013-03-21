@@ -13,6 +13,16 @@ namespace Yetti\API;
 class Order_Item extends BaseAbstract
 {
 	/**
+	 * Returns the order resource ID
+	 * 
+	 * @return int
+	 */
+	public function getId()
+	{
+		return (int)$this->getJson()->id;
+	}
+	
+	/**
 	 * Returns the item resource ID
 	 * 
 	 * @return int

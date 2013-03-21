@@ -264,4 +264,42 @@ class Order extends BaseAbstract
 		
 		return $items;
 	}
+	
+	/**
+	 * Returns a list of notes for this order
+	 * 
+	 * @return array
+	 */
+	public function getNotes()
+	{
+		$notes = array();
+		
+		foreach ($this->getJson()->notes as $noteData)
+		{
+			$note = new Order_Note();
+			$note->setJson($noteData);
+			$notes[] = $note;
+		}
+		
+		return $notes;
+	}
+	
+	/**
+	 * Returns a list of shipments for this order
+	 * 
+	 * @return array
+	 */
+	public function getShipments()
+	{
+		$shipments = array();
+		
+		foreach ($this->getJson()->shipments as $shipmentData)
+		{
+			$shipment = new Order_Shipment();
+			$shipment->setJson($shipmentData);
+			$shipments[] = $shipment;
+		}
+		
+		return $shipments;
+	}
 }

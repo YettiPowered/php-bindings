@@ -1,7 +1,7 @@
 <?php
 
 namespace Yetti\API\Tests;
-use Yetti\API\User, Yetti\API\User_Address, Yetti\API\Item, Yetti\API\Item_Combination_List, Yetti\API\Order, Yetti\API\Order_Note;
+use Yetti\API\User, Yetti\API\User_Address, Yetti\API\Item, Yetti\API\Item_Combination_List, Yetti\API\Order, Yetti\API\Order_Note, Yetti\API\Order_Shipment;
 
 /**
  * Test methods for the order model.
@@ -74,6 +74,7 @@ class OrderTest extends AuthAbstract
 		$order->setUserId($user->getId());
 		$order->setShippingAddressId($address->getId());
 		$order->setBillingAddressId($address->getId());
+		$order->setCourierId(1);
 		$order->addItem($item->getId(), $combination->getId(), 1);
 		$this->assertTrue($order->save()->success());
 		
@@ -131,5 +132,45 @@ class OrderTest extends AuthAbstract
 		
 		$note->setNote('You arse');
 		$this->assertTrue($note->save()->success());
+		
+		return $order;
+	}
+	
+	/**
+	 * @depends testAddNote
+	 */
+	public function testCreateShipment(Order $order)
+	{
+		$shipment = new Order_Shipment();
+		$this->assertFalse($shipment->save()->success());
+		
+		$shipment->setOrderId($order->getId());
+		$this->assertFalse($shipment->save()->success());
+		
+		$shipment->setCourierId($order->getCourierId());
+		$shipment->setPackageId(1);
+		$shipment->setTracking('abc123');
+		
+		$items = $order->getItems();
+		$shipment->addItem($items[0]->getId());
+		
+		$this->assertTrue($shipment->save()->success());
+		
+		return $order;
+	}
+	
+	/**
+	 * @depends testCreateShipment
+	 */
+	public function testLoadNotesAndShipments(Order $inOrder)
+	{
+		$order = new Order();
+		$this->assertTrue($order->load($inOrder->getId()));
+		
+		$notes = $order->getNotes();
+		$this->assertEquals('You arse', $notes[0]->getNote());
+		
+		$shipments = $order->getShipments();
+		$this->assertEquals('abc123', $shipments[0]->getTracking());
 	}
 }
