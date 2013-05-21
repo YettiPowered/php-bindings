@@ -518,7 +518,7 @@ class Webservice
 			}
 		}
 		
-		if ($this->_response && is_string($this->_response) && $json = json_decode(htmlspecialchars_decode($this->_response))) {
+		if ($this->_response && is_string($this->_response) && $json = json_decode(htmlspecialchars_decode($this->_response, ENT_NOQUOTES))) {
 			$this->_responseJsonObject = $json;
 		}
 		
