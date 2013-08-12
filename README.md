@@ -15,9 +15,11 @@ For more details on Yetti, please refer to http://yetti.co.uk. We welcome commen
 
 Install with composer, simply add to your composer.json:
 
+```
 "require": {
 	"yetti/api": "*"
 }
+```
 
 ## Examples
 
