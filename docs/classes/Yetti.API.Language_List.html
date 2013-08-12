@@ -1,458 +1,1029 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<meta charset="utf-8">
-<title>Yetti API - PHP Bindings » \Yetti\API\Language_List</title>
-<meta name="author" content="Mike van Riel">
-<meta name="description" content="">
-<link href="../css/template.css" rel="stylesheet" media="all">
-<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
-<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
 </head>
 <body>
+
 <div class="navbar navbar-fixed-top">
-<div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Yetti API - PHP Bindings</a><div class="nav-collapse"><ul class="nav">
-<li class="dropdown">
-<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a>Namespaces</a></li>
-<li><a href="../namespaces/Yetti.html"><i class="icon-th"></i> Yetti</a></li>
-<li><a>Packages</a></li>
-<li><a href="../packages/yetti-api.html"><i class="icon-folder-open"></i> yetti-api</a></li>
-</ul>
-</li>
-<li class="dropdown" id="charts-menu">
-<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
-</li>
-<li class="dropdown" id="reports-menu">
-<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">102</span></a></li>
-<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
-<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
-</ul>
-</li>
-</ul></div>
-</div></div>
-<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Yetti.html">\Yetti</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                    <i class="icon-list-alt"></i>&#160;Errors
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                    <i class="icon-list-alt"></i>&#160;Markers
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
 </div>
-<div id="___" class="container">
-<noscript><div class="alert alert-warning">
-                            Javascript is disabled; several features are only available
-                            if Javascript is enabled.
-                        </div></noscript>
-<div class="row">
-<div class="span4">
-<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
-<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-</div>
-<ul class="side-nav nav nav-list">
-<li class="nav-header">
-<i class="icon-custom icon-method"></i> Methods
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1743811589"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1743811589" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-831400257"></a>
+                                <a href="../namespaces/Yetti.html" style="margin-left: 30px; padding-left: 0">Yetti</a>
+            </div>
+            <div id="namespace-831400257" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-396679675"></a>
+                                <a href="../namespaces/Yetti.API.html" style="margin-left: 30px; padding-left: 0">API</a>
+            </div>
+            <div id="namespace-396679675" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
                     <ul>
-<li class="method public "><a href="#method_getCurrentPage" title="getCurrentPage :: Returns the current page"><span class="description">Returns the current page</span><pre>getCurrentPage()</pre></a></li>
-<li class="method public inherited"><a href="#method_getItems" title="getItems :: Returns a list iterator object containing items in this listing"><span class="description">Returns a list iterator object containing items in this listing</span><pre>getItems()</pre></a></li>
-<li class="method public inherited"><a href="#method_getJson" title="getJson :: Returns the JSON object"><span class="description">Returns the JSON object</span><pre>getJson()</pre></a></li>
-<li class="method public inherited"><a href="#method_getTotalItemCount" title="getTotalItemCount :: Returns the total number of items available for this listing"><span class="description">Returns the total number of items available for this listing</span><pre>getTotalItemCount()</pre></a></li>
-<li class="method public "><a href="#method_getTotalPages" title="getTotalPages :: Returns the total number of pages in the list"><span class="description">Returns the total number of pages in the list</span><pre>getTotalPages()</pre></a></li>
-<li class="method public "><a href="#method_load" title="load :: Load a list of available languages"><span class="description">Load a list of available languages</span><pre>load()</pre></a></li>
-<li class="method public inherited"><a href="#method_setJson" title="setJson :: Set the JSON object"><span class="description">Set the JSON object</span><pre>setJson()</pre></a></li>
-<li class="method public inherited"><a href="#method_setWebservice" title="setWebservice :: Set the webservice object"><span class="description">Set the webservice object</span><pre>setWebservice()</pre></a></li>
-<li class="method public inherited"><a href="#method_shouldAutoPaginate" title="shouldAutoPaginate :: Returns whether or not getItems() should auto paginate"><span class="description">Returns whether or not getItems() should auto paginate</span><pre>shouldAutoPaginate()</pre></a></li>
-<li class="method public inherited"><a href="#method_webservice" title="webservice :: Returns the webservice object"><span class="description">Returns the webservice object</span><pre>webservice()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header protected">» Protected
+                                                                                                    <li class="class"><a href="../classes/Yetti.API.Auth_Details.html">Auth_Details</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Autoloader.html">Autoloader</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.BaseAbstract.html">BaseAbstract</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_Filter_List.html">Collection_Filter_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_Filter_Type_List.html">Collection_Filter_Type_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_Filter_Type.html">Collection_Filter_Type</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_Filter.html">Collection_Filter</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_List.html">Collection_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection.html">Collection</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Exception_Auth.html">Exception_Auth</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Exception.html">Exception</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Collections.html">Item_Collections</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Combination_List.html">Item_Combination_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Combination.html">Item_Combination</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Filter_List.html">Item_Filter_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Filter_Type_List.html">Item_Filter_Type_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Filter_Type.html">Item_Filter_Type</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Filter.html">Item_Filter</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_List.html">Item_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Type_List.html">Item_Type_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Type.html">Item_Type</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Variation.html">Item_Variation</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item.html">Item</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Language_List.html">Language_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Language.html">Language</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.ListAbstract.html">ListAbstract</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.ListIterator.html">ListIterator</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Oauth_Access_Token.html">Oauth_Access_Token</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Item.html">Order_Item</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_List.html">Order_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Note.html">Order_Note</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Shipment.html">Order_Shipment</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Status_List.html">Order_Status_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Status.html">Order_Status</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order.html">Order</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_Asset_Group.html">Resource_Asset_Group</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_Asset.html">Resource_Asset</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_BaseAbstract.html">Resource_BaseAbstract</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_ListAbstract.html">Resource_ListAbstract</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_Property.html">Resource_Property</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Result.html">Result</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.User_Address_List.html">User_Address_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.User_Address.html">User_Address</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.User_List.html">User_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.User.html">User</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.VAT_List.html">VAT_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.VAT.html">VAT</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Webservice.html">Webservice</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
                     <ul>
-<li class="method protected inherited"><a href="#method_addItem" title="addItem :: Add an item to the list"><span class="description">Add an item to the list</span><pre>addItem()</pre></a></li>
-<li class="method protected "><a href="#method_loadItemObjects" title="loadItemObjects :: Load the language objects in this list"><span class="description">Load the language objects in this list</span><pre>loadItemObjects()</pre></a></li>
-<li class="method protected inherited"><a href="#method_makeRequestReturnResult" title="makeRequestReturnResult :: Performs a webservice request and returns a result object
-Must be called after everything else has been set up"><span class="description">Performs a webservice request and returns a result object
-Must be called after everything else has been set up</span><pre>makeRequestReturnResult()</pre></a></li>
-<li class="method protected inherited"><a href="#method_setAutoPaginate" title="setAutoPaginate :: Set whether or not getItems() should auto paginate"><span class="description">Set whether or not getItems() should auto paginate</span><pre>setAutoPaginate()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header private">» Private
-                    <ul><li class="method private inherited"><a href="#method_getArrayAsObject" title="getArrayAsObject :: Recursively convert the given array into a stdClass object"><span class="description">Recursively convert the given array into a stdClass object</span><pre>getArrayAsObject()</pre></a></li></ul>
-</li>
-<li class="nav-header">
-<i class="icon-custom icon-property"></i> Properties
-                    <ul></ul>
-</li>
-<li class="nav-header private">» Private
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
                     <ul>
-<li class="property private inherited"><a href="#property__autoPagination" title="$_autoPagination :: "><span class="description"></span><pre>$_autoPagination</pre></a></li>
-<li class="property private inherited"><a href="#property__items" title="$_items :: "><span class="description"></span><pre>$_items</pre></a></li>
-<li class="property private inherited"><a href="#property__json" title="$_json :: "><span class="description"></span><pre>$_json</pre></a></li>
-<li class="property private inherited"><a href="#property__webservice" title="$_webservice :: "><span class="description"></span><pre>$_webservice</pre></a></li>
-</ul>
-</li>
-</ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Yetti.API.html">\Yetti\API</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Yetti\API</small>Language_List</h1>
+                    <p><em>Language list model</em></p>
+                    
+
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Yetti.API.Language_List.html#method_load" class="">load()</a><br />
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#method_getTotalPages" class="">getTotalPages()</a><br />
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#method_getCurrentPage" class="">getCurrentPage()</a><br />
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#method_getItems" class="">getItems()</a><br />
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#method_getTotalItemCount" class="">getTotalItemCount()</a><br />
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#method_shouldAutoPaginate" class="">shouldAutoPaginate()</a><br />
+                                                                    <a href="../classes/Yetti.API.BaseAbstract.html#method_setWebservice" class="">setWebservice()</a><br />
+                                                                    <a href="../classes/Yetti.API.BaseAbstract.html#method_webservice" class="">webservice()</a><br />
+                                                                    <a href="../classes/Yetti.API.BaseAbstract.html#method_setJson" class="">setJson()</a><br />
+                                                                    <a href="../classes/Yetti.API.BaseAbstract.html#method_getJson" class="">getJson()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#method_loadItemObjects" class="">loadItemObjects()</a><br />
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#method_addItem" class="">addItem()</a><br />
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#method_setAutoPaginate" class="">setAutoPaginate()</a><br />
+                                                                    <a href="../classes/Yetti.API.BaseAbstract.html#method_makeRequestReturnResult" class="">makeRequestReturnResult()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/Yetti.API.BaseAbstract.html#method_getArrayAsObject" class="">getArrayAsObject()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#property__items" class="">$_items</a><br />
+                                                                    <a href="../classes/Yetti.API.ListAbstract.html#property__autoPagination" class="">$_autoPagination</a><br />
+                                                                    <a href="../classes/Yetti.API.BaseAbstract.html#property__webservice" class="">$_webservice</a><br />
+                                                                    <a href="../classes/Yetti.API.BaseAbstract.html#property__json" class="">$_json</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Language.List.php.html"><div class="path-wrapper">Language/List.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\yetti-api</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                        <div class="namespace-wrapper"><a href="../classes/Yetti.API.BaseAbstract.html">\Yetti\API\BaseAbstract</a></div>
+                                                                    
+                                        <div class="namespace-wrapper"><a href="../classes/Yetti.API.ListAbstract.html">\Yetti\API\ListAbstract</a></div>
+                                                                                                    <div class="namespace-wrapper">\Yetti\API\Language_List</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Sam Holman <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;:&#115;&#x61;&#x6d;&#64;&#121;&#x65;t&#116;&#x69;&#x2e;&#99;&#111;&#x2e;u&#107;">&#115;&#x61;&#x6d;&#64;&#121;&#x65;t&#116;&#x69;&#x2e;&#99;&#111;&#x2e;u&#107;</a></p>
+
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                                                    <p>Copyright (c) 2011-2012, Yetti Ltd.</p>
+
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__items" name="property__items" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_items</h3>
+                <pre class="signature">$_items</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__autoPagination" name="property__autoPagination" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_autoPagination</h3>
+                <pre class="signature">$_autoPagination</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__webservice" name="property__webservice" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_webservice</h3>
+                <pre class="signature">$_webservice</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.BaseAbstract.html"><div class="path-wrapper">\Yetti\API\BaseAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__json" name="property__json" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_json</h3>
+                <pre class="signature">$_json</pre>
+                <p><em></em></p>
+                
+
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.BaseAbstract.html"><div class="path-wrapper">\Yetti\API\BaseAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_load" name="method_load" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">load()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">load() : bool</pre>
+                <p><em>Load a list of available languages</em></p>
+                
+
+
+                
+                
+                                    <h4>Returns</h4>
+                    bool
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTotalPages" name="method_getTotalPages" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTotalPages()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTotalPages() : int</pre>
+                <p><em>Returns the total number of pages available in this listing</em></p>
+                
+
+
+                
+                
+                                    <h4>Returns</h4>
+                    int
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                        <span class="label label-info">abstract</span>
+                                                <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCurrentPage" name="method_getCurrentPage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCurrentPage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCurrentPage() : int</pre>
+                <p><em>Returns the currently loaded page number</em></p>
+                
+
+
+                
+                
+                                    <h4>Returns</h4>
+                    int
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                        <span class="label label-info">abstract</span>
+                                                <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getItems" name="method_getItems" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getItems()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getItems() : \Yetti\API\ListIterator</pre>
+                <p><em>Returns a list iterator object containing items in this listing</em></p>
+                
+
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Yetti.API.ListIterator.html">\Yetti\API\ListIterator</a>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTotalItemCount" name="method_getTotalItemCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTotalItemCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTotalItemCount() : int</pre>
+                <p><em>Returns the total number of items available for this listing</em></p>
+                
+
+
+                
+                
+                                    <h4>Returns</h4>
+                    int
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_shouldAutoPaginate" name="method_shouldAutoPaginate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">shouldAutoPaginate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">shouldAutoPaginate() : bool</pre>
+                <p><em>Returns whether or not getItems() should auto paginate</em></p>
+                
+
+
+                
+                
+                                    <h4>Returns</h4>
+                    bool
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWebservice" name="method_setWebservice" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setWebservice()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWebservice(\Yetti\API\Webservice <span class="argument">$webservice</span>) : void</pre>
+                <p><em>Set the webservice object</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></td>
+                                <td>$webservice</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.BaseAbstract.html"><div class="path-wrapper">\Yetti\API\BaseAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_webservice" name="method_webservice" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">webservice()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">webservice() : \Yetti\API\Webservice</pre>
+                <p><em>Returns the webservice object</em></p>
+                
+
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.BaseAbstract.html"><div class="path-wrapper">\Yetti\API\BaseAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setJson" name="method_setJson" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setJson()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setJson(\Yetti\API\stdClass <span class="argument">$json</span>) : void</pre>
+                <p><em>Set the JSON object</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\Yetti\API\stdClass</td>
+                                <td>$json</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.BaseAbstract.html"><div class="path-wrapper">\Yetti\API\BaseAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getJson" name="method_getJson" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getJson()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getJson() : \stdClass</pre>
+                <p><em>Returns the JSON object</em></p>
+                
+
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Yetti\API\Exception</dt>
+                            <dd>
+</dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \stdClass
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.BaseAbstract.html"><div class="path-wrapper">\Yetti\API\BaseAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadItemObjects" name="method_loadItemObjects" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">loadItemObjects()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadItemObjects() : void</pre>
+                <p><em>Load the item objects</em></p>
+                
+
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                        <span class="label label-info">abstract</span>
+                                                <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addItem" name="method_addItem" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">addItem()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addItem(mixed <span class="argument">$item</span>) : void</pre>
+                <p><em>Add an item to the list</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$item</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setAutoPaginate" name="method_setAutoPaginate" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">setAutoPaginate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setAutoPaginate(bool <span class="argument">$autoPaginate</span>) : void</pre>
+                <p><em>Set whether or not getItems() should auto paginate</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>bool</td>
+                                <td>$autoPaginate</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.ListAbstract.html"><div class="path-wrapper">\Yetti\API\ListAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_makeRequestReturnResult" name="method_makeRequestReturnResult" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">makeRequestReturnResult()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">makeRequestReturnResult() : \Yetti\API\Result</pre>
+                <p><em>Performs a webservice request and returns a result object
+Must be called after everything else has been set up</em></p>
+                
+
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.BaseAbstract.html"><div class="path-wrapper">\Yetti\API\BaseAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getArrayAsObject" name="method_getArrayAsObject" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getArrayAsObject()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getArrayAsObject(array <span class="argument">$array</span>) : \Yetti\API\stdClass</pre>
+                <p><em>Recursively convert the given array into a stdClass object</em></p>
+                
+
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$array</td>
+                                <td>
+</td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Yetti\API\stdClass
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Yetti.API.BaseAbstract.html"><div class="path-wrapper">\Yetti\API\BaseAbstract</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">List.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Language/List.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Yetti.html">\Yetti</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="">Errors</a></li>
+                                    <li><a href="">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on August 12th, 2013 at 14:35.
+                </section>
+            </section>
+        </section>
+    </footer>
 </div>
-<div class="span8">
-<a id="\Yetti\API\Language_List"></a><ul class="breadcrumb">
-<li>
-<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/Yetti.html">Yetti</a></li>
-<li>
-<span class="divider">\</span><a href="../namespaces/Yetti.API.html">API</a>
-</li>
-<li class="active">
-<span class="divider">\</span><a href="../classes/Yetti.API.Language_List.html">Language_List</a>
-</li>
-</ul>
-<div class="element class">
-<p class="short_description">Language list model</p>
-<div class="details">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>author</th>
-<td><a href="mailto:sam@yetti.co.uk">Sam Holman</a></td>
-</tr>
-<tr>
-<th>copyright</th>
-<td>Copyright (c) 2011-2012, Yetti Ltd.</td>
-</tr>
-<tr>
-<th>package</th>
-<td><a href="../packages/yetti-api.html">yetti-api</a></td>
-</tr>
-</table>
-<h3>
-<i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_getCurrentPage"></a><div class="element clickable method public method_getCurrentPage" data-toggle="collapse" data-target=".method_getCurrentPage .collapse">
-<h2>Returns the current page</h2>
-<pre>getCurrentPage() : int</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>int</code></div>
-</div></div>
-</div>
-<a id="method_getItems"></a><div class="element clickable method public method_getItems" data-toggle="collapse" data-target=".method_getItems .collapse">
-<h2>Returns a list iterator object containing items in this listing</h2>
-<pre>getItems() : <a href="../classes/Yetti.API.ListIterator.html">\Yetti\API\ListIterator</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::getItems()</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/Yetti.API.ListIterator.html">\Yetti\API\ListIterator</a></code></div>
-</div></div>
-</div>
-<a id="method_getJson"></a><div class="element clickable method public method_getJson" data-toggle="collapse" data-target=".method_getJson .collapse">
-<h2>Returns the JSON object</h2>
-<pre>getJson() : <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::getJson()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::getJson()</td>
-</tr>
-</table>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code><a href="../classes/Yetti.API.Exception.html">\Yetti\API\Exception</a></code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code></div>
-</div></div>
-</div>
-<a id="method_getTotalItemCount"></a><div class="element clickable method public method_getTotalItemCount" data-toggle="collapse" data-target=".method_getTotalItemCount .collapse">
-<h2>Returns the total number of items available for this listing</h2>
-<pre>getTotalItemCount() : int</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::getTotalItemCount()</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>int</code></div>
-</div></div>
-</div>
-<a id="method_getTotalPages"></a><div class="element clickable method public method_getTotalPages" data-toggle="collapse" data-target=".method_getTotalPages .collapse">
-<h2>Returns the total number of pages in the list</h2>
-<pre>getTotalPages() : int</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>int</code></div>
-</div></div>
-</div>
-<a id="method_load"></a><div class="element clickable method public method_load" data-toggle="collapse" data-target=".method_load .collapse">
-<h2>Load a list of available languages</h2>
-<pre>load() : bool</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>bool</code></div>
-</div></div>
-</div>
-<a id="method_setJson"></a><div class="element clickable method public method_setJson" data-toggle="collapse" data-target=".method_setJson .collapse">
-<h2>Set the JSON object</h2>
-<pre>setJson(\Yetti\API\stdClass $json) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::setJson()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::setJson()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$json</h4>
-<code>\Yetti\API\stdClass</code>
-</div>
-</div></div>
-</div>
-<a id="method_setWebservice"></a><div class="element clickable method public method_setWebservice" data-toggle="collapse" data-target=".method_setWebservice .collapse">
-<h2>Set the webservice object</h2>
-<pre>setWebservice(\Yetti\API\Webservice $webservice) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::setWebservice()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::setWebservice()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$webservice</h4>
-<code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code>
-</div>
-</div></div>
-</div>
-<a id="method_shouldAutoPaginate"></a><div class="element clickable method public method_shouldAutoPaginate" data-toggle="collapse" data-target=".method_shouldAutoPaginate .collapse">
-<h2>Returns whether or not getItems() should auto paginate</h2>
-<pre>shouldAutoPaginate() : bool</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::shouldAutoPaginate()</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>bool</code></div>
-</div></div>
-</div>
-<a id="method_webservice"></a><div class="element clickable method public method_webservice" data-toggle="collapse" data-target=".method_webservice .collapse">
-<h2>Returns the webservice object</h2>
-<pre>webservice() : <a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::webservice()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::webservice()</td>
-</tr>
-</table>
-<h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/Yetti.API.Webservice.html">\Yetti\API\Webservice</a></code></div>
-</div></div>
-</div>
-<a id="method_addItem"></a><div class="element clickable method protected method_addItem" data-toggle="collapse" data-target=".method_addItem .collapse">
-<h2>Add an item to the list</h2>
-<pre>addItem(mixed $item) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::addItem()</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$item</h4>
-<code>mixed</code>
-</div>
-</div></div>
-</div>
-<a id="method_loadItemObjects"></a><div class="element clickable method protected method_loadItemObjects" data-toggle="collapse" data-target=".method_loadItemObjects .collapse">
-<h2>Load the language objects in this list</h2>
-<pre>loadItemObjects() : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_makeRequestReturnResult"></a><div class="element clickable method protected method_makeRequestReturnResult" data-toggle="collapse" data-target=".method_makeRequestReturnResult .collapse">
-<h2>Performs a webservice request and returns a result object
-Must be called after everything else has been set up</h2>
-<pre>makeRequestReturnResult() : <a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::makeRequestReturnResult()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::makeRequestReturnResult()</td>
-</tr>
-</table>
-<h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/Yetti.API.Result.html">\Yetti\API\Result</a></code></div>
-</div></div>
-</div>
-<a id="method_setAutoPaginate"></a><div class="element clickable method protected method_setAutoPaginate" data-toggle="collapse" data-target=".method_setAutoPaginate .collapse">
-<h2>Set whether or not getItems() should auto paginate</h2>
-<pre>setAutoPaginate(bool $autoPaginate) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::setAutoPaginate()</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$autoPaginate</h4>
-<code>bool</code>
-</div>
-</div></div>
-</div>
-<a id="method_getArrayAsObject"></a><div class="element clickable method private method_getArrayAsObject" data-toggle="collapse" data-target=".method_getArrayAsObject .collapse">
-<h2>Recursively convert the given array into a stdClass object</h2>
-<pre>getArrayAsObject(array $array) : \Yetti\API\stdClass</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::getArrayAsObject()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::getArrayAsObject()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$array</h4>
-<code>array</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>\Yetti\API\stdClass</code></div>
-</div></div>
-</div>
-<h3>
-<i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property__autoPagination"> </a><div class="element clickable property private property__autoPagination" data-toggle="collapse" data-target=".property__autoPagination .collapse">
-<h2></h2>
-<pre>$_autoPagination </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::$$_autoPagination</td>
-</tr></table>
-</div></div>
-</div>
-<a id="property__items"> </a><div class="element clickable property private property__items" data-toggle="collapse" data-target=".property__items .collapse">
-<h2></h2>
-<pre>$_items </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::$$_items</td>
-</tr></table>
-</div></div>
-</div>
-<a id="property__json"> </a><div class="element clickable property private property__json" data-toggle="collapse" data-target=".property__json .collapse">
-<h2></h2>
-<pre>$_json </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::$$_json</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::$$_json</td>
-</tr>
-</table>
-</div></div>
-</div>
-<a id="property__webservice"> </a><div class="element clickable property private property__webservice" data-toggle="collapse" data-target=".property__webservice .collapse">
-<h2></h2>
-<pre>$_webservice </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\BaseAbstract::$$_webservice</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\Yetti\API\ListAbstract::$$_webservice</td>
-</tr>
-</table>
-</div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row"><footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-21T14:06:12Z.<br></footer></div>
-</div>
+
 </body>
 </html>

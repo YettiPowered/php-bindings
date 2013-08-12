@@ -1,0 +1,67 @@
+<?php
+
+namespace Yetti\API;
+
+/**
+ * Individual user model
+ * 
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
+ */
+
+class User extends Resource_BaseAbstract
+{
+	/**
+	 * Returns a singular name for this type of resource
+	 * 
+	 * @return string
+	 */
+	protected function getSingularName()
+	{
+		return 'user';
+	}
+	
+	/**
+	 * Set the user's password
+	 * 
+	 * @param string $password
+	 * @return void
+	 */
+	public function setPassword($password)
+	{
+		$this->getJson()->resource->password = (string)$password;
+	}
+	
+	/**
+	 * Returns the hashed password for this user
+	 * 
+	 * @return string
+	 */
+	public function getPassHash()
+	{
+		return (string)$this->getJson()->resource->password;
+	}
+	
+	/**
+	 * Set the user's email address
+	 * 
+	 * @param string $email
+	 * @return void
+	 */
+	public function setEmail($email)
+	{
+		$this->getJson()->resource->email = (string)$email;
+	}
+	
+	/**
+	* Returns the email address for this user
+	*
+	* @return string
+	*/
+	public function getEmail()
+	{
+		return (string)$this->getJson()->resource->email;
+	}
+}
+

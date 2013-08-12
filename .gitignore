@@ -1,4 +1,5 @@
 .settings
 .buildpath
 .project
+/docs/phpdoc-cache*
 /vendor/

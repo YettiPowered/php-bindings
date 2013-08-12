@@ -1,0 +1,52 @@
+<?php
+
+namespace Yetti\API;
+
+/**
+ * Asset group model
+ * Represents a single asset group for a resource
+ *
+ * @author Sam Holman <sam@yetti.co.uk>
+ * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @package yetti-api
+ */
+
+class Resource_Asset_Group extends ListAbstract
+{
+	/**
+	 * Load the assets in this group
+	 * 
+	 * @return array
+	 */
+	protected function loadItemObjects()
+	{
+		foreach ($this->getJson() as $json)
+		{
+			$asset = new \Yetti\API\Resource_Asset();
+			$asset->setJson($json);
+			
+			$this->addItem($asset);
+		}
+	}
+	
+	/**
+	 * Returns the total number of pages in the list
+	 * 
+	 * @return int
+	 */
+	public function getTotalPages()
+	{
+		return 1;
+	}
+	
+	/**
+	 * Returns the current page
+	 * 
+	 * @return int
+	 */
+	public function getCurrentPage()
+	{
+		return 1;
+	}
+}
+

@@ -1,438 +1,274 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<meta charset="utf-8">
-<title>Yetti API - PHP Bindings » Yetti</title>
-<meta name="author" content="Mike van Riel">
-<meta name="description" content="">
-<link href="../css/template.css" rel="stylesheet" media="all">
-<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
-<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
 </head>
 <body>
+
 <div class="navbar navbar-fixed-top">
-<div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Yetti API - PHP Bindings</a><div class="nav-collapse"><ul class="nav">
-<li class="dropdown">
-<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a>Namespaces</a></li>
-<li><a href="../namespaces/Yetti.html"><i class="icon-th"></i> Yetti</a></li>
-<li><a>Packages</a></li>
-<li><a href="../packages/yetti-api.html"><i class="icon-folder-open"></i> yetti-api</a></li>
-</ul>
-</li>
-<li class="dropdown" id="charts-menu">
-<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
-</li>
-<li class="dropdown" id="reports-menu">
-<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">102</span></a></li>
-<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
-<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
-</ul>
-</li>
-</ul></div>
-</div></div>
-<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Yetti.html">\Yetti</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                    <i class="icon-list-alt"></i>&#160;Errors
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                    <i class="icon-list-alt"></i>&#160;Markers
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
 </div>
-<div id="___" class="container">
-<noscript><div class="alert alert-warning">
-                            Javascript is disabled; several features are only available
-                            if Javascript is enabled.
-                        </div></noscript>
-<div class="row">
-<div class="span4">
-<div class="btn-group view pull-right" data-toggle="buttons-radio">
-<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-816505942"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-816505942" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-94145473"></a>
+                                <a href="../namespaces/Yetti.html" style="margin-left: 30px; padding-left: 0">Yetti</a>
+            </div>
+            <div id="namespace-94145473" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-141638770"></a>
+                                <a href="../namespaces/Yetti.API.html" style="margin-left: 30px; padding-left: 0">API</a>
+            </div>
+            <div id="namespace-141638770" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Yetti.API.Auth_Details.html">Auth_Details</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Autoloader.html">Autoloader</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.BaseAbstract.html">BaseAbstract</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_Filter_List.html">Collection_Filter_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_Filter_Type_List.html">Collection_Filter_Type_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_Filter_Type.html">Collection_Filter_Type</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_Filter.html">Collection_Filter</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection_List.html">Collection_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Collection.html">Collection</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Exception_Auth.html">Exception_Auth</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Exception.html">Exception</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Collections.html">Item_Collections</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Combination_List.html">Item_Combination_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Combination.html">Item_Combination</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Filter_List.html">Item_Filter_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Filter_Type_List.html">Item_Filter_Type_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Filter_Type.html">Item_Filter_Type</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Filter.html">Item_Filter</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_List.html">Item_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Type_List.html">Item_Type_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Type.html">Item_Type</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item_Variation.html">Item_Variation</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Item.html">Item</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Language_List.html">Language_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Language.html">Language</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.ListAbstract.html">ListAbstract</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.ListIterator.html">ListIterator</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Oauth_Access_Token.html">Oauth_Access_Token</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Item.html">Order_Item</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_List.html">Order_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Note.html">Order_Note</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Shipment.html">Order_Shipment</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Status_List.html">Order_Status_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order_Status.html">Order_Status</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Order.html">Order</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_Asset_Group.html">Resource_Asset_Group</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_Asset.html">Resource_Asset</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_BaseAbstract.html">Resource_BaseAbstract</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_ListAbstract.html">Resource_ListAbstract</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Resource_Property.html">Resource_Property</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Result.html">Result</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.User_Address_List.html">User_Address_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.User_Address.html">User_Address</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.User_List.html">User_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.User.html">User</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.VAT_List.html">VAT_List</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.VAT.html">VAT</a></li>
+                                                    <li class="class"><a href="../classes/Yetti.API.Webservice.html">Webservice</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content namespace">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a>
+                                            </nav>
+                    <h1><small>\</small>Yetti</h1>
+
+                                        <h2>Namespaces</h2>
+                    <table class="table table-hover">
+                                                    <tr>
+                                <td><a href="../namespaces/Yetti.API.html">API</a></td>
+                            </tr>
+                                            </table>
+                    
+                    
+                    
+                                    </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                        <dt>Namespace hierarchy</dt>
+                        <dd class="hierarchy">
+                                                                                                                                                                                                                                                                
+                                    <div class="namespace-wrapper"><a href="../namespaces/default.html">\</a></div>
+                                                                                        <div class="namespace-wrapper">\Yetti</div>
+                        </dd>
+                    </dl>
+                </aside>
+            </div>
+
+            
+            
+        </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Yetti.html">\Yetti</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="">Errors</a></li>
+                                    <li><a href="">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on August 12th, 2013 at 14:35.
+                </section>
+            </section>
+        </section>
+    </footer>
 </div>
-<ul class="side-nav nav nav-list">
-<li class="nav-header">
-<i class="icon-map-marker"></i> Namespaces</li>
-<li>
-<span class="empty-namespace"><i class="icon-stop"></i>Yetti</span><ul class="nav nav-list nav-namespaces"><li>
-<a href="../namespaces/Yetti.API.html" title="API"><i class="icon-th"></i>API</a><ul class="nav nav-list nav-namespaces"></ul>
-</li></ul>
-</li>
-</ul>
-</div>
-<div class="span8 namespace-contents">
-<ul class="breadcrumb">
-<li>
-<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
-</li>
-<li class="active"><a href="../namespaces/Yetti.html">Yetti</a></li>
-</ul>
-<div class="namespace-indent">
-<div class="alert alert-info">This namespace does not contain any documentable elements</div>
-<ul class="breadcrumb">
-<li>
-<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/Yetti.html">Yetti</a></li>
-<li class="active">
-<span class="divider">\</span><a href="../namespaces/Yetti.API.html">API</a>
-</li>
-</ul>
-<div class="namespace-indent">
-<h3>
-<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
-<div id="Auth_Details" class="element ajax clickable class">
-<h1>Auth_Details<a href="../classes/Yetti.API.Auth_Details.html">¶</a>
-</h1>
-<p class="short_description">Auth details model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Auth_Details.html" class="more">« More »</a>
-</div>
-<div id="Autoloader" class="element ajax clickable class">
-<h1>Autoloader<a href="../classes/Yetti.API.Autoloader.html">¶</a>
-</h1>
-<p class="short_description">Class loader</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Autoloader.html" class="more">« More »</a>
-</div>
-<div id="BaseAbstract" class="element ajax clickable class">
-<h1>BaseAbstract<a href="../classes/Yetti.API.BaseAbstract.html">¶</a>
-</h1>
-<p class="short_description">Abstract base class for Yetti API bindings</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.BaseAbstract.html" class="more">« More »</a>
-</div>
-<div id="Collection" class="element ajax clickable class">
-<h1>Collection<a href="../classes/Yetti.API.Collection.html">¶</a>
-</h1>
-<p class="short_description">Individual collection model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Collection.html" class="more">« More »</a>
-</div>
-<div id="Collection_Filter" class="element ajax clickable class">
-<h1>Collection_Filter<a href="../classes/Yetti.API.Collection_Filter.html">¶</a>
-</h1>
-<p class="short_description">Collection filter model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Collection_Filter.html" class="more">« More »</a>
-</div>
-<div id="Collection_Filter_List" class="element ajax clickable class">
-<h1>Collection_Filter_List<a href="../classes/Yetti.API.Collection_Filter_List.html">¶</a>
-</h1>
-<p class="short_description">Collection filter list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Collection_Filter_List.html" class="more">« More »</a>
-</div>
-<div id="Collection_Filter_Type" class="element ajax clickable class">
-<h1>Collection_Filter_Type<a href="../classes/Yetti.API.Collection_Filter_Type.html">¶</a>
-</h1>
-<p class="short_description">Collection filter type model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Collection_Filter_Type.html" class="more">« More »</a>
-</div>
-<div id="Collection_Filter_Type_List" class="element ajax clickable class">
-<h1>Collection_Filter_Type_List<a href="../classes/Yetti.API.Collection_Filter_Type_List.html">¶</a>
-</h1>
-<p class="short_description">Collection filter type list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Collection_Filter_Type_List.html" class="more">« More »</a>
-</div>
-<div id="Collection_List" class="element ajax clickable class">
-<h1>Collection_List<a href="../classes/Yetti.API.Collection_List.html">¶</a>
-</h1>
-<p class="short_description">Collection list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Collection_List.html" class="more">« More »</a>
-</div>
-<div id="Exception" class="element ajax clickable class">
-<h1>Exception<a href="../classes/Yetti.API.Exception.html">¶</a>
-</h1>
-<p class="short_description">Base exception</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Exception.html" class="more">« More »</a>
-</div>
-<div id="Exception_Auth" class="element ajax clickable class">
-<h1>Exception_Auth<a href="../classes/Yetti.API.Exception_Auth.html">¶</a>
-</h1>
-<p class="short_description">Authentication exception</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Exception_Auth.html" class="more">« More »</a>
-</div>
-<div id="Item" class="element ajax clickable class">
-<h1>Item<a href="../classes/Yetti.API.Item.html">¶</a>
-</h1>
-<p class="short_description">Individual item model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item.html" class="more">« More »</a>
-</div>
-<div id="Item_Collections" class="element ajax clickable class">
-<h1>Item_Collections<a href="../classes/Yetti.API.Item_Collections.html">¶</a>
-</h1>
-<p class="short_description">Item collections model
-Responsible for listing collections to which an item is assigned
-And assigning an item to one or more collections.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Collections.html" class="more">« More »</a>
-</div>
-<div id="Item_Combination" class="element ajax clickable class">
-<h1>Item_Combination<a href="../classes/Yetti.API.Item_Combination.html">¶</a>
-</h1>
-<p class="short_description">Item combination model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Combination.html" class="more">« More »</a>
-</div>
-<div id="Item_Combination_List" class="element ajax clickable class">
-<h1>Item_Combination_List<a href="../classes/Yetti.API.Item_Combination_List.html">¶</a>
-</h1>
-<p class="short_description">Item combinations list model
-Responsible for listing combinations for a product item.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Combination_List.html" class="more">« More »</a>
-</div>
-<div id="Item_Filter" class="element ajax clickable class">
-<h1>Item_Filter<a href="../classes/Yetti.API.Item_Filter.html">¶</a>
-</h1>
-<p class="short_description">Item filter model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Filter.html" class="more">« More »</a>
-</div>
-<div id="Item_Filter_List" class="element ajax clickable class">
-<h1>Item_Filter_List<a href="../classes/Yetti.API.Item_Filter_List.html">¶</a>
-</h1>
-<p class="short_description">Filter list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Filter_List.html" class="more">« More »</a>
-</div>
-<div id="Item_Filter_Type" class="element ajax clickable class">
-<h1>Item_Filter_Type<a href="../classes/Yetti.API.Item_Filter_Type.html">¶</a>
-</h1>
-<p class="short_description">Item filter type model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Filter_Type.html" class="more">« More »</a>
-</div>
-<div id="Item_Filter_Type_List" class="element ajax clickable class">
-<h1>Item_Filter_Type_List<a href="../classes/Yetti.API.Item_Filter_Type_List.html">¶</a>
-</h1>
-<p class="short_description">Item filter type list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Filter_Type_List.html" class="more">« More »</a>
-</div>
-<div id="Item_List" class="element ajax clickable class">
-<h1>Item_List<a href="../classes/Yetti.API.Item_List.html">¶</a>
-</h1>
-<p class="short_description">Item list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_List.html" class="more">« More »</a>
-</div>
-<div id="Item_Type" class="element ajax clickable class">
-<h1>Item_Type<a href="../classes/Yetti.API.Item_Type.html">¶</a>
-</h1>
-<p class="short_description">Item type model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Type.html" class="more">« More »</a>
-</div>
-<div id="Item_Type_List" class="element ajax clickable class">
-<h1>Item_Type_List<a href="../classes/Yetti.API.Item_Type_List.html">¶</a>
-</h1>
-<p class="short_description">Item type list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Type_List.html" class="more">« More »</a>
-</div>
-<div id="Item_Variation" class="element ajax clickable class">
-<h1>Item_Variation<a href="../classes/Yetti.API.Item_Variation.html">¶</a>
-</h1>
-<p class="short_description">Item variation model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Item_Variation.html" class="more">« More »</a>
-</div>
-<div id="Language" class="element ajax clickable class">
-<h1>Language<a href="../classes/Yetti.API.Language.html">¶</a>
-</h1>
-<p class="short_description">Language model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Language.html" class="more">« More »</a>
-</div>
-<div id="Language_List" class="element ajax clickable class">
-<h1>Language_List<a href="../classes/Yetti.API.Language_List.html">¶</a>
-</h1>
-<p class="short_description">Language list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Language_List.html" class="more">« More »</a>
-</div>
-<div id="ListAbstract" class="element ajax clickable class">
-<h1>ListAbstract<a href="../classes/Yetti.API.ListAbstract.html">¶</a>
-</h1>
-<p class="short_description">Abstract class for list models</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.ListAbstract.html" class="more">« More »</a>
-</div>
-<div id="ListIterator" class="element ajax clickable class">
-<h1>ListIterator<a href="../classes/Yetti.API.ListIterator.html">¶</a>
-</h1>
-<p class="short_description">List iterator object</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.ListIterator.html" class="more">« More »</a>
-</div>
-<div id="Oauth_Access_Token" class="element ajax clickable class">
-<h1>Oauth_Access_Token<a href="../classes/Yetti.API.Oauth_Access_Token.html">¶</a>
-</h1>
-<p class="short_description">Oauth access token model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Oauth_Access_Token.html" class="more">« More »</a>
-</div>
-<div id="Order" class="element ajax clickable class">
-<h1>Order<a href="../classes/Yetti.API.Order.html">¶</a>
-</h1>
-<p class="short_description">Order model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Order.html" class="more">« More »</a>
-</div>
-<div id="Order_Item" class="element ajax clickable class">
-<h1>Order_Item<a href="../classes/Yetti.API.Order_Item.html">¶</a>
-</h1>
-<p class="short_description">Order item model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Order_Item.html" class="more">« More »</a>
-</div>
-<div id="Order_List" class="element ajax clickable class">
-<h1>Order_List<a href="../classes/Yetti.API.Order_List.html">¶</a>
-</h1>
-<p class="short_description">Order list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Order_List.html" class="more">« More »</a>
-</div>
-<div id="Order_Note" class="element ajax clickable class">
-<h1>Order_Note<a href="../classes/Yetti.API.Order_Note.html">¶</a>
-</h1>
-<p class="short_description">Order note model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Order_Note.html" class="more">« More »</a>
-</div>
-<div id="Order_Shipment" class="element ajax clickable class">
-<h1>Order_Shipment<a href="../classes/Yetti.API.Order_Shipment.html">¶</a>
-</h1>
-<p class="short_description">Order shipment model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Order_Shipment.html" class="more">« More »</a>
-</div>
-<div id="Order_Status" class="element ajax clickable class">
-<h1>Order_Status<a href="../classes/Yetti.API.Order_Status.html">¶</a>
-</h1>
-<p class="short_description">Order status model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Order_Status.html" class="more">« More »</a>
-</div>
-<div id="Order_Status_List" class="element ajax clickable class">
-<h1>Order_Status_List<a href="../classes/Yetti.API.Order_Status_List.html">¶</a>
-</h1>
-<p class="short_description">Order status list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Order_Status_List.html" class="more">« More »</a>
-</div>
-<div id="Resource_Asset" class="element ajax clickable class">
-<h1>Resource_Asset<a href="../classes/Yetti.API.Resource_Asset.html">¶</a>
-</h1>
-<p class="short_description">Model represents a single asset (attached to a resource)</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Resource_Asset.html" class="more">« More »</a>
-</div>
-<div id="Resource_Asset_Group" class="element ajax clickable class">
-<h1>Resource_Asset_Group<a href="../classes/Yetti.API.Resource_Asset_Group.html">¶</a>
-</h1>
-<p class="short_description">Asset group model
-Represents a single asset group for a resource</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Resource_Asset_Group.html" class="more">« More »</a>
-</div>
-<div id="Resource_BaseAbstract" class="element ajax clickable class">
-<h1>Resource_BaseAbstract<a href="../classes/Yetti.API.Resource_BaseAbstract.html">¶</a>
-</h1>
-<p class="short_description">Abstract base class for resource models.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Resource_BaseAbstract.html" class="more">« More »</a>
-</div>
-<div id="Resource_ListAbstract" class="element ajax clickable class">
-<h1>Resource_ListAbstract<a href="../classes/Yetti.API.Resource_ListAbstract.html">¶</a>
-</h1>
-<p class="short_description">Abstract class for resource list models</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Resource_ListAbstract.html" class="more">« More »</a>
-</div>
-<div id="Resource_Property" class="element ajax clickable class">
-<h1>Resource_Property<a href="../classes/Yetti.API.Resource_Property.html">¶</a>
-</h1>
-<p class="short_description">Model represents a single property (of a resource)</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Resource_Property.html" class="more">« More »</a>
-</div>
-<div id="Result" class="element ajax clickable class">
-<h1>Result<a href="../classes/Yetti.API.Result.html">¶</a>
-</h1>
-<p class="short_description">Basic result object</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Result.html" class="more">« More »</a>
-</div>
-<div id="User" class="element ajax clickable class">
-<h1>User<a href="../classes/Yetti.API.User.html">¶</a>
-</h1>
-<p class="short_description">Individual user model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.User.html" class="more">« More »</a>
-</div>
-<div id="User_Address" class="element ajax clickable class">
-<h1>User_Address<a href="../classes/Yetti.API.User_Address.html">¶</a>
-</h1>
-<p class="short_description">User address model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.User_Address.html" class="more">« More »</a>
-</div>
-<div id="User_Address_List" class="element ajax clickable class">
-<h1>User_Address_List<a href="../classes/Yetti.API.User_Address_List.html">¶</a>
-</h1>
-<p class="short_description">User address list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.User_Address_List.html" class="more">« More »</a>
-</div>
-<div id="User_List" class="element ajax clickable class">
-<h1>User_List<a href="../classes/Yetti.API.User_List.html">¶</a>
-</h1>
-<p class="short_description">User list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.User_List.html" class="more">« More »</a>
-</div>
-<div id="VAT" class="element ajax clickable class">
-<h1>VAT<a href="../classes/Yetti.API.VAT.html">¶</a>
-</h1>
-<p class="short_description">VAT band model.</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.VAT.html" class="more">« More »</a>
-</div>
-<div id="VAT_List" class="element ajax clickable class">
-<h1>VAT_List<a href="../classes/Yetti.API.VAT_List.html">¶</a>
-</h1>
-<p class="short_description">VAT list model</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.VAT_List.html" class="more">« More »</a>
-</div>
-<div id="Webservice" class="element ajax clickable class">
-<h1>Webservice<a href="../classes/Yetti.API.Webservice.html">¶</a>
-</h1>
-<p class="short_description">Webservice class handles the actual cURL calls and responses to and from Yetti</p>
-<div class="details collapse"></div>
-<a href="../classes/Yetti.API.Webservice.html" class="more">« More »</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row"><footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-21T14:06:11Z.<br></footer></div>
-</div>
+
 </body>
 </html>
