@@ -33,9 +33,7 @@ class Order_Shipment extends BaseAbstract
 			'tracking'	=> null,
 			'packageId' => null,
 			'courierId' => null,
-			'items' => array(
-				
-			),
+			'items' => array(),
 		));
 	}
 	
@@ -185,7 +183,7 @@ class Order_Shipment extends BaseAbstract
 	}
 	
 	/**
-	 * Add an item to this shipment (by order resource ID)
+	 * Add an item to this shipment (by order line ID)
 	 * 
 	 * @param int $id
 	 * @return void
@@ -195,7 +193,7 @@ class Order_Shipment extends BaseAbstract
 		$this->getJson()->items = (array)$this->getJson()->items;
 		
 		$this->getJson()->items[] = array(
-			'orderResourceId' => (int)$id,
+			'orderLineId' => (int)$id,
 		);
 	}
 }
