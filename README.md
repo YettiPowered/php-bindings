@@ -11,6 +11,14 @@ For more details on Yetti, please refer to http://yetti.co.uk. We welcome commen
 * PHP 5.3 or above.
 * PHP's cURL module.
 
+## Installation
+
+Install with composer, simply add to your composer.json:
+
+"require": {
+	"yetti/api": "*"
+}
+
 ## Examples
 
 Creating an item is simple:
@@ -18,9 +26,6 @@ Creating an item is simple:
 ```php
 use Yetti\API\Webservice as Webservice;
 use Yetti\API\Item as Item;
-
-include 'Yetti/php-bindings/API/Autoloader.php';
-Yetti\API\Autoloader::register();
 
 Webservice::setDefaultBaseUri('https://yoursite.secure.yetti.co.uk');
 Webservice::setDefaultAccessKey('your-access-key');
