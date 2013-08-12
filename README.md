@@ -17,7 +17,7 @@ Install with composer, simply add to your composer.json:
 
 ```
 "require": {
-	"yetti/api": "*"
+	"yetti/api": "dev-master"
 }
 ```
 

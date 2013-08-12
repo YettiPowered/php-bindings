@@ -4,7 +4,11 @@ php:
   - 5.3
   - 5.4
 
-script: phpunit --coverage-text .
+before_script:
+  - composer install
+
+script:
+  - phpunit --coverage-text .
 
 notifications:
   email:
