@@ -59,7 +59,10 @@ The tests are written using [PHPUnit 3.7.24](/sebastianbergmann/phpunit/).
 
 To run the tests, cd to the api bindings directory then run:
 
+```
+composer install
 phpunit .
+```
 
 ## Contributing
 
