@@ -142,8 +142,11 @@ class Item_Combination extends BaseAbstract
 	{
 		$options = array();
 		
-		foreach ($this->getJson()->options as $optionData) {
-			$options += get_object_vars($optionData);
+		foreach ($this->getJson()->options as $optionData)
+		{
+			if (is_object($optionData)) {
+				$options += get_object_vars($optionData);
+			}
 		}
 		
 		return $options;
