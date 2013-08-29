@@ -213,7 +213,7 @@ class Item extends Resource_BaseAbstract
 		);
 		
 		$emptyFirstTier = isset($this->getJson()->pricingTiers[0]) && 
-			$this->getJson()->pricingTiers[0]->price == 0 && 
+			$this->getJson()->pricingTiers[0]->price == -1 && 
 			$this->getJson()->pricingTiers[0]->appliesToResourceId == -1 && 
 			$this->getJson()->pricingTiers[0]->appliesToResourceIdType == 100;
 		

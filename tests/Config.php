@@ -6,7 +6,7 @@ namespace Yetti\API\Tests;
  * Test suite configuration.
  *
  * @author Sam Holman <sam@yetti.co.uk>
- * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  * @subpackage tests
  */
