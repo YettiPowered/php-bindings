@@ -84,7 +84,7 @@ class Auth_Details extends BaseAbstract
 	 */
 	public function getDisplayName()
 	{
-		return (string)$this->getJson->user->name;
+		return (string)$this->getJson()->user->name;
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Auth_Details extends BaseAbstract
 	 */
 	public function getEmail()
 	{
-		return (string)$this->getJson->user->email;
+		return (string)$this->getJson()->user->email;
 	}
 
 	/**
@@ -104,7 +104,7 @@ class Auth_Details extends BaseAbstract
 	 */
 	public function getGravatar()
 	{
-		return (string)$this->getJson->user->gravatarUrl;
+		return (string)$this->getJson()->user->gravatarUrl;
 	}
 
 	/**
@@ -114,7 +114,7 @@ class Auth_Details extends BaseAbstract
 	 */
 	public function getName()
 	{
-		return (string)$this->getJson->user->identifier;
+		return (string)$this->getJson()->user->identifier;
 	}
 
 	/**
