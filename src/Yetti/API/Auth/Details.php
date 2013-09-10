@@ -65,4 +65,65 @@ class Auth_Details extends BaseAbstract
 	{
 		return (array)$this->getJson()->scopes;
 	}
+
+
+	/**
+	 * Return the user's ID
+	 *
+	 * @return integer
+	 */
+	public function getUserId()
+	{
+		return (int)$this->getJson()->user->resourceId;
+	}
+
+	/**
+	 * Return the user's display name
+	 *
+	 * @return string
+	 */
+	public function getDisplayName()
+	{
+		return (string)$this->getJson()->user->name;
+	}
+
+	/**
+	 * Return the user's email
+	 *
+	 * @return string
+	 */
+	public function getEmail()
+	{
+		return (string)$this->getJson()->user->email;
+	}
+
+	/**
+	 * Return the user's gravatar url
+	 * 
+	 * @return string
+	 */
+	public function getGravatar()
+	{
+		return (string)$this->getJson()->user->gravatarUrl;
+	}
+
+	/**
+	 * Return the user's name
+	 * 
+	 * @return string
+	 */
+	public function getName()
+	{
+		return (string)$this->getJson()->user->identifier;
+	}
+
+	/**
+	 * Return the user's identifier (same as name)
+	 * 
+	 * @return string
+	 */
+	public function getIdentifier()
+	{
+		return (string)$this->getName();
+	}
 }
