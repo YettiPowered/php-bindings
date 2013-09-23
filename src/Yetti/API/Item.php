@@ -92,6 +92,16 @@ class Item extends Resource_BaseAbstract
 	}
 	
 	/**
+	 * Clear existing collection assignments for this item
+	 * 
+	 * @return void
+	 */
+	public function clearCollections()
+	{
+		$this->getJson()->collectionIds = array();
+	}
+	
+	/**
 	 * Assign this item to the collection with the given ID
 	 * 
 	 * @param int $collectionId
