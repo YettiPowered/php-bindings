@@ -81,8 +81,10 @@ class Item extends Resource_BaseAbstract
 	{
 		$itemCollections = new \Yetti\API\Item_Collections();
 		$itemCollections->setWebservice($this->webservice());
-		$itemCollections->load($this->getId());
-		$itemCollections->clearCollections();
+		
+		if ($itemCollections->load($this->getId())) {
+			$itemCollections->clearCollections();
+		}
 		
 		foreach ($this->getCollectionIds() as $collectionId) {
 			$itemCollections->addCollection($collectionId);
