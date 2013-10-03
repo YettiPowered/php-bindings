@@ -42,7 +42,9 @@ class Item_Collections extends BaseAbstract
 			return true;
 		}
 		
-		$this->setJson(array('collections' => array()));
+		$json = new stdClass();
+		$json->collections = array();
+		$this->setJson($json);
 		return false;
 	}
 	
