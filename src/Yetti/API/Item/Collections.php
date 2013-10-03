@@ -8,20 +8,21 @@ namespace Yetti\API;
  * And assigning an item to one or more collections.
  *
  * @author Sam Holman <sam@yetti.co.uk>
- * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  */
 
 class Item_Collections extends BaseAbstract
 {
 	private
+	
 		/**
 		 * The ID of the parent item for loaded collections
 		 * 
 		 * @var int
 		 */
 		$_resourceId;
-		
+	
 	/**
 	 * Loads a list of collections to which the given item is assigned
 	 *
@@ -41,6 +42,7 @@ class Item_Collections extends BaseAbstract
 			return true;
 		}
 		
+		$this->setJson(array('collections' => array()));
 		return false;
 	}
 	
