@@ -42,7 +42,7 @@ class Item_Collections extends BaseAbstract
 			return true;
 		}
 		
-		$json = new stdClass();
+		$json = new \stdClass();
 		$json->collections = array();
 		$this->setJson($json);
 		return false;
