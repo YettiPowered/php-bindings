@@ -36,7 +36,7 @@ class Item_Filter_Type extends BaseAbstract
 	 */
 	public function load($filterTypeId)
 	{
-		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/null/' . $filterTypeId . '.ws');
+		$this->webservice()->setRequestPath('/filters/' . $this->getUriBase() . '/null/' . $filterTypeId . '.ws');
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -55,7 +55,7 @@ class Item_Filter_Type extends BaseAbstract
 	 */
 	public function save()
 	{
-		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/' . ($this->_collectionId ?: $this->_itemTypeId) . '.ws');
+		$this->webservice()->setRequestPath('/filters/' . $this->getUriBase() . '/' . ($this->_collectionId ?: $this->_itemTypeId) . '.ws');
 		$this->webservice()->setRequestMethod('post');
 		
 		if ($this->getId())

@@ -29,7 +29,7 @@ class Item_Filter extends BaseAbstract
 	 */
 	public function load($filterId)
 	{
-		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/null/null/' . $filterId . '.ws');
+		$this->webservice()->setRequestPath('/filters/' . $this->getUriBase() . '/null/null/' . $filterId . '.ws');
 		$this->webservice()->setRequestMethod('get');
 		
 		if ($this->webservice()->makeRequest())
@@ -49,7 +49,7 @@ class Item_Filter extends BaseAbstract
 	 */
 	public function save()
 	{
-		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/null/' . $this->_filterTypeId . '.ws');
+		$this->webservice()->setRequestPath('/filters/' . $this->getUriBase() . '/null/' . $this->_filterTypeId . '.ws');
 		$this->webservice()->setRequestMethod('post');
 		
 		if ($this->getId())
@@ -75,7 +75,7 @@ class Item_Filter extends BaseAbstract
 	 */
 	public function delete()
 	{
-		$this->webservice()->setRequestPath('/' . $this->getUriBase() . '/filters/null/null/' . $this->getId() . '.ws');
+		$this->webservice()->setRequestPath('/filters/' . $this->getUriBase() . '/null/null/' . $this->getId() . '.ws');
 		$this->webservice()->setRequestMethod('delete');
 		return $this->makeRequestReturnResult();
 	}

@@ -6,7 +6,7 @@ namespace Yetti\API;
  * Filter list model
  *
  * @author Sam Holman <sam@yetti.co.uk>
- * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  */
 
@@ -21,7 +21,7 @@ class Item_Filter_List extends ListAbstract
 	public function load($filterTypeId)
 	{
 		$this->webservice()->setRequestMethod('get');
-		$this->webservice()->setRequestPath('/items/filters/null/' . $filterTypeId . '.ws');
+		$this->webservice()->setRequestPath('/filters/items/null/' . $filterTypeId . '.ws');
 		
 		if ($this->webservice()->makeRequest())
 		{
@@ -30,6 +30,62 @@ class Item_Filter_List extends ListAbstract
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Load a list of filters specifically attached to the given item
+	 * 
+	 * @param int $itemId
+	 * @param int $filterTypeId
+	 * @return bool
+	 */
+	public function loadByItemId($itemId, $filterTypeId=null)
+	{
+		$path = '/items/-1/' . $itemId;
+		
+		if ($filterTypeId) {
+			$path .= '/' . $filterTypeId;
+		}
+		
+		$path .= '/filters.ws';
+		
+		$this->webservice()->setRequestMethod('get');
+		$this->webservice()->setRequestPath($path);
+		
+		if ($this->webservice()->makeRequest())
+		{
+			$this->setJson($this->webservice()->getResponseJsonObject());
+			return true;
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * Clear filters for the given item
+	 * 
+	 * @param int $itemId
+	 * @param int $filterTypeId
+	 * @return \Yetti\API\Result
+	 */
+	public function clearFiltersForItem($itemId, $filterTypeId=null)
+	{
+		$path = '/items/-1/' . $itemId;
+		
+		if ($filterTypeId) {
+			$path .= '/' . $filterTypeId;
+		}
+		
+		$path .= '/filters.ws';
+		
+		$filters = new \stdClass();
+		$filters->filters = array();
+		$this->setJson($filters);
+		
+		$this->webservice()->setRequestMethod('put');
+		$this->webservice()->setRequestPath($path);
+		$this->webservice()->setPostData(json_encode($this->getJson()));
+		return $this->makeRequestReturnResult();
 	}
 	
 	/**

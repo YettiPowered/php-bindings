@@ -54,7 +54,7 @@ class Webservice
 		 * 
 		 * @var string
 		 */
-		$_version = '2',
+		$_version = '2.1',
 		
 		/**
 		 * The HTTP request method.

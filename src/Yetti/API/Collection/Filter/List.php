@@ -21,7 +21,7 @@ class Collection_Filter_List extends ListAbstract
 	public function load($filterTypeId)
 	{
 		$this->webservice()->setRequestMethod('get');
-		$this->webservice()->setRequestPath('/collections/filters/null/' . $filterTypeId . '.ws');
+		$this->webservice()->setRequestPath('/filters/collections/null/' . $filterTypeId . '.ws');
 		
 		if ($this->webservice()->makeRequest())
 		{

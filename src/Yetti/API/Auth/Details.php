@@ -6,7 +6,7 @@ namespace Yetti\API;
  * Auth details model.
  * 
  * @author Sam Holman <sam@yetti.co.uk>
- * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  */
 
@@ -50,7 +50,7 @@ class Auth_Details extends BaseAbstract
 		if (!$this->_user)
 		{
 			$this->_user = new User();
-			$this->_user->load($this->getJson()->user->resourceId);
+			$this->_user->load($this->getJson()->user->id);
 		}
 		
 		return $this->_user;
@@ -74,7 +74,7 @@ class Auth_Details extends BaseAbstract
 	 */
 	public function getUserId()
 	{
-		return (int)$this->getJson()->user->resourceId;
+		return (int)$this->getJson()->user->id;
 	}
 
 	/**
@@ -114,7 +114,7 @@ class Auth_Details extends BaseAbstract
 	 */
 	public function getName()
 	{
-		return (string)$this->getJson()->user->identifier;
+		return (string)$this->getJson()->user->username;
 	}
 
 	/**
@@ -125,5 +125,15 @@ class Auth_Details extends BaseAbstract
 	public function getIdentifier()
 	{
 		return (string)$this->getName();
+	}
+	
+	/**
+	 * Returns an object containing the authorised user's subscription details
+	 * 
+	 * @return stdClass
+	 */
+	public function getSubscriptionDetails()
+	{
+		return $this->getJson()->user->subscription;
 	}
 }

@@ -7,7 +7,7 @@ use Yetti\API\Auth_Details;
  * Test methods for the fetching auth details
  *
  * @author Sam Holman <sam@yetti.co.uk>
- * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  * @subpackage tests
  */
@@ -21,5 +21,8 @@ class DetailsTest extends AuthAbstract
 		
 		$this->assertEquals(YETTI_API_ACCESS_KEY, $details->getUser()->getName());
 		$this->assertEmpty($details->getScopes());
+		
+		$this->assertInstanceOf('\stdClass', $details->getSubscriptionDetails());
+		$this->assertEquals(0, $details->getSubscriptionDetails()->id);
 	}
 }

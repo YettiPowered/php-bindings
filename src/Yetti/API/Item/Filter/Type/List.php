@@ -21,7 +21,7 @@ class Item_Filter_Type_List extends ListAbstract
 	public function load($itemTypeId)
 	{
 		$this->webservice()->setRequestMethod('get');
-		$this->webservice()->setRequestPath('/items/filters/' . $itemTypeId . '.ws');
+		$this->webservice()->setRequestPath('/filters/items/' . $itemTypeId . '.ws');
 		
 		if ($this->webservice()->makeRequest())
 		{
