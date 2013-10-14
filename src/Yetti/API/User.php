@@ -63,4 +63,14 @@ class User extends Resource_BaseAbstract
 	{
 		return (string)$this->getJson()->resource->email;
 	}
+	
+	/**
+	 * Returns an object containing the authorised user's subscription details
+	 * 
+	 * @return stdClass
+	 */
+	public function getSubscriptionDetails()
+	{
+		return $this->getJson()->subscription;
+	}
 }

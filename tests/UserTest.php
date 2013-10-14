@@ -7,7 +7,7 @@ use Yetti\API\User as User;
  * Test methods for the user model.
  *
  * @author Sam Holman <sam@yetti.co.uk>
- * @copyright Copyright (c) 2011-2012, Yetti Ltd.
+ * @copyright Copyright (c) 2011-2013, Yetti Ltd.
  * @package yetti-api
  * @subpackage tests
  */
@@ -62,6 +62,17 @@ class UserTest extends AuthAbstract
 		$user = new User();
 		$this->assertTrue($user->load($inUser->getId()));
 		$this->assertEquals($passHash, $user->getPassHash());
+		
+		return $user;
+	}
+	
+	/**
+	 * @depends testLoadUser
+	 */
+	public function testGetSubscriptionDetails(User $inUser)
+	{
+		$this->assertInstanceOf('\stdClass', $inUser->getSubscriptionDetails());
+		$this->assertEquals(0, $inUser->getSubscriptionDetails()->id);
 	}
 	
 	/**
