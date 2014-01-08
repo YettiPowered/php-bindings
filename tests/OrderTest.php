@@ -59,7 +59,8 @@ class OrderTest extends AuthAbstract
 		$combinationList = new Item_Combination_List();
 		$combinationList->load($item->getId());
 		$this->assertEquals(2, $combinationList->getTotalItemCount());
-		$combination = $combinationList->getItems()->first();
+		$combinations = $combinationList->getItems();
+		$combination = $combinations[1];
 		$combination->setSku('SKU123');
 		$this->assertTrue($combination->save()->success());
 		
@@ -172,5 +173,29 @@ class OrderTest extends AuthAbstract
 		
 		$shipments = $order->getShipments();
 		$this->assertEquals('abc123', $shipments[0]->getTracking());
+		
+		return $order;
+	}
+	
+	/**
+	* @depends testLoadNotesAndShipments
+	*/
+	public function testOrderItemDetails(Order $order)
+	{
+	    $items = $order->getItems();
+	    
+	    $this->assertEquals('Test product for order', $items[0]->getName());
+	    
+	    $this->assertEquals(19, $items[0]->getPrice());
+	    $this->assertEquals(22.80, $items[0]->getPriceIncVat());
+	    $this->assertEquals(20, $items[0]->getVatRate());
+	    
+	    $this->assertEquals(1, $items[0]->getQuantity());
+	    
+	    $this->assertEquals('SKU123', $items[0]->getSku());
+	    
+	    $options = $items[0]->getCombinationOptions();
+	    $this->assertEquals(1, count($options));
+	    $this->assertEquals($options[0]->name, 'An option');
 	}
 }

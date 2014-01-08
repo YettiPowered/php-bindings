@@ -23,13 +23,23 @@ class Order_Item extends BaseAbstract
 	}
 	
 	/**
-	 * Returns the item resource ID
+	 * Returns the order item's resource ID
 	 * 
 	 * @return int
 	 */
 	public function getResourceId()
 	{
 		return (int)$this->getJson()->resource->resourceId;
+	}
+	
+	/**
+	* Returns the order item's name
+	*
+	* @return string
+	*/
+	public function getName()
+	{
+	    return (string)$this->getJson()->resource->name;
 	}
 	
 	/**
@@ -53,12 +63,52 @@ class Order_Item extends BaseAbstract
 	}
 	
 	/**
-	 * Returns the quantity of this item ordered
+	* Returns the order item's combination options
+	*
+	* @return array
+	*/
+	public function getCombinationOptions()
+	{
+	    return $this->getJson()->combination->options;
+	}
+	
+	/**
+	 * Returns the quantity of the order item ordered
 	 * 
 	 * @return float
 	 */
 	public function getQuantity()
 	{
 		return (float)$this->getJson()->quantity;
+	}
+	
+	/**
+	* Returns the order item's price excluding VAT
+	*
+	* @return float
+	*/
+	public function getPrice()
+	{
+	    return (float)$this->getJson()->price;
+	}
+	
+	/**
+	* Returns the order item's price including VAT
+	*
+	* @return float
+	*/
+	public function getPriceIncVat()
+	{
+	    return (float)$this->getJson()->priceIncVat;
+	}
+	
+	/**
+	* Returns the VAT rate for this order item (if applicable)
+	*
+	* @return float
+	*/
+	public function getVatRate()
+	{
+	    return (float)$this->getJson()->vat;
 	}
 }
